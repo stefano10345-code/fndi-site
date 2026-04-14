@@ -166,32 +166,25 @@
 
   /* VOICE DEMO */
   .demo-sec{background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%)}
-  .demo-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
-  .demo-player{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;position:relative;overflow:hidden}
-  .demo-player::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--accent))}
-  .demo-player-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
-  .demo-player-label .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-  .demo-player h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.4rem}
-  .demo-player p{font-size:0.82rem;color:var(--text2);line-height:1.6;margin-bottom:1.2rem}
-  .demo-waveform{display:flex;align-items:center;gap:2px;height:40px;margin-bottom:1.2rem;padding:0.8rem;background:rgba(0,0,0,0.2);border-radius:10px}
-  .demo-waveform .bar{width:3px;border-radius:2px;background:var(--accent);transition:height 0.15s}
-  .demo-waveform.playing .bar{animation:waveAnim 0.6s ease-in-out infinite alternate}
-  @keyframes waveAnim{0%{height:8px;opacity:0.4}100%{height:100%;opacity:1}}
-  .demo-controls{display:flex;align-items:center;gap:1rem}
-  .demo-play-btn{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0}
-  .demo-play-btn:hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(124,58,237,0.4)}
-  .demo-time{font-size:0.78rem;color:var(--text3);font-family:'Space Grotesk',sans-serif;font-weight:600}
-  .demo-progress{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;position:relative;cursor:pointer}
-  .demo-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--cyan));border-radius:2px;width:0%;transition:width 0.3s}
+  .demo-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:2.5rem;align-items:center}
+  .demo-player{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:20px;position:relative;overflow:hidden}
+  .demo-transcript{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.1) transparent}
+  .demo-transcript::-webkit-scrollbar{width:3px}
+  .demo-transcript::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
+  .dt-msg{display:flex;flex-direction:column;gap:0.25rem}
+  .dt-label{font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .dt-ai .dt-label{color:var(--cyan)}
+  .dt-caller .dt-label{color:var(--accent2)}
+  .dt-bubble{font-size:0.82rem;line-height:1.55;padding:0.7rem 1rem;border-radius:12px;max-width:92%}
+  .dt-bubble-ai{background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.1);color:var(--text2)}
+  .dt-bubble-caller{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.12);color:var(--text2);align-self:flex-end}
+  .dt-caller{align-items:flex-end}
   .demo-info{text-align:left}
-  .demo-info h3{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.8rem;line-height:1.2}
+  .demo-info h3{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:0.8rem;line-height:1.2}
   .demo-info p{font-size:0.92rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
   .demo-features{display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem}
   .demo-feat{display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text2)}
   .demo-feat .check{color:var(--green);font-weight:700}
-  .demo-call-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.9rem 2rem;border-radius:12px;background:linear-gradient(135deg,var(--green),#059669);color:white;text-decoration:none;font-weight:700;font-size:0.9rem;transition:all 0.3s;border:none;cursor:pointer}
-  .demo-call-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(52,211,153,0.3)}
-  .demo-call-btn .phone-icon{font-size:1.1rem;animation:float 3s ease-in-out infinite}
   @media(max-width:768px){
     .demo-wrap{grid-template-columns:1fr}
   }
@@ -416,27 +409,39 @@
 <section class="demo-sec">
   <div class="con">
     <div class="s-head">
-      <div class="s-label anim d1">HEAR IT IN ACTION</div>
-      <h2 class="s-title anim d2">Listen to Our AI Voice Agent</h2>
-      <p class="s-sub anim d3">This is what your customers hear when they call. Natural, helpful, and always available.</p>
+      <div class="s-label anim d1">SEE IT IN ACTION</div>
+      <h2 class="s-title anim d2">What Your Customers Experience</h2>
+      <p class="s-sub anim d3">Here's a real example of how our AI voice agent handles an inbound call — booking an appointment in under 60 seconds.</p>
     </div>
     <div class="demo-wrap">
-      <div class="demo-player anim d2">
-        <div class="demo-player-label"><span class="live-dot"></span> SAMPLE CALL RECORDING</div>
-        <h3>AI Agent Booking a Dental Appointment</h3>
-        <p>A real demo of our voice agent handling an inbound call, answering questions, and booking an appointment.</p>
-        <div class="demo-waveform" id="demoWaveform"></div>
-        <div class="demo-controls">
-          <button class="demo-play-btn" id="demoPlayBtn" onclick="toggleDemo()">▶</button>
-          <div class="demo-progress" id="demoProgress" onclick="seekDemo(event)">
-            <div class="demo-progress-fill" id="demoProgressFill"></div>
+      <div class="demo-player anim d2" style="padding:0;overflow:hidden">
+        <div style="background:rgba(124,58,237,0.05);padding:1rem 1.5rem;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;gap:0.6rem">
+          <span style="font-size:1.2rem">📞</span>
+          <div>
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan)">LIVE CALL TRANSCRIPT</div>
+            <div style="font-size:0.75rem;color:var(--text3)">AI Voice Agent — Dental Office Demo</div>
           </div>
-          <span class="demo-time" id="demoTime">0:00 / 1:42</span>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:0.4rem"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite"></span><span style="font-size:0.7rem;color:var(--green);font-weight:600">ACTIVE</span></div>
+        </div>
+        <div class="demo-transcript" id="demoTranscript" style="padding:1.2rem 1.5rem;display:flex;flex-direction:column;gap:1rem;max-height:380px;overflow-y:auto">
+          <div class="dt-msg dt-ai"><div class="dt-label">AI Agent</div><div class="dt-bubble dt-bubble-ai">Hi, thanks for calling Bright Smile Dental! I'm your AI assistant. How can I help you today?</div></div>
+          <div class="dt-msg dt-caller"><div class="dt-label">Caller</div><div class="dt-bubble dt-bubble-caller">Hi, I need to schedule a teeth cleaning. Do you have anything this week?</div></div>
+          <div class="dt-msg dt-ai"><div class="dt-label">AI Agent</div><div class="dt-bubble dt-bubble-ai">Absolutely! I have openings on Thursday at 10 AM and Friday at 2 PM. Which works better for you?</div></div>
+          <div class="dt-msg dt-caller"><div class="dt-label">Caller</div><div class="dt-bubble dt-bubble-caller">Thursday at 10 works. How much is a cleaning?</div></div>
+          <div class="dt-msg dt-ai"><div class="dt-label">AI Agent</div><div class="dt-bubble dt-bubble-ai">A standard cleaning is $150, but if you have insurance we can bill directly. Can I get your name to book that Thursday 10 AM slot?</div></div>
+          <div class="dt-msg dt-caller"><div class="dt-label">Caller</div><div class="dt-bubble dt-bubble-caller">Sure, it's Maria Lopez.</div></div>
+          <div class="dt-msg dt-ai"><div class="dt-label">AI Agent</div><div class="dt-bubble dt-bubble-ai">You're all set, Maria! Thursday at 10 AM for a teeth cleaning. You'll get a confirmation text shortly. Anything else I can help with?</div></div>
+          <div class="dt-msg dt-caller"><div class="dt-label">Caller</div><div class="dt-bubble dt-bubble-caller">Nope, that's it. Thanks!</div></div>
+          <div class="dt-msg dt-ai"><div class="dt-label">AI Agent</div><div class="dt-bubble dt-bubble-ai">Happy to help! See you Thursday, Maria. Have a great day! 😊</div></div>
+        </div>
+        <div style="padding:0.8rem 1.5rem;border-top:1px solid var(--glass-border);display:flex;align-items:center;gap:0.5rem;background:rgba(52,211,153,0.03)">
+          <span style="color:var(--green);font-weight:700">✓</span>
+          <span style="font-size:0.78rem;color:var(--text3)">Appointment booked in 47 seconds — no hold time, no missed call</span>
         </div>
       </div>
       <div class="demo-info anim d3">
-        <h3>Try It <span class="grad">Live</span> Right Now</h3>
-        <p>Call our demo line and experience the AI voice agent yourself. It'll answer, ask about your needs, and book you in — just like it would for your customers.</p>
+        <h3>Every Call <span class="grad">Answered.</span> Every Lead <span class="grad">Captured.</span></h3>
+        <p>Your AI voice agent picks up instantly — day or night. It answers questions, books appointments, and sends confirmations. No more voicemail, no more lost customers.</p>
         <div class="demo-features">
           <div class="demo-feat"><span class="check">✓</span> Answers in under 1 second</div>
           <div class="demo-feat"><span class="check">✓</span> Sounds natural and friendly</div>
@@ -444,7 +449,7 @@
           <div class="demo-feat"><span class="check">✓</span> Handles FAQs about your business</div>
           <div class="demo-feat"><span class="check">✓</span> Works 24/7, no hold times</div>
         </div>
-        <a href="tel:+17868430145" class="demo-call-btn"><span class="phone-icon">📞</span> Call Demo: (786) 843-0145</a>
+        <a href="/book" class="btn btn-g">Get This for Your Business</a>
       </div>
     </div>
   </div>
@@ -764,60 +769,7 @@ function updateCalc(){
   document.getElementById('calcSavings').textContent='$'+recovered.toLocaleString()+' / year';
 }
 
-/* VOICE DEMO PLAYER */
-let demoPlaying=false;
-let demoInterval=null;
-let demoProgress=0;
-const demoDuration=102; // 1:42 in seconds
-
-function initWaveform(){
-  const wf=document.getElementById('demoWaveform');
-  if(!wf||wf.children.length>0)return;
-  for(let i=0;i<60;i++){
-    const bar=document.createElement('div');
-    bar.className='bar';
-    const h=Math.random()*28+8;
-    bar.style.height=h+'px';
-    bar.style.animationDelay=(Math.random()*0.5)+'s';
-    bar.style.animationDuration=(0.3+Math.random()*0.5)+'s';
-    wf.appendChild(bar);
-  }
-}
-
-function toggleDemo(){
-  const btn=document.getElementById('demoPlayBtn');
-  const wf=document.getElementById('demoWaveform');
-  demoPlaying=!demoPlaying;
-  if(demoPlaying){
-    btn.textContent='⏸';
-    wf.classList.add('playing');
-    demoInterval=setInterval(()=>{
-      demoProgress+=1;
-      if(demoProgress>=demoDuration){demoProgress=0;toggleDemo();return;}
-      const pct=(demoProgress/demoDuration)*100;
-      document.getElementById('demoProgressFill').style.width=pct+'%';
-      const mins=Math.floor(demoProgress/60);
-      const secs=String(demoProgress%60).padStart(2,'0');
-      document.getElementById('demoTime').textContent=mins+':'+secs+' / 1:42';
-    },1000);
-  } else {
-    btn.textContent='▶';
-    wf.classList.remove('playing');
-    clearInterval(demoInterval);
-  }
-}
-
-function seekDemo(e){
-  const rect=e.target.getBoundingClientRect();
-  const pct=(e.clientX-rect.left)/rect.width;
-  demoProgress=Math.round(pct*demoDuration);
-  document.getElementById('demoProgressFill').style.width=(pct*100)+'%';
-  const mins=Math.floor(demoProgress/60);
-  const secs=String(demoProgress%60).padStart(2,'0');
-  document.getElementById('demoTime').textContent=mins+':'+secs+' / 1:42';
-}
-
-document.addEventListener('DOMContentLoaded',()=>{initWaveform();updateCalc();});
+document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
 </script>
 </body>
 </html>
