@@ -15,169 +15,98 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  ::selection{background:rgba(124,58,237,0.3);color:white}
-  :root{
-    --bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--card2:#151530;--card-hover:#1a1a3a;
-    --accent:#7c3aed;--accent2:#a78bfa;--accent3:#c4b5fd;
-    --green:#34d399;--green2:#6ee7b7;
-    --cyan:#22d3ee;--pink:#f472b6;--orange:#fb923c;--blue:#60a5fa;--yellow:#fbbf24;
-    --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
-    --border:rgba(255,255,255,0.04);--glow:rgba(124,58,237,0.15);
-    --glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
-  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
-  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
-
-  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim.v{opacity:1;transform:translateY(0)}
-  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
-
-  /* NAV */
-  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
-  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
-  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
-  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
-  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
-  .n-links{display:flex;align-items:center;gap:0.3rem}
-  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
-  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
-  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important}
-  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
-  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
-  .logo small{display:none}
-  @media(max-width:768px){.mob-toggle{display:block}.n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}.n-links.open{display:flex}.logo small{display:none}}
-
-  /* HERO */
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 3rem;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
-  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:600px;height:600px;background:rgba(124,58,237,0.1);top:-10%;left:-10%}
-  .orb2{width:500px;height:500px;background:rgba(34,211,238,0.06);bottom:-15%;right:-10%;animation-delay:2s}
-  .h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;letter-spacing:-1px}
-  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2rem;line-height:1.7}
-  .h-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
-  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
-  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
-  .btn-o{background:rgba(255,255,255,0.03);color:var(--text);border:1px solid rgba(255,255,255,0.1)}
-  .btn-o:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
-
-  /* SECTIONS */
-  section{padding:6rem 2rem;position:relative}
-  .con{max-width:1200px;margin:0 auto;position:relative;z-index:2}
-  .s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
-  .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem;letter-spacing:-1px;line-height:1.15}
-  .s-sub{font-size:0.95rem;color:var(--text2);line-height:1.7}
-  .s-head{margin-bottom:3.5rem;text-align:center}
-  .s-head .s-sub{max-width:700px;margin:0 auto}
-
-  /* FEATURES GRID */
-  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:3rem}
-  .feature{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.3s}
-  .feature:hover{border-color:rgba(124,58,237,0.15);transform:translateY(-4px);box-shadow:0 12px 40px rgba(124,58,237,0.06)}
-  .feature-icon{font-size:2.2rem;margin-bottom:1rem}
-  .feature h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
-  .feature p{font-size:0.88rem;color:var(--text2);line-height:1.6}
-
-  /* HOW IT WORKS */
-  .how-section{background:var(--surface)}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-  .step{text-align:center;position:relative}
-  .step-num{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;font-weight:700;font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:'Space Grotesk','Inter',sans-serif}
-  .step h4{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
-  .step p{font-size:0.88rem;color:var(--text2);line-height:1.6}
-
-  /* TESTIMONIAL */
-  .test-sec{background:var(--bg)}
-  .test-card{background:var(--card);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem;text-align:center;max-width:700px;margin:0 auto}
-  .test-stars{color:var(--yellow);margin-bottom:1rem;font-size:1.1rem;letter-spacing:0.3rem}
-  .test-card p{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-style:italic}
-  .test-author{font-weight:700;color:var(--text);font-size:0.95rem}
-  .test-role{font-size:0.82rem;color:var(--text3)}
-
-  /* PRICING PREVIEW */
-  .pricing-sec{background:var(--surface)}
-  .price-box{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem;text-align:center;max-width:500px;margin:0 auto}
-  .price-amount{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--green);margin:1.5rem 0}
-  .price-per{font-size:0.85rem;color:var(--text3)}
-  .price-list{text-align:left;margin:2rem 0;padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .price-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)}
-  .price-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
-
-  /* CTA */
-  .cta-sec{text-align:center;padding:5rem 2rem}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
-  .cta-sec p{font-size:1.02rem;color:var(--text2);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
-
-  /* FOOTER */
-  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
-  .ft-inner{max-width:1200px;margin:0 auto}
-  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
-  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
-  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
-  footer a:hover{color:var(--accent2)}
-  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
-  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
-  .ft-bottom p{margin:0;font-size:0.75rem}
-
-  /* CHAT WIDGET STYLES */
-  @keyframes widgetPop{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
-  @keyframes fabPulse{0%,100%{box-shadow:0 4px 24px rgba(124,58,237,0.3)}50%{box-shadow:0 4px 40px rgba(124,58,237,0.6)}}
-  .chat-fab{position:fixed;bottom:2rem;right:2rem;z-index:3000;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;border:none;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;animation:fabPulse 3s ease-in-out infinite}
-  .chat-fab:hover{transform:scale(1.08)}
-  .chat-fab.open{animation:none;border-radius:16px;background:rgba(255,255,255,0.1)}
-  .chat-widget{position:fixed;bottom:6.5rem;right:2rem;z-index:2999;width:380px;max-height:520px;display:none;flex-direction:column;background:var(--card);border:1px solid rgba(124,58,237,0.12);border-radius:20px;overflow:hidden;animation:widgetPop 0.3s}
-  .chat-widget.open{display:flex}
-  .cw-header{padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);background:rgba(124,58,237,0.03);display:flex;align-items:center;gap:0.5rem}
-  .cw-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-  .cw-title{font-size:0.75rem;font-weight:700;color:var(--accent2);letter-spacing:0.5px}
-  .cw-close{margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer}
-  .cw-close:hover{color:var(--text)}
-  .advisor-chat{padding:1rem;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:0.6rem;min-height:280px}
-  .advisor-chat::-webkit-scrollbar{width:3px}
-  .advisor-chat::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
-  .msg{display:flex;flex-direction:column;gap:0.3rem;font-size:0.82rem;line-height:1.5;animation:fadeUp 0.3s}
-  .msg-user{align-items:flex-end}
-  .msg-user span{background:var(--accent);color:white;padding:0.6rem 1rem;border-radius:12px;border-bottom-right-radius:4px}
-  .msg-ai{align-items:flex-start}
-  .msg-ai .msg-name{font-size:0.68rem;color:var(--accent2);font-weight:700;margin-bottom:0.2rem}
-  .msg-ai span{background:var(--card2);color:var(--text2);padding:0.6rem 1rem;border-radius:12px;border-bottom-left-radius:4px}
-  .advisor-input{padding:1rem;border-top:1px solid var(--border);display:flex;gap:0.5rem}
-  .advisor-input input{flex:1;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.9rem;color:var(--text);font-size:0.8rem;outline:none}
-  .advisor-input input:focus{border-color:var(--accent);background:rgba(255,255,255,0.05)}
-  .advisor-send{background:var(--accent);border:none;color:white;border-radius:10px;width:36px;height:36px;cursor:pointer;font-weight:700}
-  .advisor-send:hover{background:var(--accent2)}
-  .typing-dots{display:flex;gap:0.3rem}
-  .typing-dots span{width:4px;height:4px;border-radius:50%;background:var(--accent);animation:pulse 1.4s infinite}
-
-  .hero-svg{position:relative;z-index:2;margin:2rem auto 0;opacity:0.7;animation:float 6s ease-in-out infinite}
-
-  @media(max-width:768px){
-    section{padding:4rem 1.5rem}
-    .feature-grid{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr}
-    .ft-inner>div:first-child{grid-template-columns:1fr}
-    .chat-widget{width:calc(100% - 2rem)}
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:rgba(124,58,237,0.3);color:white}
+:root{--bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--accent:#7c3aed;--accent2:#a78bfa;--cyan:#22d3ee;--green:#34d399;--pink:#f472b6;--orange:#fb923c;--blue:#60a5fa;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+@keyframes pageLoad{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.anim{opacity:0;transform:translateY(40px);transition:all 0.8s}
+.anim.v{opacity:1;transform:translateY(0)}
+.anim.v.d1{transition-delay:.1s}
+.anim.v.d2{transition-delay:.2s}
+.anim.v.d3{transition-delay:.3s}
+.anim.v.d4{transition-delay:.4s}
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
+nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--glass-border)}
+.nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+.logo small{font-family:'Inter';font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
+.n-links{display:flex;align-items:center;gap:0.3rem}
+.n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
+.n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+.n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important}
+.n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
+.mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+@media(max-width:768px){.mob-toggle{display:block}.n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}.n-links.open{display:flex}.logo small{display:none}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 3rem;position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
+.orb1{width:600px;height:600px;background:rgba(124,58,237,0.08);top:-10%;left:-10%}
+.orb2{width:500px;height:500px;background:rgba(34,211,238,0.05);bottom:-15%;right:-10%;animation-delay:2s}
+.h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
+.grad{background:linear-gradient(135deg,#60a5fa,#f472b6,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+.hero p{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2rem;line-height:1.7}
+.h-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+.btn-o{background:rgba(255,255,255,0.03);color:var(--text);border:1px solid rgba(255,255,255,0.1)}
+.btn-o:hover{background:rgba(255,255,255,0.06)}
+.section{padding:6rem 2rem;position:relative}
+.con{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
+.s-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.s-head{margin-bottom:3.5rem;text-align:center}
+.s-head .s-sub{font-size:0.95rem;color:var(--text2);line-height:1.7;max-width:700px;margin:0 auto}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feat-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;transition:all 0.4s}
+.feat-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.15);box-shadow:0 12px 40px rgba(124,58,237,0.08)}
+.feat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
+.feat-card h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.feat-card p{font-size:0.82rem;color:var(--text2);line-height:1.6}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.use-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;text-align:center;transition:all 0.4s}
+.use-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.15);box-shadow:0 12px 40px rgba(124,58,237,0.08)}
+.use-icon{font-size:3rem;margin-bottom:1rem}
+.use-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
+.use-card p{font-size:0.82rem;color:var(--text2);line-height:1.6}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem}
+.process-step{position:relative;padding:2rem;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border)}
+.process-num{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:800;color:rgba(124,58,237,0.15);position:absolute;top:1rem;right:1.5rem}
+.process-step h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.process-step p{font-size:0.82rem;color:var(--text2);line-height:1.6}
+.cta-sec{text-align:center;padding:5rem 2rem}
+.cta-sec h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
+.cta-sec p{font-size:1.02rem;color:var(--text2);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
+.ft-inner{max-width:1200px;margin:0 auto}
+.ft-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem}
+.ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+footer h4{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+footer a:hover{color:var(--accent2)}
+footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
+.ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
+.ft-bottom p{margin:0;font-size:0.75rem}
+.hero-svg{position:relative;z-index:2;margin:2rem auto 0;opacity:0.7;animation:float 6s ease-in-out infinite}
+@media(max-width:768px){.section{padding:4rem 1.5rem}.feat-grid{grid-template-columns:1fr}.use-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-i">
-    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
-    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">☰</button>
+    <a href="/" class="logo">
+      <span>FNDI</span>
+      <small>Future Native Digital Intelligence</small>
+    </a>
+    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
     <div class="n-links">
       <a href="/#services">Services</a>
       <a href="/pricing">Pricing</a>
@@ -192,152 +121,166 @@
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
   <div class="h-content">
-    <h1>AI Voice Agents That <span class="grad">Never Miss a Call</span></h1>
-    <p>Answer every call 24/7, book appointments automatically, and never lose a customer to voicemail again.</p>
+    <h1>Never Miss a Call Again With <span class="grad">AI Voice Agents</span></h1>
+    <p>24/7 phone agents powered by AI. Answer every call, book appointments, handle FAQs, and follow up on missed calls — completely automated.</p>
     <div class="h-btns">
-      <a href="/book" class="btn btn-g">Start Your Free Trial</a>
-      <a href="#features" class="btn btn-o">See All Features</a>
+      <a href="/book" class="btn btn-g">Get Your AI Voice Agent</a>
+      <a href="#features" class="btn btn-o">See How It Works</a>
     </div>
-    <svg class="hero-svg" viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+    <svg class="hero-svg" viewBox="0 0 320 280" width="320" height="280" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
+        <filter id="phoneglow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+        <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f472b6"/><stop offset="50%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#fb923c"/></linearGradient>
       </defs>
-      <!-- Sound wave circles -->
-      <circle cx="150" cy="150" r="40" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.3"/>
-      <circle cx="150" cy="150" r="60" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.2"/>
-      <circle cx="150" cy="150" r="80" fill="none" stroke="#34d399" stroke-width="1" opacity="0.15"/>
-      <!-- Phone receiver -->
-      <rect x="130" y="120" width="40" height="55" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" filter="url(#glow)"/>
-      <circle cx="150" cy="130" r="6" fill="#22d3ee" opacity="0.8"/>
-      <path d="M 145 160 Q 150 165 155 160" fill="none" stroke="#34d399" stroke-width="1.5"/>
-      <!-- Sound waves -->
-      <path d="M 160 145 Q 170 140 180 145" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.7"/>
-      <path d="M 165 135 Q 177 128 190 135" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.5"/>
-      <path d="M 160 160 Q 170 168 180 160" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.6"/>
-      <!-- Center accent dot -->
-      <circle cx="150" cy="150" r="4" fill="#22d3ee" opacity="0.9" filter="url(#glow)"/>
+      <!-- Phone Device -->
+      <g transform="translate(60,30)" filter="url(#phoneglow)">
+        <rect width="80" height="140" rx="10" fill="none" stroke="url(#phoneGrad)" stroke-width="2" opacity="0.8"/>
+        <rect x="5" y="5" width="70" height="130" rx="8" fill="rgba(96,165,250,0.05)" stroke="rgba(96,165,250,0.15)" stroke-width="0.5"/>
+        <circle cx="40" cy="15" r="3" fill="rgba(96,165,250,0.3)"/>
+        <rect x="8" y="25" width="64" height="100" rx="4" fill="rgba(96,165,250,0.03)"/>
+        <circle cx="40" cy="75" r="8" fill="rgba(96,165,250,0.15)"/>
+        <text x="40" y="78" text-anchor="middle" fill="#60a5fa" font-size="10" font-weight="700" font-family="Space Grotesk">AI</text>
+      </g>
+      <!-- Sound Waves -->
+      <g transform="translate(200,80)" opacity="0.7">
+        <circle cx="0" cy="0" r="8" fill="none" stroke="url(#waveGrad)" stroke-width="1.5" opacity="0.6" style="animation:pulse 1.5s ease-in-out infinite"/>
+        <circle cx="0" cy="0" r="18" fill="none" stroke="url(#waveGrad)" stroke-width="1.2" opacity="0.4" style="animation:pulse 1.5s ease-in-out infinite 0.3s"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="url(#waveGrad)" stroke-width="1" opacity="0.2" style="animation:pulse 1.5s ease-in-out infinite 0.6s"/>
+      </g>
+      <!-- Checkmarks floating -->
+      <g transform="translate(100,200)" opacity="0.5">
+        <rect x="-35" y="-12" width="70" height="24" rx="12" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.3)" stroke-width="0.5"/>
+        <text x="0" y="2" text-anchor="middle" fill="#34d399" font-size="8" font-weight="700" font-family="Inter">24/7 Answering</text>
+      </g>
+      <g transform="translate(220,140)" opacity="0.5">
+        <rect x="-35" y="-12" width="70" height="24" rx="12" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/>
+        <text x="0" y="2" text-anchor="middle" fill="#22d3ee" font-size="8" font-weight="700" font-family="Inter">Book Appts</text>
+      </g>
     </svg>
   </div>
 </div>
 
-<section id="features">
+<section class="section" id="features">
   <div class="con">
     <div class="s-head">
-      <div class="s-label anim d1">KEY FEATURES</div>
-      <h2 class="s-title anim d2">Everything You Need to Never Miss a Call</h2>
+      <div class="s-label anim d1">WHAT'S INCLUDED</div>
+      <h2 class="s-title anim d2">Everything Your Business Needs to Never Miss a Call</h2>
+      <p class="s-sub anim d3">Our AI voice agents handle the work of a full-time receptionist — 24/7, with zero downtime.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature anim d1">
-        <div class="feature-icon">📞</div>
-        <h3>Answers All Calls 24/7</h3>
-        <p>Pick up in under 2 rings, even nights, weekends, and holidays. Never lose a customer to a busy signal again.</p>
+    <div class="feat-grid">
+      <div class="feat-card anim d1">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(96,165,250,0.15),rgba(96,165,250,0.05))">📞</div>
+        <h3>24/7 Call Answering</h3>
+        <p>Every call answered instantly, even after hours. Your customers never hit a voicemail box again.</p>
       </div>
-      <div class="feature anim d2">
-        <div class="feature-icon">🗣️</div>
-        <h3>Sounds Human</h3>
-        <p>Natural, conversational voice that customers love. Callers often don't realize they're talking to AI.</p>
+      <div class="feat-card anim d2">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(244,114,182,0.15),rgba(244,114,182,0.05))">📅</div>
+        <h3>Appointment Booking</h3>
+        <p>Customers book appointments directly during the call. Automatically integrated with your calendar.</p>
       </div>
-      <div class="feature anim d3">
-        <div class="feature-icon">📅</div>
-        <h3>Books Appointments</h3>
-        <p>Integrates with Google Calendar, Calendly, or your system. Customers book appointments directly during the call.</p>
+      <div class="feat-card anim d3">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.05))">🎯</div>
+        <h3>Call Screening & Routing</h3>
+        <p>Intelligent call screening determines urgency and routes calls to the right team member automatically.</p>
       </div>
-      <div class="feature anim d1">
-        <div class="feature-icon">❓</div>
-        <h3>Answers Questions</h3>
-        <p>Trained on your business info: services, pricing, hours, location, team bios, FAQs. Handles 95% of calls.</p>
+      <div class="feat-card anim d4">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(52,211,153,0.15),rgba(52,211,153,0.05))">❓</div>
+        <h3>FAQ Handling</h3>
+        <p>Common questions answered instantly. No need to wait for a human to respond to routine inquiries.</p>
       </div>
-      <div class="feature anim d2">
-        <div class="feature-icon">📲</div>
-        <h3>Texts You Summaries</h3>
-        <p>Get a text after every call with caller info, what they needed, and what action was taken. Never miss context.</p>
+      <div class="feat-card anim d1">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))">↩️</div>
+        <h3>Missed Call Follow-up</h3>
+        <p>Automatically sends SMS or email to missed callers with options to reschedule or get more info.</p>
       </div>
-      <div class="feature anim d3">
-        <div class="feature-icon">🚨</div>
-        <h3>Transfers Urgent Calls</h3>
-        <p>Detects urgent requests and routes to your cell phone immediately. Your most important calls always get through.</p>
+      <div class="feat-card anim d2">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(251,146,60,0.05))">🌍</div>
+        <h3>Multi-Language Support</h3>
+        <p>Your AI agent speaks English, Spanish, French, and more. Serve customers in their preferred language.</p>
+      </div>
+      <div class="feat-card anim d3">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(96,165,250,0.15),rgba(96,165,250,0.05))">📝</div>
+        <h3>Call Summaries Texted to You</h3>
+        <p>Every call transcribed and summarized. Get instant SMS or email updates on what customers said.</p>
+      </div>
+      <div class="feat-card anim d4">
+        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(244,114,182,0.15),rgba(244,114,182,0.05))">🎤</div>
+        <h3>Custom Voice & Personality</h3>
+        <p>Train your AI agent with your brand voice, tone, and personality. Sounds like your team, not a robot.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="how-section">
+<section class="section" style="background:var(--surface)">
   <div class="con">
     <div class="s-head">
-      <div class="s-label anim d1">HOW IT WORKS</div>
-      <h2 class="s-title anim d2">Simple 3-Step Setup</h2>
+      <div class="s-label anim d1">WHO WE SERVE</div>
+      <h2 class="s-title anim d2">Perfect For Businesses That Rely on Phone Calls</h2>
+      <p class="s-sub anim d3">From medical practices to home services, any business that takes calls will benefit from AI answering.</p>
     </div>
-    <div class="steps">
-      <div class="step anim d1">
-        <div class="step-num">1</div>
-        <h4>Share Your Info</h4>
-        <p>Tell us about your business: services, pricing, team, hours, FAQs. Takes 1-2 hours maximum.</p>
+    <div class="use-grid">
+      <div class="use-card anim d1">
+        <div class="use-icon">💆</div>
+        <h3>Med Spas & Clinics</h3>
+        <p>Book appointments, answer questions about treatments, and handle routine scheduling 24/7.</p>
       </div>
-      <div class="step anim d2">
-        <div class="step-num">2</div>
-        <h4>We Train & Test</h4>
-        <p>We configure the AI with your business details and run test calls. You approve before going live.</p>
+      <div class="use-card anim d2">
+        <div class="use-icon">🔧</div>
+        <h3>Home Services</h3>
+        <p>Dispatch crews, take service requests, and qualify leads automatically — even at 2 AM.</p>
       </div>
-      <div class="step anim d3">
-        <div class="step-num">3</div>
-        <h4>Go Live</h4>
-        <p>Point your phone number to our system. AI answers your calls. You get notifications for each call.</p>
+      <div class="use-card anim d3">
+        <div class="use-icon">🦷</div>
+        <h3>Dental Offices</h3>
+        <p>Schedule cleanings, handle emergencies, and answer insurance questions without human intervention.</p>
+      </div>
+      <div class="use-card anim d4">
+        <div class="use-icon">⚖️</div>
+        <h3>Law Firms</h3>
+        <p>Screen calls, qualify cases, and collect client information before your attorneys get involved.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="test-sec">
+<section class="section">
   <div class="con">
     <div class="s-head">
-      <div class="s-label anim d1">REAL RESULTS</div>
-      <h2 class="s-title anim d2">What Our Clients See</h2>
+      <div class="s-label anim d1">THE PROCESS</div>
+      <h2 class="s-title anim d2">From Setup to Live in Just Days</h2>
     </div>
-    <div class="test-card anim d1">
-      <div class="test-stars">★★★★★</div>
-      <p>"The AI voice agent transformed our business overnight. We were losing 60% of calls to voicemail. Now we capture 80% of them and the AI books 30-40 appointments per month that we would have completely lost. It's like hiring a full-time receptionist for a fraction of the cost."</p>
-      <div class="test-author">Maria Rodriguez</div>
-      <div class="test-role">Med Spa Owner, Miami FL</div>
-    </div>
-  </div>
-</section>
-
-<section class="pricing-sec">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1">PRICING</div>
-      <h2 class="s-title anim d2">Simple, Transparent Pricing</h2>
-    </div>
-    <div class="price-box anim d1">
-      <div style="font-size:0.85rem;color:var(--text3);margin-bottom:1rem">Starting at</div>
-      <div class="price-amount">$300<span class="price-per">/month</span></div>
-      <p style="color:var(--text2);margin-bottom:1.5rem">Plus one-time setup fee</p>
-      <div class="price-list">
-        <div class="price-item">Answers unlimited calls 24/7</div>
-        <div class="price-item">Learns your business in minutes</div>
-        <div class="price-item">Books appointments automatically</div>
-        <div class="price-item">Texts you call summaries</div>
-        <div class="price-item">Transfers urgent calls to you</div>
-        <div class="price-item">Works with any phone system</div>
-        <div class="price-item">Full call transcripts & analytics</div>
+    <div class="process-grid">
+      <div class="process-step anim d1">
+        <div class="process-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We learn your business, your call patterns, and what the AI agent should handle. Takes 30 minutes.</p>
       </div>
-      <a href="/book" class="btn btn-g">Start Your Free Trial</a>
-      <p style="font-size:0.78rem;color:var(--text3);margin-top:1.5rem">14-day free trial. No credit card required.</p>
+      <div class="process-step anim d2">
+        <div class="process-num">02</div>
+        <h3>Build & Train AI</h3>
+        <p>We configure your agent with your business info, FAQs, appointment calendar, and custom voice.</p>
+      </div>
+      <div class="process-step anim d3">
+        <div class="process-num">03</div>
+        <h3>Test & Refine</h3>
+        <p>You test the agent with real calls. We tweak responses, routing, and handling based on feedback.</p>
+      </div>
+      <div class="process-step anim d4">
+        <div class="process-num">04</div>
+        <h3>Go Live</h3>
+        <p>We port your number over to the AI agent. It's live and answering calls immediately.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="cta-sec">
   <div class="con">
-    <h2>Ready to Stop Missing Calls?</h2>
-    <p>Join 100+ Miami businesses using FNDI's AI voice agent to answer every call and book more appointments.</p>
-    <a href="/book" class="btn btn-g">Schedule Your Free Consultation</a>
+    <h2>Ready to Never Miss a Call Again?</h2>
+    <p>Schedule a free 20-minute consultation. We'll show you exactly how an AI voice agent can transform your business.</p>
+    <a href="/book" class="btn btn-g">Book Your Free Consultation</a>
   </div>
 </section>
 
@@ -370,26 +313,10 @@
       </div>
     </div>
     <div class="ft-bottom">
-      <p>© 2026 FNDI. All rights reserved.</p>
+      <p>&copy; 2026 FNDI. All rights reserved.</p>
     </div>
   </div>
 </footer>
-
-<!-- CHAT WIDGET -->
-<div class="chat-widget" id="chatWidget">
-  <div class="cw-header">
-    <div class="cw-dot"></div>
-    <div class="cw-title">FNDI AI Advisor</div>
-    <button class="cw-close" onclick="toggleChat()">✕</button>
-  </div>
-  <div class="advisor-chat" id="adv-chat"></div>
-  <div class="advisor-input">
-    <input type="text" id="adv-in" placeholder="Ask me..." onkeydown="if(event.key==='Enter')advSend()">
-    <button class="advisor-send" onclick="advSend()">→</button>
-  </div>
-</div>
-
-<button class="chat-fab" id="chatFab" onclick="toggleChat()">💬</button>
 
 <script>
 window.addEventListener('scroll',()=>{
@@ -401,85 +328,12 @@ window.addEventListener('scroll',()=>{
 document.addEventListener('DOMContentLoaded',()=>{
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('v');
-      }
+      if(entry.isIntersecting) entry.target.classList.add('v');
     });
   },{threshold:0.1});
   document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
 });
-
-/* CHAT */
-const chatHistory=[];
-let chatBusy=false;
-
-function toggleChat(){
-  const w=document.getElementById('chatWidget');
-  const f=document.getElementById('chatFab');
-  w.classList.toggle('open');
-  f.classList.toggle('open');
-  if(w.classList.contains('open')&&chatHistory.length===0){
-    document.getElementById('adv-chat').innerHTML='';
-    addMsg('','msg-ai','Hi! Questions about our AI voice agents? I can help! 🚀');
-  }
-}
-
-function addMsg(text,type,html){
-  const chat=document.getElementById('adv-chat');
-  const d=document.createElement('div');
-  d.className='msg '+type;
-  if(html){
-    const cont=document.createElement('span');cont.innerHTML=html;d.appendChild(cont);
-  } else {
-    const sp=document.createElement('span');sp.textContent=text;d.appendChild(sp);
-  }
-  chat.appendChild(d);chat.scrollTop=chat.scrollHeight;
-}
-
-function showTyping(){
-  const chat=document.getElementById('adv-chat');
-  const d=document.createElement('div');d.className='msg msg-ai';d.id='typing-msg';
-  d.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>';
-  chat.appendChild(d);chat.scrollTop=chat.scrollHeight;
-}
-
-function removeTyping(){
-  const t=document.getElementById('typing-msg');
-  if(t)t.remove();
-}
-
-async function aiChat(userText){
-  chatHistory.push({role:'user',content:userText});
-  try{
-    const res=await fetch('/api/chat',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:chatHistory})
-    });
-    if(!res.ok) throw new Error('API error');
-    const data=await res.json();
-    const reply=data.reply||"Sorry, something went wrong. Try again!";
-    chatHistory.push({role:'assistant',content:reply});
-    return reply;
-  }catch(e){
-    return "I'm having trouble connecting. Email us at support@fndi.tech.";
-  }
-}
-
-function advSend(){
-  const inp=document.getElementById('adv-in');
-  const text=inp.value.trim();
-  if(!text||chatBusy)return;
-  inp.value='';
-  addMsg(text,'msg-user');
-  showTyping();
-  chatBusy=true;
-  aiChat(text).then(reply=>{
-    removeTyping();
-    addMsg(reply,'msg-ai');
-    chatBusy=false;
-  });
-}
 </script>
+
 </body>
 </html>
