@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+<title>Client Onboarding | FNDI</title>
+<meta name="description" content="Start your AI journey with FNDI. Tell us about your business and we'll create a custom automation plan tailored to your needs.">
+<meta property="og:title" content="Client Onboarding | FNDI">
+<meta property="og:description" content="Tell us about your business and get a free AI audit with recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fndi.tech/onboarding">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  ::selection{background:rgba(124,58,237,0.3);color:white}
+  :root{
+    --bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--card2:#151530;
+    --accent:#7c3aed;--accent2:#a78bfa;--accent3:#c4b5fd;
+    --cyan:#22d3ee;--green:#34d399;--green2:#6ee7b7;
+    --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+    --border:rgba(255,255,255,0.04);--glow:rgba(124,58,237,0.15);
+    --glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+  @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim.v{opacity:1;transform:translateY(0)}
+  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+
+  /* NAV */
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
+  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
+  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
+  .n-links{display:flex;align-items:center;gap:0.3rem}
+  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
+  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
+  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,58,237,0.45)!important}
+  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  .hero{padding:10rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
+  .h-bg{position:absolute;inset:0;z-index:0}
+  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
+  .orb1{width:500px;height:500px;background:rgba(124,58,237,0.08);top:-10%;left:-8%}
+  .orb2{width:400px;height:400px;background:rgba(34,211,238,0.05);bottom:-15%;right:-5%;animation-delay:3s}
+  .h-content{position:relative;z-index:2;max-width:650px;margin:0 auto;animation:fadeUp 1s}
+  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:1rem;letter-spacing:-2px}
+  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+  .hero p{font-size:1.02rem;color:var(--text2);line-height:1.7}
+
+  section{padding:4rem 2rem;position:relative}
+  .con{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+
+  /* PROGRESS STEPS */
+  .steps-bar{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto}
+  .step-indicator{display:flex;align-items:center;gap:0}
+  .step-dot{width:40px;height:40px;border-radius:50%;background:var(--glass);border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text3);transition:all 0.4s;flex-shrink:0}
+  .step-dot.active{background:var(--accent);border-color:var(--accent);color:white;box-shadow:0 0 20px rgba(124,58,237,0.3)}
+  .step-dot.done{background:var(--green);border-color:var(--green);color:white}
+  .step-line{width:80px;height:2px;background:var(--glass-border);transition:background 0.4s}
+  .step-line.done{background:var(--green)}
+  .step-label{font-size:0.7rem;color:var(--text3);text-align:center;margin-top:0.5rem;font-weight:500}
+  .step-wrap{display:flex;flex-direction:column;align-items:center}
+
+  /* FORM CONTAINER */
+  .form-container{max-width:750px;margin:0 auto}
+  .form-section{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem;margin-bottom:1.5rem;display:none}
+  .form-section.active{display:block;animation:fadeUp 0.5s ease}
+  .form-section h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem}
+  .form-section .section-sub{font-size:0.85rem;color:var(--text2);margin-bottom:2rem;line-height:1.6}
+
+  /* FORM ELEMENTS */
+  .form-group{margin-bottom:1.4rem}
+  .form-group label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:0.5rem;letter-spacing:0.5px;text-transform:uppercase}
+  .form-group label .req{color:var(--accent2)}
+  .form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;padding:0.8rem 1rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;outline:none;transition:all 0.25s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);background:rgba(124,58,237,0.03);box-shadow:0 0 0 3px rgba(124,58,237,0.08)}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text3)}
+  .form-group textarea{resize:vertical;min-height:120px}
+  .form-group select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+  .form-group select option{background:var(--card);color:var(--text)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .form-hint{font-size:0.73rem;color:var(--text3);margin-top:0.35rem}
+
+  /* CHECKBOXES */
+  .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+  .checkbox-item{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);border-radius:10px;cursor:pointer;transition:all 0.25s;font-size:0.85rem;color:var(--text2)}
+  .checkbox-item:hover{background:rgba(124,58,237,0.04);border-color:rgba(124,58,237,0.15)}
+  .checkbox-item.checked{background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.25);color:var(--text)}
+  .checkbox-item input{display:none}
+  .check-box{width:20px;height:20px;border-radius:6px;border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;transition:all 0.25s;flex-shrink:0}
+  .checkbox-item.checked .check-box{background:var(--accent);border-color:var(--accent)}
+  .checkbox-item.checked .check-box::after{content:'';width:6px;height:10px;border:solid white;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px}
+
+  /* BUTTONS */
+  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem;font-family:'Inter',sans-serif}
+  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
+  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+  .btn-g:disabled{opacity:0.5;cursor:not-allowed;transform:none!important;box-shadow:0 4px 20px rgba(124,58,237,0.15)!important}
+  .btn-o{background:rgba(255,255,255,0.03);color:var(--text);border:1px solid rgba(255,255,255,0.1)}
+  .btn-o:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+  .form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--glass-border)}
+
+  /* LOADING STATE */
+  .loading-overlay{display:none;position:fixed;inset:0;background:rgba(3,3,8,0.92);backdrop-filter:blur(20px);z-index:2000;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+  .loading-overlay.active{display:flex}
+  .loader-ring{width:60px;height:60px;border:3px solid var(--glass-border);border-top:3px solid var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:2rem}
+  .loading-overlay h2{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.5rem}
+  .loading-overlay p{color:var(--text2);font-size:0.92rem;max-width:400px;line-height:1.6}
+  .loading-step{margin-top:2rem;display:flex;flex-direction:column;gap:0.8rem}
+  .loading-step-item{display:flex;align-items:center;gap:0.75rem;font-size:0.85rem;color:var(--text3);transition:color 0.3s}
+  .loading-step-item.active{color:var(--text)}
+  .loading-step-item.done{color:var(--green)}
+  .loading-check{width:22px;height:22px;border-radius:50%;border:2px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:0.7rem;transition:all 0.3s;flex-shrink:0}
+  .loading-step-item.active .loading-check{border-color:var(--accent);animation:spin 1.5s linear infinite;border-top-color:transparent}
+  .loading-step-item.done .loading-check{background:var(--green);border-color:var(--green)}
+  .loading-step-item.done .loading-check::after{content:'';width:5px;height:9px;border:solid white;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-1px}
+
+  /* SUCCESS STATE */
+  .success-view{display:none;text-align:center;padding:4rem 2rem;max-width:600px;margin:0 auto}
+  .success-view.active{display:block;animation:fadeUp 0.6s ease}
+  .success-icon{width:80px;height:80px;border-radius:50%;background:rgba(52,211,153,0.1);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+  .success-icon svg{width:36px;height:36px;stroke:var(--green)}
+  .success-view h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.5rem}
+  .success-view p{color:var(--text2);font-size:0.95rem;line-height:1.7;margin-bottom:2rem}
+
+  /* FOOTER */
+  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
+  .ft-inner{max-width:1200px;margin:0 auto}
+  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
+  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+  footer a:hover{color:var(--accent2)}
+  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
+  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
+  .ft-bottom p{margin:0;font-size:0.75rem}
+
+  @media(max-width:768px){
+    .mob-toggle{display:block}
+    .n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}
+    .n-links.open{display:flex}
+    .logo small{display:none}
+    section{padding:3rem 1.5rem}
+    .form-row{grid-template-columns:1fr}
+    .checkbox-grid{grid-template-columns:1fr}
+    .steps-bar{gap:0;padding:0 1rem}
+    .step-line{width:40px}
+    .form-section{padding:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
+    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
+    <div class="n-links">
+      <a href="/#services" data-es="Servicios">Services</a>
+      <a href="/pricing" data-es="Precios">Pricing</a>
+      <a href="/portfolio" data-es="Portafolio">Portfolio</a>
+      <a href="/about" data-es="Nosotros">About</a>
+      <a href="/contact" data-es="Contacto">Contact</a>
+      <a href="/book" class="n-cta" data-es="Reservar Llamada">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="h-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="h-content">
+    <h1><span class="grad" data-es="Bienvenido a Bordo">Welcome Aboard</span></h1>
+    <p data-es="Cuéntanos sobre tu negocio y te prepararemos un plan de automatización personalizado con IA. Toma menos de 3 minutos.">Tell us about your business and we'll prepare a custom AI automation plan for you. Takes less than 3 minutes.</p>
+  </div>
+</div>
+
+<section>
+  <div class="con">
+
+    <!-- Progress Steps -->
+    <div class="steps-bar anim" id="stepsBar">
+      <div class="step-wrap">
+        <div class="step-dot active" id="stepDot1">1</div>
+        <div class="step-label" data-es="Tu Negocio">Your Business</div>
+      </div>
+      <div class="step-line" id="stepLine1"></div>
+      <div class="step-wrap">
+        <div class="step-dot" id="stepDot2">2</div>
+        <div class="step-label" data-es="Desafios">Challenges</div>
+      </div>
+      <div class="step-line" id="stepLine2"></div>
+      <div class="step-wrap">
+        <div class="step-dot" id="stepDot3">3</div>
+        <div class="step-label" data-es="Detalles">Details</div>
+      </div>
+      <div class="step-line" id="stepLine3"></div>
+      <div class="step-wrap">
+        <div class="step-dot" id="stepDot4">4</div>
+        <div class="step-label" data-es="Enviar">Submit</div>
+      </div>
+    </div>
+
+    <div class="form-container" id="formContainer">
+
+      <!-- STEP 1: Business Info -->
+      <div class="form-section active" id="step1">
+        <h2 data-es="Cuéntanos Sobre Tu Negocio">Tell Us About Your Business</h2>
+        <p class="section-sub" data-es="Esto nos ayuda a entender qué haces y cómo podemos ayudar.">This helps us understand what you do and how we can help.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-es="Nombre del Negocio"><span class="req">*</span> Business Name</label>
+            <input type="text" id="businessName" placeholder="e.g. Miami Auto Spa" required>
+          </div>
+          <div class="form-group">
+            <label data-es="Tu Nombre"><span class="req">*</span> Your Name</label>
+            <input type="text" id="contactName" placeholder="e.g. John Smith" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-es="Correo Electrónico"><span class="req">*</span> Email</label>
+            <input type="email" id="contactEmail" placeholder="you@business.com" required>
+          </div>
+          <div class="form-group">
+            <label data-es="Teléfono"><span class="req">*</span> Phone</label>
+            <input type="tel" id="contactPhone" placeholder="(786) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Tipo de Negocio"><span class="req">*</span> Type of Business</label>
+          <select id="businessType" required>
+            <option value="" disabled selected data-es="Selecciona tu industria">Select your industry</option>
+            <option value="salon-barbershop">Salon / Barbershop</option>
+            <option value="medical-dental">Medical / Dental Practice</option>
+            <option value="restaurant-food">Restaurant / Food Service</option>
+            <option value="law-firm">Law Firm / Legal</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="auto-services">Auto Services / Detailing</option>
+            <option value="home-services">Home Services / Contractor</option>
+            <option value="fitness-wellness">Fitness / Wellness</option>
+            <option value="retail-ecommerce">Retail / E-Commerce</option>
+            <option value="professional-services">Professional Services / Consulting</option>
+            <option value="health-supplements">Health / Supplements</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Sitio Web del Negocio"><span class="req">*</span> Business Website</label>
+          <input type="url" id="businessWebsite" placeholder="https://yourbusiness.com" required>
+          <div class="form-hint" data-es="Lo usaremos para preparar un análisis gratuito de tu presencia digital.">We'll use this to prepare a free analysis of your digital presence.</div>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Instagram del Negocio (si tienen)">Business Instagram (if any)</label>
+          <input type="text" id="businessInstagram" placeholder="@yourbusiness">
+        </div>
+
+        <div class="form-nav">
+          <div></div>
+          <button class="btn btn-g" onclick="nextStep(2)" data-es="Siguiente">Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Challenges -->
+      <div class="form-section" id="step2">
+        <h2 data-es="Cuáles Son Tus Principales Desafios?">What Are Your Biggest Challenges?</h2>
+        <p class="section-sub" data-es="Selecciona todos los que apliquen. Esto nos ayuda a recomendar las herramientas de IA adecuadas para tu negocio.">Select all that apply. This helps us recommend the right AI tools for your business.</p>
+
+        <div class="form-group">
+          <label data-es="Problemas que enfrentas">Problems You're Facing</label>
+          <div class="checkbox-grid" id="problemsGrid">
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="missed-calls">
+              <div class="check-box"></div>
+              <span data-es="Llamadas perdidas / sin respuesta">Missed calls / no one answering</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="low-reviews">
+              <div class="check-box"></div>
+              <span data-es="Pocas reseñas en Google">Not enough Google reviews</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="no-shows">
+              <div class="check-box"></div>
+              <span data-es="Clientes que no se presentan">Customer no-shows</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="slow-leads">
+              <div class="check-box"></div>
+              <span data-es="Respuesta lenta a leads / consultas">Slow response to leads / inquiries</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="website-leads">
+              <div class="check-box"></div>
+              <span data-es="El sitio web no genera leads">Website doesn't generate leads</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="lost-customers">
+              <div class="check-box"></div>
+              <span data-es="Clientes perdidos / inactivos">Lost / inactive customers</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="social-media">
+              <div class="check-box"></div>
+              <span data-es="DMs de redes sociales sin respuesta">Unanswered social media DMs</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="manual-tasks">
+              <div class="check-box"></div>
+              <span data-es="Demasiadas tareas manuales">Too many manual tasks</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="bad-website">
+              <div class="check-box"></div>
+              <span data-es="Sitio web desactualizado o sin sitio">Outdated website or no website</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="problems" value="low-traffic">
+              <div class="check-box"></div>
+              <span data-es="Poco tráfico / visibilidad en línea">Low traffic / online visibility</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Algo más que debamos saber?">Anything else we should know?</label>
+          <textarea id="otherProblems" placeholder="Describe any specific challenges, goals, or frustrations..." data-es-placeholder="Describe cualquier desafío específico, metas o frustraciones..."></textarea>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-o" onclick="prevStep(1)" data-es="Atrás">Back</button>
+          <button class="btn btn-g" onclick="nextStep(3)" data-es="Siguiente">Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Additional Details -->
+      <div class="form-section" id="step3">
+        <h2 data-es="Algunos Detalles Más">A Few More Details</h2>
+        <p class="section-sub" data-es="Esto nos ayuda a diseñar la solución perfecta para tu negocio.">This helps us design the perfect solution for your business.</p>
+
+        <div class="form-group">
+          <label data-es="Cuántos empleados tienes?">How many employees do you have?</label>
+          <select id="teamSize">
+            <option value="" disabled selected data-es="Selecciona tamaño del equipo">Select team size</option>
+            <option value="solo">Just me (solo)</option>
+            <option value="2-5">2 – 5 employees</option>
+            <option value="6-15">6 – 15 employees</option>
+            <option value="16-50">16 – 50 employees</option>
+            <option value="50+">50+ employees</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Cuántas llamadas recibes por semana (aprox)?">How many calls do you get per week (approx)?</label>
+          <select id="callVolume">
+            <option value="" disabled selected data-es="Selecciona volumen">Select volume</option>
+            <option value="0-10">0 – 10 calls</option>
+            <option value="10-30">10 – 30 calls</option>
+            <option value="30-75">30 – 75 calls</option>
+            <option value="75-150">75 – 150 calls</option>
+            <option value="150+">150+ calls</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Qué herramientas usas actualmente?">What tools do you currently use?</label>
+          <input type="text" id="currentTools" placeholder="e.g. Square, Calendly, Mailchimp, Google Sheets...">
+          <div class="form-hint" data-es="Herramientas de reservas, CRM, marketing por email, etc.">Booking tools, CRM, email marketing, etc.</div>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Cuál es tu presupuesto mensual para automatización?">What's your monthly budget for automation?</label>
+          <select id="budget">
+            <option value="" disabled selected data-es="Selecciona rango">Select range</option>
+            <option value="under-300">Under $300/mo</option>
+            <option value="300-700">$300 – $700/mo</option>
+            <option value="700-1000">$700 – $1,000/mo</option>
+            <option value="1000+">$1,000+/mo</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-es="Cómo te enteraste de FNDI?">How did you hear about FNDI?</label>
+          <select id="referralSource">
+            <option value="" disabled selected data-es="Selecciona una opción">Select one</option>
+            <option value="google">Google Search</option>
+            <option value="instagram">Instagram</option>
+            <option value="referral">Referral / Word of mouth</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-o" onclick="prevStep(2)" data-es="Atrás">Back</button>
+          <button class="btn btn-g" onclick="nextStep(4)" data-es="Siguiente">Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Review & Submit -->
+      <div class="form-section" id="step4">
+        <h2 data-es="Revisar y Enviar">Review & Submit</h2>
+        <p class="section-sub" data-es="Revisa tus respuestas a continuación. Cuando envíes, generaremos automáticamente un análisis de IA personalizado de tu negocio.">Review your answers below. When you submit, we'll automatically generate a custom AI analysis of your business.</p>
+
+        <div id="reviewContent" style="margin-bottom:1.5rem"></div>
+
+        <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.15);border-radius:14px;padding:1.2rem 1.5rem;display:flex;align-items:start;gap:0.8rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div>
+            <div style="font-size:0.85rem;font-weight:600;color:var(--green);margin-bottom:0.2rem" data-es="Análisis de IA incluido">AI Analysis Included</div>
+            <div style="font-size:0.8rem;color:var(--text2);line-height:1.5" data-es="Cuando envíes, nuestra IA escaneará tu sitio web y generará un informe de auditoría personalizado con recomendaciones específicas para tu negocio.">When you submit, our AI will scan your website and generate a custom audit report with specific recommendations for your business.</div>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-o" onclick="prevStep(3)" data-es="Atrás">Back</button>
+          <button class="btn btn-g" id="submitBtn" onclick="submitForm()" data-es="Enviar y Obtener Mi Análisis">Submit & Get My Analysis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Success View -->
+    <div class="success-view" id="successView">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 data-es="Todo Listo!">You're All Set!</h2>
+      <p data-es="Recibimos tu información y estamos analizando tu negocio. Recibirás un informe de auditoría de IA personalizado por email en breve. Nuestro equipo se comunicará contigo dentro de 24 horas.">We've received your information and are analyzing your business. You'll receive a custom AI audit report via email shortly. Our team will reach out within 24 hours.</p>
+      <a href="/" class="btn btn-g" data-es="Volver al Inicio">Back to Home</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loader-ring"></div>
+  <h2 data-es="Analizando Tu Negocio">Analyzing Your Business</h2>
+  <p data-es="Nuestra IA está escaneando tu sitio web y preparando recomendaciones personalizadas...">Our AI is scanning your website and preparing personalized recommendations...</p>
+  <div class="loading-step">
+    <div class="loading-step-item" id="loadStep1">
+      <div class="loading-check"></div>
+      <span data-es="Recopilando información del negocio">Gathering business information</span>
+    </div>
+    <div class="loading-step-item" id="loadStep2">
+      <div class="loading-check"></div>
+      <span data-es="Escaneando tu sitio web">Scanning your website</span>
+    </div>
+    <div class="loading-step-item" id="loadStep3">
+      <div class="loading-check"></div>
+      <span data-es="Generando auditoría de IA">Generating AI audit report</span>
+    </div>
+    <div class="loading-step-item" id="loadStep4">
+      <div class="loading-check"></div>
+      <span data-es="Enviando resultados a tu equipo">Sending results to your team</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+      <div style="max-width:300px">
+        <div class="ft-logo"><span>FNDI</span></div>
+        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
+        <p style="margin-top:0.8rem" data-es="Soluciones de IA para pequeñas empresas. Con sede en Miami.">AI solutions for small businesses. Based in Miami.</p>
+        <div style="display:flex;gap:1rem;margin-top:1rem">
+          <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-es="Enlaces">Links</h4>
+        <a href="/#services" data-es="Servicios">Services</a>
+        <a href="/pricing" data-es="Precios">Pricing</a>
+        <a href="/portfolio" data-es="Portafolio">Portfolio</a>
+        <a href="/about" data-es="Nosotros">About</a>
+        <a href="/book" data-es="Reservar Llamada">Book a Call</a>
+      </div>
+      <div>
+        <h4 data-es="Contacto">Contact</h4>
+        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+        <a href="tel:+17868430145">(786) 843-0145</a>
+        <p style="margin-top:0.3rem">Miami, FL</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>&copy; 2026 FNDI. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== STEP NAVIGATION =====
+var currentStep = 1;
+
+function nextStep(step) {
+  // Validate current step
+  if (!validateStep(currentStep)) return;
+
+  document.getElementById('step' + currentStep).classList.remove('active');
+  document.getElementById('step' + step).classList.add('active');
+
+  // Update dots
+  document.getElementById('stepDot' + currentStep).classList.remove('active');
+  document.getElementById('stepDot' + currentStep).classList.add('done');
+  document.getElementById('stepDot' + currentStep).innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+  if (currentStep < 4) document.getElementById('stepLine' + currentStep).classList.add('done');
+  document.getElementById('stepDot' + step).classList.add('active');
+
+  currentStep = step;
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+
+  // Build review on step 4
+  if (step === 4) buildReview();
+}
+
+function prevStep(step) {
+  document.getElementById('step' + currentStep).classList.remove('active');
+  document.getElementById('step' + step).classList.add('active');
+
+  document.getElementById('stepDot' + currentStep).classList.remove('active');
+  document.getElementById('stepDot' + currentStep).classList.remove('done');
+  document.getElementById('stepDot' + currentStep).innerHTML = currentStep;
+  if (step < 4) {
+    document.getElementById('stepLine' + step).classList.remove('done');
+  }
+  document.getElementById('stepDot' + step).classList.remove('done');
+  document.getElementById('stepDot' + step).classList.add('active');
+  document.getElementById('stepDot' + step).innerHTML = step;
+
+  currentStep = step;
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+function validateStep(step) {
+  if (step === 1) {
+    var fields = ['businessName', 'contactName', 'contactEmail', 'contactPhone', 'businessType', 'businessWebsite'];
+    for (var i = 0; i < fields.length; i++) {
+      var el = document.getElementById(fields[i]);
+      if (!el.value.trim()) {
+        el.focus();
+        el.style.borderColor = '#ef4444';
+        setTimeout(function() { el.style.borderColor = ''; }, 2000);
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+// ===== CHECKBOXES =====
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  var cb = el.querySelector('input');
+  cb.checked = !cb.checked;
+}
+
+// ===== BUILD REVIEW =====
+function buildReview() {
+  var problems = [];
+  document.querySelectorAll('#problemsGrid .checkbox-item.checked span').forEach(function(s) { problems.push(s.textContent); });
+
+  var html = '<div style="display:flex;flex-direction:column;gap:1rem">';
+
+  var items = [
+    ['Business', document.getElementById('businessName').value],
+    ['Contact', document.getElementById('contactName').value],
+    ['Email', document.getElementById('contactEmail').value],
+    ['Phone', document.getElementById('contactPhone').value],
+    ['Industry', document.getElementById('businessType').value],
+    ['Website', document.getElementById('businessWebsite').value],
+    ['Instagram', document.getElementById('businessInstagram').value || '—'],
+    ['Challenges', problems.length ? problems.join(', ') : '—'],
+    ['Team Size', document.getElementById('teamSize').value || '—'],
+    ['Weekly Calls', document.getElementById('callVolume').value || '—'],
+    ['Current Tools', document.getElementById('currentTools').value || '—'],
+    ['Budget', document.getElementById('budget').value || '—'],
+    ['Referral', document.getElementById('referralSource').value || '—']
+  ];
+
+  items.forEach(function(item) {
+    html += '<div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--glass-border);font-size:0.85rem">';
+    html += '<span style="color:var(--text3);font-weight:600">' + item[0] + '</span>';
+    html += '<span style="color:var(--text);text-align:right;max-width:60%">' + item[1] + '</span>';
+    html += '</div>';
+  });
+
+  if (document.getElementById('otherProblems').value) {
+    html += '<div style="padding:0.8rem;background:rgba(255,255,255,0.02);border-radius:10px;border:1px solid var(--glass-border);font-size:0.83rem">';
+    html += '<div style="color:var(--text3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem">Additional Notes</div>';
+    html += '<div style="color:var(--text2);line-height:1.5">' + document.getElementById('otherProblems').value + '</div>';
+    html += '</div>';
+  }
+
+  html += '</div>';
+  document.getElementById('reviewContent').innerHTML = html;
+}
+
+// ===== FORM SUBMISSION =====
+async function submitForm() {
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+
+  // Gather all data
+  var problems = [];
+  document.querySelectorAll('#problemsGrid .checkbox-item.checked span').forEach(function(s) { problems.push(s.textContent); });
+
+  var formData = {
+    businessName: document.getElementById('businessName').value,
+    contactName: document.getElementById('contactName').value,
+    contactEmail: document.getElementById('contactEmail').value,
+    contactPhone: document.getElementById('contactPhone').value,
+    businessType: document.getElementById('businessType').value,
+    businessWebsite: document.getElementById('businessWebsite').value,
+    businessInstagram: document.getElementById('businessInstagram').value,
+    problems: problems.join(', '),
+    otherProblems: document.getElementById('otherProblems').value,
+    teamSize: document.getElementById('teamSize').value,
+    callVolume: document.getElementById('callVolume').value,
+    currentTools: document.getElementById('currentTools').value,
+    budget: document.getElementById('budget').value,
+    referralSource: document.getElementById('referralSource').value
+  };
+
+  // Show loading
+  var overlay = document.getElementById('loadingOverlay');
+  overlay.classList.add('active');
+  document.getElementById('formContainer').style.display = 'none';
+  document.getElementById('stepsBar').style.display = 'none';
+
+  // Animate loading steps
+  animateLoadStep('loadStep1', 0);
+  animateLoadStep('loadStep2', 1500);
+
+  // Run AI audit
+  var auditResult = '';
+  try {
+    animateLoadStepActive('loadStep3', 3000);
+    var auditRes = await fetch('/api/audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        website: formData.businessWebsite,
+        businessName: formData.businessName,
+        businessType: formData.businessType,
+        problems: formData.problems + (formData.otherProblems ? '. ' + formData.otherProblems : '')
+      })
+    });
+    if (auditRes.ok) {
+      var auditData = await auditRes.json();
+      auditResult = auditData.audit || '';
+    }
+  } catch (e) {
+    console.error('Audit error:', e);
+    auditResult = 'AI audit could not be generated. Please review the client website manually.';
+  }
+
+  completeLoadStep('loadStep3');
+
+  // Submit to FormSubmit with audit results
+  animateLoadStepActive('loadStep4', 0);
+
+  try {
+    var submitData = new FormData();
+    submitData.append('_subject', 'New Client Onboarding: ' + formData.businessName);
+    submitData.append('_captcha', 'false');
+    submitData.append('_cc', 'dokeefe@fndi.tech');
+    submitData.append('_template', 'table');
+    submitData.append('_autoresponse', 'Thanks for submitting your information to FNDI! We\'re analyzing your business now and will reach out within 24 hours with a custom AI automation plan. In the meantime, feel free to book a call at fndi.tech/book.');
+
+    // Client info
+    submitData.append('01 - Business Name', formData.businessName);
+    submitData.append('02 - Contact Name', formData.contactName);
+    submitData.append('03 - Email', formData.contactEmail);
+    submitData.append('04 - Phone', formData.contactPhone);
+    submitData.append('05 - Business Type', formData.businessType);
+    submitData.append('06 - Website', formData.businessWebsite);
+    submitData.append('07 - Instagram', formData.businessInstagram || 'N/A');
+    submitData.append('08 - Challenges', formData.problems || 'None selected');
+    submitData.append('09 - Additional Notes', formData.otherProblems || 'N/A');
+    submitData.append('10 - Team Size', formData.teamSize || 'N/A');
+    submitData.append('11 - Weekly Calls', formData.callVolume || 'N/A');
+    submitData.append('12 - Current Tools', formData.currentTools || 'N/A');
+    submitData.append('13 - Budget', formData.budget || 'N/A');
+    submitData.append('14 - Referral Source', formData.referralSource || 'N/A');
+    submitData.append('15 - AI AUDIT REPORT', auditResult || 'Not available');
+
+    await fetch('https://formsubmit.co/ajax/stefano@fndi.tech', {
+      method: 'POST',
+      body: submitData
+    });
+  } catch (e) {
+    console.error('Submit error:', e);
+  }
+
+  setTimeout(function() {
+    completeLoadStep('loadStep4');
+  }, 800);
+
+  setTimeout(function() {
+    overlay.classList.remove('active');
+    document.getElementById('successView').classList.add('active');
+    window.scrollTo({ top: 200, behavior: 'smooth' });
+  }, 2000);
+}
+
+function animateLoadStep(id, delay) {
+  setTimeout(function() {
+    document.getElementById(id).classList.add('active');
+    setTimeout(function() {
+      document.getElementById(id).classList.remove('active');
+      document.getElementById(id).classList.add('done');
+    }, 1200);
+  }, delay);
+}
+
+function animateLoadStepActive(id, delay) {
+  setTimeout(function() {
+    document.getElementById(id).classList.add('active');
+  }, delay);
+}
+
+function completeLoadStep(id) {
+  var el = document.getElementById(id);
+  el.classList.remove('active');
+  el.classList.add('done');
+}
+</script>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', function() {
+  var nav = document.querySelector('nav');
+  if (window.scrollY > 10) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Animate on scroll
+document.addEventListener('DOMContentLoaded', function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('v'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+});
+</script>
+<script src="/lang.js"></script>
+</body>
+</html>
