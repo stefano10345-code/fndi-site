@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+<title>Portfolio | FNDI — Client Success Stories</title>
+<meta name="description" content="See how FNDI has helped Miami businesses grow with AI solutions.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--accent:#7c3aed;--accent2:#a78bfa;--cyan:#22d3ee;--green:#34d399;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s}
+  .anim.v{opacity:1;transform:translateY(0)}
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
+  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--glass-border)}
+  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
+  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
+  .n-links{display:flex;align-items:center;gap:0.3rem}
+  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
+  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important}
+  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
+  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+  .logo small{display:none}
+  @media(max-width:768px){.mob-toggle{display:block}.n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}.n-links.open{display:flex}.logo small{display:none}}
+  .hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem;position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
+  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;margin-bottom:1rem}
+  .hero p{font-size:1.02rem;color:var(--text2);max-width:700px;margin:0 auto}
+  section{padding:6rem 2rem}
+  .con{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .s-head{margin-bottom:3.5rem;text-align:center}
+  .s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
+  .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+  section:first-of-type{background-image:radial-gradient(circle,rgba(124,58,237,0.08) 1px,transparent 1px);background-size:40px 40px;background-position:0 0;position:relative}
+  section:first-of-type::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(34,211,238,0.05) 1px,transparent 1px);background-size:80px 80px;background-position:20px 20px;pointer-events:none}
+  .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;position:relative;z-index:1}
+  .case{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.3s}
+  .case:hover{border-color:rgba(124,58,237,0.15);transform:translateY(-6px);box-shadow:0 16px 50px rgba(124,58,237,0.1)}
+  .case-tag{display:inline-block;background:rgba(124,58,237,0.15);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.65rem;font-weight:700;margin-bottom:1rem}
+  .case h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
+  .case-meta{font-size:0.8rem;color:var(--text3);margin-bottom:1rem}
+  .case p{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
+  .case-result{background:rgba(52,211,153,0.08);border-left:3px solid var(--green);padding:1rem;border-radius:4px}
+  .case-result strong{color:var(--green);font-weight:700}
+  .cta-sec{text-align:center;padding:5rem 2rem}
+  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
+  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
+  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white}
+  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
+  .ft-inner{max-width:1200px;margin:0 auto}
+  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
+  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+  footer a:hover{color:var(--accent2)}
+  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
+  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
+  .ft-bottom p{margin:0;font-size:0.75rem}
+  @media(max-width:768px){section{padding:4rem 1.5rem}.case-grid{grid-template-columns:1fr}.ft-inner>div:first-child{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-i">
+    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
+    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">☰</button>
+    <div class="n-links">
+      <a href="/#services">Services</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/about">About</a>
+      <a href="/book" class="n-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="con">
+    <h1>Client Success Stories</h1>
+    <p>See how Miami businesses are using FNDI to answer more calls, capture more leads, and grow revenue 24/7.</p>
+  </div>
+</div>
+
+<section>
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim">CASE STUDIES</div>
+      <h2 class="s-title anim">Real Results From Real Businesses</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case anim">
+        <div class="case-tag">Voice Agent</div>
+        <h3>Med Spa in Coral Gables</h3>
+        <div class="case-meta">Botox treatments • High volume calls</div>
+        <p>This med spa was losing 60% of calls to voicemail. The owner was frustrated with missed revenue. We installed our AI voice agent, and within 30 days they were booking 40+ appointments per month they would have completely lost.</p>
+        <div class="case-result">
+          <strong>Result:</strong> 80% call capture rate. $15K+ in recovered monthly revenue from missed calls alone.
+        </div>
+      </div>
+
+      <div class="case anim">
+        <div class="case-tag">Chatbot</div>
+        <h3>Dental Practice in Miami Beach</h3>
+        <div class="case-meta">Family dentistry • Web leads</div>
+        <p>Their website was getting traffic but not converting visitors into appointments. We added our AI chatbot, and within the first month, they saw qualified leads double. The chatbot captures patient info and books appointments 24/7.</p>
+        <div class="case-result">
+          <strong>Result:</strong> 2x more qualified leads in 30 days. Chatbot books 5-8 appointments weekly.
+        </div>
+      </div>
+
+      <div class="case anim">
+        <div class="case-tag">Website + Chatbot</div>
+        <h3>Blue Buffalo Renovations</h3>
+        <div class="case-meta">Home renovation • First time client</div>
+        <p>This Miami home renovation company needed a modern website with lead capture. We built them a beautiful, AI-optimized site with a chatbot. The chatbot qualifies leads before they even talk to the sales team.</p>
+        <div class="case-result">
+          <strong>Result:</strong> 25+ qualified leads in first month. Chatbot saves 10+ hours per week on initial contact.
+        </div>
+      </div>
+
+      <div class="case anim">
+        <div class="case-tag">Voice Agent</div>
+        <h3>Law Firm in Downtown Miami</h3>
+        <div class="case-meta">Personal injury • Call-heavy practice</div>
+        <p>This law firm received 100+ calls per month but had no receptionist. Callers got voicemail. The AI voice agent now answers every call, qualifies prospects, and only routes relevant cases to attorneys. Valuable leads no longer slip away.</p>
+        <div class="case-result">
+          <strong>Result:</strong> Zero missed calls. 30% increase in qualified case intake from improved call handling.
+        </div>
+      </div>
+
+      <div class="case anim">
+        <div class="case-tag">Automation</div>
+        <h3>Fitness Studio in Wynwood</h3>
+        <div class="case-meta">Group fitness • Appointment heavy</div>
+        <p>This fitness studio was sending manual reminder texts before every class. No-shows were 40%. We automated the entire appointment reminder system. Now clients get text + email reminders automatically, and no-shows dropped dramatically.</p>
+        <div class="case-result">
+          <strong>Result:</strong> No-shows reduced from 40% to 12%. Saves 15+ hours per month on manual work.
+        </div>
+      </div>
+
+      <div class="case anim">
+        <div class="case-tag">Multiple Services</div>
+        <h3>Salon in Brickell</h3>
+        <div class="case-meta">Hair & beauty • Multi-location</div>
+        <p>This upscale salon combined our voice agent for calls, chatbot for web visitors, and automation for appointment reminders. Result: Fully automated customer intake. Appointments book 24/7 without human intervention. Staff focuses on service quality.</p>
+        <div class="case-result">
+          <strong>Result:</strong> Bookings up 50%. Staff time freed up for client care. 98% client satisfaction.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="con">
+    <h2>Ready to Be Our Next Success Story?</h2>
+    <p>Let's talk about how FNDI can help your business grow. Schedule a free consultation with our team.</p>
+    <a href="/book" class="btn btn-g">Schedule Your Free Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+      <div style="max-width:300px">
+        <div class="ft-logo"><span>FNDI</span></div>
+        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
+        <p style="margin-top:0.8rem">AI solutions for small businesses. Based in Miami.</p>
+        <div style="display:flex;gap:1rem;margin-top:1rem">
+          <a href="https://instagram.com/fndi.tech" target="_blank">📷</a>
+          <a href="https://linkedin.com/company/fndi" target="_blank">💼</a>
+          <a href="mailto:support@fndi.tech">✉️</a>
+        </div>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="/#services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/about">About</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+        <a href="tel:+17868430145">(786) 843-0145</a>
+        <p style="margin-top:0.3rem">Miami, FL</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 FNDI. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>10) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('v');
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>

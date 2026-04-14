@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+<title>Contact Us | FNDI</title>
+<meta name="description" content="Get in touch with FNDI. Book a free consultation, send us a message, or reach out directly. Based in Miami, FL.">
+<meta property="og:title" content="Contact | FNDI">
+<meta property="og:description" content="Reach out to FNDI — AI solutions for small businesses. Based in Miami, FL.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fndi.tech/contact">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  ::selection{background:rgba(124,58,237,0.3);color:white}
+  :root{
+    --bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--card2:#151530;
+    --accent:#7c3aed;--accent2:#a78bfa;--accent3:#c4b5fd;
+    --cyan:#22d3ee;--green:#34d399;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+    --border:rgba(255,255,255,0.04);--glow:rgba(124,58,237,0.15);
+    --glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+
+  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim.v{opacity:1;transform:translateY(0)}
+  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
+  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
+  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
+  .n-links{display:flex;align-items:center;gap:0.3rem}
+  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
+  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
+  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,58,237,0.45)!important}
+  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+  .hero{padding:10rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+  .h-bg{position:absolute;inset:0;z-index:0}
+  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
+  .orb1{width:500px;height:500px;background:rgba(124,58,237,0.08);top:-10%;left:-8%}
+  .orb2{width:400px;height:400px;background:rgba(34,211,238,0.05);bottom:-15%;right:-5%;animation-delay:3s}
+  .h-content{position:relative;z-index:2;max-width:600px;margin:0 auto;animation:fadeUp 1s}
+  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem;letter-spacing:-2px}
+  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+  .hero p{font-size:1.02rem;color:var(--text2);line-height:1.7}
+
+  section{padding:4rem 2rem;position:relative}
+  .con{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+
+  /* CONTACT LAYOUT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+
+  /* LEFT: FORM */
+  .contact-form{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem}
+  .contact-form h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.4rem}
+  .contact-form .sub{font-size:0.85rem;color:var(--text2);margin-bottom:2rem}
+  .form-group{margin-bottom:1.2rem}
+  .form-group label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:0.4rem;letter-spacing:0.5px;text-transform:uppercase}
+  .form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;outline:none;transition:all 0.25s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);background:rgba(124,58,237,0.03);box-shadow:0 0 0 3px rgba(124,58,237,0.08)}
+  .form-group textarea{resize:vertical;min-height:120px}
+  .form-group select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+  .form-group select option{background:var(--card);color:var(--text)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
+  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25);width:100%;justify-content:center}
+  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+  .form-note{font-size:0.75rem;color:var(--text3);margin-top:1rem;text-align:center}
+
+  /* RIGHT: INFO */
+  .contact-info{display:flex;flex-direction:column;gap:1.5rem}
+  .info-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;transition:all 0.3s}
+  .info-card:hover{border-color:rgba(124,58,237,0.12);transform:translateY(-2px)}
+  .info-card .ic-icon{font-size:1.5rem;margin-bottom:0.8rem}
+  .info-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.3rem}
+  .info-card p{font-size:0.88rem;color:var(--text2);line-height:1.6}
+  .info-card a{color:var(--accent2);text-decoration:none;transition:color 0.3s}
+  .info-card a:hover{color:var(--text)}
+
+  .founders-quick{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem}
+  .founders-quick h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1.2rem}
+  .fq-person{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+  .fq-person:last-child{margin-bottom:0}
+  .fq-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+  .fq-avatar.sf{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(34,211,238,0.1));color:var(--accent2)}
+  .fq-avatar.do{background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(52,211,153,0.1));color:var(--cyan)}
+  .fq-details{flex:1}
+  .fq-name{font-weight:700;font-size:0.88rem}
+  .fq-role{font-size:0.75rem;color:var(--text3)}
+  .fq-email{font-size:0.78rem;color:var(--accent2);text-decoration:none}
+  .fq-email:hover{color:var(--text)}
+
+  .book-card{background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(34,211,238,0.04));border:1px solid rgba(124,58,237,0.15);border-radius:16px;padding:2rem;text-align:center}
+  .book-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
+  .book-card p{font-size:0.85rem;color:var(--text2);margin-bottom:1.2rem;line-height:1.6}
+  .btn-sm{padding:0.7rem 1.8rem;border-radius:10px;font-weight:700;font-size:0.85rem;text-decoration:none;background:var(--accent);color:white;transition:all 0.3s;display:inline-block}
+  .btn-sm:hover{background:var(--accent2);transform:translateY(-1px)}
+
+  /* FOOTER */
+  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
+  .ft-inner{max-width:1200px;margin:0 auto}
+  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
+  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+  footer a:hover{color:var(--accent2)}
+  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
+  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
+  .ft-bottom p{margin:0;font-size:0.75rem}
+
+  @media(max-width:768px){
+    .mob-toggle{display:block}
+    .n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}
+    .n-links.open{display:flex}
+    .logo small{display:none}
+    section{padding:3rem 1.5rem}
+    .contact-grid{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
+    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
+    <div class="n-links">
+      <a href="/#services">Services</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/about">About</a>
+      <a href="/book" class="n-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="h-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="h-content">
+    <h1><span class="grad">Get in Touch</span></h1>
+    <p>Have a question, want to start a project, or just want to say hi? We'd love to hear from you.</p>
+  </div>
+</div>
+
+<section>
+  <div class="con">
+    <div class="contact-grid">
+
+      <div class="contact-form anim d1">
+        <h2>Send Us a Message</h2>
+        <p class="sub">We'll get back to you within 24 hours.</p>
+        <form action="https://formsubmit.co/support@fndi.tech" method="POST">
+          <input type="hidden" name="_subject" value="New Contact from fndi.tech">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://fndi.tech/contact?sent=true">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="Stefano" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Fernandini">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="(786) 000-0000">
+          </div>
+          <div class="form-group">
+            <label>What are you interested in?</label>
+            <select name="interest">
+              <option value="" disabled selected>Select a service</option>
+              <option value="voice-agents">AI Voice Agents</option>
+              <option value="chatbots">Website Chatbots</option>
+              <option value="websites">Website Development</option>
+              <option value="automation">Business Automation</option>
+              <option value="crm">CRM Solutions</option>
+              <option value="social-media">Social Media Management</option>
+              <option value="multiple">Multiple Services</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell us about your project</label>
+            <textarea name="message" placeholder="What does your business do? What challenges are you facing? What are you looking to build?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-g">Send Message</button>
+          <p class="form-note">We respect your privacy. No spam, ever.</p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="info-card anim d1">
+          <div class="ic-icon">&#128205;</div>
+          <h3>Based in Miami</h3>
+          <p>Miami, Florida<br>Serving businesses across South Florida and beyond.</p>
+        </div>
+
+        <div class="info-card anim d2">
+          <div class="ic-icon">&#9993;&#65039;</div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:support@fndi.tech">support@fndi.tech</a></p>
+        </div>
+
+        <div class="info-card anim d3">
+          <div class="ic-icon">&#9742;&#65039;</div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+17868430145">(786) 843-0145</a></p>
+        </div>
+
+        <div class="founders-quick anim d2">
+          <h3>Reach a Founder Directly</h3>
+          <div class="fq-person">
+            <div class="fq-avatar sf">SF</div>
+            <div class="fq-details">
+              <div class="fq-name">Stefano Fernandini</div>
+              <div class="fq-role">Co-Founder</div>
+              <a class="fq-email" href="mailto:stefano@fndi.tech">stefano@fndi.tech</a>
+            </div>
+          </div>
+          <div class="fq-person">
+            <div class="fq-avatar do">DO</div>
+            <div class="fq-details">
+              <div class="fq-name">Douglas O'Keefe</div>
+              <div class="fq-role">Co-Founder</div>
+              <a class="fq-email" href="mailto:dokeefe@fndi.tech">dokeefe@fndi.tech</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card anim d3">
+          <h3>Prefer to Talk Live?</h3>
+          <p>Skip the form. Book a free call and we'll chat about your business in real time.</p>
+          <a href="/book" class="btn-sm">Book a Free Call</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+      <div style="max-width:300px">
+        <div class="ft-logo"><span>FNDI</span></div>
+        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
+        <p style="margin-top:0.8rem">AI solutions for small businesses. Based in Miami.</p>
+        <div style="display:flex;gap:1rem;margin-top:1rem">
+          <a href="https://instagram.com/fndi.tech" target="_blank">&#128247;</a>
+          <a href="https://linkedin.com/company/fndi" target="_blank">&#128188;</a>
+          <a href="mailto:support@fndi.tech">&#9993;&#65039;</a>
+        </div>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="/#services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/about">About</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+        <a href="tel:+17868430145">(786) 843-0145</a>
+        <p style="margin-top:0.3rem">Miami, FL</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>&copy; 2026 FNDI. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>10) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('v')});
+  },{threshold:0.1});
+  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+
+  // Check if redirected after form submission
+  if(window.location.search.includes('sent=true')){
+    const form=document.querySelector('.contact-form');
+    form.innerHTML='<div style="text-align:center;padding:3rem 1rem"><div style="font-size:3rem;margin-bottom:1rem">&#10003;</div><h2 style="margin-bottom:0.5rem">Message Sent!</h2><p style="color:var(--text2)">Thanks for reaching out. We\'ll get back to you within 24 hours.</p><a href="/" style="color:var(--accent2);text-decoration:none;font-weight:600;display:inline-block;margin-top:1.5rem">Back to Home &rarr;</a></div>';
+  }
+});
+</script>
+</body>
+</html>

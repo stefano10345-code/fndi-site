@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found - FNDI</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  ::selection{background:rgba(124,58,237,0.3);color:white}
+  :root{
+    --bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--card2:#151530;--card-hover:#1a1a3a;
+    --accent:#7c3aed;--accent2:#a78bfa;--accent3:#c4b5fd;
+    --green:#34d399;--green2:#6ee7b7;
+    --cyan:#22d3ee;--pink:#f472b6;--orange:#fb923c;--blue:#60a5fa;--yellow:#fbbf24;
+    --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+    --border:rgba(255,255,255,0.04);--glow:rgba(124,58,237,0.15);
+    --glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+  @keyframes pageLoad{to{opacity:1}}
+
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
+  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px}
+  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+  .logo sub{font-family:'Inter',sans-serif;font-size:0.48rem;color:var(--text3);letter-spacing:1.5px;font-weight:500;vertical-align:baseline;margin-left:0.7rem;opacity:0.5}
+  .n-links{display:flex;align-items:center;gap:0.15rem}
+  .n-links a{color:var(--text2);text-decoration:none;font-size:0.85rem;font-weight:500;padding:0.5rem 0.9rem;border-radius:10px;transition:all 0.25s;letter-spacing:0.2px}
+  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
+  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,58,237,0.45)!important}
+
+  .error-container{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 5rem;position:relative}
+  .error-content{max-width:600px;animation:fadeUp 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .error-code{font-family:'Space Grotesk',sans-serif;font-size:clamp(6rem,15vw,9rem);font-weight:700;letter-spacing:-3px;background:linear-gradient(135deg,var(--accent2),var(--cyan),var(--green2),var(--accent2));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite;margin-bottom:1.5rem}
+  .error-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;margin-bottom:1rem;color:var(--text)}
+  .error-message{font-size:1.05rem;color:var(--text2);margin-bottom:2.5rem;line-height:1.75}
+  .btn{padding:0.9rem 2.2rem;border-radius:14px;font-weight:700;font-size:0.93rem;text-decoration:none;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem;letter-spacing:0.2px}
+  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
+  .btn-g:hover{transform:translateY(-3px);box-shadow:0 10px 50px rgba(124,58,237,0.45)}
+
+  footer{border-top:1px solid var(--glass-border);padding:3.5rem 2rem;background:rgba(3,3,8,0.5)}
+  .ft-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:4px}
+  .ft-logo span{background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .ft-right{text-align:right}
+  .ft-right p{font-size:0.8rem;color:var(--text3)}
+
+  @media(max-width:768px){
+    nav{padding:0 1.5rem}
+    .error-container{padding:7rem 1.5rem 4rem}
+    .error-code{font-size:clamp(4rem,10vw,6rem)}
+    .error-title{font-size:1.5rem}
+    .ft-inner{flex-direction:column;text-align:center;gap:1rem}
+    .ft-right{text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nb">
+  <div class="nav-i">
+    <a href="/" style="text-decoration:none;color:inherit">
+      <div class="logo"><span>FNDI</span><sub>Future Native Digital Intelligence</sub></div>
+    </a>
+    <div class="n-links">
+      <a href="/#services">Solutions</a>
+      <a href="/#industries">Industries</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/book" class="n-cta">Book a Meeting</a>
+    </div>
+  </div>
+</nav>
+
+<div class="error-container">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">Sorry, the page you're looking for doesn't exist. It might have been moved or deleted. Let's get you back on track.</p>
+    <a href="/" class="btn btn-g">← Back to Home</a>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-logo"><span>FNDI</span></div>
+      <p style="font-size:0.78rem;color:var(--text3);margin-top:0.25rem">AI solutions for small businesses</p>
+    </div>
+    <div class="ft-right">
+      <p style="font-size:0.78rem;color:var(--text3)">© 2026 FNDI. All rights reserved.</p>
+      <p style="font-size:0.78rem;color:var(--text3);margin-top:0.25rem">support@fndi.tech</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nb');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>
+
+</body>
+</html>

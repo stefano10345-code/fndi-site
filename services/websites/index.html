@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+<title>Web Development | FNDI — AI-Optimized Websites</title>
+<meta name="description" content="Modern, fast, AI-optimized websites designed to capture leads and convert visitors into paying customers.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  ::selection{background:rgba(124,58,237,0.3);color:white}
+  :root{--bg:#030308;--surface:#0a0a1a;--card:#0f0f24;--card2:#151530;--accent:#7c3aed;--accent2:#a78bfa;--cyan:#22d3ee;--green:#34d399;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,0.04);--glass:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.06);}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
+  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+  @keyframes glow{0%,100%{opacity:0.6}50%{opacity:1}}
+  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s}
+  .anim.v{opacity:1;transform:translateY(0)}
+  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
+  nav.scrolled{background:rgba(3,3,8,0.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--glass-border)}
+  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
+  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
+  .n-links{display:flex;align-items:center;gap:0.3rem}
+  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
+  .n-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important}
+  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
+  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+  .logo small{display:none}
+  @media(max-width:768px){.mob-toggle{display:block}.n-links{position:fixed;top:72px;left:0;right:0;background:rgba(3,3,8,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}.n-links.open{display:flex}.logo small{display:none}}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 3rem;position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%);overflow:hidden}
+  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
+  .orb1{width:600px;height:600px;background:rgba(96,165,250,0.08);top:-10%;left:-10%}
+  .orb2{width:500px;height:500px;background:rgba(34,211,238,0.05);bottom:-15%;right:-10%;animation-delay:2s}
+  .h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s}
+  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
+  .grad{background:linear-gradient(135deg,#60a5fa,var(--cyan),#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+  .hero p{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2rem;line-height:1.7}
+  .h-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
+  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white}
+  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+  .btn-o{background:rgba(255,255,255,0.03);color:var(--text);border:1px solid rgba(255,255,255,0.1)}
+  .btn-o:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+  section{padding:6rem 2rem;position:relative}
+  .con{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
+  .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+  .s-head{margin-bottom:3.5rem;text-align:center}
+  .s-head .s-sub{font-size:0.95rem;color:var(--text2);line-height:1.7;max-width:700px;margin:0 auto}
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+  .feature{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.3s}
+  .feature:hover{border-color:rgba(124,58,237,0.15);transform:translateY(-4px)}
+  .feature-icon{font-size:2.2rem;margin-bottom:1rem}
+  .feature h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
+  .feature p{font-size:0.88rem;color:var(--text2);line-height:1.6}
+  .how-section{background:var(--surface)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+  .step{text-align:center}
+  .step-num{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#3b82f6);color:white;font-weight:700;font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+  .step h4{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
+  .step p{font-size:0.88rem;color:var(--text2);line-height:1.6}
+  .test-sec{background:var(--bg)}
+  .test-card{background:var(--card);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem;text-align:center;max-width:700px;margin:0 auto}
+  .test-stars{color:#fbbf24;margin-bottom:1rem;font-size:1.1rem}
+  .test-card p{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-style:italic}
+  .test-author{font-weight:700;color:var(--text);font-size:0.95rem}
+  .test-role{font-size:0.82rem;color:var(--text3)}
+  .cta-sec{text-align:center;padding:5rem 2rem}
+  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
+  .cta-sec p{font-size:1.02rem;color:var(--text2);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
+  .ft-inner{max-width:1200px;margin:0 auto}
+  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
+  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+  footer a:hover{color:var(--accent2)}
+  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
+  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
+  .ft-bottom p{margin:0;font-size:0.75rem}
+
+  .hero-svg{position:relative;z-index:2;margin:2rem auto 0;opacity:0.7;animation:float 6s ease-in-out infinite}
+
+  @media(max-width:768px){section{padding:4rem 1.5rem}.feature-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.ft-inner>div:first-child{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-i">
+    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
+    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">☰</button>
+    <div class="n-links">
+      <a href="/#services">Services</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/about">About</a>
+      <a href="/book" class="n-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="h-content">
+    <h1>Modern Websites That <span class="grad">Convert Visitors Into Customers</span></h1>
+    <p>Fast, beautiful, AI-optimized websites designed to rank high, load fast, and capture leads automatically.</p>
+    <div class="h-btns">
+      <a href="/book" class="btn btn-g">Start Your Project</a>
+      <a href="#features" class="btn btn-o">See What We Build</a>
+    </div>
+    <svg class="hero-svg" viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow3">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Browser window -->
+      <rect x="60" y="80" width="180" height="140" rx="8" fill="none" stroke="#22d3ee" stroke-width="2" filter="url(#glow3)"/>
+      <!-- Browser header -->
+      <rect x="60" y="80" width="180" height="25" rx="8" fill="rgba(34,211,238,0.1)" stroke="none"/>
+      <!-- Address bar -->
+      <rect x="75" y="92" width="150" height="8" rx="3" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.6"/>
+      <!-- Content lines -->
+      <line x1="75" y1="115" x2="215" y2="115" stroke="#34d399" stroke-width="2" opacity="0.7"/>
+      <line x1="75" y1="128" x2="200" y2="128" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+      <line x1="75" y1="140" x2="190" y2="140" stroke="#22d3ee" stroke-width="1.5" opacity="0.5"/>
+      <line x1="75" y1="152" x2="185" y2="152" stroke="#34d399" stroke-width="1.5" opacity="0.4"/>
+      <line x1="75" y1="164" x2="210" y2="164" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+      <line x1="75" y1="176" x2="195" y2="176" stroke="#22d3ee" stroke-width="1" opacity="0.3"/>
+      <!-- Accent dot (cursor) -->
+      <circle cx="220" cy="115" r="3" fill="#34d399" opacity="0.8" filter="url(#glow3)"/>
+      <!-- Code brackets -->
+      <path d="M 70 185 L 75 185" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.4"/>
+      <path d="M 225 185 L 220 185" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+</div>
+
+<section id="features">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1">KEY FEATURES</div>
+      <h2 class="s-title anim d2">Websites That Work Hard for Your Business</h2>
+      <p class="s-sub anim d3">Every website we build includes SEO, mobile optimization, analytics, and built-in AI chatbots.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature anim d1">
+        <div class="feature-icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Optimized for speed. Fast-loading sites rank higher in Google and convert better.</p>
+      </div>
+      <div class="feature anim d2">
+        <div class="feature-icon">📱</div>
+        <h3>Mobile First</h3>
+        <p>Fully responsive. Your site looks perfect on phones, tablets, and desktops.</p>
+      </div>
+      <div class="feature anim d3">
+        <div class="feature-icon">🔍</div>
+        <h3>SEO Optimized</h3>
+        <p>Built with SEO best practices. Helps you rank higher in Google Search.</p>
+      </div>
+      <div class="feature anim d1">
+        <div class="feature-icon">💬</div>
+        <h3>Built-in Chatbot</h3>
+        <p>Every website includes an AI chatbot to capture leads and answer questions.</p>
+      </div>
+      <div class="feature anim d2">
+        <div class="feature-icon">📊</div>
+        <h3>Full Analytics</h3>
+        <p>See who visits, where they come from, and how they interact with your site.</p>
+      </div>
+      <div class="feature anim d3">
+        <div class="feature-icon">🔐</div>
+        <h3>Secure & Reliable</h3>
+        <p>SSL encryption, automatic backups, and 99.9% uptime guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1">PROCESS</div>
+      <h2 class="s-title anim d2">From Concept to Launch in 2-4 Weeks</h2>
+    </div>
+    <div class="steps">
+      <div class="step anim d1">
+        <div class="step-num">1</div>
+        <h4>Discovery</h4>
+        <p>We learn about your business, goals, and target customers. We design the perfect site for YOU.</p>
+      </div>
+      <div class="step anim d2">
+        <div class="step-num">2</div>
+        <h4>Design & Build</h4>
+        <p>We design and build your site with conversion in mind. SEO built-in. Chatbot included.</p>
+      </div>
+      <div class="step anim d3">
+        <div class="step-num">3</div>
+        <h4>Test & Launch</h4>
+        <p>We test everything, train your team, and launch your new site. We're here for support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="test-sec">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1">CLIENT RESULTS</div>
+      <h2 class="s-title anim d2">What Our Clients Say</h2>
+    </div>
+    <div class="test-card anim d1">
+      <div class="test-stars">★★★★★</div>
+      <p>"Our new website is stunning and it actually works. We went from 10 leads per month to over 50. The chatbot is capturing leads 24/7 even while we're sleeping. Best business investment we've made."</p>
+      <div class="test-author">David Johnson</div>
+      <div class="test-role">Real Estate Agent, Miami FL</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="con">
+    <h2>Ready for a Website That Actually Works?</h2>
+    <p>Let's build you a modern, AI-powered website that captures leads and converts visitors into customers.</p>
+    <a href="/book" class="btn btn-g">Schedule Your Free Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+      <div style="max-width:300px">
+        <div class="ft-logo"><span>FNDI</span></div>
+        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
+        <p style="margin-top:0.8rem">AI solutions for small businesses. Based in Miami.</p>
+        <div style="display:flex;gap:1rem;margin-top:1rem">
+          <a href="https://instagram.com/fndi.tech" target="_blank">📷</a>
+          <a href="https://linkedin.com/company/fndi" target="_blank">💼</a>
+          <a href="mailto:support@fndi.tech">✉️</a>
+        </div>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="/#services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/about">About</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+        <a href="tel:+17868430145">(786) 843-0145</a>
+        <p style="margin-top:0.3rem">Miami, FL</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 FNDI. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>10) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('v');
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>
