@@ -131,6 +131,71 @@
   .why-card p{font-size:0.85rem;color:var(--text2);line-height:1.6}
   @media(max-width:768px){.why-grid{grid-template-columns:1fr}}
 
+  /* REVENUE CALCULATOR */
+  .calc-sec{background:linear-gradient(180deg,var(--bg) 0%,rgba(124,58,237,0.03) 50%,var(--bg) 100%)}
+  .calc-wrap{max-width:900px;margin:0 auto}
+  .calc-box{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
+  .calc-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--cyan),var(--green));border-radius:20px 20px 0 0}
+  .calc-sliders{display:flex;flex-direction:column;gap:2rem;margin-bottom:2.5rem}
+  .calc-slider-group label{display:flex;justify-content:space-between;align-items:center;font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.8rem}
+  .calc-slider-group label span{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;color:var(--cyan);font-weight:700}
+  .calc-slider-group input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--cyan));outline:none;cursor:pointer}
+  .calc-slider-group input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.3),0 0 20px rgba(124,58,237,0.3);cursor:pointer;transition:transform 0.2s}
+  .calc-slider-group input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .calc-result{display:grid;grid-template-columns:1fr 60px 1fr;gap:1rem;align-items:stretch}
+  .calc-card{border-radius:16px;padding:1.8rem;text-align:center;position:relative}
+  .calc-card.without{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15)}
+  .calc-card.with{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.15)}
+  .calc-card-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem}
+  .calc-card.without .calc-card-label{color:#ef4444}
+  .calc-card.with .calc-card-label{color:var(--green)}
+  .calc-card-amount{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:0.4rem}
+  .calc-card.without .calc-card-amount{color:#ef4444}
+  .calc-card.with .calc-card-amount{color:var(--green)}
+  .calc-card-sub{font-size:0.78rem;color:var(--text3);line-height:1.5}
+  .calc-vs{display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text3)}
+  .calc-savings{text-align:center;margin-top:2rem;padding:1.5rem;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(34,211,238,0.08));border:1px solid rgba(124,58,237,0.12)}
+  .calc-savings-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:0.3rem}
+  .calc-savings-amount{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .calc-savings-cta{margin-top:1.5rem}
+  @media(max-width:768px){
+    .calc-result{grid-template-columns:1fr;gap:0.8rem}
+    .calc-vs{transform:rotate(90deg);padding:0.5rem 0}
+    .calc-box{padding:1.5rem}
+  }
+
+  /* VOICE DEMO */
+  .demo-sec{background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%)}
+  .demo-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+  .demo-player{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;position:relative;overflow:hidden}
+  .demo-player::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--accent))}
+  .demo-player-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+  .demo-player-label .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+  .demo-player h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.4rem}
+  .demo-player p{font-size:0.82rem;color:var(--text2);line-height:1.6;margin-bottom:1.2rem}
+  .demo-waveform{display:flex;align-items:center;gap:2px;height:40px;margin-bottom:1.2rem;padding:0.8rem;background:rgba(0,0,0,0.2);border-radius:10px}
+  .demo-waveform .bar{width:3px;border-radius:2px;background:var(--accent);transition:height 0.15s}
+  .demo-waveform.playing .bar{animation:waveAnim 0.6s ease-in-out infinite alternate}
+  @keyframes waveAnim{0%{height:8px;opacity:0.4}100%{height:100%;opacity:1}}
+  .demo-controls{display:flex;align-items:center;gap:1rem}
+  .demo-play-btn{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0}
+  .demo-play-btn:hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(124,58,237,0.4)}
+  .demo-time{font-size:0.78rem;color:var(--text3);font-family:'Space Grotesk',sans-serif;font-weight:600}
+  .demo-progress{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;position:relative;cursor:pointer}
+  .demo-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--cyan));border-radius:2px;width:0%;transition:width 0.3s}
+  .demo-info{text-align:left}
+  .demo-info h3{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.8rem;line-height:1.2}
+  .demo-info p{font-size:0.92rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
+  .demo-features{display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem}
+  .demo-feat{display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text2)}
+  .demo-feat .check{color:var(--green);font-weight:700}
+  .demo-call-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.9rem 2rem;border-radius:12px;background:linear-gradient(135deg,var(--green),#059669);color:white;text-decoration:none;font-weight:700;font-size:0.9rem;transition:all 0.3s;border:none;cursor:pointer}
+  .demo-call-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(52,211,153,0.3)}
+  .demo-call-btn .phone-icon{font-size:1.1rem;animation:float 3s ease-in-out infinite}
+  @media(max-width:768px){
+    .demo-wrap{grid-template-columns:1fr}
+  }
+
   /* HOW IT WORKS */
   .how-sec{background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%)}
   .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
@@ -347,6 +412,44 @@
   </div>
 </section>
 
+<!-- VOICE AGENT DEMO -->
+<section class="demo-sec">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1">HEAR IT IN ACTION</div>
+      <h2 class="s-title anim d2">Listen to Our AI Voice Agent</h2>
+      <p class="s-sub anim d3">This is what your customers hear when they call. Natural, helpful, and always available.</p>
+    </div>
+    <div class="demo-wrap">
+      <div class="demo-player anim d2">
+        <div class="demo-player-label"><span class="live-dot"></span> SAMPLE CALL RECORDING</div>
+        <h3>AI Agent Booking a Dental Appointment</h3>
+        <p>A real demo of our voice agent handling an inbound call, answering questions, and booking an appointment.</p>
+        <div class="demo-waveform" id="demoWaveform"></div>
+        <div class="demo-controls">
+          <button class="demo-play-btn" id="demoPlayBtn" onclick="toggleDemo()">▶</button>
+          <div class="demo-progress" id="demoProgress" onclick="seekDemo(event)">
+            <div class="demo-progress-fill" id="demoProgressFill"></div>
+          </div>
+          <span class="demo-time" id="demoTime">0:00 / 1:42</span>
+        </div>
+      </div>
+      <div class="demo-info anim d3">
+        <h3>Try It <span class="grad">Live</span> Right Now</h3>
+        <p>Call our demo line and experience the AI voice agent yourself. It'll answer, ask about your needs, and book you in — just like it would for your customers.</p>
+        <div class="demo-features">
+          <div class="demo-feat"><span class="check">✓</span> Answers in under 1 second</div>
+          <div class="demo-feat"><span class="check">✓</span> Sounds natural and friendly</div>
+          <div class="demo-feat"><span class="check">✓</span> Books appointments instantly</div>
+          <div class="demo-feat"><span class="check">✓</span> Handles FAQs about your business</div>
+          <div class="demo-feat"><span class="check">✓</span> Works 24/7, no hold times</div>
+        </div>
+        <a href="tel:+17868430145" class="demo-call-btn"><span class="phone-icon">📞</span> Call Demo: (786) 843-0145</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="why-sec">
   <div class="con">
     <div class="s-head">
@@ -369,6 +472,55 @@
         <div class="why-num">100%</div>
         <h3>Custom Built</h3>
         <p>Nothing off the shelf. Every solution is designed around how your business actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE CALCULATOR -->
+<section class="calc-sec">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1">SEE THE IMPACT</div>
+      <h2 class="s-title anim d2">How Much Revenue Are You Losing?</h2>
+      <p class="s-sub anim d3">Adjust the sliders to see how missed calls and slow follow-ups are costing your business real money.</p>
+    </div>
+    <div class="calc-wrap anim d2">
+      <div class="calc-box">
+        <div class="calc-sliders">
+          <div class="calc-slider-group">
+            <label>Missed calls per week <span id="callsVal">15</span></label>
+            <input type="range" id="callsSlider" min="1" max="60" value="15" oninput="updateCalc()">
+          </div>
+          <div class="calc-slider-group">
+            <label>Average deal value <span id="dealVal">$350</span></label>
+            <input type="range" id="dealSlider" min="50" max="2000" step="50" value="350" oninput="updateCalc()">
+          </div>
+          <div class="calc-slider-group">
+            <label>Close rate on answered calls <span id="closeVal">25%</span></label>
+            <input type="range" id="closeSlider" min="5" max="60" value="25" oninput="updateCalc()">
+          </div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-card without">
+            <div class="calc-card-label">Without FNDI</div>
+            <div class="calc-card-amount" id="calcWithout">-$68,250</div>
+            <div class="calc-card-sub">Lost revenue per year from<br>missed calls going to voicemail</div>
+          </div>
+          <div class="calc-vs">VS</div>
+          <div class="calc-card with">
+            <div class="calc-card-label">With FNDI</div>
+            <div class="calc-card-amount" id="calcWith">+$57,915</div>
+            <div class="calc-card-sub">Revenue recovered per year<br>by AI answering every call</div>
+          </div>
+        </div>
+        <div class="calc-savings">
+          <div class="calc-savings-label">You're leaving on the table</div>
+          <div class="calc-savings-amount" id="calcSavings">$57,915 / year</div>
+          <div class="calc-savings-cta">
+            <a href="/book" class="btn btn-g" style="margin-top:0.8rem">Stop Losing Money — Book a Free Call</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -595,6 +747,77 @@ function advSend(){
     chatBusy=false;
   });
 }
+
+/* REVENUE CALCULATOR */
+function updateCalc(){
+  const calls=parseInt(document.getElementById('callsSlider').value);
+  const deal=parseInt(document.getElementById('dealSlider').value);
+  const close=parseInt(document.getElementById('closeSlider').value);
+  document.getElementById('callsVal').textContent=calls;
+  document.getElementById('dealVal').textContent='$'+deal.toLocaleString();
+  document.getElementById('closeVal').textContent=close+'%';
+  const lostPerYear=Math.round(calls*52*deal*(close/100));
+  const recoveryRate=0.85;
+  const recovered=Math.round(lostPerYear*recoveryRate);
+  document.getElementById('calcWithout').textContent='-$'+lostPerYear.toLocaleString();
+  document.getElementById('calcWith').textContent='+$'+recovered.toLocaleString();
+  document.getElementById('calcSavings').textContent='$'+recovered.toLocaleString()+' / year';
+}
+
+/* VOICE DEMO PLAYER */
+let demoPlaying=false;
+let demoInterval=null;
+let demoProgress=0;
+const demoDuration=102; // 1:42 in seconds
+
+function initWaveform(){
+  const wf=document.getElementById('demoWaveform');
+  if(!wf||wf.children.length>0)return;
+  for(let i=0;i<60;i++){
+    const bar=document.createElement('div');
+    bar.className='bar';
+    const h=Math.random()*28+8;
+    bar.style.height=h+'px';
+    bar.style.animationDelay=(Math.random()*0.5)+'s';
+    bar.style.animationDuration=(0.3+Math.random()*0.5)+'s';
+    wf.appendChild(bar);
+  }
+}
+
+function toggleDemo(){
+  const btn=document.getElementById('demoPlayBtn');
+  const wf=document.getElementById('demoWaveform');
+  demoPlaying=!demoPlaying;
+  if(demoPlaying){
+    btn.textContent='⏸';
+    wf.classList.add('playing');
+    demoInterval=setInterval(()=>{
+      demoProgress+=1;
+      if(demoProgress>=demoDuration){demoProgress=0;toggleDemo();return;}
+      const pct=(demoProgress/demoDuration)*100;
+      document.getElementById('demoProgressFill').style.width=pct+'%';
+      const mins=Math.floor(demoProgress/60);
+      const secs=String(demoProgress%60).padStart(2,'0');
+      document.getElementById('demoTime').textContent=mins+':'+secs+' / 1:42';
+    },1000);
+  } else {
+    btn.textContent='▶';
+    wf.classList.remove('playing');
+    clearInterval(demoInterval);
+  }
+}
+
+function seekDemo(e){
+  const rect=e.target.getBoundingClientRect();
+  const pct=(e.clientX-rect.left)/rect.width;
+  demoProgress=Math.round(pct*demoDuration);
+  document.getElementById('demoProgressFill').style.width=(pct*100)+'%';
+  const mins=Math.floor(demoProgress/60);
+  const secs=String(demoProgress%60).padStart(2,'0');
+  document.getElementById('demoTime').textContent=mins+':'+secs+' / 1:42';
+}
+
+document.addEventListener('DOMContentLoaded',()=>{initWaveform();updateCalc();});
 </script>
 </body>
 </html>
