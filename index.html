@@ -277,6 +277,49 @@
   .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
   .ft-bottom p{margin:0;font-size:0.75rem}
 
+  /* FREE AUDIT SECTION */
+  .audit-sec{background:linear-gradient(180deg,var(--bg) 0%,rgba(124,58,237,0.03) 50%,var(--bg) 100%)}
+  .audit-wrap{max-width:800px;margin:0 auto}
+  .audit-box{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:24px;padding:3rem;position:relative;overflow:hidden}
+  .audit-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--cyan),var(--green));border-radius:24px 24px 0 0}
+  .audit-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.5rem}
+  .audit-badge svg{width:14px;height:14px;stroke:var(--green)}
+  .audit-box h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:0.5rem;letter-spacing:-1px}
+  .audit-box .audit-sub{font-size:0.92rem;color:var(--text2);line-height:1.7;margin-bottom:2rem;max-width:600px}
+  .audit-form{display:flex;flex-direction:column;gap:1.2rem}
+  .audit-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .audit-form input,.audit-form select,.audit-form textarea{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;padding:0.8rem 1rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;outline:none;transition:all 0.25s}
+  .audit-form input:focus,.audit-form select:focus,.audit-form textarea:focus{border-color:var(--accent);background:rgba(124,58,237,0.03);box-shadow:0 0 0 3px rgba(124,58,237,0.08)}
+  .audit-form input::placeholder,.audit-form textarea::placeholder{color:var(--text3)}
+  .audit-form select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+  .audit-form select option{background:var(--card);color:var(--text)}
+  .audit-form textarea{resize:vertical;min-height:90px}
+  .audit-form label{font-size:0.75rem;font-weight:600;color:var(--text2);margin-bottom:0.3rem;display:block;letter-spacing:0.5px;text-transform:uppercase}
+  .audit-form .fg{display:flex;flex-direction:column}
+  .audit-perks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:0.5rem;margin-bottom:0.5rem}
+  .audit-perk{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text2)}
+  .audit-perk svg{width:16px;height:16px;stroke:var(--green);flex-shrink:0}
+  .audit-submit-wrap{display:flex;align-items:center;gap:1rem;margin-top:0.5rem}
+  .audit-submit-wrap .btn{flex-shrink:0}
+  .audit-note{font-size:0.75rem;color:var(--text3)}
+  .audit-loading{display:none;align-items:center;gap:0.8rem;padding:1.5rem;background:rgba(124,58,237,0.04);border:1px solid rgba(124,58,237,0.12);border-radius:14px;margin-top:1rem}
+  .audit-loading.active{display:flex}
+  .audit-spinner{width:24px;height:24px;border:3px solid var(--glass-border);border-top:3px solid var(--accent);border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0}
+  @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+  .audit-loading-text{font-size:0.85rem;color:var(--text2)}
+  .audit-success{display:none;text-align:center;padding:2rem}
+  .audit-success.active{display:block;animation:fadeUp 0.5s ease}
+  .audit-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(52,211,153,0.1);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+  .audit-success-icon svg{width:24px;height:24px;stroke:var(--green)}
+  .audit-success h3{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.4rem}
+  .audit-success p{font-size:0.88rem;color:var(--text2);line-height:1.6}
+  @media(max-width:768px){
+    .audit-row{grid-template-columns:1fr}
+    .audit-perks{grid-template-columns:1fr}
+    .audit-box{padding:1.8rem}
+    .audit-submit-wrap{flex-direction:column;align-items:stretch}
+  }
+
   /* CHAT WIDGET STYLES */
   @keyframes widgetPop{from{opacity:0;transform:scale(0.85) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
   @keyframes fabPulse{0%,100%{box-shadow:0 4px 24px rgba(124,58,237,0.3)}50%{box-shadow:0 4px 40px rgba(124,58,237,0.6)}}
@@ -660,6 +703,94 @@
   </div>
 </section>
 
+<!-- FREE AUDIT -->
+<section class="audit-sec" id="free-audit">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1" data-es="AUDITORÍA GRATUITA">FREE BUSINESS AUDIT</div>
+      <h2 class="s-title anim d2" data-es="Descubre Cómo la IA Puede Hacer Crecer Tu Negocio">Find Out How AI Can Grow Your Business</h2>
+      <p class="s-sub anim d3" data-es="Envía tu sitio web y cuéntanos tus desafíos. Nuestro equipo analizará tu negocio y te enviará un informe personalizado con soluciones en 48 horas. Completamente gratis.">Submit your website and tell us your challenges. Our team will analyze your business and send you a custom report with solutions within 48 hours. Completely free.</p>
+    </div>
+    <div class="audit-wrap anim d2">
+      <div class="audit-box">
+        <div class="audit-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="100% Gratis — Sin Compromiso">100% Free — No Strings Attached</span></div>
+        <h2 data-es="Obtén Tu Informe Personalizado de IA">Get Your Custom AI Report</h2>
+        <p class="audit-sub" data-es="Cuéntanos sobre tu negocio y te mostraremos exactamente qué herramientas pueden ayudarte a captar más clientes, ahorrar tiempo y aumentar ingresos.">Tell us about your business and we'll show you exactly which tools can help you capture more customers, save time, and increase revenue.</p>
+
+        <div id="auditFormWrap">
+          <form id="auditForm" class="audit-form" onsubmit="return submitAudit(event)">
+            <div class="audit-row">
+              <div class="fg">
+                <label data-es="Tu Nombre"><span style="color:var(--accent2)">*</span> Your Name</label>
+                <input type="text" id="auditName" placeholder="John Smith" required>
+              </div>
+              <div class="fg">
+                <label data-es="Nombre del Negocio"><span style="color:var(--accent2)">*</span> Business Name</label>
+                <input type="text" id="auditBusiness" placeholder="Miami Auto Spa" required>
+              </div>
+            </div>
+            <div class="audit-row">
+              <div class="fg">
+                <label data-es="Correo Electrónico"><span style="color:var(--accent2)">*</span> Email</label>
+                <input type="email" id="auditEmail" placeholder="you@business.com" required>
+              </div>
+              <div class="fg">
+                <label data-es="Teléfono">Phone</label>
+                <input type="tel" id="auditPhone" placeholder="(786) 000-0000">
+              </div>
+            </div>
+            <div class="fg">
+              <label data-es="Tu Sitio Web"><span style="color:var(--accent2)">*</span> Your Website</label>
+              <input type="url" id="auditWebsite" placeholder="https://yourbusiness.com" required>
+            </div>
+            <div class="fg">
+              <label data-es="Tipo de Negocio"><span style="color:var(--accent2)">*</span> Type of Business</label>
+              <select id="auditType" required>
+                <option value="" disabled selected data-es="Selecciona tu industria">Select your industry</option>
+                <option value="Salon / Barbershop">Salon / Barbershop</option>
+                <option value="Medical / Dental">Medical / Dental Practice</option>
+                <option value="Restaurant / Food">Restaurant / Food Service</option>
+                <option value="Law Firm / Legal">Law Firm / Legal</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Auto Services">Auto Services / Detailing</option>
+                <option value="Home Services">Home Services / Contractor</option>
+                <option value="Fitness / Wellness">Fitness / Wellness</option>
+                <option value="Retail / E-Commerce">Retail / E-Commerce</option>
+                <option value="Health / Supplements">Health / Supplements</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label data-es="Cuáles son tus principales desafíos?"><span style="color:var(--accent2)">*</span> What are your biggest challenges?</label>
+              <textarea id="auditProblems" placeholder="e.g. Missing phone calls, not enough online reviews, customers not booking, website doesn't bring leads..." required></textarea>
+            </div>
+            <div class="audit-perks">
+              <div class="audit-perk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="Análisis de sitio web">Website analysis</span></div>
+              <div class="audit-perk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="Herramientas de IA recomendadas">Recommended AI tools</span></div>
+              <div class="audit-perk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="Informe en 48 horas">Report in 48 hours</span></div>
+            </div>
+            <div class="audit-submit-wrap">
+              <button type="submit" class="btn btn-g" id="auditSubmitBtn" data-es="Obtener Mi Auditoría Gratis">Get My Free Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <span class="audit-note" data-es="Sin spam. Solo tu informe personalizado.">No spam. Just your custom report.</span>
+            </div>
+          </form>
+          <div class="audit-loading" id="auditLoading">
+            <div class="audit-spinner"></div>
+            <div class="audit-loading-text" data-es="Analizando tu negocio... Esto toma unos segundos.">Analyzing your business... This takes a few seconds.</div>
+          </div>
+        </div>
+
+        <div class="audit-success" id="auditSuccess">
+          <div class="audit-success-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3 data-es="Recibimos Tu Solicitud!">We've Got Your Request!</h3>
+          <p data-es="Nuestro equipo está analizando tu negocio ahora mismo. Recibirás un informe de auditoría personalizado por email dentro de 48 horas con recomendaciones específicas sobre cómo la IA puede ayudar a tu negocio a crecer.">Our team is analyzing your business right now. You'll receive a custom audit report by email within 48 hours with specific recommendations on how AI can help your business grow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-sec">
   <div class="con">
     <h2 data-es="Construyamos Algo Juntos">Let's Build Something Together</h2>
@@ -933,6 +1064,66 @@ async function startVoiceDemo(){
 }
 
 document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
+
+// ===== FREE AUDIT FORM =====
+async function submitAudit(e){
+  e.preventDefault();
+  var btn=document.getElementById('auditSubmitBtn');
+  btn.disabled=true;
+  document.getElementById('auditLoading').classList.add('active');
+
+  var data={
+    name:document.getElementById('auditName').value,
+    business:document.getElementById('auditBusiness').value,
+    email:document.getElementById('auditEmail').value,
+    phone:document.getElementById('auditPhone').value,
+    website:document.getElementById('auditWebsite').value,
+    type:document.getElementById('auditType').value,
+    problems:document.getElementById('auditProblems').value
+  };
+
+  // Run AI audit in background
+  var auditResult='';
+  try{
+    var res=await fetch('/api/audit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        website:data.website,
+        businessName:data.business,
+        businessType:data.type,
+        problems:data.problems
+      })
+    });
+    if(res.ok){var d=await res.json();auditResult=d.audit||'';}
+  }catch(err){
+    auditResult='AI audit could not be generated automatically. Please review manually.';
+  }
+
+  // Send to FormSubmit (both founders)
+  try{
+    var fd=new FormData();
+    fd.append('_subject','Free Audit Request: '+data.business);
+    fd.append('_cc','dokeefe@fndi.tech');
+    fd.append('_captcha','false');
+    fd.append('_template','table');
+    fd.append('_autoresponse','Thanks for requesting your free business audit from FNDI! Our team is analyzing your website and business now. You\'ll receive your custom AI report within 48 hours. If you\'d like to talk sooner, book a call at fndi.tech/book.');
+    fd.append('01 - Name',data.name);
+    fd.append('02 - Business',data.business);
+    fd.append('03 - Email',data.email);
+    fd.append('04 - Phone',data.phone||'N/A');
+    fd.append('05 - Website',data.website);
+    fd.append('06 - Business Type',data.type);
+    fd.append('07 - Challenges',data.problems);
+    fd.append('08 - AI AUDIT REPORT',auditResult||'Pending manual review');
+    await fetch('https://formsubmit.co/ajax/stefano@fndi.tech',{method:'POST',body:fd});
+  }catch(err){}
+
+  // Show success
+  document.getElementById('auditLoading').classList.remove('active');
+  document.getElementById('auditForm').style.display='none';
+  document.getElementById('auditSuccess').classList.add('active');
+}
 </script>
 <script src="/lang.js"></script>
 </body>
