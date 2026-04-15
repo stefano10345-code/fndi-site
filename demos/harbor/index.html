@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harbor Car Rental — Miami Car Rentals</title>
+<meta name="description" content="Affordable car rentals in Miami. Daily, weekly, and monthly rates. SUVs, sedans, luxury, and economy vehicles. Book online or call today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --navy:#0a1628;--navy2:#101d35;--navy3:#162344;
+    --blue:#2563eb;--blue2:#3b82f6;--blue-light:#60a5fa;
+    --sky:#0ea5e9;--sky-light:#38bdf8;
+    --gold:#f59e0b;--gold2:#fbbf24;
+    --white:#ffffff;--gray50:#f8fafc;--gray100:#f1f5f9;--gray200:#e2e8f0;
+    --gray300:#cbd5e1;--gray400:#94a3b8;--gray500:#64748b;--gray600:#475569;
+    --gray800:#1e293b;--gray900:#0f172a;
+    --green:#10b981;--red:#ef4444;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--white);color:var(--gray900);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+  /* NAV */
+  nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;height:70px}
+  .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none}
+  .nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--sky));border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .nav-logo-icon svg{width:22px;height:22px;fill:white}
+  .nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;color:white;letter-spacing:-0.5px}
+  .nav-logo-text span{color:var(--sky-light)}
+  .nav-links{display:flex;align-items:center;gap:0.2rem}
+  .nav-links a{color:var(--gray300);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:8px;transition:all 0.25s}
+  .nav-links a:hover{color:white;background:rgba(255,255,255,0.06)}
+  .nav-cta{background:var(--blue)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(37,99,235,0.3)!important}
+  .nav-cta:hover{background:var(--blue2)!important;transform:translateY(-1px)!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;color:var(--gold2);font-weight:600;font-size:0.88rem;text-decoration:none;margin-right:1rem}
+  .nav-phone svg{width:16px;height:16px;stroke:var(--gold2)}
+  .lang-toggle{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:var(--gray200);font-size:0.8rem;font-weight:600;padding:0.4rem 0.8rem;border-radius:6px;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif;margin-right:0.5rem}
+  .lang-toggle:hover{background:rgba(255,255,255,0.15)}
+  .mob-toggle{display:none;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  .hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,var(--navy3) 100%);display:flex;align-items:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 70%);border-radius:50%}
+  .hero::after{content:'';position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.08) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2;width:100%}
+  .hero-content{max-width:560px}
+  .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);color:var(--gold2);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.5rem}
+  .hero-badge svg{width:14px;height:14px;fill:var(--gold2)}
+  .hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;color:white;line-height:1.1;margin-bottom:1.2rem;letter-spacing:-1.5px}
+  .hero h1 span{color:var(--sky-light)}
+  .hero-sub{font-size:1.05rem;color:var(--gray400);line-height:1.7;margin-bottom:2rem}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{padding:0.85rem 2rem;border-radius:10px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem;font-family:'Inter',sans-serif}
+  .btn-blue{background:var(--blue);color:white;box-shadow:0 4px 20px rgba(37,99,235,0.3)}
+  .btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.4)}
+  .btn-outline{background:transparent;color:white;border:1px solid rgba(255,255,255,0.2)}
+  .btn-outline:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+  .hero-stats{display:flex;gap:2.5rem;margin-top:2.5rem}
+  .hero-stat{text-align:left}
+  .hero-stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:white}
+  .hero-stat-label{font-size:0.78rem;color:var(--gray500);margin-top:0.2rem}
+
+  /* HERO CAR VISUAL */
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+  .car-card{background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.06);border-radius:24px;padding:2rem;width:100%;max-width:480px}
+  .car-card-label{font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-light);margin-bottom:0.8rem}
+  .car-card-img{width:100%;height:200px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(14,165,233,0.05));border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;overflow:hidden}
+  .car-card-img svg{width:180px;height:100px;opacity:0.7}
+  .car-card-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;color:white;margin-bottom:0.3rem}
+  .car-card-type{font-size:0.82rem;color:var(--gray400);margin-bottom:1.2rem}
+  .car-card-features{display:flex;gap:1.2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+  .car-feat{display:flex;align-items:center;gap:0.35rem;font-size:0.78rem;color:var(--gray300)}
+  .car-feat svg{width:14px;height:14px;stroke:var(--sky-light)}
+  .car-card-price{display:flex;align-items:baseline;gap:0.3rem}
+  .car-card-price .from{font-size:0.78rem;color:var(--gray500)}
+  .car-card-price .amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:white}
+  .car-card-price .per{font-size:0.85rem;color:var(--gray400)}
+  .car-book-btn{margin-top:1.2rem;width:100%;padding:0.8rem;border-radius:10px;background:var(--blue);color:white;border:none;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif}
+  .car-book-btn:hover{background:var(--blue2);transform:translateY(-1px)}
+
+  /* SECTIONS */
+  section{padding:5rem 2rem}
+  .con{max-width:1200px;margin:0 auto}
+  .s-label{font-size:0.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.8rem}
+  .s-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--gray900);margin-bottom:0.5rem;letter-spacing:-1px;line-height:1.15}
+  .s-sub{font-size:0.92rem;color:var(--gray500);line-height:1.7;max-width:550px}
+  .s-head{text-align:center;margin-bottom:3rem}
+  .s-head .s-sub{margin:0.5rem auto 0}
+
+  /* FLEET SECTION */
+  .fleet-sec{background:var(--gray50)}
+  .fleet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+  .fleet-card{background:white;border:1px solid var(--gray200);border-radius:18px;padding:1.8rem;transition:all 0.3s;cursor:pointer}
+  .fleet-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08);border-color:var(--blue)}
+  .fleet-card-img{height:160px;background:var(--gray50);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+  .fleet-card-img svg{width:120px;height:70px;fill:var(--gray400)}
+  .fleet-tag{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.7rem;border-radius:6px;margin-bottom:0.6rem}
+  .fleet-tag.economy{background:rgba(16,185,129,0.08);color:var(--green)}
+  .fleet-tag.suv{background:rgba(37,99,235,0.08);color:var(--blue)}
+  .fleet-tag.luxury{background:rgba(245,158,11,0.08);color:var(--gold)}
+  .fleet-tag.van{background:rgba(139,92,246,0.08);color:#8b5cf6}
+  .fleet-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.2rem}
+  .fleet-card .fleet-desc{font-size:0.82rem;color:var(--gray500);margin-bottom:1rem;line-height:1.5}
+  .fleet-card-bottom{display:flex;justify-content:space-between;align-items:center}
+  .fleet-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue)}
+  .fleet-price span{font-size:0.78rem;font-weight:500;color:var(--gray500)}
+  .fleet-book{padding:0.55rem 1.2rem;border-radius:8px;background:var(--blue);color:white;border:none;font-weight:600;font-size:0.82rem;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+  .fleet-book:hover{background:var(--blue2)}
+
+  /* WHY US */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .why-card{background:white;border:1px solid var(--gray200);border-radius:18px;padding:2rem;text-align:center;transition:all 0.3s}
+  .why-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .why-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+  .why-icon svg{width:26px;height:26px}
+  .why-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.4rem}
+  .why-card p{font-size:0.85rem;color:var(--gray500);line-height:1.6}
+
+  /* HOW IT WORKS */
+  .how-sec{background:var(--navy);color:white}
+  .how-sec .s-label{color:var(--sky-light)}
+  .how-sec .s-title{color:white}
+  .how-sec .s-sub{color:var(--gray400)}
+  .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+  .how-step{text-align:center;padding:2rem 1.5rem}
+  .how-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+  .how-step h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.4rem}
+  .how-step p{font-size:0.85rem;color:var(--gray400);line-height:1.6}
+
+  /* TESTIMONIALS */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+  .test-card{background:white;border:1px solid var(--gray200);border-radius:18px;padding:2rem}
+  .test-stars{color:var(--gold);font-size:0.9rem;letter-spacing:2px;margin-bottom:0.8rem}
+  .test-card p{font-size:0.9rem;color:var(--gray600);line-height:1.7;margin-bottom:1rem;font-style:italic}
+  .test-author{font-weight:700;font-size:0.88rem;color:var(--gray900)}
+  .test-role{font-size:0.78rem;color:var(--gray500)}
+
+  /* CTA */
+  .cta-sec{background:linear-gradient(135deg,var(--blue),var(--sky));padding:4rem 2rem;text-align:center}
+  .cta-sec h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:white;margin-bottom:0.8rem}
+  .cta-sec p{color:rgba(255,255,255,0.8);font-size:0.95rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .btn-white{background:white;color:var(--blue);font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.15)}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+
+  /* CONTACT */
+  .contact-sec{background:var(--gray50)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .contact-form{background:white;border:1px solid var(--gray200);border-radius:18px;padding:2.5rem}
+  .contact-form h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem}
+  .contact-form .csub{font-size:0.85rem;color:var(--gray500);margin-bottom:1.5rem}
+  .fg{margin-bottom:1rem}
+  .fg label{display:block;font-size:0.78rem;font-weight:600;color:var(--gray600);margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.3px}
+  .fg input,.fg textarea,.fg select{width:100%;border:1px solid var(--gray200);border-radius:8px;padding:0.75rem 1rem;font-size:0.88rem;color:var(--gray900);font-family:'Inter',sans-serif;outline:none;transition:all 0.25s;background:white}
+  .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.08)}
+  .fg textarea{resize:vertical;min-height:100px}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .contact-info-cards{display:flex;flex-direction:column;gap:1.2rem}
+  .ci-card{background:white;border:1px solid var(--gray200);border-radius:14px;padding:1.5rem;display:flex;align-items:start;gap:1rem;transition:all 0.3s}
+  .ci-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .ci-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ci-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.2rem}
+  .ci-card p{font-size:0.85rem;color:var(--gray500);line-height:1.5}
+  .ci-card a{color:var(--blue);text-decoration:none;font-weight:600;font-size:0.85rem}
+  .ci-card a:hover{color:var(--blue2)}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:var(--gray400);padding:4rem 2rem 2rem}
+  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;max-width:1200px;margin:0 auto}
+  .ft-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:white;margin-bottom:0.5rem}
+  .ft-logo span{color:var(--sky-light)}
+  footer h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem}
+  footer a{color:var(--gray400);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
+  footer a:hover{color:var(--sky-light)}
+  .ft-bottom{max-width:1200px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem}
+  .ft-bottom a{display:inline;padding:0}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    .mob-toggle{display:block}
+    .nav-links{position:fixed;top:70px;left:0;right:0;background:rgba(10,22,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:0.3rem;display:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .nav-links.open{display:flex}
+    .nav-phone{display:none}
+    .hero-inner{grid-template-columns:1fr;text-align:center}
+    .hero-content{max-width:100%}
+    .hero-stats{justify-content:center}
+    .hero-visual{display:none}
+    .hero-btns{justify-content:center}
+    .fleet-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .f-row{grid-template-columns:1fr}
+    .ft-grid{grid-template-columns:1fr;gap:2rem}
+    section{padding:3.5rem 1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+      <div class="nav-logo-text">Harbor <span>Car Rental</span></div>
+    </a>
+    <button class="mob-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <a href="#fleet" data-es="Flota">Fleet</a>
+      <a href="#why" data-es="Por Qué Nosotros">Why Us</a>
+      <a href="#how" data-es="Cómo Funciona">How It Works</a>
+      <a href="#contact" data-es="Contacto">Contact</a>
+      <a href="tel:+17865160659" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (786) 516-0659</a>
+      <a href="#contact" class="nav-cta" data-es="Reservar Ahora">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg> <span data-es="De Confianza en Miami">Trusted in Miami</span></div>
+      <h1 data-es="Alquila Tu Auto Perfecto en <span>Miami</span>">Rent Your Perfect Car in <span>Miami</span></h1>
+      <p class="hero-sub" data-es="Autos económicos, SUVs, lujo y más. Tarifas diarias, semanales y mensuales. Recogida y entrega gratis en Miami.">Economy cars, SUVs, luxury, and more. Daily, weekly, and monthly rates. Free pickup and delivery across Miami.</p>
+      <div class="hero-btns">
+        <a href="#fleet" class="btn btn-blue" data-es="Ver Flota">View Fleet <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="tel:+17865160659" class="btn btn-outline" data-es="Llamar Ahora">Call Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-es="500+">500+</div>
+          <div class="hero-stat-label" data-es="Clientes Satisfechos">Happy Customers</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-es="50+">50+</div>
+          <div class="hero-stat-label" data-es="Vehículos Disponibles">Vehicles Available</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.8<span style="font-size:1rem;color:var(--gold)">★</span></div>
+          <div class="hero-stat-label" data-es="Calificación en Google">Google Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="car-card">
+        <div class="car-card-label" data-es="Destacado de Hoy">Today's Featured</div>
+        <div class="car-card-img">
+          <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="30" width="140" height="35" rx="8" fill="rgba(37,99,235,0.15)" stroke="rgba(37,99,235,0.3)" stroke-width="1"/>
+            <circle cx="60" cy="65" r="12" fill="rgba(37,99,235,0.2)" stroke="rgba(37,99,235,0.4)" stroke-width="1.5"/>
+            <circle cx="140" cy="65" r="12" fill="rgba(37,99,235,0.2)" stroke="rgba(37,99,235,0.4)" stroke-width="1.5"/>
+            <rect x="45" y="15" width="90" height="22" rx="6" fill="rgba(14,165,233,0.1)" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+            <rect x="55" y="20" width="25" height="12" rx="3" fill="rgba(37,99,235,0.15)"/>
+            <rect x="95" y="20" width="25" height="12" rx="3" fill="rgba(37,99,235,0.15)"/>
+          </svg>
+        </div>
+        <div class="car-card-name" data-es="Toyota Camry 2024">Toyota Camry 2024</div>
+        <div class="car-card-type" data-es="Sedán Mediano — Automático">Midsize Sedan — Automatic</div>
+        <div class="car-card-features">
+          <div class="car-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> <span data-es="5 pasajeros">5 seats</span></div>
+          <div class="car-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/></svg> <span data-es="2 maletas">2 bags</span></div>
+          <div class="car-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span data-es="A/C">A/C</span></div>
+          <div class="car-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> <span data-es="Buen rendimiento">Fuel efficient</span></div>
+        </div>
+        <div class="car-card-price">
+          <span class="from" data-es="Desde">From</span>
+          <span class="amount">$45</span>
+          <span class="per" data-es="/día">/day</span>
+        </div>
+        <button class="car-book-btn" data-es="Reservar Este Auto">Book This Car</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FLEET -->
+<section class="fleet-sec" id="fleet">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label" data-es="NUESTRA FLOTA">OUR FLEET</div>
+      <h2 class="s-title" data-es="Encuentra Tu Auto Ideal">Find Your Perfect Ride</h2>
+      <p class="s-sub" data-es="Desde económicos hasta lujo, tenemos el vehículo perfecto para tu viaje.">From economy to luxury, we have the perfect vehicle for your trip.</p>
+    </div>
+    <div class="fleet-grid">
+      <div class="fleet-card">
+        <div class="fleet-card-img"><svg viewBox="0 0 120 60" fill="none"><rect x="15" y="20" width="90" height="25" rx="6" fill="var(--gray200)"/><circle cx="35" cy="45" r="8" fill="var(--gray300)"/><circle cx="85" cy="45" r="8" fill="var(--gray300)"/><rect x="25" y="10" width="55" height="15" rx="4" fill="var(--gray200)"/></svg></div>
+        <div class="fleet-tag economy" data-es="Económico">Economy</div>
+        <h3 data-es="Nissan Versa o similar">Nissan Versa or similar</h3>
+        <p class="fleet-desc" data-es="Perfecto para la ciudad. Ahorra combustible y muévete con facilidad.">Perfect for the city. Great on gas and easy to maneuver.</p>
+        <div class="fleet-card-bottom">
+          <div class="fleet-price">$29<span data-es="/día">/day</span></div>
+          <button class="fleet-book" data-es="Reservar">Book Now</button>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-card-img"><svg viewBox="0 0 120 60" fill="none"><rect x="15" y="18" width="90" height="27" rx="6" fill="var(--gray200)"/><circle cx="35" cy="45" r="9" fill="var(--gray300)"/><circle cx="85" cy="45" r="9" fill="var(--gray300)"/><rect x="22" y="8" width="60" height="16" rx="4" fill="var(--gray200)"/></svg></div>
+        <div class="fleet-tag suv" data-es="SUV">SUV</div>
+        <h3 data-es="Toyota RAV4 o similar">Toyota RAV4 or similar</h3>
+        <p class="fleet-desc" data-es="Espacio para toda la familia. Cómodo para viajes largos.">Room for the whole family. Comfortable for longer trips.</p>
+        <div class="fleet-card-bottom">
+          <div class="fleet-price">$59<span data-es="/día">/day</span></div>
+          <button class="fleet-book" data-es="Reservar">Book Now</button>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-card-img"><svg viewBox="0 0 120 60" fill="none"><rect x="15" y="20" width="90" height="24" rx="6" fill="var(--gray200)"/><circle cx="35" cy="44" r="8" fill="var(--gray300)"/><circle cx="85" cy="44" r="8" fill="var(--gray300)"/><rect x="20" y="10" width="65" height="15" rx="5" fill="var(--gray200)"/></svg></div>
+        <div class="fleet-tag luxury" data-es="Lujo">Luxury</div>
+        <h3 data-es="BMW 3 Series o similar">BMW 3 Series or similar</h3>
+        <p class="fleet-desc" data-es="Viaja con estilo. Ideal para negocios o eventos especiales.">Travel in style. Ideal for business or special occasions.</p>
+        <div class="fleet-card-bottom">
+          <div class="fleet-price">$89<span data-es="/día">/day</span></div>
+          <button class="fleet-book" data-es="Reservar">Book Now</button>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-card-img"><svg viewBox="0 0 120 60" fill="none"><rect x="10" y="15" width="100" height="30" rx="6" fill="var(--gray200)"/><circle cx="32" cy="45" r="9" fill="var(--gray300)"/><circle cx="88" cy="45" r="9" fill="var(--gray300)"/><rect x="15" y="6" width="70" height="16" rx="4" fill="var(--gray200)"/></svg></div>
+        <div class="fleet-tag van" data-es="Van / Grupo">Van / Group</div>
+        <h3 data-es="Chrysler Pacifica o similar">Chrysler Pacifica or similar</h3>
+        <p class="fleet-desc" data-es="Para grupos grandes o familias. Mucho espacio y comodidad.">For large groups or families. Plenty of space and comfort.</p>
+        <div class="fleet-card-bottom">
+          <div class="fleet-price">$75<span data-es="/día">/day</span></div>
+          <button class="fleet-book" data-es="Reservar">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label" data-es="POR QUÉ ELEGIRNOS">WHY CHOOSE US</div>
+      <h2 class="s-title" data-es="Alquiler de Autos Hecho Fácil">Car Rental Made Easy</h2>
+      <p class="s-sub" data-es="Sin sorpresas, sin cargos ocultos. Solo un servicio honesto y autos confiables.">No surprises, no hidden fees. Just honest service and reliable cars.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(37,99,235,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 data-es="Seguro Incluido">Insurance Included</h3>
+        <p data-es="Todos nuestros alquileres incluyen cobertura básica de seguro. Sin sorpresas.">All our rentals come with basic insurance coverage. No surprises.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(16,185,129,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 data-es="Mejores Precios">Best Prices</h3>
+        <p data-es="Tarifas competitivas en Miami con descuentos para alquileres semanales y mensuales.">Competitive Miami rates with discounts for weekly and monthly rentals.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(245,158,11,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3 data-es="Entrega Gratis">Free Delivery</h3>
+        <p data-es="Te llevamos el auto a tu hotel, aeropuerto o cualquier lugar en Miami.">We deliver the car to your hotel, airport, or anywhere in Miami.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(14,165,233,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sky)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3 data-es="Soporte 24/7">24/7 Support</h3>
+        <p data-es="Llámanos a cualquier hora. Estamos aquí para ayudarte siempre.">Call us anytime. We're always here to help you.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(139,92,246,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3 data-es="Reserva Flexible">Flexible Booking</h3>
+        <p data-es="Cancela o modifica tu reserva sin cargo hasta 24 horas antes.">Cancel or modify your booking free of charge up to 24 hours before.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:rgba(239,68,68,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 data-es="Ubicación en Miami">Miami Based</h3>
+        <p data-es="Somos locales. Conocemos Miami mejor que nadie y estamos cerca de ti.">We're local. We know Miami better than anyone and we're close to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec" id="how">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label" data-es="CÓMO FUNCIONA">HOW IT WORKS</div>
+      <h2 class="s-title" data-es="Alquila en 3 Pasos Simples">Rent in 3 Simple Steps</h2>
+      <p class="s-sub" data-es="Sin complicaciones. Reserva en minutos y recoge tu auto.">No hassle. Book in minutes and pick up your car.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <h3 data-es="Elige Tu Auto">Choose Your Car</h3>
+        <p data-es="Navega nuestra flota y selecciona el vehículo perfecto para tu viaje.">Browse our fleet and select the perfect vehicle for your trip.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <h3 data-es="Reserva en Línea o Llama">Book Online or Call</h3>
+        <p data-es="Reserva en minutos a través de nuestra web o llámanos directamente.">Book in minutes through our site or call us directly.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <h3 data-es="Recoge y Maneja">Pick Up & Drive</h3>
+        <p data-es="Recoge tu auto o te lo llevamos. Así de fácil.">Pick up your car or we'll deliver it. It's that easy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label" data-es="RESEÑAS">REVIEWS</div>
+      <h2 class="s-title" data-es="Lo Que Dicen Nuestros Clientes">What Our Customers Say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p data-es="Excelente servicio. Me entregaron el auto en el hotel en menos de 30 minutos. Muy profesionales.">"Great service. They delivered the car to my hotel in under 30 minutes. Very professional."</p>
+        <div class="test-author">Carlos M.</div>
+        <div class="test-role" data-es="Visitante de Venezuela">Visitor from Venezuela</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p data-es="Los mejores precios en Miami. Alquilé por un mes y me dieron un descuento increíble. 100% recomendado.">"Best prices in Miami. I rented for a month and they gave me an amazing discount. 100% recommended."</p>
+        <div class="test-author">Maria L.</div>
+        <div class="test-role" data-es="Residente de Miami">Miami Resident</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p data-es="El auto estaba impecable y el proceso fue super rápido. Hablan español que es un gran plus para mí.">"Car was spotless and the process was super fast. They speak Spanish which is a big plus for me."</p>
+        <div class="test-author">Diego R.</div>
+        <div class="test-role" data-es="Viajero de negocios">Business Traveler</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2 data-es="Listo Para Manejar?">Ready to Hit the Road?</h2>
+  <p data-es="Reserva tu auto hoy y recibe entrega gratis en Miami. Sin depósitos sorpresa, sin cargos ocultos.">Book your car today and get free delivery in Miami. No surprise deposits, no hidden charges.</p>
+  <a href="tel:+17865160659" class="btn btn-white" data-es="Llama al (786) 516-0659">Call (786) 516-0659</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="con">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2 data-es="Solicita una Cotización">Request a Quote</h2>
+        <p class="csub" data-es="Cuéntanos qué necesitas y te respondemos rápido.">Tell us what you need and we'll get back to you fast.</p>
+        <form>
+          <div class="f-row">
+            <div class="fg">
+              <label data-es="Nombre">Name</label>
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="fg">
+              <label data-es="Teléfono">Phone</label>
+              <input type="tel" placeholder="(786) 000-0000" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label data-es="Correo Electrónico">Email</label>
+            <input type="email" placeholder="you@email.com" required>
+          </div>
+          <div class="f-row">
+            <div class="fg">
+              <label data-es="Fecha de Recogida">Pickup Date</label>
+              <input type="date" required>
+            </div>
+            <div class="fg">
+              <label data-es="Fecha de Devolución">Return Date</label>
+              <input type="date" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label data-es="Tipo de Vehículo">Vehicle Type</label>
+            <select>
+              <option value="" disabled selected data-es="Selecciona un tipo">Select a type</option>
+              <option value="economy" data-es="Económico">Economy</option>
+              <option value="midsize" data-es="Sedán Mediano">Midsize Sedan</option>
+              <option value="suv">SUV</option>
+              <option value="luxury" data-es="Lujo">Luxury</option>
+              <option value="van">Van / Minivan</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label data-es="Notas Adicionales">Additional Notes</label>
+            <textarea placeholder="e.g. I need a child seat, pickup at the airport..." data-es-placeholder="ej. Necesito silla de bebé, recogida en el aeropuerto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center" data-es="Enviar Solicitud">Send Request</button>
+        </form>
+      </div>
+      <div class="contact-info-cards">
+        <div class="ci-card">
+          <div class="ci-icon" style="background:rgba(37,99,235,0.08)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <h3 data-es="Llámanos">Call Us</h3>
+            <p><a href="tel:+17865160659">(786) 516-0659</a></p>
+            <p style="font-size:0.78rem;color:var(--gray400);margin-top:0.2rem" data-es="Disponible 7 días a la semana">Available 7 days a week</p>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon" style="background:rgba(16,185,129,0.08)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <h3 data-es="Escríbenos">Email Us</h3>
+            <p><a href="mailto:harborcarrental@gmail.com">harborcarrental@gmail.com</a></p>
+            <p style="font-size:0.78rem;color:var(--gray400);margin-top:0.2rem" data-es="Respondemos en menos de 1 hora">We respond within 1 hour</p>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon" style="background:rgba(245,158,11,0.08)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h3 data-es="Ubicación">Location</h3>
+            <p data-es="Miami, Florida">Miami, Florida</p>
+            <p style="font-size:0.78rem;color:var(--gray400);margin-top:0.2rem" data-es="Entrega gratis en toda la ciudad">Free delivery city-wide</p>
+          </div>
+        </div>
+        <div class="ci-card" style="background:linear-gradient(135deg,rgba(37,99,235,0.04),rgba(14,165,233,0.04));border-color:rgba(37,99,235,0.15)">
+          <div class="ci-icon" style="background:rgba(14,165,233,0.1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <h3 data-es="Horario">Hours</h3>
+            <p data-es="Lunes — Domingo: 8AM – 8PM">Monday — Sunday: 8AM – 8PM</p>
+            <p style="font-size:0.78rem;color:var(--gray400);margin-top:0.2rem" data-es="Recogidas fuera de horario disponibles">After-hours pickups available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">Harbor <span>Car Rental</span></div>
+      <p style="margin-top:0.5rem;max-width:280px;line-height:1.6" data-es="Alquiler de autos confiable y económico en Miami. Servicio personalizado en inglés y español.">Reliable and affordable car rental in Miami. Personalized service in English and Spanish.</p>
+    </div>
+    <div>
+      <h4 data-es="Flota">Fleet</h4>
+      <a href="#fleet" data-es="Económico">Economy</a>
+      <a href="#fleet">SUV</a>
+      <a href="#fleet" data-es="Lujo">Luxury</a>
+      <a href="#fleet">Van / Minivan</a>
+    </div>
+    <div>
+      <h4 data-es="Empresa">Company</h4>
+      <a href="#why" data-es="Por Qué Nosotros">Why Us</a>
+      <a href="#how" data-es="Cómo Funciona">How It Works</a>
+      <a href="#contact" data-es="Contacto">Contact</a>
+    </div>
+    <div>
+      <h4 data-es="Contacto">Contact</h4>
+      <a href="tel:+17865160659">(786) 516-0659</a>
+      <a href="mailto:harborcarrental@gmail.com">harborcarrental@gmail.com</a>
+      <p style="margin-top:0.3rem" data-es="Miami, FL">Miami, FL</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>&copy; 2026 Harbor Car Rental. All rights reserved.</p>
+    <p data-es="Sitio web por FNDI">Website by <a href="https://fndi.tech" style="color:var(--sky-light)">FNDI</a></p>
+  </div>
+</footer>
+
+<script>
+// Language toggle
+var currentLang = 'en';
+function toggleLang(){
+  currentLang = currentLang === 'en' ? 'es' : 'en';
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'ES' : 'EN';
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    if(!el.hasAttribute('data-en')) el.setAttribute('data-en', el.innerHTML);
+    el.innerHTML = currentLang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+  });
+}
+
+// Nav scroll
+window.addEventListener('scroll', function(){
+  var nav = document.querySelector('nav');
+  if(window.scrollY > 10) nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+  else nav.style.boxShadow = 'none';
+});
+</script>
+</body>
+</html>
