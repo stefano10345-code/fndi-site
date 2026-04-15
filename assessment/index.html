@@ -1871,12 +1871,12 @@
             submitData.append('_captcha', 'false');
             submitData.append('_template', 'table');
 
-            fetch('https://formsubmit.co/ajax/support@fndi.tech', {
+            fetch('https://formsubmit.co/ajax/stefano@fndi.tech', {
                 method: 'POST',
                 body: submitData
             }).catch(err => console.log('Lead send failed:', err));
 
-            // Also send to Stefano's email as backup
+            // Also send to Mac
             const submitData2 = new FormData();
             submitData2.append('name', name);
             submitData2.append('email', email);
@@ -1886,10 +1886,10 @@
             submitData2.append('_captcha', 'false');
             submitData2.append('_template', 'table');
 
-            fetch('https://formsubmit.co/ajax/stefano@mrben.com', {
+            fetch('https://formsubmit.co/ajax/dokeefe@fndi.tech', {
                 method: 'POST',
                 body: submitData2
-            }).catch(err => console.log('Backup send failed:', err));
+            }).catch(err => console.log('Mac send failed:', err));
         }
 
         // Scoring logic
