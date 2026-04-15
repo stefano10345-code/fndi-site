@@ -755,6 +755,46 @@
             line-height: 1.5;
         }
 
+        /* Lead Capture Card */
+        .lead-capture-card {
+            background: linear-gradient(135deg, rgba(124,58,237,0.03), rgba(124,58,237,0.06));
+            border: 1px solid rgba(124,58,237,0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1rem;
+        }
+        .lead-capture-inner {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .lead-benefit {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid rgba(124,58,237,0.08);
+        }
+        .lead-benefit-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .lead-benefit strong {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        .lead-capture-card input:focus {
+            outline: none;
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+        }
+        .form-submitting .btn-primary {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
         .results-cta-section {
             background: white;
             border-radius: 12px;
@@ -971,6 +1011,7 @@
                 <div class="step-dot" data-step="4">4</div>
                 <div class="step-dot" data-step="5">5</div>
                 <div class="step-dot" data-step="6">6</div>
+                <div class="step-dot" data-step="7">✓</div>
             </div>
 
             <div class="progress-bar">
@@ -1461,6 +1502,47 @@
                     </div>
                 </div>
 
+                <!-- Step 7: Get Your Results -->
+                <div class="step-content" data-step="7">
+                    <div class="step-icon">📩</div>
+                    <h2 class="step-title">Get Your Results</h2>
+                    <p class="step-subtitle">Enter your info below and we'll send your full report</p>
+
+                    <div class="lead-capture-card">
+                        <div class="lead-capture-inner">
+                            <div class="lead-benefit">
+                                <div class="lead-benefit-icon">📊</div>
+                                <div>
+                                    <strong>Your personalized report includes:</strong>
+                                    <ul style="margin-top:8px;padding-left:18px;font-size:0.85rem;color:var(--text2);line-height:1.8">
+                                        <li>Overall health score out of 100</li>
+                                        <li>Category-by-category breakdown</li>
+                                        <li>Estimated monthly revenue loss</li>
+                                        <li>Prioritized action plan for your business</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top:24px">
+                                <label for="contactName">Your Name *</label>
+                                <input type="text" id="contactName" name="contactName" placeholder="John Smith" required style="width:100%;padding:14px 16px;border:1.5px solid rgba(124,58,237,0.15);border-radius:10px;font-family:'Inter',sans-serif;font-size:0.95rem;transition:all 0.3s">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" placeholder="john@business.com" required style="width:100%;padding:14px 16px;border:1.5px solid rgba(124,58,237,0.15);border-radius:10px;font-family:'Inter',sans-serif;font-size:0.95rem;transition:all 0.3s">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number *</label>
+                                <input type="tel" id="contactPhone" name="contactPhone" placeholder="(305) 555-1234" required style="width:100%;padding:14px 16px;border:1.5px solid rgba(124,58,237,0.15);border-radius:10px;font-family:'Inter',sans-serif;font-size:0.95rem;transition:all 0.3s">
+                            </div>
+
+                            <p style="font-size:0.75rem;color:var(--text3);margin-top:8px;text-align:center">We'll never spam you. This is just so we can send your results and follow up if you'd like help.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Button Group -->
                 <div class="button-group">
                     <button type="button" class="btn-secondary" id="backBtn" onclick="previousStep()" style="display: none;">Back</button>
@@ -1618,7 +1700,7 @@
 
         // Wizard logic
         let currentStep = 1;
-        const totalSteps = 6;
+        const totalSteps = 7;
 
         function updateStepIndicator() {
             const dots = document.querySelectorAll('.step-dot');
@@ -1643,7 +1725,7 @@
                 nextBtn.textContent = 'Next';
             } else if (currentStep === totalSteps) {
                 backBtn.style.display = 'block';
-                nextBtn.textContent = 'Get Results';
+                nextBtn.textContent = 'Get My Results →';
             } else {
                 backBtn.style.display = 'block';
                 nextBtn.textContent = 'Next';
@@ -1693,7 +1775,24 @@
             }
 
             if (currentStep === totalSteps) {
-                // Calculate and show results
+                // Step 7: validate contact info, send to Web3Forms, then show results
+                const contactName = document.getElementById('contactName').value.trim();
+                const contactEmail = document.getElementById('contactEmail').value.trim();
+                const contactPhone = document.getElementById('contactPhone').value.trim();
+                if (!contactName || !contactEmail || !contactPhone) {
+                    alert('Please fill in all fields to see your results.');
+                    return;
+                }
+                // Calculate scores first
+                const form = document.getElementById('assessmentForm');
+                const formData = new FormData(form);
+                const scores = calculateScores(formData);
+                const overallScore = Math.round((scores.phone + scores.website + scores.crm + scores.marketing + scores.operations) / 5);
+
+                // Send lead data via Web3Forms
+                sendLeadData(contactName, contactEmail, contactPhone, formData, scores, overallScore);
+
+                // Show results immediately (don't wait for email to send)
                 calculateAndShowResults();
             } else {
                 currentStep++;
@@ -1732,6 +1831,50 @@
                 }
             }
         });
+
+        // Send lead data to Web3Forms (emails results to FNDI team)
+        function sendLeadData(name, email, phone, formData, scores, overallScore) {
+            const businessName = formData.get('businessName') || 'Not provided';
+            const industry = formData.get('industry') || 'Not provided';
+            const monthlyRevenue = formData.get('monthlyRevenue') || 'Not provided';
+
+            // Build the weakest areas list
+            const categories = [
+                { name: 'Phone & Communication', score: scores.phone },
+                { name: 'Website & Online Presence', score: scores.website },
+                { name: 'Lead Management (CRM)', score: scores.crm },
+                { name: 'Marketing', score: scores.marketing },
+                { name: 'Operations', score: scores.operations }
+            ].sort((a, b) => a.score - b.score);
+
+            const weakAreas = categories.filter(c => c.score < 70).map(c => c.name + ': ' + c.score + '/100').join(', ');
+            const allScores = categories.map(c => c.name + ': ' + c.score + '/100').join('\n');
+
+            const statusLabel = overallScore >= 80 ? 'Excellent' : overallScore >= 50 ? 'Good' : overallScore >= 30 ? 'Needs Improvement' : 'Critical';
+
+            // Send via Web3Forms
+            const payload = {
+                access_key: 'YOUR_WEB3FORMS_KEY',
+                subject: '🔥 New Assessment: ' + businessName + ' — Score: ' + overallScore + '/100 (' + statusLabel + ')',
+                from_name: 'FNDI Assessment Tool',
+                name: name,
+                email: email,
+                phone: phone,
+                business_name: businessName,
+                industry: industry,
+                monthly_revenue: monthlyRevenue,
+                overall_score: overallScore + '/100 — ' + statusLabel,
+                category_scores: allScores,
+                weakest_areas: weakAreas || 'None (all areas above 70)',
+                message: 'New business assessment completed on fndi.tech/assessment.\n\nContact: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nBusiness: ' + businessName + '\nIndustry: ' + industry + '\nRevenue: ' + monthlyRevenue + '\n\nOverall Score: ' + overallScore + '/100 (' + statusLabel + ')\n\n' + allScores + '\n\nWeakest Areas: ' + (weakAreas || 'None')
+            };
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.log('Lead send failed:', err));
+        }
 
         // Scoring logic
         function calculateScores(formData) {
