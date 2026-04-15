@@ -32,16 +32,16 @@
     }
 
     :root {
-      --bg: #030308;
-      --surface: #0a0a1a;
-      --card: #0f0f24;
+      --bg:#ffffff;
+      --surface:#f8f7ff;
+      --card:#ffffff;
       --accent: #7c3aed;
       --accent2: #a78bfa;
       --cyan: #22d3ee;
       --green: #34d399;
       --orange: #fb923c;
-      --text: #f1f5f9;
-      --text2: #94a3b8;
+      --text:#1a1a2e;
+      --text2:#4a4a68;
       --text3: #64748b;
       --glass: rgba(255, 255, 255, 0.02);
       --glass-border: rgba(255, 255, 255, 0.06);
@@ -564,7 +564,14 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+  /* ===== WHITE/PURPLE AI THEME ===== */
+  #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
+  .ai-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.15),rgba(167,139,250,0.25),rgba(124,58,237,0.15),transparent);position:relative;overflow:visible}
+  .ai-divider::after{content:'';position:absolute;top:-2px;left:0;width:60px;height:5px;background:rgba(124,58,237,0.4);border-radius:5px;filter:blur(3px);animation:dividerGlow 4s ease-in-out infinite}
+  @keyframes dividerGlow{0%{left:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 60px);opacity:0}}
+
+</style>
 </head>
 <body>
   <nav>
@@ -839,5 +846,23 @@
     });
   </script>
 <script src="/lang.js"></script>
+<script>
+/* ===== AI PARTICLE MESH ===== */
+(function(){
+  const canvas=document.getElementById('particleCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let w,h,particles=[];
+  const PC=45,CD=160,SP=0.25;
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  class P{constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-0.5)*SP;this.vy=(Math.random()-0.5)*SP;this.r=Math.random()*1.5+0.8;this.c=Math.random()>0.5?'124,58,237':'167,139,250';this.a=Math.random()*0.4+0.15;}
+  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1;}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();}}
+  for(let i=0;i<PC;i++)particles.push(new P());
+  function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
+  animate();
+})();
+</script>
 </body>
 </html>
