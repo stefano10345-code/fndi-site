@@ -1832,13 +1832,12 @@
             }
         });
 
-        // Send lead data to Web3Forms (emails results to FNDI team)
+        // Send lead data to FormSubmit (emails results to FNDI team)
         function sendLeadData(name, email, phone, formData, scores, overallScore) {
             const businessName = formData.get('businessName') || 'Not provided';
             const industry = formData.get('industry') || 'Not provided';
             const monthlyRevenue = formData.get('monthlyRevenue') || 'Not provided';
 
-            // Build the weakest areas list
             const categories = [
                 { name: 'Phone & Communication', score: scores.phone },
                 { name: 'Website & Online Presence', score: scores.website },
@@ -1849,31 +1848,48 @@
 
             const weakAreas = categories.filter(c => c.score < 70).map(c => c.name + ': ' + c.score + '/100').join(', ');
             const allScores = categories.map(c => c.name + ': ' + c.score + '/100').join('\n');
-
             const statusLabel = overallScore >= 80 ? 'Excellent' : overallScore >= 50 ? 'Good' : overallScore >= 30 ? 'Needs Improvement' : 'Critical';
 
-            // Send via Web3Forms
-            const payload = {
-                access_key: 'YOUR_WEB3FORMS_KEY',
-                subject: '🔥 New Assessment: ' + businessName + ' — Score: ' + overallScore + '/100 (' + statusLabel + ')',
-                from_name: 'FNDI Assessment Tool',
-                name: name,
-                email: email,
-                phone: phone,
-                business_name: businessName,
-                industry: industry,
-                monthly_revenue: monthlyRevenue,
-                overall_score: overallScore + '/100 — ' + statusLabel,
-                category_scores: allScores,
-                weakest_areas: weakAreas || 'None (all areas above 70)',
-                message: 'New business assessment completed on fndi.tech/assessment.\n\nContact: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nBusiness: ' + businessName + '\nIndustry: ' + industry + '\nRevenue: ' + monthlyRevenue + '\n\nOverall Score: ' + overallScore + '/100 (' + statusLabel + ')\n\n' + allScores + '\n\nWeakest Areas: ' + (weakAreas || 'None')
-            };
+            const message = 'New business assessment completed on fndi.tech/assessment.\n\n' +
+                'Contact: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Phone: ' + phone + '\n' +
+                'Business: ' + businessName + '\n' +
+                'Industry: ' + industry + '\n' +
+                'Revenue: ' + monthlyRevenue + '\n\n' +
+                'OVERALL SCORE: ' + overallScore + '/100 (' + statusLabel + ')\n\n' +
+                allScores + '\n\n' +
+                'Weakest Areas: ' + (weakAreas || 'All areas above 70');
 
-            fetch('https://api.web3forms.com/submit', {
+            // Send to support@fndi.tech via FormSubmit (no API key needed)
+            const submitData = new FormData();
+            submitData.append('name', name);
+            submitData.append('email', email);
+            submitData.append('phone', phone);
+            submitData.append('_subject', 'New Assessment: ' + businessName + ' — Score: ' + overallScore + '/100 (' + statusLabel + ')');
+            submitData.append('message', message);
+            submitData.append('_captcha', 'false');
+            submitData.append('_template', 'table');
+
+            fetch('https://formsubmit.co/ajax/support@fndi.tech', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: submitData
             }).catch(err => console.log('Lead send failed:', err));
+
+            // Also send to Stefano's email as backup
+            const submitData2 = new FormData();
+            submitData2.append('name', name);
+            submitData2.append('email', email);
+            submitData2.append('phone', phone);
+            submitData2.append('_subject', 'New Assessment: ' + businessName + ' — Score: ' + overallScore + '/100 (' + statusLabel + ')');
+            submitData2.append('message', message);
+            submitData2.append('_captcha', 'false');
+            submitData2.append('_template', 'table');
+
+            fetch('https://formsubmit.co/ajax/stefano@mrben.com', {
+                method: 'POST',
+                body: submitData2
+            }).catch(err => console.log('Backup send failed:', err));
         }
 
         // Scoring logic
