@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Business Assessment | FNDI — Find Out What's Costing You Money</title>
+    <meta name="description" content="Take FNDI's free 2-minute business health assessment. Get your score across phone coverage, website, CRM, marketing, and operations — plus a personalized action plan.">
+    <meta name="keywords" content="business assessment, free assessment, business health score, digital transformation">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FNDI">
+    <meta name="canonical" href="https://fndi.tech/assessment">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fndi.tech/assessment">
+    <meta property="og:title" content="Free Business Assessment | FNDI">
+    <meta property="og:description" content="Take FNDI's free 2-minute business health assessment. Get your score across phone coverage, website, CRM, marketing, and operations.">
+    <meta property="og:site_name" content="FNDI">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fndi.tech/assessment">
+    <meta name="twitter:title" content="Free Business Assessment | FNDI">
+    <meta name="twitter:description" content="Take FNDI's free 2-minute business health assessment.">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f8f7ff;
+            --card: #ffffff;
+            --accent: #7c3aed;
+            --accent2: #6d28d9;
+            --accent3: #5b21b6;
+            --green: #16a34a;
+            --green2: #22c55e;
+            --cyan: #7c3aed;
+            --text: #1a1a2e;
+            --text2: #4a4a68;
+            --text3: #6b7280;
+            --glass: rgba(124, 58, 237, 0.03);
+            --glass-border: rgba(124, 58, 237, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 40%;
+            left: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom-color: rgba(124, 58, 237, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-i {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 1.25rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .logo span {
+            letter-spacing: 2px;
+        }
+
+        .logo small {
+            font-size: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text3);
+            margin-top: 0.15rem;
+        }
+
+        .n-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .n-links a {
+            text-decoration: none;
+            color: var(--text2);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .n-links a:hover {
+            color: var(--accent);
+        }
+
+        .n-links .n-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .n-links .n-cta:hover {
+            background: var(--accent2);
+            color: white;
+        }
+
+        .mob-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .mob-toggle {
+                display: block;
+            }
+
+            .n-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+                display: none;
+                border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            }
+
+            .n-links.open {
+                display: flex;
+            }
+
+            .nav-i {
+                padding: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--text2);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            border: 1px solid var(--glass-border);
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Wizard Section */
+        .wizard-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: var(--surface);
+            position: relative;
+            z-index: 2;
+        }
+
+        .wizard-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--glass-border);
+            z-index: 0;
+        }
+
+        .step-dot {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text3);
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step-dot.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .step-dot.completed {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+        }
+
+        .step-dot:hover:not(.active):not(.completed) {
+            border-color: var(--accent);
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--glass-border);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .wizard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-content {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-content.active {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: var(--text3);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-card {
+            padding: 1rem;
+            border: 2px solid var(--glass-border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+        }
+
+        .radio-card:hover {
+            border-color: var(--accent);
+            background: rgba(124, 58, 237, 0.02);
+        }
+
+        .radio-card input[type="radio"] {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+        }
+
+        .radio-card.selected {
+            border-color: var(--accent);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .radio-label {
+            flex: 1;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: space-between;
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--glass-border);
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: var(--bg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-section.active {
+            display: block;
+        }
+
+        .results-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .score-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .score-circle {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .score-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .score-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+        }
+
+        .score-label {
+            font-size: 0.95rem;
+            color: var(--text3);
+            margin-top: 0.5rem;
+        }
+
+        .score-status {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .score-status.excellent {
+            color: var(--green);
+        }
+
+        .score-status.good {
+            color: #2563eb;
+        }
+
+        .score-status.needs-improvement {
+            color: #f59e0b;
+        }
+
+        .score-status.critical {
+            color: #ef4444;
+        }
+
+        .breakdown-section {
+            margin: 3rem 0;
+        }
+
+        .breakdown-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .category-bar {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .category-score {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+
+        .bar-container {
+            height: 8px;
+            background: var(--surface);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green) 0%, var(--green2) 100%);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .bar-fill.good {
+            background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+        }
+
+        .bar-fill.average {
+            background: linear-gradient(90deg, #f59e0b 0%, #f97316 100%);
+        }
+
+        .bar-fill.poor {
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .revenue-loss-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+            border: 2px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .revenue-loss-label {
+            color: var(--text3);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .revenue-loss-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .revenue-loss-description {
+            color: var(--text2);
+            font-size: 0.95rem;
+        }
+
+        .recommendations-section {
+            margin: 3rem 0;
+        }
+
+        .recommendation-card {
+            background: white;
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .recommendation-priority {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .recommendation-title {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .recommendation-description {
+            color: var(--text2);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .results-cta-section {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin: 3rem 0;
+        }
+
+        .results-cta-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .results-cta-subtitle {
+            color: var(--text2);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .cta-link {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
+        }
+
+        .retake-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .retake-button:hover {
+            border-color: var(--accent);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .ft-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .ft-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+        }
+
+        footer h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .ft-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                margin-bottom: 0.75rem;
+            }
+
+            .trust-badges {
+                gap: 1rem;
+                margin: 1.5rem 0 2rem;
+            }
+
+            .badge {
+                padding: 0.6rem 1rem;
+                gap: 0.5rem;
+            }
+
+            .wizard-card {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .step-content {
+                padding: 1.5rem;
+            }
+
+            .score-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .score-number {
+                font-size: 2.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-i">
+            <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
+            <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
+            <div class="n-links">
+                <a href="/#services">Services</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
+                <a href="/assessment" style="color:var(--accent);font-weight:600">Free Assessment</a>
+                <a href="/book" class="n-cta">Book a Call</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>How Healthy Is Your Business?</h1>
+        <p class="subtitle">Take our free 2-minute assessment. Get your score across 5 critical areas — and find out exactly what's costing you customers.</p>
+
+        <div class="trust-badges">
+            <div class="badge">
+                <span class="badge-icon">⏱️</span>
+                <span>2 Minutes</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">✨</span>
+                <span>100% Free</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">⚡</span>
+                <span>Instant Results</span>
+            </div>
+        </div>
+
+        <button class="cta-primary" onclick="document.querySelector('.wizard-section').scrollIntoView({behavior: 'smooth'})">
+            Start Assessment
+        </button>
+    </section>
+
+    <!-- Wizard Section -->
+    <section class="wizard-section">
+        <div class="wizard-container">
+            <div class="step-indicator">
+                <div class="step-dot active" data-step="1">1</div>
+                <div class="step-dot" data-step="2">2</div>
+                <div class="step-dot" data-step="3">3</div>
+                <div class="step-dot" data-step="4">4</div>
+                <div class="step-dot" data-step="5">5</div>
+                <div class="step-dot" data-step="6">6</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 16.66%"></div>
+            </div>
+
+            <form class="wizard-card" id="assessmentForm">
+                <!-- Step 1: Your Business -->
+                <div class="step-content active" data-step="1">
+                    <div class="step-icon">🏢</div>
+                    <h2 class="step-title">Your Business</h2>
+                    <p class="step-description">Let's start with the basics</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Business Name</label>
+                        <input type="text" class="form-input" name="businessName" placeholder="Enter your business name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Industry</label>
+                        <select class="form-select" name="industry" required>
+                            <option value="">Select an industry</option>
+                            <option value="dental">Dental</option>
+                            <option value="medical">Medical</option>
+                            <option value="home-service">Home Service</option>
+                            <option value="salon">Salon / Spa</option>
+                            <option value="legal">Legal</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Monthly Revenue</label>
+                        <select class="form-select" name="monthlyRevenue" required>
+                            <option value="">Select revenue range</option>
+                            <option value="0-10k">Under $10,000</option>
+                            <option value="10-25k">$10,000 - $25,000</option>
+                            <option value="25-50k">$25,000 - $50,000</option>
+                            <option value="50-100k">$50,000 - $100,000</option>
+                            <option value="100k+">Over $100,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Number of Employees</label>
+                        <select class="form-select" name="employees" required>
+                            <option value="">Select range</option>
+                            <option value="1">Just me</option>
+                            <option value="2-5">2-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11-20">11-20</option>
+                            <option value="20+">20+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 2: Phone & Communication -->
+                <div class="step-content" data-step="2">
+                    <div class="step-icon">☎️</div>
+                    <h2 class="step-title">Phone & Communication</h2>
+                    <p class="step-description">How do you handle customer calls?</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Calls per day</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="callsPerDay" value="1-5" required>
+                                <span class="radio-label">1-5 calls</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="callsPerDay" value="5-15" required>
+                                <span class="radio-label">5-15 calls</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="callsPerDay" value="15-30" required>
+                                <span class="radio-label">15-30 calls</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="callsPerDay" value="30+" required>
+                                <span class="radio-label">30+ calls</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Calls you miss (%)</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="missedCalls" value="0-10" required>
+                                <span class="radio-label">0-10%</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="missedCalls" value="10-25" required>
+                                <span class="radio-label">10-25%</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="missedCalls" value="25-50" required>
+                                <span class="radio-label">25-50%</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="missedCalls" value="50+" required>
+                                <span class="radio-label">50%+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">After-hours coverage?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="afterHours" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="afterHours" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Average hold time</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="holdTime" value="under30" required>
+                                <span class="radio-label">Under 30 seconds</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="holdTime" value="30s-2m" required>
+                                <span class="radio-label">30 seconds - 2 minutes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="holdTime" value="2-5m" required>
+                                <span class="radio-label">2-5 minutes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="holdTime" value="5m+" required>
+                                <span class="radio-label">5+ minutes</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Website & Online Presence -->
+                <div class="step-content" data-step="3">
+                    <div class="step-icon">🌐</div>
+                    <h2 class="step-title">Website & Online Presence</h2>
+                    <p class="step-description">Your digital storefront</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Have a website?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="haveWebsite" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="haveWebsite" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mobile-friendly?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="mobileFriendly" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="mobileFriendly" value="not-sure" required>
+                                <span class="radio-label">Not sure</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="mobileFriendly" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Online booking available?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="onlineBooking" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="onlineBooking" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">On Google's first page?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="googleFirstPage" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="googleFirstPage" value="not-sure" required>
+                                <span class="radio-label">Not sure</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="googleFirstPage" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Have a chatbot?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="hasChatbot" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="hasChatbot" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Lead Management -->
+                <div class="step-content" data-step="4">
+                    <div class="step-icon">🎯</div>
+                    <h2 class="step-title">Lead Management</h2>
+                    <p class="step-description">How do you track and manage leads?</p>
+
+                    <div class="form-group">
+                        <label class="form-label">How do you track leads?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="leadTracking" value="crm" required>
+                                <span class="radio-label">CRM (Pipedrive, HubSpot, etc.)</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="leadTracking" value="spreadsheet" required>
+                                <span class="radio-label">Spreadsheet (Excel, Google Sheets)</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="leadTracking" value="paper" required>
+                                <span class="radio-label">Paper / Notebook</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="leadTracking" value="memory" required>
+                                <span class="radio-label">Memory / No system</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Response time to new leads</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="responseTime" value="under5" required>
+                                <span class="radio-label">Under 5 minutes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="responseTime" value="5-30" required>
+                                <span class="radio-label">5-30 minutes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="responseTime" value="30m-1h" required>
+                                <span class="radio-label">30 minutes - 1 hour</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="responseTime" value="1h+" required>
+                                <span class="radio-label">1+ hours</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="responseTime" value="next-day" required>
+                                <span class="radio-label">Next day</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Follow-ups per lead</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="followUpsPerLead" value="0" required>
+                                <span class="radio-label">0 follow-ups</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="followUpsPerLead" value="1" required>
+                                <span class="radio-label">1 follow-up</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="followUpsPerLead" value="2" required>
+                                <span class="radio-label">2 follow-ups</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="followUpsPerLead" value="3+" required>
+                                <span class="radio-label">3+ follow-ups</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Automated follow-up sequences?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="automatedFollowup" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="automatedFollowup" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Marketing -->
+                <div class="step-content" data-step="5">
+                    <div class="step-icon">📢</div>
+                    <h2 class="step-title">Marketing</h2>
+                    <p class="step-description">Your growth strategy</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Social media posting frequency</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="socialFrequency" value="daily" required>
+                                <span class="radio-label">Daily</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="socialFrequency" value="few-week" required>
+                                <span class="radio-label">Few times per week</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="socialFrequency" value="weekly" required>
+                                <span class="radio-label">Weekly</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="socialFrequency" value="rarely" required>
+                                <span class="radio-label">Rarely</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="socialFrequency" value="never" required>
+                                <span class="radio-label">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Run paid ads?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="paidAds" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="paidAds" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="adBudgetGroup" style="display: none;">
+                        <label class="form-label">Monthly ad budget</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="adBudget" value="under500" required>
+                                <span class="radio-label">Under $500</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adBudget" value="500-1500" required>
+                                <span class="radio-label">$500-1,500</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adBudget" value="1500-3000" required>
+                                <span class="radio-label">$1,500-3,000</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adBudget" value="3000+" required>
+                                <span class="radio-label">$3,000+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Know your cost per lead?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="knowCPL" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="knowCPL" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Google Business Profile?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="googleBusiness" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="googleBusiness" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Operations -->
+                <div class="step-content" data-step="6">
+                    <div class="step-icon">⚙️</div>
+                    <h2 class="step-title">Operations</h2>
+                    <p class="step-description">How efficient are your processes?</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Automated appointment reminders?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="automatedReminders" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="automatedReminders" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Hours per week on manual admin tasks</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="adminHours" value="0-5" required>
+                                <span class="radio-label">0-5 hours</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adminHours" value="5-10" required>
+                                <span class="radio-label">5-10 hours</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adminHours" value="10-20" required>
+                                <span class="radio-label">10-20 hours</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="adminHours" value="20+" required>
+                                <span class="radio-label">20+ hours</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Automated invoicing?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="automatedInvoicing" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="automatedInvoicing" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Collect reviews automatically?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="autoReviews" value="yes" required>
+                                <span class="radio-label">Yes</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="autoReviews" value="no" required>
+                                <span class="radio-label">No</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button Group -->
+                <div class="button-group">
+                    <button type="button" class="btn-secondary" id="backBtn" onclick="previousStep()" style="display: none;">Back</button>
+                    <button type="button" class="btn-primary" id="nextBtn" onclick="nextStep()">Next</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection">
+        <div class="results-container">
+            <!-- Score Card -->
+            <div class="score-card">
+                <div class="score-circle">
+                    <svg class="score-svg" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="95" fill="none" stroke="var(--glass-border)" stroke-width="8"/>
+                        <circle id="scoreCircle" cx="100" cy="100" r="95" fill="none" stroke="var(--green)" stroke-width="8"
+                            style="stroke-dasharray: 596; stroke-dashoffset: 596; transform: rotate(-90deg); transform-origin: center; transition: stroke-dashoffset 1.5s ease;"/>
+                    </svg>
+                    <div class="score-text">
+                        <div class="score-number" id="scoreNumber">0</div>
+                        <div class="score-label">out of 100</div>
+                    </div>
+                </div>
+                <div class="score-status" id="scoreStatus">Loading...</div>
+                <p style="color: var(--text2); margin-top: 1rem;">Your overall business health score across all 5 critical areas</p>
+            </div>
+
+            <!-- Category Breakdown -->
+            <div class="breakdown-section">
+                <h3 class="breakdown-title">Score Breakdown</h3>
+
+                <div class="category-bar">
+                    <div class="category-header">
+                        <span class="category-name">☎️ Phone & Communication</span>
+                        <span class="category-score" id="phoneScore">0</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="phoneBar" style="width: 0%; transition: width 1s ease 0.2s;"></div>
+                    </div>
+                </div>
+
+                <div class="category-bar">
+                    <div class="category-header">
+                        <span class="category-name">🌐 Website & Online Presence</span>
+                        <span class="category-score" id="websiteScore">0</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="websiteBar" style="width: 0%; transition: width 1s ease 0.3s;"></div>
+                    </div>
+                </div>
+
+                <div class="category-bar">
+                    <div class="category-header">
+                        <span class="category-name">🎯 Lead Management (CRM)</span>
+                        <span class="category-score" id="crmScore">0</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="crmBar" style="width: 0%; transition: width 1s ease 0.4s;"></div>
+                    </div>
+                </div>
+
+                <div class="category-bar">
+                    <div class="category-header">
+                        <span class="category-name">📢 Marketing</span>
+                        <span class="category-score" id="marketingScore">0</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="marketingBar" style="width: 0%; transition: width 1s ease 0.5s;"></div>
+                    </div>
+                </div>
+
+                <div class="category-bar">
+                    <div class="category-header">
+                        <span class="category-name">⚙️ Operations</span>
+                        <span class="category-score" id="operationsScore">0</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="operationsBar" style="width: 0%; transition: width 1s ease 0.6s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Loss Card -->
+            <div class="revenue-loss-card">
+                <div class="revenue-loss-label">Estimated Monthly Revenue Loss</div>
+                <div class="revenue-loss-amount" id="revenueLoss">$0</div>
+                <div class="revenue-loss-description">Based on your score and typical conversion patterns</div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="recommendations-section" id="recommendationsSection">
+                <h3 class="breakdown-title">Your Action Plan</h3>
+                <div id="recommendationsContainer"></div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="results-cta-section">
+                <h2 class="results-cta-title">Ready to Transform Your Business?</h2>
+                <p class="results-cta-subtitle">Schedule a 30-minute consultation. We'll walk through your results and show you exactly how to fix what's broken.</p>
+                <a href="/book" class="cta-link">Book a Free Consultation</a>
+                <br>
+                <button class="retake-button" onclick="retakeAssessment()">Retake Assessment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="ft-inner">
+            <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+                <div style="max-width:300px">
+                    <div class="ft-logo"><span>FNDI</span></div>
+                    <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
+                    <p style="margin-top:0.8rem">AI solutions for small businesses. Based in Miami.</p>
+                    <div style="display:flex;gap:1rem;margin-top:1rem">
+                        <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <a href="/#services">Services</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/portfolio">Portfolio</a>
+                    <a href="/about">About</a>
+                    <a href="/book">Book a Call</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+                    <a href="tel:+17868430145">(786) 843-0145</a>
+                    <p style="margin-top:0.3rem">Miami, FL</p>
+                </div>
+            </div>
+            <div class="ft-bottom">
+                <p>© 2026 FNDI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/lang.js"></script>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Wizard logic
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function updateStepIndicator() {
+            const dots = document.querySelectorAll('.step-dot');
+            dots.forEach((dot, index) => {
+                const step = index + 1;
+                dot.classList.remove('active', 'completed');
+                if (step === currentStep) {
+                    dot.classList.add('active');
+                } else if (step < currentStep) {
+                    dot.classList.add('completed');
+                }
+            });
+
+            const progress = (currentStep / totalSteps) * 100;
+            document.querySelector('.progress-fill').style.width = progress + '%';
+
+            const backBtn = document.getElementById('backBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (currentStep === 1) {
+                backBtn.style.display = 'none';
+                nextBtn.textContent = 'Next';
+            } else if (currentStep === totalSteps) {
+                backBtn.style.display = 'block';
+                nextBtn.textContent = 'Get Results';
+            } else {
+                backBtn.style.display = 'block';
+                nextBtn.textContent = 'Next';
+            }
+
+            // Show/hide ad budget question based on paid ads answer
+            const paidAdsRadios = document.querySelectorAll('input[name="paidAds"]');
+            const adBudgetGroup = document.getElementById('adBudgetGroup');
+            const checkedAds = Array.from(paidAdsRadios).find(r => r.checked);
+            if (checkedAds) {
+                adBudgetGroup.style.display = checkedAds.value === 'yes' ? 'block' : 'none';
+            }
+        }
+
+        function showStep(step) {
+            const contents = document.querySelectorAll('.step-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            const activeContent = document.querySelector(`.step-content[data-step="${step}"]`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+            updateStepIndicator();
+        }
+
+        function nextStep() {
+            const form = document.getElementById('assessmentForm');
+            const activeContent = document.querySelector(`.step-content[data-step="${currentStep}"]`);
+
+            // Check if all required fields in current step are filled
+            const requiredFields = activeContent.querySelectorAll('[required]');
+            let allFilled = true;
+            requiredFields.forEach(field => {
+                if (field.type === 'radio') {
+                    const radioGroup = document.querySelectorAll(`input[name="${field.name}"]`);
+                    const isChecked = Array.from(radioGroup).some(r => r.checked);
+                    if (!isChecked) allFilled = false;
+                } else if (!field.value) {
+                    allFilled = false;
+                }
+            });
+
+            if (!allFilled) {
+                alert('Please answer all questions before continuing.');
+                return;
+            }
+
+            if (currentStep === totalSteps) {
+                // Calculate and show results
+                calculateAndShowResults();
+            } else {
+                currentStep++;
+                showStep(currentStep);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Radio card selection styling
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                const group = e.target.name;
+                const cards = document.querySelectorAll(`input[name="${group}"]`);
+                cards.forEach(radio => {
+                    radio.parentElement.classList.toggle('selected', radio.checked);
+                });
+
+                // Show ad budget if paid ads is yes
+                if (group === 'paidAds') {
+                    const adBudgetGroup = document.getElementById('adBudgetGroup');
+                    if (e.target.value === 'yes') {
+                        adBudgetGroup.style.display = 'block';
+                    } else {
+                        adBudgetGroup.style.display = 'none';
+                        // Clear ad budget selection
+                        document.querySelectorAll('input[name="adBudget"]').forEach(r => r.checked = false);
+                    }
+                }
+            }
+        });
+
+        // Scoring logic
+        function calculateScores(formData) {
+            // Phone Score
+            let phoneScore = 0;
+            const callsPerDay = formData.get('callsPerDay');
+            if (callsPerDay === '30+') phoneScore += 20;
+            else if (callsPerDay === '15-30') phoneScore += 15;
+            else if (callsPerDay === '5-15') phoneScore += 10;
+            else if (callsPerDay === '1-5') phoneScore += 5;
+
+            const missedCalls = formData.get('missedCalls');
+            if (missedCalls === '0-10') phoneScore += 25;
+            else if (missedCalls === '10-25') phoneScore += 20;
+            else if (missedCalls === '25-50') phoneScore += 10;
+            else if (missedCalls === '50+') phoneScore += 5;
+
+            const afterHours = formData.get('afterHours');
+            phoneScore += afterHours === 'yes' ? 25 : 10;
+
+            const holdTime = formData.get('holdTime');
+            if (holdTime === 'under30') phoneScore += 30;
+            else if (holdTime === '30s-2m') phoneScore += 25;
+            else if (holdTime === '2-5m') phoneScore += 15;
+            else if (holdTime === '5m+') phoneScore += 5;
+
+            // Website Score
+            let websiteScore = 0;
+            const haveWebsite = formData.get('haveWebsite');
+            websiteScore += haveWebsite === 'yes' ? 20 : 0;
+
+            const mobileFriendly = formData.get('mobileFriendly');
+            if (mobileFriendly === 'yes') websiteScore += 25;
+            else if (mobileFriendly === 'not-sure') websiteScore += 12;
+
+            const onlineBooking = formData.get('onlineBooking');
+            websiteScore += onlineBooking === 'yes' ? 25 : 0;
+
+            const googleFirstPage = formData.get('googleFirstPage');
+            if (googleFirstPage === 'yes') websiteScore += 20;
+            else if (googleFirstPage === 'not-sure') websiteScore += 10;
+
+            const hasChatbot = formData.get('hasChatbot');
+            websiteScore += hasChatbot === 'yes' ? 10 : 0;
+
+            // CRM Score
+            let crmScore = 0;
+            const leadTracking = formData.get('leadTracking');
+            if (leadTracking === 'crm') crmScore += 30;
+            else if (leadTracking === 'spreadsheet') crmScore += 15;
+            else if (leadTracking === 'paper') crmScore += 5;
+
+            const responseTime = formData.get('responseTime');
+            if (responseTime === 'under5') crmScore += 25;
+            else if (responseTime === '5-30') crmScore += 20;
+            else if (responseTime === '30m-1h') crmScore += 10;
+            else if (responseTime === '1h+') crmScore += 5;
+            else if (responseTime === 'next-day') crmScore += 2;
+
+            const followUps = formData.get('followUpsPerLead');
+            if (followUps === '3+') crmScore += 25;
+            else if (followUps === '2') crmScore += 20;
+            else if (followUps === '1') crmScore += 10;
+
+            const automatedFollowup = formData.get('automatedFollowup');
+            crmScore += automatedFollowup === 'yes' ? 20 : 5;
+
+            // Marketing Score
+            let marketingScore = 0;
+            const socialFrequency = formData.get('socialFrequency');
+            if (socialFrequency === 'daily') marketingScore += 25;
+            else if (socialFrequency === 'few-week') marketingScore += 20;
+            else if (socialFrequency === 'weekly') marketingScore += 15;
+            else if (socialFrequency === 'rarely') marketingScore += 5;
+
+            const paidAds = formData.get('paidAds');
+            marketingScore += paidAds === 'yes' ? 20 : 0;
+
+            if (paidAds === 'yes') {
+                const adBudget = formData.get('adBudget');
+                if (adBudget === '3000+') marketingScore += 20;
+                else if (adBudget === '1500-3000') marketingScore += 15;
+                else if (adBudget === '500-1500') marketingScore += 10;
+                else if (adBudget === 'under500') marketingScore += 5;
+            }
+
+            const knowCPL = formData.get('knowCPL');
+            marketingScore += knowCPL === 'yes' ? 20 : 5;
+
+            const googleBusiness = formData.get('googleBusiness');
+            marketingScore += googleBusiness === 'yes' ? 15 : 0;
+
+            // Operations Score
+            let operationsScore = 0;
+            const automatedReminders = formData.get('automatedReminders');
+            operationsScore += automatedReminders === 'yes' ? 25 : 0;
+
+            const adminHours = formData.get('adminHours');
+            if (adminHours === '0-5') operationsScore += 30;
+            else if (adminHours === '5-10') operationsScore += 20;
+            else if (adminHours === '10-20') operationsScore += 10;
+            else if (adminHours === '20+') operationsScore += 5;
+
+            const automatedInvoicing = formData.get('automatedInvoicing');
+            operationsScore += automatedInvoicing === 'yes' ? 25 : 0;
+
+            const autoReviews = formData.get('autoReviews');
+            operationsScore += autoReviews === 'yes' ? 20 : 5;
+
+            return {
+                phone: phoneScore,
+                website: websiteScore,
+                crm: crmScore,
+                marketing: marketingScore,
+                operations: operationsScore
+            };
+        }
+
+        function calculateAndShowResults() {
+            const form = document.getElementById('assessmentForm');
+            const formData = new FormData(form);
+            const scores = calculateScores(formData);
+            const overallScore = Math.round((scores.phone + scores.website + scores.crm + scores.marketing + scores.operations) / 5);
+
+            // Store data for results display
+            window.assessmentResults = {
+                scores: scores,
+                overall: overallScore,
+                formData: formData
+            };
+
+            // Show results section
+            const wizardSection = document.querySelector('.wizard-section');
+            const resultsSection = document.getElementById('resultsSection');
+            wizardSection.style.display = 'none';
+            resultsSection.classList.add('active');
+
+            // Animate score reveal
+            setTimeout(() => {
+                displayResults(overallScore, scores, formData);
+            }, 100);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function displayResults(overallScore, scores, formData) {
+            // Update overall score
+            document.getElementById('scoreNumber').textContent = overallScore;
+
+            // Determine status
+            let status = '';
+            let statusClass = '';
+            if (overallScore >= 80) {
+                status = 'Excellent';
+                statusClass = 'excellent';
+            } else if (overallScore >= 50) {
+                status = 'Good';
+                statusClass = 'good';
+            } else if (overallScore >= 30) {
+                status = 'Needs Improvement';
+                statusClass = 'needs-improvement';
+            } else {
+                status = 'Critical';
+                statusClass = 'critical';
+            }
+
+            const statusEl = document.getElementById('scoreStatus');
+            statusEl.textContent = status;
+            statusEl.className = `score-status ${statusClass}`;
+
+            // Animate circle
+            const circumference = 2 * Math.PI * 95;
+            const strokeDashoffset = circumference - (overallScore / 100) * circumference;
+            const circle = document.getElementById('scoreCircle');
+
+            // Set color based on score
+            if (overallScore >= 80) {
+                circle.style.stroke = 'var(--green)';
+            } else if (overallScore >= 50) {
+                circle.style.stroke = '#2563eb';
+            } else if (overallScore >= 30) {
+                circle.style.stroke = '#f59e0b';
+            } else {
+                circle.style.stroke = '#ef4444';
+            }
+
+            setTimeout(() => {
+                circle.style.strokeDashoffset = strokeDashoffset;
+            }, 100);
+
+            // Update category scores
+            document.getElementById('phoneScore').textContent = scores.phone;
+            document.getElementById('websiteScore').textContent = scores.website;
+            document.getElementById('crmScore').textContent = scores.crm;
+            document.getElementById('marketingScore').textContent = scores.marketing;
+            document.getElementById('operationsScore').textContent = scores.operations;
+
+            // Update bars
+            updateBar('phoneBar', scores.phone);
+            updateBar('websiteBar', scores.website);
+            updateBar('crmBar', scores.crm);
+            updateBar('marketingBar', scores.marketing);
+            updateBar('operationsBar', scores.operations);
+
+            // Calculate and display revenue loss
+            const monthlyRevenue = getMonthlyRevenueValue(formData.get('monthlyRevenue'));
+            const revenueLoss = Math.round(monthlyRevenue * (100 - overallScore) / 100 * 0.15);
+            document.getElementById('revenueLoss').textContent = '$' + revenueLoss.toLocaleString();
+
+            // Generate recommendations
+            generateRecommendations(scores);
+        }
+
+        function updateBar(barId, score) {
+            const bar = document.getElementById(barId);
+            const percentage = score;
+
+            // Determine color
+            if (score >= 70) {
+                bar.className = 'bar-fill good';
+            } else if (score >= 50) {
+                bar.className = 'bar-fill average';
+            } else {
+                bar.className = 'bar-fill poor';
+            }
+
+            setTimeout(() => {
+                bar.style.width = percentage + '%';
+            }, 100);
+        }
+
+        function getMonthlyRevenueValue(range) {
+            const midpoints = {
+                '0-10k': 5000,
+                '10-25k': 17500,
+                '25-50k': 37500,
+                '50-100k': 75000,
+                '100k+': 150000
+            };
+            return midpoints[range] || 0;
+        }
+
+        function generateRecommendations(scores) {
+            const recommendations = [];
+
+            if (scores.phone < 70) {
+                recommendations.push({
+                    priority: 1,
+                    category: 'Phone & Communication',
+                    title: 'You Need an AI Voice Agent',
+                    description: 'Missing calls and slow response times are costing you customers. Our AI voice agent answers calls 24/7, schedules appointments, and qualifies leads automatically.',
+                    service: 'ai-voice-agent'
+                });
+            }
+
+            if (scores.website < 70) {
+                recommendations.push({
+                    priority: 1,
+                    category: 'Website & Online Presence',
+                    title: 'You Need a Modern Website',
+                    description: 'Your online presence is critical. A mobile-friendly website with online booking and a chatbot can increase conversions by 30%+.',
+                    service: 'website'
+                });
+            }
+
+            if (scores.crm < 70) {
+                recommendations.push({
+                    priority: scores.phone < 70 || scores.website < 70 ? 2 : 1,
+                    category: 'Lead Management',
+                    title: 'You Need CRM Setup & Automation',
+                    description: 'Track leads properly. Automate follow-ups. Convert more prospects. A solid CRM system is the backbone of business growth.',
+                    service: 'crm-automation'
+                });
+            }
+
+            if (scores.marketing < 70) {
+                recommendations.push({
+                    priority: 2,
+                    category: 'Marketing',
+                    title: 'You Need Social Media + Meta Ads',
+                    description: 'Consistent content and targeted ads drive consistent leads. We handle your posting schedule and ad strategy so you focus on delivery.',
+                    service: 'marketing'
+                });
+            }
+
+            if (scores.operations < 70) {
+                recommendations.push({
+                    priority: 2,
+                    category: 'Operations',
+                    title: 'You Need Workflow Automation',
+                    description: 'Automate reminders, invoicing, and admin tasks. Save 10-20 hours per week and reduce no-shows by 40%+.',
+                    service: 'automation'
+                });
+            }
+
+            const container = document.getElementById('recommendationsContainer');
+            container.innerHTML = '';
+
+            // Sort by priority
+            recommendations.sort((a, b) => a.priority - b.priority);
+
+            recommendations.forEach((rec, index) => {
+                const card = document.createElement('div');
+                card.className = 'recommendation-card';
+                card.innerHTML = `
+                    <div class="recommendation-priority">#${rec.priority} Priority</div>
+                    <div class="recommendation-title">${rec.title}</div>
+                    <div class="recommendation-description">${rec.description}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function retakeAssessment() {
+            currentStep = 1;
+            document.getElementById('assessmentForm').reset();
+            document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('selected'));
+            document.getElementById('adBudgetGroup').style.display = 'none';
+
+            const wizardSection = document.querySelector('.wizard-section');
+            const resultsSection = document.getElementById('resultsSection');
+            resultsSection.classList.remove('active');
+            wizardSection.style.display = 'block';
+
+            showStep(1);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        showStep(1);
+    </script>
+
+    <!-- Particle Canvas Script -->
+    <script>
+        (function(){
+            const canvas=document.getElementById('particleCanvas');
+            if(!canvas)return;
+            const ctx=canvas.getContext('2d');
+            let w,h,particles=[];
+            const PC=45,CD=160,SP=0.25;
+            function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
+            window.addEventListener('resize',resize);
+            resize();
+            class P{
+                constructor(){
+                    this.x=Math.random()*w;
+                    this.y=Math.random()*h;
+                    this.vx=(Math.random()-0.5)*SP;
+                    this.vy=(Math.random()-0.5)*SP;
+                    this.r=Math.random()*1.5+0.8;
+                    this.c=Math.random()>0.5?'124,58,237':'167,139,250';
+                    this.a=Math.random()*0.4+0.15;
+                }
+                update(){
+                    this.x+=this.vx;
+                    this.y+=this.vy;
+                    if(this.x<0||this.x>w)this.vx*=-1;
+                    if(this.y<0||this.y>h)this.vy*=-1;
+                }
+                draw(){
+                    ctx.beginPath();
+                    ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+                    ctx.fillStyle='rgba('+this.c+','+this.a+')';
+                    ctx.fill();
+                }
+            }
+            for(let i=0;i<PC;i++)particles.push(new P());
+            function animate(){
+                ctx.clearRect(0,0,w,h);
+                for(let i=0;i<particles.length;i++){
+                    particles[i].update();
+                    particles[i].draw();
+                    for(let j=i+1;j<particles.length;j++){
+                        const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);
+                        if(d<CD){
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x,particles[i].y);
+                            ctx.lineTo(particles[j].x,particles[j].y);
+                            ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';
+                            ctx.lineWidth=0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+    </script>
+</body>
+</html>
