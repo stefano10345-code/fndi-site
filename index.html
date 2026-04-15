@@ -542,6 +542,58 @@
   .hero-ai-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);color:var(--accent2);font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.45rem 1.2rem;border-radius:20px;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.2s both}
   .hero-ai-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 
+  /* ===== BEFORE/AFTER COMPARISON SLIDER ===== */
+  .compare-sec{background:var(--surface);overflow:hidden}
+  .compare-wrap{max-width:900px;margin:0 auto}
+  .compare-slider{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.08);cursor:col-resize;-webkit-user-select:none;user-select:none}
+  .compare-side{display:flex;min-height:400px}
+  .compare-before,.compare-after{flex:1;padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+  .compare-before{background:linear-gradient(135deg,#fef2f2,#fff1f2);border-right:none}
+  .compare-after{background:linear-gradient(135deg,#f0fdf4,#ecfdf5)}
+  .compare-divider{position:absolute;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--accent),#a78bfa);z-index:10;cursor:col-resize;left:50%;transform:translateX(-50%)}
+  .compare-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:white;border-radius:50%;box-shadow:0 4px 20px rgba(124,58,237,0.2);display:flex;align-items:center;justify-content:center;z-index:11;border:2px solid var(--accent)}
+  .compare-handle svg{width:20px;height:20px;stroke:var(--accent)}
+  .compare-label{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem}
+  .compare-before .compare-label{color:#dc2626}
+  .compare-after .compare-label{color:#16a34a}
+  .compare-label-dot{width:8px;height:8px;border-radius:50%}
+  .compare-before .compare-label-dot{background:#dc2626}
+  .compare-after .compare-label-dot{background:#16a34a}
+  .compare-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.2rem;font-size:0.88rem;line-height:1.5}
+  .compare-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .compare-icon.bad{background:rgba(220,38,38,0.08)}
+  .compare-icon.bad svg{stroke:#dc2626}
+  .compare-icon.good{background:rgba(22,163,74,0.08)}
+  .compare-icon.good svg{stroke:#16a34a}
+  .compare-item strong{font-weight:700;display:block;margin-bottom:0.15rem}
+  .compare-item span{color:var(--text2);font-size:0.8rem}
+  .compare-stat{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;margin-top:1.2rem;display:flex;align-items:baseline;gap:0.4rem}
+  .compare-stat span:last-child{font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+  .bad-stat{color:#dc2626}
+  .bad-stat span:last-child{color:#ef4444}
+  .good-stat{color:#16a34a}
+  .good-stat span:last-child{color:#22c55e}
+  .compare-stat-num{font-size:2.2rem}
+  @media(max-width:768px){
+    .compare-side{flex-direction:column;min-height:auto}
+    .compare-before,.compare-after{padding:2rem 1.5rem}
+    .compare-divider,.compare-handle{display:none}
+    .compare-before{border-bottom:2px solid rgba(124,58,237,0.1);border-right:none}
+  }
+
+  /* ===== ENHANCED SCROLL ANIMATIONS ===== */
+  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim.v{opacity:1;transform:translateY(0)}
+  .anim-left{opacity:0;transform:translateX(-60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-left.v{opacity:1;transform:translateX(0)}
+  .anim-right{opacity:0;transform:translateX(60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-right.v{opacity:1;transform:translateX(0)}
+  .anim-scale{opacity:0;transform:scale(0.85);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-scale.v{opacity:1;transform:scale(1)}
+  .anim-rotate{opacity:0;transform:rotate(-5deg) translateY(30px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1)}
+  .anim-rotate.v{opacity:1;transform:rotate(0) translateY(0)}
+  .parallax-slow{transition:transform 0.1s linear}
+
   /* RESPONSIVE */
   @media(max-width:768px){
     section{padding:4rem 1.5rem}
@@ -635,7 +687,7 @@
         <a href="#free-audit" class="btn btn-o" data-es="Obtener Auditoría Gratis">Get Free Audit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
       </div>
     </div>
-    <div class="h-visual">
+    <div class="h-visual anim-right">
       <div class="hero-mockup">
         <div class="hero-mockup-bar"><div class="hero-mockup-dot"></div><div class="hero-mockup-dot"></div><div class="hero-mockup-dot"></div></div>
         <div class="hero-mockup-body">
@@ -818,19 +870,19 @@
       <p class="s-sub anim d3" data-es="No somos una agencia grande que te trata como un número. Somos fundadores construyendo herramientas reales para negocios reales.">We're not a big agency that treats you like a number. We're founders building real tools for real businesses.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card anim d1">
+      <div class="why-card anim anim-scale d1">
         <div class="why-icon i1"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="why-num">24/7</div>
         <h3 data-es="Siempre Trabajando">Always Working</h3>
         <p data-es="Tus herramientas de IA no duermen, no toman días libres, y nunca pierden un cliente — ni a las 3 AM.">Your AI tools don't sleep, don't take days off, and never miss a customer — even at 3 AM.</p>
       </div>
-      <div class="why-card anim d2">
+      <div class="why-card anim anim-scale d2">
         <div class="why-icon i2"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="why-num">1:1</div>
         <h3 data-es="Atención Personalizada">Personal Attention</h3>
         <p data-es="Trabajas directamente con nuestro equipo fundador. Sin intermediarios, sin vueltas — solo resultados.">You work directly with our founding team. No account managers, no runaround — just results.</p>
       </div>
-      <div class="why-card anim d3">
+      <div class="why-card anim anim-scale d3">
         <div class="why-icon i3"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09c-.658.003-1.25.396-1.51 1z"/></svg></div>
         <div class="why-num">100%</div>
         <h3 data-es="Hecho a Medida">Custom Built</h3>
@@ -890,6 +942,69 @@
 </section>
 
 <div class="ai-divider"></div>
+
+<!-- BEFORE / AFTER COMPARISON -->
+<section class="compare-sec">
+  <div class="con">
+    <div class="s-head">
+      <div class="s-label anim d1" data-es="ANTES VS DESPUÉS">BEFORE VS AFTER</div>
+      <h2 class="s-title anim d2" data-es="Ve la Diferencia que la IA Hace">See the Difference AI Makes</h2>
+      <p class="s-sub anim d3" data-es="Lo que cambia cuando tu negocio funciona con IA 24/7.">What changes when your business runs on AI 24/7.</p>
+    </div>
+    <div class="compare-wrap anim d2">
+      <div class="compare-slider" id="compareSlider">
+        <div class="compare-side">
+          <div class="compare-before">
+            <div class="compare-label before-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-es="Sin IA">Without AI</span>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+              <div><strong data-es="Llamadas Perdidas">Missed Calls</strong><span data-es="62% de llamadas van a buzón de voz">62% of calls go to voicemail</span></div>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><strong data-es="Respuesta Lenta">Slow Response</strong><span data-es="Horas o días para responder">Hours or days to reply</span></div>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div><strong data-es="Ingresos Perdidos">Lost Revenue</strong><span data-es="$2,500+/mes en clientes perdidos">$2,500+/mo in lost customers</span></div>
+            </div>
+            <div class="compare-stat bad-stat"><span class="compare-stat-num" data-target="38" data-suffix="%">0%</span> <span data-es="tasa de reservas">booking rate</span></div>
+          </div>
+          <div class="compare-after">
+            <div class="compare-label after-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span data-es="Con FNDI AI">With FNDI AI</span>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div>
+              <div><strong data-es="Cobertura 24/7">24/7 Coverage</strong><span data-es="Cada llamada es contestada al instante">Every call answered instantly</span></div>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+              <div><strong data-es="Reservas Instantáneas">Instant Booking</strong><span data-es="Los clientes agendan en segundos">Customers book in seconds</span></div>
+            </div>
+            <div class="compare-item">
+              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+              <div><strong data-es="Ingresos Recuperados">Recovered Revenue</strong><span data-es="+$4,200/mes en nuevas reservas">+$4,200/mo in new bookings</span></div>
+            </div>
+            <div class="compare-stat good-stat"><span class="compare-stat-num" data-target="94" data-suffix="%">0%</span> <span data-es="tasa de reservas">booking rate</span></div>
+          </div>
+        </div>
+        <div class="compare-divider" id="compareDivider">
+          <div class="compare-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ai-divider"></div>
 <section class="how-sec">
   <!-- Floating AI elements -->
   <div class="ai-float ai-float-3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
@@ -934,7 +1049,7 @@
       <p class="s-sub anim d3" data-es="Envía tu sitio web y cuéntanos tus desafíos. Nuestro equipo analizará tu negocio y te enviará un informe personalizado con soluciones en 48 horas. Completamente gratis.">Submit your website and tell us your challenges. Our team will analyze your business and send you a custom report with solutions within 48 hours. Completely free.</p>
     </div>
     <div class="audit-split anim d2">
-      <div class="audit-visual">
+      <div class="audit-visual anim-left">
         <div class="audit-img">
           <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=700&fit=crop&crop=center" alt="AI business analytics dashboard" loading="lazy">
         </div>
@@ -947,7 +1062,7 @@
           <div><div class="afc-text">Report Ready</div><div class="afc-sub">Within 48 hours</div></div>
         </div>
       </div>
-      <div class="audit-box">
+      <div class="audit-box anim-right">
         <div class="audit-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="100% Gratis — Sin Compromiso">100% Free — No Strings Attached</span></div>
         <h2 data-es="Obtén Tu Informe Personalizado de IA">Get Your Custom AI Report</h2>
         <p class="audit-sub" data-es="Cuéntanos sobre tu negocio y te mostraremos exactamente qué herramientas pueden ayudarte a captar más clientes, ahorrar tiempo y aumentar ingresos.">Tell us about your business and we'll show you exactly which tools can help you capture more customers, save time, and increase revenue.</p>
@@ -1375,24 +1490,129 @@ document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
   animate();
 })();
 
-/* ===== AI ENHANCED: COUNTER ANIMATION ===== */
-function animateCounters(){
-  const nums=document.querySelectorAll('.why-num');
-  nums.forEach(el=>{
-    if(el.dataset.animated)return;
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight*0.85){
-      el.dataset.animated='true';
-      const text=el.textContent;
-      if(text.includes('/')||text.includes('%')){
-        el.style.opacity='0';el.style.transform='translateY(20px)';
-        el.style.transition='all 0.6s cubic-bezier(0.16,1,0.3,1)';
-        setTimeout(()=>{el.style.opacity='1';el.style.transform='translateY(0)';},100);
+/* ===== ANIMATED NUMBER COUNTERS ===== */
+(function(){
+  function animateValue(el, start, end, duration, prefix, suffix){
+    const range = end - start;
+    const startTime = performance.now();
+    function step(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      const current = Math.round(start + range * ease);
+      el.textContent = prefix + current.toLocaleString() + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Hero dashboard stats
+  const heroObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting || entry.target.dataset.counted) return;
+      entry.target.dataset.counted = 'true';
+      const el = entry.target;
+      const text = el.textContent.trim();
+      if(text === '847') animateValue(el, 0, 847, 2000, '', '');
+      else if(text === '94%') animateValue(el, 0, 94, 1800, '', '%');
+      else if(text === '$52K') animateValue(el, 0, 52, 1600, '$', 'K');
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.hmc-val').forEach(el => heroObs.observe(el));
+
+  // Why section stats
+  const whyObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting || entry.target.dataset.counted) return;
+      entry.target.dataset.counted = 'true';
+      const el = entry.target;
+      const text = el.textContent.trim();
+      el.style.opacity = '0'; el.style.transform = 'scale(0.5)';
+      el.style.transition = 'all 0.7s cubic-bezier(0.16,1,0.3,1)';
+      setTimeout(() => {
+        el.style.opacity = '1'; el.style.transform = 'scale(1)';
+        if(text === '100%') animateValue(el, 0, 100, 1400, '', '%');
+      }, 150);
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.why-num').forEach(el => whyObs.observe(el));
+
+  // Before/after comparison stats
+  const compareObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting || entry.target.dataset.counted) return;
+      entry.target.dataset.counted = 'true';
+      const el = entry.target;
+      const target = parseInt(el.dataset.target) || 0;
+      const suffix = el.dataset.suffix || '';
+      animateValue(el, 0, target, 1800, '', suffix);
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.compare-stat-num').forEach(el => compareObs.observe(el));
+})();
+
+/* ===== BEFORE/AFTER COMPARISON SLIDER ===== */
+(function(){
+  const slider = document.getElementById('compareSlider');
+  const divider = document.getElementById('compareDivider');
+  if(!slider || !divider) return;
+
+  let isDragging = false;
+
+  function updatePosition(clientX){
+    const rect = slider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(15, Math.min(85, pct));
+    divider.style.left = pct + '%';
+    const before = slider.querySelector('.compare-before');
+    const after = slider.querySelector('.compare-after');
+    if(before) before.style.flex = '0 0 ' + pct + '%';
+    if(after) after.style.flex = '0 0 ' + (100 - pct) + '%';
+  }
+
+  divider.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
+  divider.addEventListener('touchstart', (e) => { isDragging = true; }, {passive: true});
+
+  document.addEventListener('mousemove', (e) => { if(isDragging) updatePosition(e.clientX); });
+  document.addEventListener('touchmove', (e) => { if(isDragging) updatePosition(e.touches[0].clientX); }, {passive: true});
+
+  document.addEventListener('mouseup', () => { isDragging = false; });
+  document.addEventListener('touchend', () => { isDragging = false; });
+
+  slider.addEventListener('click', (e) => { updatePosition(e.clientX); });
+})();
+
+/* ===== ENHANCED SCROLL ANIMATIONS ===== */
+(function(){
+  const animObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('v');
       }
+    });
+  }, {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+
+  document.querySelectorAll('.anim-left,.anim-right,.anim-scale,.anim-rotate').forEach(el => {
+    animObs.observe(el);
+  });
+
+  // Subtle parallax on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if(!ticking){
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        document.querySelectorAll('.parallax-slow').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const offset = (rect.top + rect.height/2 - window.innerHeight/2) * 0.04;
+          el.style.transform = 'translateY(' + offset + 'px)';
+        });
+        ticking = false;
+      });
+      ticking = true;
     }
   });
-}
-window.addEventListener('scroll',animateCounters);
+})();
 
 // ===== FREE AUDIT FORM =====
 async function submitAudit(e){
