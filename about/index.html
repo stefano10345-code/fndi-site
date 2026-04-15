@@ -75,34 +75,55 @@
   .story-content p:last-child{margin-bottom:0}
   .story-highlight{border-left:3px solid var(--accent);padding-left:1.5rem;margin:2.5rem 0;font-size:1.1rem;color:var(--text);font-weight:500;line-height:1.7;font-style:italic}
 
-  /* FOUNDERS */
-  .founders-sec{background:var(--bg)}
-  .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
-  .founder-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;transition:all 0.4s}
-  .founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--cyan));opacity:0;transition:opacity 0.3s}
-  .founder-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.12);box-shadow:0 16px 50px rgba(124,58,237,0.08)}
-  .founder-card:hover::before{opacity:1}
-  .founder-avatar{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem;font-weight:800;font-family:'Space Grotesk','Inter',sans-serif}
-  .founder-avatar.sf{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(34,211,238,0.1));color:var(--accent2)}
-  .founder-avatar.do{background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(52,211,153,0.1));color:var(--cyan)}
-  .founder-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.2rem}
-  .founder-role{font-size:0.82rem;color:var(--accent2);font-weight:600;margin-bottom:1.2rem}
-  .founder-bio{font-size:0.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
-  .founder-links{display:flex;gap:1rem}
-  .founder-links a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;transition:color 0.3s}
-  .founder-links a:hover{color:var(--accent2)}
+  /* TIMELINE */
+  .timeline-sec{background:var(--bg)}
+  .timeline{position:relative;max-width:700px;margin:0 auto;padding-left:40px}
+  .timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(124,58,237,0.1))}
+  .tl-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+  .tl-item:last-child{margin-bottom:0}
+  .tl-dot{position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid white;box-shadow:0 0 0 3px rgba(124,58,237,0.15)}
+  .tl-date{font-size:0.7rem;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.3rem}
+  .tl-item h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.3rem}
+  .tl-item p{font-size:0.85rem;color:var(--text2);line-height:1.6}
 
-  /* DECORATIVE SVG */
-  .decorator{display:flex;justify-content:center;margin:3rem 0;opacity:0.5}
-  .decorator svg{max-width:200px;height:auto}
+  /* FOUNDERS */
+  .founders-sec{background:var(--surface)}
+  .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
+  .founder-card{background:white;border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;position:relative;transition:all 0.4s}
+  .founder-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.12);box-shadow:0 16px 50px rgba(124,58,237,0.08)}
+  .founder-photo{width:100%;height:280px;object-fit:cover;display:block}
+  .founder-info{padding:2rem}
+  .founder-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.2rem}
+  .founder-role{font-size:0.82rem;color:var(--accent2);font-weight:600;margin-bottom:1rem}
+  .founder-bio{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem}
+  .founder-links{display:flex;gap:1rem}
+  .founder-links a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;transition:color 0.3s;padding:0.4rem 0.8rem;border-radius:8px;background:rgba(124,58,237,0.04)}
+  .founder-links a:hover{color:var(--accent2);background:rgba(124,58,237,0.08)}
+
+  /* NUMBERS */
+  .numbers-sec{background:var(--bg)}
+  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2rem}
+  .number-card{text-align:center;padding:2rem 1rem}
+  .number-val{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.8rem;font-weight:800;color:var(--accent);line-height:1}
+  .number-label{font-size:0.78rem;color:var(--text2);margin-top:0.5rem;line-height:1.4}
 
   /* VALUES */
   .values-sec{background:var(--surface)}
   .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
-  .value-card{padding:2rem;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border)}
-  .value-icon{font-size:1.5rem;margin-bottom:1rem}
+  .value-card{padding:2rem;border-radius:16px;background:white;border:1px solid var(--glass-border);transition:all 0.3s}
+  .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(124,58,237,0.06)}
+  .value-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(167,139,250,0.04))}
+  .value-icon svg{stroke:var(--accent)}
   .value-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
   .value-card p{font-size:0.85rem;color:var(--text2);line-height:1.7}
+
+  /* SCROLL ANIMATIONS */
+  .anim-left{opacity:0;transform:translateX(-60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-left.v{opacity:1;transform:translateX(0)}
+  .anim-right{opacity:0;transform:translateX(60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-right.v{opacity:1;transform:translateX(0)}
+  .anim-scale{opacity:0;transform:scale(0.85);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-scale.v{opacity:1;transform:scale(1)}
 
   /* CTA */
   .cta-sec{text-align:center;padding:5rem 2rem}
@@ -133,6 +154,8 @@
     section{padding:3.5rem 1.5rem}
     .founders-grid{grid-template-columns:1fr}
     .values-grid{grid-template-columns:1fr}
+    .numbers-grid{grid-template-columns:1fr 1fr}
+    .founder-photo{height:220px}
   }
 
   /* ===== WHITE/PURPLE AI THEME ===== */
@@ -184,30 +207,47 @@
   </div>
 </section>
 
-<div class="decorator">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="decor-glow">
-        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-    <!-- Intersecting circles (tech blueprint) -->
-    <circle cx="70" cy="70" r="45" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.6" filter="url(#decor-glow)"/>
-    <circle cx="130" cy="70" r="45" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.6" filter="url(#decor-glow)"/>
-    <circle cx="100" cy="120" r="45" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.6" filter="url(#decor-glow)"/>
-    <!-- Intersection points -->
-    <circle cx="92" cy="85" r="2" fill="#7c3aed" opacity="0.8"/>
-    <circle cx="108" cy="85" r="2" fill="#22d3ee" opacity="0.8"/>
-    <circle cx="100" cy="105" r="2" fill="#34d399" opacity="0.8"/>
-    <!-- Center marker -->
-    <circle cx="100" cy="90" r="3" fill="#22d3ee" opacity="0.9" filter="url(#decor-glow)"/>
-  </svg>
-</div>
+<div class="ai-divider"></div>
 
+<!-- TIMELINE -->
+<section class="timeline-sec">
+  <div class="con">
+    <div style="text-align:center">
+      <div class="s-label anim d1" data-es="NUESTRO CAMINO">OUR JOURNEY</div>
+      <h2 class="s-title anim d2" data-es="De una Idea a un Impacto">From Idea to Impact</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item anim d1">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Early 2025</div>
+        <h3 data-es="La Chispa">The Spark</h3>
+        <p data-es="Stefano y Mac se dieron cuenta de que las pequeñas empresas estaban perdiendo miles de dólares en llamadas perdidas y clientes sin responder. Decidieron que la IA podía resolver esto.">Stefano and Mac noticed small businesses were losing thousands to missed calls and unresponsive leads. They decided AI could fix this.</p>
+      </div>
+      <div class="tl-item anim d2">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Spring 2025</div>
+        <h3 data-es="Primeros Clientes">First Clients</h3>
+        <p data-es="Construimos nuestro primer agente de voz para un spa médico en Coral Gables. Los resultados fueron inmediatos: 80% de captura de llamadas y $15K en ingresos recuperados.">Built our first voice agent for a med spa in Coral Gables. Results were immediate: 80% call capture and $15K in recovered revenue.</p>
+      </div>
+      <div class="tl-item anim d3">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Summer 2025</div>
+        <h3 data-es="Expansión de Servicios">Service Expansion</h3>
+        <p data-es="Agregamos chatbots, automatización, desarrollo web y manejo de CRM. Las empresas querían la solución completa, así que la construimos.">Added chatbots, automation, web development, and CRM management. Businesses wanted the full stack, so we built it.</p>
+      </div>
+      <div class="tl-item anim d3">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026</div>
+        <h3 data-es="Creciendo Fuerte">Growing Strong</h3>
+        <p data-es="Más de 50 clientes atendidos. Más de 2 millones de llamadas manejadas por nuestros agentes. Más de $350K en ingresos recuperados para nuestros clientes. Y solo estamos comenzando.">50+ clients served. 2M+ calls handled by our agents. $350K+ in revenue recovered for clients. And we're just getting started.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ai-divider"></div>
+
+<!-- FOUNDERS -->
 <section class="founders-sec">
   <div class="con">
     <div style="text-align:center">
@@ -215,30 +255,67 @@
       <h2 class="s-title anim d2" data-es="Conoce a los Fundadores">Meet the Founders</h2>
     </div>
     <div class="founders-grid">
-      <div class="founder-card anim d1">
-        <div class="founder-avatar sf">SF</div>
-        <div class="founder-name" data-es="Stefano Fernandini">Stefano Fernandini</div>
-        <div class="founder-role" data-es="Co-Fundador">Co-Founder</div>
-        <div class="founder-bio" data-es="Stefano lidera la visión y la estrategia de clientes de FNDI. Con una comprensión profunda de lo que las pequeñas empresas necesitan para competir en el mercado actual, trabaja directamente con cada cliente para diseñar soluciones de IA que realmente marquen la diferencia. Es quien se asegura de que cada herramienta que construimos resuelva un problema real, no solo uno hipotético.">Stefano leads FNDI's vision and client strategy. With a deep understanding of what small businesses need to compete in today's market, he works directly with every client to design AI solutions that actually move the needle. He's the one making sure every tool we build solves a real problem — not just a hypothetical one.</div>
-        <div class="founder-links">
-          <a href="mailto:stefano@fndi.tech">&#9993; stefano@fndi.tech</a>
-          <a href="tel:+17868430145">&#9742; (786) 843-0145</a>
+      <div class="founder-card anim anim-left d1">
+        <img class="founder-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=350&fit=crop&crop=face" alt="Stefano Fernandini" loading="lazy">
+        <div class="founder-info">
+          <div class="founder-name" data-es="Stefano Fernandini">Stefano Fernandini</div>
+          <div class="founder-role" data-es="Co-Fundador • Visión y Estrategia">Co-Founder &bull; Vision & Strategy</div>
+          <div class="founder-bio" data-es="Stefano lidera la visión y la estrategia de clientes de FNDI. Trabaja directamente con cada cliente para diseñar soluciones de IA que realmente marquen la diferencia. Es quien se asegura de que cada herramienta que construimos resuelva un problema real.">Stefano leads FNDI's vision and client strategy. He works directly with every client to design AI solutions that actually move the needle. He's the one making sure every tool we build solves a real problem — not just a hypothetical one.</div>
+          <div class="founder-links">
+            <a href="mailto:stefano@fndi.tech"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> stefano@fndi.tech</a>
+            <a href="tel:+17868430145"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> (786) 843-0145</a>
+          </div>
         </div>
       </div>
-      <div class="founder-card anim d2">
-        <div class="founder-avatar do">DO</div>
-        <div class="founder-name" data-es="Douglas O'Keefe">Douglas O'Keefe</div>
-        <div class="founder-role" data-es="Co-Fundador">Co-Founder</div>
-        <div class="founder-bio" data-es="Mac es el motor detrás de las operaciones y el crecimiento de FNDI. Trae una perspectiva perspicaz para el desarrollo empresarial y una ética de trabajo implacable que mantiene a la empresa avanzando. Desde la construcción de asociaciones hasta la gestión de la entrega, Mac se asegura de que cada cliente obtenga una experiencia de clase mundial de principio a fin.">Mac is the engine behind FNDI's operations and growth. He brings a sharp eye for business development and a relentless work ethic that keeps the company pushing forward. From building partnerships to managing delivery, Mac makes sure every client gets a world-class experience from start to finish.</div>
-        <div class="founder-links">
-          <a href="mailto:dokeefe@fndi.tech">&#9993; dokeefe@fndi.tech</a>
-          <a href="tel:+17867778283">&#9742; (786) 777-8283</a>
+      <div class="founder-card anim anim-right d2">
+        <img class="founder-photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=350&fit=crop&crop=face" alt="Douglas O'Keefe" loading="lazy">
+        <div class="founder-info">
+          <div class="founder-name" data-es="Douglas O'Keefe">Douglas O'Keefe</div>
+          <div class="founder-role" data-es="Co-Fundador • Operaciones y Crecimiento">Co-Founder &bull; Operations & Growth</div>
+          <div class="founder-bio" data-es="Mac es el motor detrás de las operaciones y el crecimiento de FNDI. Desde la construcción de asociaciones hasta la gestión de la entrega, Mac se asegura de que cada cliente obtenga una experiencia de clase mundial de principio a fin.">Mac is the engine behind FNDI's operations and growth. He brings a sharp eye for business development and a relentless work ethic. From building partnerships to managing delivery, Mac makes sure every client gets a world-class experience.</div>
+          <div class="founder-links">
+            <a href="mailto:dokeefe@fndi.tech"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> dokeefe@fndi.tech</a>
+            <a href="tel:+17867778283"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> (786) 777-8283</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="ai-divider"></div>
+
+<!-- BY THE NUMBERS -->
+<section class="numbers-sec">
+  <div class="con">
+    <div style="text-align:center">
+      <div class="s-label anim d1" data-es="POR LOS NÚMEROS">BY THE NUMBERS</div>
+      <h2 class="s-title anim d2" data-es="Nuestro Impacto Hasta Ahora">Our Impact So Far</h2>
+    </div>
+    <div class="numbers-grid">
+      <div class="number-card anim anim-scale d1">
+        <div class="number-val" data-count="50" data-suffix="+">0</div>
+        <div class="number-label" data-es="Clientes atendidos en South Florida">Clients served across South Florida</div>
+      </div>
+      <div class="number-card anim anim-scale d2">
+        <div class="number-val" data-count="2" data-suffix="M+">0</div>
+        <div class="number-label" data-es="Llamadas manejadas por nuestros agentes IA">Calls handled by our AI agents</div>
+      </div>
+      <div class="number-card anim anim-scale d3">
+        <div class="number-val" data-count="350" data-prefix="$" data-suffix="K">0</div>
+        <div class="number-label" data-es="Ingresos recuperados para clientes">Revenue recovered for clients</div>
+      </div>
+      <div class="number-card anim anim-scale d3">
+        <div class="number-val" data-count="94" data-suffix="%">0</div>
+        <div class="number-label" data-es="Tasa de retención de clientes">Client retention rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ai-divider"></div>
+
+<!-- VALUES -->
 <section class="values-sec">
   <div class="con">
     <div style="text-align:center">
@@ -246,23 +323,23 @@
       <h2 class="s-title anim d2" data-es="Nuestros Valores">Our Values</h2>
     </div>
     <div class="values-grid">
-      <div class="value-card anim d1">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
+      <div class="value-card anim anim-scale d1">
+        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
         <h3 data-es="Resultados Sobre Todo">Results Over Everything</h3>
         <p data-es="No construimos cosas que se vean bien pero no funcionen. Cada solución que entregamos se mide por una cosa: ¿creció tu negocio?">We don't build things that look cool but don't work. Every solution we deliver is measured by one thing: did it grow your business?</p>
       </div>
-      <div class="value-card anim d2">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="value-card anim anim-scale d2">
+        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3 data-es="Fundadores, No Freelancers">Founders, Not Freelancers</h3>
         <p data-es="No estás trabajando con una agencia aleatoria. Estás trabajando con las personas que construyeron esta empresa y pusieron su nombre en ella.">You're not working with a random agency. You're working with the people who built this company and put their name on it.</p>
       </div>
-      <div class="value-card anim d3">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="value-card anim anim-scale d3">
+        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3 data-es="Muévete Rápido, Construye Bien">Move Fast, Build Right</h3>
         <p data-es="No tardamos meses en entregar. Construimos rápido, iteramos basándonos en datos reales y obtenemos resultados mientras otros aún están escribiendo propuestas.">We don't take months to deliver. We build fast, iterate based on real data, and get you results while others are still writing proposals.</p>
       </div>
-      <div class="value-card anim d4">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="value-card anim anim-scale d4">
+        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3 data-es="Crece Con Vosotros">Grow With You</h3>
         <p data-es="No estamos aquí para un proyecto y desaparecemos. Somos socios a largo plazo invertidos en ver el éxito de tu negocio mes tras mes.">We're not here for one project and gone. We're long-term partners invested in seeing your business succeed month after month.</p>
       </div>
@@ -317,13 +394,41 @@ window.addEventListener('scroll',()=>{
   if(window.scrollY>10) nav.classList.add('scrolled');
   else nav.classList.remove('scrolled');
 });
+
+/* ANIMATED COUNTERS */
+function animateValue(el, end, duration, prefix, suffix){
+  const startTime = performance.now();
+  function step(now){
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(end * ease);
+    el.textContent = (prefix || '') + current.toLocaleString() + (suffix || '');
+    if(progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const numObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting || entry.target.dataset.counted) return;
+    entry.target.dataset.counted = 'true';
+    const el = entry.target;
+    const count = parseInt(el.dataset.count) || 0;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    animateValue(el, count, 2000, prefix, suffix);
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('.number-val[data-count]').forEach(el => numObs.observe(el));
+
+/* SCROLL OBSERVER */
 document.addEventListener('DOMContentLoaded',()=>{
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting) entry.target.classList.add('v');
     });
   },{threshold:0.1});
-  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.anim,.anim-left,.anim-right,.anim-scale').forEach(el=>obs.observe(el));
 });
 </script>
 <script src="/lang.js"></script>

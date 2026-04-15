@@ -44,15 +44,39 @@
   .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
   section:first-of-type{background-image:radial-gradient(circle,rgba(124,58,237,0.08) 1px,transparent 1px);background-size:40px 40px;background-position:0 0;position:relative}
   section:first-of-type::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(34,211,238,0.05) 1px,transparent 1px);background-size:80px 80px;background-position:20px 20px;pointer-events:none}
-  .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;position:relative;z-index:1}
-  .case{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.3s}
+  /* FILTER TABS */
+  .filter-tabs{display:flex;justify-content:center;gap:0.5rem;margin-bottom:3rem;flex-wrap:wrap}
+  .filter-tab{padding:0.5rem 1.2rem;border-radius:24px;font-size:0.82rem;font-weight:600;color:var(--text3);background:rgba(124,58,237,0.04);border:1px solid transparent;cursor:pointer;transition:all 0.25s;-webkit-user-select:none;user-select:none}
+  .filter-tab:hover{color:var(--text2);background:rgba(124,58,237,0.08)}
+  .filter-tab.active{color:white;background:var(--accent);border-color:var(--accent);box-shadow:0 4px 16px rgba(124,58,237,0.25)}
+
+  /* STATS BAR */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:4rem;padding:2.5rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:20px}
+  .stat-item{text-align:center}
+  .stat-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1}
+  .stat-label{font-size:0.72rem;color:var(--text3);margin-top:0.4rem;font-weight:500;text-transform:uppercase;letter-spacing:1px}
+
+  /* CASE CARDS */
+  .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;position:relative;z-index:1}
+  .case{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;transition:all 0.4s}
   .case:hover{border-color:rgba(124,58,237,0.15);transform:translateY(-6px);box-shadow:0 16px 50px rgba(124,58,237,0.1)}
-  .case-tag{display:inline-block;background:rgba(124,58,237,0.15);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.65rem;font-weight:700;margin-bottom:1rem}
-  .case h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
-  .case-meta{font-size:0.8rem;color:var(--text3);margin-bottom:1rem}
-  .case p{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
-  .case-result{background:rgba(52,211,153,0.08);border-left:3px solid var(--green);padding:1rem;border-radius:4px}
+  .case.hidden{display:none}
+  .case-img{width:100%;height:200px;object-fit:cover;display:block}
+  .case-body{padding:1.8rem}
+  .case-tag{display:inline-block;background:rgba(124,58,237,0.12);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.65rem;font-weight:700;margin-bottom:0.8rem}
+  .case h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:0.4rem;line-height:1.3}
+  .case-meta{font-size:0.78rem;color:var(--text3);margin-bottom:1rem}
+  .case p{font-size:0.85rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem}
+  .case-result{background:rgba(52,211,153,0.06);border-left:3px solid var(--green);padding:1rem 1.2rem;border-radius:0 10px 10px 0}
   .case-result strong{color:var(--green);font-weight:700}
+  .case-metrics{display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--glass-border)}
+  .case-metric{text-align:center;flex:1}
+  .case-metric-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.3rem;font-weight:800;color:var(--accent)}
+  .case-metric-label{font-size:0.65rem;color:var(--text3);margin-top:0.2rem;text-transform:uppercase;letter-spacing:0.5px}
+
+  /* SCROLL ANIMS */
+  .anim-scale{opacity:0;transform:scale(0.85);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+  .anim-scale.v{opacity:1;transform:scale(1)}
   .cta-sec{text-align:center;padding:5rem 2rem}
   .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
   .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
@@ -68,7 +92,7 @@
   footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
   .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
   .ft-bottom p{margin:0;font-size:0.75rem}
-  @media(max-width:768px){section{padding:4rem 1.5rem}.case-grid{grid-template-columns:1fr}.ft-inner>div:first-child{grid-template-columns:1fr}}
+  @media(max-width:768px){section{padding:4rem 1.5rem}.case-grid{grid-template-columns:1fr}.ft-inner>div:first-child{grid-template-columns:1fr}.stats-bar{grid-template-columns:1fr 1fr;gap:1rem;padding:1.5rem}.filter-tabs{gap:0.3rem}.filter-tab{padding:0.4rem 0.9rem;font-size:0.75rem}}
 
   /* ===== WHITE/PURPLE AI THEME ===== */
   #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
@@ -106,64 +130,130 @@
       <div class="s-label anim" data-es="ESTUDIOS DE CASO">CASE STUDIES</div>
       <h2 class="s-title anim" data-es="Resultados Reales de Negocios Reales">Real Results From Real Businesses</h2>
     </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar anim">
+      <div class="stat-item"><div class="stat-num" data-count="50">0</div><div class="stat-label" data-es="Clientes Atendidos">Clients Served</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="94" data-suffix="%">0%</div><div class="stat-label" data-es="Tasa de Retención">Retention Rate</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="2" data-prefix="" data-suffix="M+">0</div><div class="stat-label" data-es="Llamadas Manejadas">Calls Handled</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="350" data-prefix="$" data-suffix="K+">$0</div><div class="stat-label" data-es="Ingresos Recuperados">Revenue Recovered</div></div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs anim">
+      <div class="filter-tab active" data-filter="all" data-es="Todos">All</div>
+      <div class="filter-tab" data-filter="voice" data-es="Agentes de Voz">Voice Agents</div>
+      <div class="filter-tab" data-filter="chatbot" data-es="Chatbots">Chatbots</div>
+      <div class="filter-tab" data-filter="automation" data-es="Automatización">Automation</div>
+      <div class="filter-tab" data-filter="website" data-es="Sitios Web">Websites</div>
+    </div>
+
     <div class="case-grid">
-      <div class="case anim">
-        <div class="case-tag" data-es="Agente de Voz">Voice Agent</div>
-        <h3 data-es="Spa Médico en Coral Gables">Med Spa in Coral Gables</h3>
-        <div class="case-meta" data-es="Tratamientos de Botox • Alto volumen de llamadas">Botox treatments • High volume calls</div>
-        <p data-es="Este spa médico estaba perdiendo el 60% de las llamadas al buzón de voz. El dueño estaba frustrado por los ingresos perdidos. Instalamos nuestro agente de voz IA, y dentro de 30 días estaban reservando 40+ citas por mes que hubieran perdido completamente.">This med spa was losing 60% of calls to voicemail. The owner was frustrated with missed revenue. We installed our AI voice agent, and within 30 days they were booking 40+ appointments per month they would have completely lost.</p>
-        <div class="case-result">
-          <strong data-es="Resultado:">Result:</strong> <span data-es="Tasa de captura de llamadas del 80%. $15K+ en ingresos mensuales recuperados solo de llamadas perdidas.">80% call capture rate. $15K+ in recovered monthly revenue from missed calls alone.</span>
+      <div class="case anim anim-scale" data-category="voice">
+        <img class="case-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=300&fit=crop&crop=center" alt="Med spa interior" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Agente de Voz">Voice Agent</div>
+          <h3 data-es="Spa Médico en Coral Gables">Med Spa in Coral Gables</h3>
+          <div class="case-meta" data-es="Tratamientos de Botox • Alto volumen de llamadas">Botox treatments • High volume calls</div>
+          <p data-es="Este spa médico estaba perdiendo el 60% de las llamadas al buzón de voz. Instalamos nuestro agente de voz IA, y dentro de 30 días estaban reservando 40+ citas por mes que hubieran perdido.">This med spa was losing 60% of calls to voicemail. We installed our AI voice agent, and within 30 days they were booking 40+ appointments per month they would have completely lost.</p>
+          <div class="case-result">
+            <strong data-es="Resultado:">Result:</strong> <span data-es="Tasa de captura de llamadas del 80%. $15K+ en ingresos mensuales recuperados.">80% call capture rate. $15K+ in recovered monthly revenue from missed calls alone.</span>
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">80%</div><div class="case-metric-label" data-es="Llamadas Capturadas">Calls Captured</div></div>
+            <div class="case-metric"><div class="case-metric-num">40+</div><div class="case-metric-label" data-es="Citas/Mes">Appts/Month</div></div>
+            <div class="case-metric"><div class="case-metric-num">$15K</div><div class="case-metric-label" data-es="Recuperados/Mes">Recovered/Mo</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="case anim">
-        <div class="case-tag" data-es="Chatbot">Chatbot</div>
-        <h3 data-es="Práctica Dental en Miami Beach">Dental Practice in Miami Beach</h3>
-        <div class="case-meta" data-es="Odontología familiar • Leads web">Family dentistry • Web leads</div>
-        <p data-es="Su sitio web recibía tráfico pero no convertía visitantes en citas. Agregamos nuestro chatbot de IA, y dentro del primer mes, vieron que los leads calificados se duplicaron. El chatbot captura información del paciente y reserva citas 24/7.">Their website was getting traffic but not converting visitors into appointments. We added our AI chatbot, and within the first month, they saw qualified leads double. The chatbot captures patient info and books appointments 24/7.</p>
-        <div class="case-result">
-          <strong data-es="Resultado:">Result:</strong> <span data-es="2x más leads calificados en 30 días. El chatbot reserva 5-8 citas por semana.">2x more qualified leads in 30 days. Chatbot books 5-8 appointments weekly.</span>
+      <div class="case anim anim-scale" data-category="chatbot">
+        <img class="case-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=300&fit=crop&crop=center" alt="Dental practice" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Chatbot">Chatbot</div>
+          <h3 data-es="Práctica Dental en Miami Beach">Dental Practice in Miami Beach</h3>
+          <div class="case-meta" data-es="Odontología familiar • Leads web">Family dentistry • Web leads</div>
+          <p data-es="Su sitio web recibía tráfico pero no convertía visitantes en citas. Agregamos nuestro chatbot de IA, y los leads calificados se duplicaron en el primer mes.">Their website was getting traffic but not converting visitors into appointments. We added our AI chatbot, and qualified leads doubled within the first month.</p>
+          <div class="case-result">
+            <strong data-es="Resultado:">Result:</strong> <span data-es="2x más leads calificados en 30 días. El chatbot reserva 5-8 citas por semana.">2x more qualified leads in 30 days. Chatbot books 5-8 appointments weekly.</span>
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">2x</div><div class="case-metric-label" data-es="Más Leads">More Leads</div></div>
+            <div class="case-metric"><div class="case-metric-num">5-8</div><div class="case-metric-label" data-es="Citas/Semana">Appts/Week</div></div>
+            <div class="case-metric"><div class="case-metric-num">24/7</div><div class="case-metric-label" data-es="Cobertura">Coverage</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="case anim">
-        <div class="case-tag" data-es="Sitio Web + Chatbot">Website + Chatbot</div>
-        <h3 data-es="Blue Buffalo Renovations">Blue Buffalo Renovations</h3>
-        <div class="case-meta" data-es="Renovación del hogar • Cliente por primera vez">Home renovation • First time client</div>
-        <p>This Miami home renovation company needed a modern website with lead capture. We built them a beautiful, AI-optimized site with a chatbot. The chatbot qualifies leads before they even talk to the sales team.</p>
-        <div class="case-result">
-          <strong>Result:</strong> 25+ qualified leads in first month. Chatbot saves 10+ hours per week on initial contact.
+      <div class="case anim anim-scale" data-category="website chatbot">
+        <img class="case-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=300&fit=crop&crop=center" alt="Home renovation" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Sitio Web + Chatbot">Website + Chatbot</div>
+          <h3>Blue Buffalo Renovations</h3>
+          <div class="case-meta" data-es="Renovación del hogar • Cliente por primera vez">Home renovation • First time client</div>
+          <p>This Miami renovation company needed a modern website with lead capture. We built an AI-optimized site with a chatbot that qualifies leads before they reach the sales team.</p>
+          <div class="case-result">
+            <strong>Result:</strong> 25+ qualified leads in first month. Chatbot saves 10+ hours per week on initial contact.
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">25+</div><div class="case-metric-label">Leads/Month</div></div>
+            <div class="case-metric"><div class="case-metric-num">10hrs</div><div class="case-metric-label">Saved/Week</div></div>
+            <div class="case-metric"><div class="case-metric-num">3x</div><div class="case-metric-label">ROI</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="case anim">
-        <div class="case-tag" data-es="Agente de Voz">Voice Agent</div>
-        <h3 data-es="Firma Legal en el Centro de Miami">Law Firm in Downtown Miami</h3>
-        <div class="case-meta" data-es="Lesiones personales • Práctica con muchas llamadas">Personal injury • Call-heavy practice</div>
-        <p>This law firm received 100+ calls per month but had no receptionist. Callers got voicemail. The AI voice agent now answers every call, qualifies prospects, and only routes relevant cases to attorneys. Valuable leads no longer slip away.</p>
-        <div class="case-result">
-          <strong>Result:</strong> Zero missed calls. 30% increase in qualified case intake from improved call handling.
+      <div class="case anim anim-scale" data-category="voice">
+        <img class="case-img" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=300&fit=crop&crop=center" alt="Law firm office" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Agente de Voz">Voice Agent</div>
+          <h3 data-es="Firma Legal en el Centro de Miami">Law Firm in Downtown Miami</h3>
+          <div class="case-meta" data-es="Lesiones personales • Práctica con muchas llamadas">Personal injury • Call-heavy practice</div>
+          <p>This law firm received 100+ calls per month but had no receptionist. The AI voice agent now answers every call, qualifies prospects, and only routes relevant cases to attorneys.</p>
+          <div class="case-result">
+            <strong>Result:</strong> Zero missed calls. 30% increase in qualified case intake from improved call handling.
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">0</div><div class="case-metric-label">Missed Calls</div></div>
+            <div class="case-metric"><div class="case-metric-num">30%</div><div class="case-metric-label">More Cases</div></div>
+            <div class="case-metric"><div class="case-metric-num">100+</div><div class="case-metric-label">Calls/Month</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="case anim">
-        <div class="case-tag" data-es="Automatización">Automation</div>
-        <h3 data-es="Estudio de Fitness en Wynwood">Fitness Studio in Wynwood</h3>
-        <div class="case-meta" data-es="Fitness grupal • Mucho movimiento de citas">Group fitness • Appointment heavy</div>
-        <p>This fitness studio was sending manual reminder texts before every class. No-shows were 40%. We automated the entire appointment reminder system. Now clients get text + email reminders automatically, and no-shows dropped dramatically.</p>
-        <div class="case-result">
-          <strong>Result:</strong> No-shows reduced from 40% to 12%. Saves 15+ hours per month on manual work.
+      <div class="case anim anim-scale" data-category="automation">
+        <img class="case-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=300&fit=crop&crop=center" alt="Fitness studio" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Automatización">Automation</div>
+          <h3 data-es="Estudio de Fitness en Wynwood">Fitness Studio in Wynwood</h3>
+          <div class="case-meta" data-es="Fitness grupal • Mucho movimiento de citas">Group fitness • Appointment heavy</div>
+          <p>This fitness studio was sending manual reminder texts before every class. No-shows were 40%. We automated the entire appointment reminder system and no-shows dropped dramatically.</p>
+          <div class="case-result">
+            <strong>Result:</strong> No-shows reduced from 40% to 12%. Saves 15+ hours per month on manual work.
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">12%</div><div class="case-metric-label">No-Show Rate</div></div>
+            <div class="case-metric"><div class="case-metric-num">15hrs</div><div class="case-metric-label">Saved/Month</div></div>
+            <div class="case-metric"><div class="case-metric-num">70%</div><div class="case-metric-label">Less No-Shows</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="case anim">
-        <div class="case-tag" data-es="Múltiples Servicios">Multiple Services</div>
-        <h3 data-es="Salón en Brickell">Salon in Brickell</h3>
-        <div class="case-meta" data-es="Cabello y belleza • Multi-ubicación">Hair & beauty • Multi-location</div>
-        <p>This upscale salon combined our voice agent for calls, chatbot for web visitors, and automation for appointment reminders. Result: Fully automated customer intake. Appointments book 24/7 without human intervention. Staff focuses on service quality.</p>
-        <div class="case-result">
-          <strong>Result:</strong> Bookings up 50%. Staff time freed up for client care. 98% client satisfaction.
+      <div class="case anim anim-scale" data-category="voice chatbot automation">
+        <img class="case-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=300&fit=crop&crop=center" alt="Hair salon interior" loading="lazy">
+        <div class="case-body">
+          <div class="case-tag" data-es="Múltiples Servicios">Multiple Services</div>
+          <h3 data-es="Salón en Brickell">Salon in Brickell</h3>
+          <div class="case-meta" data-es="Cabello y belleza • Multi-ubicación">Hair & beauty • Multi-location</div>
+          <p>This upscale salon combined our voice agent, chatbot, and automation for a fully automated customer intake. Appointments book 24/7 without human intervention.</p>
+          <div class="case-result">
+            <strong>Result:</strong> Bookings up 50%. Staff time freed up for client care. 98% client satisfaction.
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-num">50%</div><div class="case-metric-label">More Bookings</div></div>
+            <div class="case-metric"><div class="case-metric-num">98%</div><div class="case-metric-label">Satisfaction</div></div>
+            <div class="case-metric"><div class="case-metric-num">24/7</div><div class="case-metric-label">Automated</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -218,13 +308,58 @@ window.addEventListener('scroll',()=>{
   else nav.classList.remove('scrolled');
 });
 
+/* FILTER TABS */
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.case').forEach(card => {
+      if(filter === 'all' || card.dataset.category.includes(filter)){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+/* ANIMATED STAT COUNTERS */
+function animateValue(el, end, duration, prefix, suffix){
+  const start = 0;
+  const startTime = performance.now();
+  function step(now){
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(end * ease);
+    el.textContent = (prefix || '') + current.toLocaleString() + (suffix || '');
+    if(progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting || entry.target.dataset.counted) return;
+    entry.target.dataset.counted = 'true';
+    const el = entry.target;
+    const count = parseInt(el.dataset.count) || 0;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    animateValue(el, count, 2000, prefix, suffix);
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('.stat-num[data-count]').forEach(el => statsObs.observe(el));
+
+/* SCROLL OBSERVER */
 document.addEventListener('DOMContentLoaded',()=>{
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting) entry.target.classList.add('v');
     });
   },{threshold:0.1});
-  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.anim,.anim-scale').forEach(el=>obs.observe(el));
 });
 </script>
 <script src="/lang.js"></script>
