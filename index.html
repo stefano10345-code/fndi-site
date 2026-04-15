@@ -105,11 +105,80 @@
   /* HERO GRID OVERLAY */
   .hero-grid{position:absolute;inset:0;z-index:0;opacity:0.04;background-image:linear-gradient(rgba(124,58,237,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.3) 1px,transparent 1px);background-size:80px 80px}
 
-  .h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1)}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-2px}
+  .hero-inner{position:relative;z-index:2;max-width:1200px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin:0 auto}
+  .h-content{animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1);text-align:left}
+  .h-visual{animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s both;position:relative}
+  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-2px}
   .grad{background:linear-gradient(135deg,#7c3aed,#5b21b6,#7c3aed);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.08rem;color:var(--text2);max-width:560px;margin:0 auto 2.2rem;line-height:1.7;font-weight:400}
-  .h-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+  .hero p{font-size:1.08rem;color:var(--text2);max-width:560px;margin:0 0 2.2rem;line-height:1.7;font-weight:400}
+  .h-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+
+  /* HERO VISUAL - AI DASHBOARD MOCKUP */
+  .hero-mockup{width:100%;max-width:520px;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(124,58,237,0.12),0 10px 30px rgba(0,0,0,0.06);border:1px solid rgba(124,58,237,0.08);background:white;position:relative;margin-left:auto}
+  .hero-mockup-bar{height:36px;background:linear-gradient(135deg,#f8f7ff,#ede9fe);display:flex;align-items:center;padding:0 14px;gap:6px;border-bottom:1px solid rgba(124,58,237,0.08)}
+  .hero-mockup-dot{width:10px;height:10px;border-radius:50%;background:rgba(124,58,237,0.15)}
+  .hero-mockup-dot:nth-child(2){background:rgba(124,58,237,0.1)}
+  .hero-mockup-dot:nth-child(3){background:rgba(124,58,237,0.06)}
+  .hero-mockup-body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+  .hero-mockup-row{display:flex;gap:0.8rem}
+  .hero-mockup-card{flex:1;border-radius:14px;padding:1.2rem;border:1px solid rgba(124,58,237,0.06);position:relative;overflow:hidden}
+  .hero-mockup-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+  .hmc-1{background:linear-gradient(135deg,rgba(124,58,237,0.04),rgba(167,139,250,0.02))}.hmc-1::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+  .hmc-2{background:linear-gradient(135deg,rgba(16,185,129,0.04),rgba(52,211,153,0.02))}.hmc-2::before{background:linear-gradient(90deg,#10b981,#34d399)}
+  .hmc-3{background:linear-gradient(135deg,rgba(59,130,246,0.04),rgba(96,165,250,0.02))}.hmc-3::before{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .hmc-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:0.6rem}
+  .hmc-1 .hmc-icon{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+  .hmc-2 .hmc-icon{background:linear-gradient(135deg,#10b981,#34d399)}
+  .hmc-3 .hmc-icon{background:linear-gradient(135deg,#3b82f6,#60a5fa)}
+  .hmc-icon svg{stroke:white;width:16px;height:16px}
+  .hmc-val{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);line-height:1}
+  .hmc-label{font-size:0.65rem;color:var(--text3);margin-top:0.3rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+  .hero-mockup-graph{height:80px;background:linear-gradient(135deg,rgba(124,58,237,0.03),rgba(167,139,250,0.02));border-radius:14px;border:1px solid rgba(124,58,237,0.06);padding:0.8rem;display:flex;align-items:flex-end;gap:6px;overflow:hidden}
+  .hm-bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(to top,#7c3aed,#a78bfa);opacity:0.7;animation:barGrow 1.5s ease both}
+  @keyframes barGrow{from{height:0}to{height:var(--h)}}
+  .hero-mockup-chat{display:flex;flex-direction:column;gap:0.5rem;padding:1rem;background:linear-gradient(135deg,rgba(124,58,237,0.03),rgba(167,139,250,0.01));border-radius:14px;border:1px solid rgba(124,58,237,0.06)}
+  .hm-chat-line{display:flex;align-items:center;gap:0.5rem}
+  .hm-chat-avatar{width:24px;height:24px;border-radius:8px;flex-shrink:0}
+  .hm-chat-avatar.ai{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+  .hm-chat-avatar.user{background:linear-gradient(135deg,#e0e7ff,#c7d2fe)}
+  .hm-chat-bubble{font-size:0.65rem;padding:0.4rem 0.7rem;border-radius:10px;line-height:1.4;max-width:80%}
+  .hm-chat-line.from-ai .hm-chat-bubble{background:var(--card2);color:var(--text2)}
+  .hm-chat-line.from-user .hm-chat-bubble{background:var(--accent);color:white;margin-left:auto}
+  .hm-chat-line.from-user{justify-content:flex-end}
+
+  @media(max-width:768px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
+    .h-content{text-align:center}
+    .hero p{margin:0 auto 2.2rem}
+    .h-btns{justify-content:center}
+    .hero-mockup{max-width:380px;margin:0 auto}
+  }
+
+  /* SECTION IMAGES */
+  .sec-img{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.06);position:relative}
+  .sec-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .sec-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,0.05),transparent);pointer-events:none}
+
+  /* HOW IT WORKS IMAGES */
+  .how-step-img{width:100%;height:120px;border-radius:12px;overflow:hidden;margin-bottom:1rem;position:relative}
+  .how-step-img img{width:100%;height:100%;object-fit:cover}
+  .how-step-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(124,58,237,0.03),transparent)}
+
+  /* AUDIT SECTION SPLIT */
+  .audit-split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .audit-visual{position:relative}
+  .audit-img{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.08)}
+  .audit-img img{width:100%;display:block;border-radius:20px}
+  .audit-floating-card{position:absolute;background:white;border-radius:14px;padding:0.8rem 1.2rem;box-shadow:0 10px 40px rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.08);display:flex;align-items:center;gap:0.6rem;animation:float 4s ease-in-out infinite}
+  .audit-floating-card.afc-1{bottom:-15px;left:-15px;animation-delay:0s}
+  .audit-floating-card.afc-2{top:20px;right:-20px;animation-delay:1.5s}
+  .afc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .afc-icon.purple{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+  .afc-icon.green{background:linear-gradient(135deg,#10b981,#34d399)}
+  .afc-icon svg{stroke:white;width:16px;height:16px}
+  .afc-text{font-size:0.7rem;font-weight:700;color:var(--text)}
+  .afc-sub{font-size:0.6rem;color:var(--text3);font-weight:500}
+  @media(max-width:768px){.audit-split{grid-template-columns:1fr}.audit-visual{display:none}}
   .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
   .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
   .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
@@ -556,13 +625,46 @@
     <div class="hero-shape hero-shape-3"></div>
     <div class="hero-shape hero-shape-4"></div>
   </div>
-  <div class="h-content">
-    <div class="hero-ai-badge"><span class="badge-dot"></span> Powered by AI</div>
-    <h1><span class="grad" data-es="Soluciones de IA para Pequeños Negocios">AI Solutions for Small Business</span></h1>
-    <p data-es="Agentes de voz, chatbots, automatización y más — trabajando 24/7 para que nunca pierdas un cliente.">Voice agents, chatbots, automation, and more — all working 24/7 so you never miss a customer.</p>
-    <div class="h-btns">
-      <a href="/book" class="btn btn-g" data-es="Agenda una Llamada Gratis">Book a Free Call</a>
-      <a href="#free-audit" class="btn btn-o" data-es="Obtener Auditoría Gratis">Get Free Audit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+  <div class="hero-inner">
+    <div class="h-content">
+      <div class="hero-ai-badge"><span class="badge-dot"></span> Powered by AI</div>
+      <h1><span class="grad" data-es="Soluciones de IA para Pequeños Negocios">AI Solutions for Small Business</span></h1>
+      <p data-es="Agentes de voz, chatbots, automatización y más — trabajando 24/7 para que nunca pierdas un cliente.">Voice agents, chatbots, automation, and more — all working 24/7 so you never miss a customer.</p>
+      <div class="h-btns">
+        <a href="/book" class="btn btn-g" data-es="Agenda una Llamada Gratis">Book a Free Call</a>
+        <a href="#free-audit" class="btn btn-o" data-es="Obtener Auditoría Gratis">Get Free Audit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      </div>
+    </div>
+    <div class="h-visual">
+      <div class="hero-mockup">
+        <div class="hero-mockup-bar"><div class="hero-mockup-dot"></div><div class="hero-mockup-dot"></div><div class="hero-mockup-dot"></div></div>
+        <div class="hero-mockup-body">
+          <div class="hero-mockup-row">
+            <div class="hero-mockup-card hmc-1"><div class="hmc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div><div class="hmc-val">847</div><div class="hmc-label">Calls Answered</div></div>
+            <div class="hero-mockup-card hmc-2"><div class="hmc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="hmc-val">94%</div><div class="hmc-label">Booking Rate</div></div>
+            <div class="hero-mockup-card hmc-3"><div class="hmc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="hmc-val">$52K</div><div class="hmc-label">Revenue Saved</div></div>
+          </div>
+          <div class="hero-mockup-graph">
+            <div class="hm-bar" style="--h:30%"></div>
+            <div class="hm-bar" style="--h:50%"></div>
+            <div class="hm-bar" style="--h:40%"></div>
+            <div class="hm-bar" style="--h:70%"></div>
+            <div class="hm-bar" style="--h:55%"></div>
+            <div class="hm-bar" style="--h:85%"></div>
+            <div class="hm-bar" style="--h:65%"></div>
+            <div class="hm-bar" style="--h:90%"></div>
+            <div class="hm-bar" style="--h:75%"></div>
+            <div class="hm-bar" style="--h:95%"></div>
+            <div class="hm-bar" style="--h:80%"></div>
+            <div class="hm-bar" style="--h:100%"></div>
+          </div>
+          <div class="hero-mockup-chat">
+            <div class="hm-chat-line from-ai"><div class="hm-chat-avatar ai"></div><div class="hm-chat-bubble">Hi! Welcome to Glow Med Spa. How can I help you today?</div></div>
+            <div class="hm-chat-line from-user"><div class="hm-chat-bubble">I'd like to book a Botox appointment</div><div class="hm-chat-avatar user"></div></div>
+            <div class="hm-chat-line from-ai"><div class="hm-chat-avatar ai"></div><div class="hm-chat-bubble">I'd love to help! We have Thursday at 2pm and Friday at 10am available.</div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -800,18 +902,21 @@
     <div class="how-steps">
       <div class="how-step anim d1">
         <div class="how-step-num">01</div>
+        <div class="how-step-img"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=200&fit=crop&crop=center" alt="Business consultation call" loading="lazy"></div>
         <div class="how-step-icon s1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 11.042 11.042 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 11.042 11.042 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <h3 data-es="Agenda una Llamada Gratis">Book a Free Call</h3>
         <p data-es="Conoceremos tu negocio, qué no está funcionando, y dónde la IA puede generar el mayor impacto.">We'll learn about your business, what's not working, and where AI can make the biggest impact.</p>
       </div>
       <div class="how-step anim d2">
         <div class="how-step-num">02</div>
+        <div class="how-step-img"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop&crop=center" alt="Team building AI tools" loading="lazy"></div>
         <div class="how-step-icon s2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3 data-es="Lo Construimos">We Build It</h3>
         <p data-es="Nuestro equipo diseña y construye tus herramientas de IA — agentes de voz, chatbots, automatizaciones, lo que necesites.">Our team designs and builds your AI tools — voice agents, chatbots, automations, whatever you need.</p>
       </div>
       <div class="how-step anim d3">
         <div class="how-step-num">03</div>
+        <div class="how-step-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop&crop=center" alt="Business growth analytics" loading="lazy"></div>
         <div class="how-step-icon s3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
         <h3 data-es="Tú Creces">You Grow</h3>
         <p data-es="Lánzalo y empieza a ver resultados. Más llamadas contestadas, más clientes capturados, más ingresos.">Go live and start seeing results. More calls answered, more leads captured, more revenue coming in.</p>
@@ -828,7 +933,20 @@
       <h2 class="s-title anim d2" data-es="Descubre Cómo la IA Puede Hacer Crecer Tu Negocio">Find Out How AI Can Grow Your Business</h2>
       <p class="s-sub anim d3" data-es="Envía tu sitio web y cuéntanos tus desafíos. Nuestro equipo analizará tu negocio y te enviará un informe personalizado con soluciones en 48 horas. Completamente gratis.">Submit your website and tell us your challenges. Our team will analyze your business and send you a custom report with solutions within 48 hours. Completely free.</p>
     </div>
-    <div class="audit-wrap anim d2">
+    <div class="audit-split anim d2">
+      <div class="audit-visual">
+        <div class="audit-img">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=700&fit=crop&crop=center" alt="AI business analytics dashboard" loading="lazy">
+        </div>
+        <div class="audit-floating-card afc-1">
+          <div class="afc-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><div class="afc-text">AI Analysis</div><div class="afc-sub">Scanning your website</div></div>
+        </div>
+        <div class="audit-floating-card afc-2">
+          <div class="afc-icon green"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><div class="afc-text">Report Ready</div><div class="afc-sub">Within 48 hours</div></div>
+        </div>
+      </div>
       <div class="audit-box">
         <div class="audit-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-es="100% Gratis — Sin Compromiso">100% Free — No Strings Attached</span></div>
         <h2 data-es="Obtén Tu Informe Personalizado de IA">Get Your Custom AI Report</h2>
