@@ -542,6 +542,59 @@
   .hero-ai-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);color:var(--accent2);font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.45rem 1.2rem;border-radius:20px;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.2s both}
   .hero-ai-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 
+  /* TYPING ANIMATION */
+  .typing-wrap{display:inline}
+  .typing-cursor{display:inline-block;width:3px;height:1em;background:var(--accent);margin-left:4px;vertical-align:text-bottom;animation:blink 0.7s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+  /* SCROLL PROGRESS BAR */
+  .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#a78bfa,var(--accent));z-index:10001;width:0%;transition:width 0.1s linear;border-radius:0 2px 2px 0}
+
+  /* BACK TO TOP */
+  .back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--accent);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:999;opacity:0;transform:translateY(20px);transition:all 0.3s;box-shadow:0 4px 20px rgba(124,58,237,0.3)}
+  .back-top.visible{opacity:1;transform:translateY(0)}
+  .back-top:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,0.4)}
+
+  /* SOCIAL PROOF TOAST */
+  .toast{position:fixed;bottom:2rem;left:2rem;background:white;border:1px solid var(--glass-border);border-radius:14px;padding:0.9rem 1.2rem;display:flex;align-items:center;gap:0.8rem;box-shadow:0 12px 40px rgba(124,58,237,0.1);z-index:998;opacity:0;transform:translateX(-30px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);pointer-events:none;max-width:320px}
+  .toast.show{opacity:1;transform:translateX(0);pointer-events:auto}
+  .toast-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(167,139,250,0.06));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .toast-icon svg{stroke:var(--accent)}
+  .toast-text{font-size:0.78rem;color:var(--text2);line-height:1.4}
+  .toast-text strong{color:var(--text);display:block;font-size:0.82rem;margin-bottom:1px}
+  .toast-time{font-size:0.65rem;color:var(--text3);margin-top:2px}
+  .toast-close{position:absolute;top:0.5rem;right:0.7rem;background:none;border:none;color:var(--text3);cursor:pointer;font-size:0.9rem;line-height:1;padding:2px}
+
+  /* CHAT WIDGET */
+  .chat-widget{position:fixed;bottom:2rem;right:5.5rem;z-index:997}
+  .chat-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(124,58,237,0.35);transition:all 0.3s;position:relative}
+  .chat-btn:hover{transform:scale(1.08);box-shadow:0 8px 40px rgba(124,58,237,0.45)}
+  .chat-btn .chat-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--accent);animation:pulseRing 2s infinite;opacity:0.4}
+  .chat-bubble{position:absolute;bottom:70px;right:0;width:360px;max-height:480px;background:white;border:1px solid var(--glass-border);border-radius:20px;box-shadow:0 20px 60px rgba(124,58,237,0.12);display:none;flex-direction:column;overflow:hidden}
+  .chat-bubble.open{display:flex}
+  .chat-header{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+  .chat-header-info{display:flex;align-items:center;gap:0.7rem}
+  .chat-header-avatar{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center}
+  .chat-header h4{font-size:0.9rem;font-weight:700;margin:0}
+  .chat-header span{font-size:0.7rem;opacity:0.8}
+  .chat-close{background:none;border:none;color:white;cursor:pointer;font-size:1.2rem;opacity:0.7;transition:opacity 0.2s}
+  .chat-close:hover{opacity:1}
+  .chat-messages{flex:1;padding:1.2rem;overflow-y:auto;display:flex;flex-direction:column;gap:0.8rem;min-height:280px;max-height:320px}
+  .chat-msg{max-width:85%;padding:0.7rem 1rem;border-radius:14px;font-size:0.84rem;line-height:1.5}
+  .chat-msg.bot{background:var(--surface);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px}
+  .chat-msg.user{background:var(--accent);color:white;align-self:flex-end;border-bottom-right-radius:4px}
+  .chat-msg.typing{display:flex;gap:4px;padding:0.8rem 1.2rem}
+  .chat-msg.typing span{width:6px;height:6px;border-radius:50%;background:var(--text3);animation:typingDot 1.4s infinite}
+  .chat-msg.typing span:nth-child(2){animation-delay:0.2s}
+  .chat-msg.typing span:nth-child(3){animation-delay:0.4s}
+  @keyframes typingDot{0%,100%{opacity:0.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+  .chat-input-wrap{padding:0.8rem 1rem;border-top:1px solid var(--glass-border);display:flex;gap:0.5rem}
+  .chat-input{flex:1;border:1px solid var(--glass-border);border-radius:12px;padding:0.6rem 1rem;font-size:0.84rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+  .chat-input:focus{border-color:var(--accent)}
+  .chat-send{width:36px;height:36px;border-radius:10px;background:var(--accent);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+  .chat-send:hover{background:var(--accent2)}
+  @media(max-width:768px){.chat-bubble{width:calc(100vw - 2rem);right:-1rem;bottom:65px}.toast{left:1rem;right:1rem;max-width:none}.back-top{bottom:1.5rem;right:1rem}.chat-widget{right:4rem}}
+
   /* ===== BEFORE/AFTER COMPARISON SLIDER ===== */
   .compare-sec{background:var(--surface);overflow:hidden}
   .compare-wrap{max-width:900px;margin:0 auto}
@@ -680,7 +733,7 @@
   <div class="hero-inner">
     <div class="h-content">
       <div class="hero-ai-badge"><span class="badge-dot"></span> Powered by AI</div>
-      <h1><span class="grad" data-es="Soluciones de IA para Pequeños Negocios">AI Solutions for Small Business</span></h1>
+      <h1><span class="grad typing-wrap" id="heroTyping"></span><span class="typing-cursor"></span></h1>
       <p data-es="Agentes de voz, chatbots, automatización y más — trabajando 24/7 para que nunca pierdas un cliente.">Voice agents, chatbots, automation, and more — all working 24/7 so you never miss a customer.</p>
       <div class="h-btns">
         <a href="/book" class="btn btn-g" data-es="Agenda una Llamada Gratis">Book a Free Call</a>
@@ -1614,6 +1667,148 @@ document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
   });
 })();
 
+/* ===== TYPING HERO ANIMATION ===== */
+(function(){
+  const phrases = [
+    'Answer Every Call, 24/7',
+    'Book More Appointments',
+    'Never Miss a Lead Again',
+    'AI Solutions for Small Business',
+    'Automate Your Growth'
+  ];
+  const el = document.getElementById('heroTyping');
+  if(!el) return;
+  let phraseIdx = 0, charIdx = 0, deleting = false;
+
+  function type(){
+    const current = phrases[phraseIdx];
+    if(!deleting){
+      el.textContent = current.substring(0, charIdx + 1);
+      charIdx++;
+      if(charIdx === current.length){
+        setTimeout(() => { deleting = true; type(); }, 2200);
+        return;
+      }
+      setTimeout(type, 65);
+    } else {
+      el.textContent = current.substring(0, charIdx - 1);
+      charIdx--;
+      if(charIdx === 0){
+        deleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        setTimeout(type, 400);
+        return;
+      }
+      setTimeout(type, 35);
+    }
+  }
+  setTimeout(type, 800);
+})();
+
+/* ===== SCROLL PROGRESS BAR ===== */
+(function(){
+  const bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  window.addEventListener('scroll', () => {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / docH) * 100;
+    bar.style.width = pct + '%';
+  });
+})();
+
+/* ===== BACK TO TOP BUTTON ===== */
+(function(){
+  const btn = document.getElementById('backTop');
+  if(!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 600);
+  });
+})();
+
+/* ===== SOCIAL PROOF TOASTS ===== */
+(function(){
+  const toasts = [
+    {title: 'Med Spa in Coral Gables', text: 'Just booked a free consultation', time: '2 minutes ago'},
+    {title: 'Dental Practice in Miami', text: 'Started using AI voice agent', time: '5 minutes ago'},
+    {title: 'Law Firm in Downtown', text: 'Requested a free business audit', time: '8 minutes ago'},
+    {title: 'Fitness Studio in Wynwood', text: 'Upgraded to Growth plan', time: '12 minutes ago'},
+    {title: 'Salon in Brickell', text: 'Just booked a free consultation', time: '15 minutes ago'},
+  ];
+  const toast = document.getElementById('toast');
+  if(!toast) return;
+  let idx = 0;
+
+  function showToast(){
+    const t = toasts[idx % toasts.length];
+    toast.querySelector('strong').textContent = t.title;
+    toast.querySelector('.toast-text span').textContent = t.text;
+    document.getElementById('toastTime').textContent = t.time;
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 5000);
+    idx++;
+  }
+  // First toast after 15s, then every 30s
+  setTimeout(showToast, 15000);
+  setInterval(showToast, 35000);
+})();
+
+/* ===== CHAT WIDGET ===== */
+function toggleChat(){
+  document.getElementById('chatBubble').classList.toggle('open');
+}
+
+function sendChat(){
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+
+  const messages = document.getElementById('chatMessages');
+
+  // Add user message
+  const userDiv = document.createElement('div');
+  userDiv.className = 'chat-msg user';
+  userDiv.textContent = msg;
+  messages.appendChild(userDiv);
+  messages.scrollTop = messages.scrollHeight;
+
+  // Show typing indicator
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'chat-msg bot typing';
+  typingDiv.innerHTML = '<span></span><span></span><span></span>';
+  messages.appendChild(typingDiv);
+  messages.scrollTop = messages.scrollHeight;
+
+  // Generate response after delay
+  setTimeout(() => {
+    typingDiv.remove();
+    const botDiv = document.createElement('div');
+    botDiv.className = 'chat-msg bot';
+    botDiv.textContent = getBotResponse(msg);
+    messages.appendChild(botDiv);
+    messages.scrollTop = messages.scrollHeight;
+  }, 1200 + Math.random() * 800);
+}
+
+function getBotResponse(msg){
+  const m = msg.toLowerCase();
+  if(m.includes('price') || m.includes('cost') || m.includes('pricing') || m.includes('precio'))
+    return "Our plans start at $497/month for a single AI tool (voice agent or chatbot). The Growth plan at $997/mo is our most popular — it includes both. Check out fndi.tech/pricing for full details, or book a free call and we'll find the right fit for you!";
+  if(m.includes('voice') || m.includes('call') || m.includes('phone') || m.includes('llamada'))
+    return "Our AI voice agents answer calls 24/7 with natural-sounding conversation. They can book appointments, answer FAQs, qualify leads, and transfer urgent calls. Most businesses see 80%+ call capture rates. Want to hear a demo? Book a free call with our team!";
+  if(m.includes('chatbot') || m.includes('chat') || m.includes('website'))
+    return "Our AI chatbots live on your website and engage visitors instantly. They capture lead info, book appointments, answer questions, and qualify prospects — all 24/7. Setup takes about 48 hours. Would you like to see how it would work for your business?";
+  if(m.includes('automation') || m.includes('automat'))
+    return "We build custom automation workflows that handle repetitive tasks — appointment reminders, follow-up emails, lead routing, review requests, and more. Businesses typically save 15+ hours per month. Want to discuss what we could automate for you?";
+  if(m.includes('demo') || m.includes('try') || m.includes('example'))
+    return "You're chatting with a demo right now! Imagine this on your website, trained on YOUR business — answering customer questions, booking appointments, and capturing leads 24/7. Book a free call to see a full demo customized for your industry.";
+  if(m.includes('hi') || m.includes('hello') || m.includes('hey') || m.includes('hola'))
+    return "Hey! Welcome to FNDI. We build AI voice agents, chatbots, and automation tools for small businesses. What can I help you with? Feel free to ask about any of our services!";
+  if(m.includes('book') || m.includes('call') || m.includes('consult') || m.includes('agendar'))
+    return "You can book a free consultation at fndi.tech/book — it takes 30 seconds. We'll discuss your business, show you exactly how AI can help, and there's zero pressure. Looking forward to it!";
+  return "Great question! We specialize in AI voice agents, chatbots, automation, web development, and CRM systems — all built for small businesses. I'd love to connect you with our team for a detailed answer. Book a free call at fndi.tech/book or ask me about a specific service!";
+}
+
 // ===== FREE AUDIT FORM =====
 async function submitAudit(e){
   e.preventDefault();
@@ -1674,6 +1869,48 @@ async function submitAudit(e){
   document.getElementById('auditSuccess').classList.add('active');
 }
 </script>
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- SOCIAL PROOF TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+  <div>
+    <div class="toast-text" id="toastText"><strong></strong><span></span></div>
+    <div class="toast-time" id="toastTime"></div>
+  </div>
+  <button class="toast-close" onclick="document.getElementById('toast').classList.remove('show')">&times;</button>
+</div>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-header-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 0 1 1h1a4 4 0 0 1 0 8h-1a1 1 0 0 0-1 1v1a4 4 0 0 1-8 0v-1a1 1 0 0 0-1-1H6a4 4 0 0 1 0-8h1a1 1 0 0 0 1-1V6a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div><h4>FNDI AI Assistant</h4><span data-es="En línea ahora">Online now</span></div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">&times;</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot" data-es="¡Hola! Soy el asistente de IA de FNDI. ¿Cómo puedo ayudarte hoy? Pregúntame sobre nuestros agentes de voz, chatbots o cualquier servicio.">Hi there! I'm FNDI's AI assistant. How can I help you today? Ask me about our voice agents, chatbots, or any of our services.</div>
+    </div>
+    <div class="chat-input-wrap">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." data-es-placeholder="Escribe un mensaje..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()">
+    <div class="chat-pulse"></div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+</div>
+
 <script src="/lang.js"></script>
 </body>
 </html>
