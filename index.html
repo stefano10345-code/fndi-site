@@ -87,9 +87,23 @@
   .h-bg{position:absolute;inset:0;z-index:1;overflow:hidden}
   .network-canvas{position:absolute;inset:0;opacity:0.3;filter:drop-shadow(0 0 20px rgba(124,58,237,0.15))}
   .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:700px;height:700px;background:rgba(124,58,237,0.06);top:-20%;left:-15%}
-  .orb2{width:550px;height:550px;background:rgba(124,58,237,0.04);bottom:-20%;right:-12%;animation-delay:3s}
-  .orb3{width:400px;height:400px;background:rgba(167,139,250,0.05);top:25%;right:10%;animation-delay:5s}
+  .orb1{width:700px;height:700px;background:rgba(124,58,237,0.1);top:-20%;left:-15%}
+  .orb2{width:550px;height:550px;background:rgba(167,139,250,0.08);bottom:-20%;right:-12%;animation-delay:3s}
+  .orb3{width:400px;height:400px;background:rgba(139,92,246,0.07);top:25%;right:10%;animation-delay:5s}
+  .orb4{width:350px;height:350px;background:rgba(196,181,253,0.06);bottom:10%;left:20%;animation-delay:6s;filter:blur(80px)}
+
+  /* HERO FLOATING 3D GLASSMORPHISM SHAPES */
+  .hero-shape{position:absolute;border-radius:20px;backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.08);z-index:1;pointer-events:none}
+  .hero-shape-1{width:200px;height:200px;top:12%;left:5%;background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(167,139,250,0.03));transform:rotate(-15deg);animation:floatShape1 12s ease-in-out infinite;border-radius:24px}
+  .hero-shape-2{width:140px;height:140px;bottom:18%;right:6%;background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(196,181,253,0.03));transform:rotate(20deg);animation:floatShape2 10s ease-in-out infinite;border-radius:20px}
+  .hero-shape-3{width:80px;height:80px;top:30%;right:18%;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(167,139,250,0.04));transform:rotate(45deg);animation:floatShape1 8s ease-in-out infinite 2s;border-radius:16px}
+  .hero-shape-4{width:120px;height:120px;bottom:25%;left:12%;background:linear-gradient(135deg,rgba(167,139,250,0.06),transparent);transform:rotate(-30deg);animation:floatShape2 14s ease-in-out infinite 1s;border-radius:50%}
+  .hero-shape-1::before,.hero-shape-2::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,0.4),transparent);pointer-events:none}
+  @keyframes floatShape1{0%,100%{transform:rotate(-15deg) translateY(0)}50%{transform:rotate(-12deg) translateY(-25px)}}
+  @keyframes floatShape2{0%,100%{transform:rotate(20deg) translateY(0) scale(1)}50%{transform:rotate(22deg) translateY(-20px) scale(1.03)}}
+
+  /* HERO GRID OVERLAY */
+  .hero-grid{position:absolute;inset:0;z-index:0;opacity:0.04;background-image:linear-gradient(rgba(124,58,237,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.3) 1px,transparent 1px);background-size:80px 80px}
 
   .h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1)}
   h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-2px}
@@ -120,19 +134,21 @@
   /* SERVICES */
   .svc-sec{background:var(--surface)}
   .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-  .sc{background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;position:relative;overflow:hidden;transition:all 0.4s;cursor:pointer}
-  .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.5),transparent);opacity:0;transition:opacity 0.3s;z-index:1}
-  .sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,0.3),transparent);opacity:0;transition:opacity 0.3s;z-index:1}
-  .sc:hover{transform:translateY(-6px);border-color:rgba(124,58,237,0.2);box-shadow:0 16px 50px rgba(124,58,237,0.08)}
-  .sc:hover::before{opacity:1}
+  .sc{background:white;backdrop-filter:blur(8px);border:1px solid rgba(124,58,237,0.08);border-radius:20px;padding:1.8rem;position:relative;overflow:hidden;transition:all 0.4s;cursor:pointer;box-shadow:0 2px 12px rgba(124,58,237,0.03)}
+  .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#a78bfa,var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;z-index:1}
+  .sc::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(124,58,237,0.04),transparent 60%);opacity:0;transition:opacity 0.4s;pointer-events:none}
+  .sc:hover{transform:translateY(-8px);border-color:rgba(124,58,237,0.15);box-shadow:0 20px 60px rgba(124,58,237,0.1)}
+  .sc:hover::before{transform:scaleX(1)}
   .sc:hover::after{opacity:1}
-  .si{width:45px;height:45px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;transition:transform 0.3s}
-  .si.p{background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.05))}
-  .si.g{background:linear-gradient(135deg,rgba(52,211,153,0.15),rgba(52,211,153,0.05))}
-  .si.c{background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))}
-  .si.o{background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(251,146,60,0.05))}
-  .si.pk{background:linear-gradient(135deg,rgba(244,114,182,0.15),rgba(244,114,182,0.05))}
-  .si.b{background:linear-gradient(135deg,rgba(96,165,250,0.15),rgba(96,165,250,0.05))}
+  .si{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;transition:all 0.3s;position:relative}
+  .sc:hover .si{transform:scale(1.1) rotate(-3deg)}
+  .si.p{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:white;box-shadow:0 4px 15px rgba(124,58,237,0.25)}
+  .si.g{background:linear-gradient(135deg,#10b981,#34d399);color:white;box-shadow:0 4px 15px rgba(16,185,129,0.25)}
+  .si.c{background:linear-gradient(135deg,#06b6d4,#22d3ee);color:white;box-shadow:0 4px 15px rgba(6,182,212,0.25)}
+  .si.o{background:linear-gradient(135deg,#f97316,#fb923c);color:white;box-shadow:0 4px 15px rgba(249,115,22,0.25)}
+  .si.pk{background:linear-gradient(135deg,#ec4899,#f472b6);color:white;box-shadow:0 4px 15px rgba(236,72,153,0.25)}
+  .si.b{background:linear-gradient(135deg,#3b82f6,#60a5fa);color:white;box-shadow:0 4px 15px rgba(59,130,246,0.25)}
+  .si svg{stroke:white}
   .sc h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.3rem}
   .sc .tag{font-size:0.75rem;color:var(--accent2);font-weight:600;margin-bottom:0.6rem}
   .sc p{font-size:0.82rem;color:var(--text2);line-height:1.6;margin-bottom:1rem}
@@ -142,8 +158,15 @@
   /* WHY FNDI */
   .why-sec{background:var(--bg)}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-  .why-card{text-align:center;padding:2rem 1.5rem}
-  .why-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:0.5rem}
+  .why-card{text-align:center;padding:2.5rem 1.5rem;border-radius:20px;background:white;border:1px solid rgba(124,58,237,0.06);box-shadow:0 4px 20px rgba(124,58,237,0.04);transition:all 0.4s;position:relative;overflow:hidden}
+  .why-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--accent),#a78bfa);border-radius:0 0 3px 3px;transition:width 0.3s}
+  .why-card:hover::before{width:100%}
+  .why-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.12)}
+  .why-icon{width:64px;height:64px;border-radius:18px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+  .why-icon.i1{background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(167,139,250,0.05))}
+  .why-icon.i2{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(196,181,253,0.05))}
+  .why-icon.i3{background:linear-gradient(135deg,rgba(109,40,217,0.1),rgba(167,139,250,0.05))}
+  .why-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.5rem}
   .why-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
   .why-card p{font-size:0.85rem;color:var(--text2);line-height:1.6}
   @media(max-width:768px){.why-grid{grid-template-columns:1fr}}
@@ -242,30 +265,50 @@
 
   /* HOW IT WORKS */
   .how-sec{background:var(--bg)}
-  .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-  .how-step{position:relative;padding:2rem;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border)}
-  .how-step-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:3rem;font-weight:800;color:rgba(124,58,237,0.15);position:absolute;top:1rem;right:1.5rem}
-  .how-step h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+  .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem;position:relative}
+  .how-steps::before{content:'';position:absolute;top:50%;left:calc(33.33% + 1rem);right:calc(33.33% + 1rem);height:2px;background:linear-gradient(90deg,var(--accent),#a78bfa,var(--accent));opacity:0.15;transform:translateY(-50%)}
+  .how-step{position:relative;padding:2.2rem;border-radius:20px;background:white;border:1px solid rgba(124,58,237,0.06);box-shadow:0 4px 20px rgba(124,58,237,0.04);transition:all 0.4s;overflow:hidden}
+  .how-step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#a78bfa);transform:scaleX(0);transition:transform 0.4s}
+  .how-step:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.12)}
+  .how-step:hover::after{transform:scaleX(1)}
+  .how-step-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:3.5rem;font-weight:800;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(167,139,250,0.05));-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:absolute;top:0.8rem;right:1.2rem;line-height:1}
+  .how-step-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
+  .how-step-icon.s1{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:white;box-shadow:0 4px 12px rgba(124,58,237,0.2)}
+  .how-step-icon.s2{background:linear-gradient(135deg,#6d28d9,#8b5cf6);color:white;box-shadow:0 4px 12px rgba(109,40,217,0.2)}
+  .how-step-icon.s3{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:white;box-shadow:0 4px 12px rgba(91,33,182,0.2)}
+  .how-step h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
   .how-step p{font-size:0.85rem;color:var(--text2);line-height:1.6}
-  @media(max-width:768px){.how-steps{grid-template-columns:1fr}}
+  @media(max-width:768px){.how-steps{grid-template-columns:1fr}.how-steps::before{display:none}}
 
   /* TESTIMONIALS */
   .test-sec{background:var(--bg)}
   .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-  .tc{background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;position:relative;transition:all 0.3s}
-  .tc:hover{border-color:rgba(124,58,237,0.12);transform:translateY(-4px);box-shadow:0 12px 40px rgba(124,58,237,0.06)}
-  .tc-stars{color:var(--yellow);margin-bottom:1rem;font-size:0.9rem;letter-spacing:0.2rem}
+  .tc{background:white;border:1px solid rgba(124,58,237,0.06);border-radius:20px;padding:2rem;position:relative;transition:all 0.4s;box-shadow:0 4px 20px rgba(124,58,237,0.03);overflow:hidden}
+  .tc::before{content:'\201C';position:absolute;top:12px;right:20px;font-size:4rem;font-family:Georgia,serif;color:rgba(124,58,237,0.06);line-height:1;pointer-events:none}
+  .tc:hover{border-color:rgba(124,58,237,0.12);transform:translateY(-6px);box-shadow:0 20px 60px rgba(124,58,237,0.08)}
+  .tc-stars{color:#eab308;margin-bottom:1rem;font-size:0.9rem;letter-spacing:0.2rem}
   .tc p{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem;font-style:italic}
   .tc-author{font-weight:700;color:var(--text);font-size:0.85rem}
   .tc-role{font-size:0.75rem;color:var(--text3)}
 
   /* CTA SECTION */
-  .cta-sec{text-align:center;padding:5rem 2rem;background:#1a1a2e;color:white}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem;color:white}
-  .cta-sec p{font-size:1.02rem;color:#94a3b8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+  .cta-sec{text-align:center;padding:6rem 2rem;background:linear-gradient(135deg,#1a1a2e 0%,#2d1b69 50%,#1a1a2e 100%);color:white;position:relative;overflow:hidden}
+  .cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(124,58,237,0.2),transparent 70%);pointer-events:none}
+  .cta-sec::after{content:'';position:absolute;inset:0;opacity:0.05;background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,0.3) 1px,transparent 0);background-size:30px 30px;pointer-events:none}
+  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem;color:white;position:relative;z-index:1}
+  .cta-sec p{font-size:1.02rem;color:#c4b5fd;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+  .cta-sec .btn{position:relative;z-index:1}
+  .cta-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+  .cta-orb-1{width:300px;height:300px;background:rgba(124,58,237,0.2);top:-100px;left:-50px}
+  .cta-orb-2{width:250px;height:250px;background:rgba(167,139,250,0.15);bottom:-80px;right:-30px}
+
+  /* WAVE SEPARATOR */
+  .wave-sep{width:100%;height:80px;position:relative;overflow:hidden;background:var(--bg)}
+  .wave-sep svg{position:absolute;bottom:0;width:100%;height:80px}
 
   /* FOOTER */
-  footer{background:#1a1a2e;border-top:1px solid rgba(124,58,237,0.15);padding:4rem 2rem 2rem;color:#94a3b8}
+  footer{background:linear-gradient(180deg,#1a1a2e 0%,#12101f 100%);border-top:none;padding:4rem 2rem 2rem;color:#94a3b8;position:relative;overflow:hidden}
+  footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.3),rgba(167,139,250,0.2),rgba(124,58,237,0.3),transparent)}
   .ft-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
   .ft-inner>div:first-child{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
   .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
@@ -506,6 +549,12 @@
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+    <div class="hero-shape hero-shape-4"></div>
   </div>
   <div class="h-content">
     <div class="hero-ai-badge"><span class="badge-dot"></span> Powered by AI</div>
@@ -668,16 +717,19 @@
     </div>
     <div class="why-grid">
       <div class="why-card anim d1">
+        <div class="why-icon i1"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="why-num">24/7</div>
         <h3 data-es="Siempre Trabajando">Always Working</h3>
         <p data-es="Tus herramientas de IA no duermen, no toman días libres, y nunca pierden un cliente — ni a las 3 AM.">Your AI tools don't sleep, don't take days off, and never miss a customer — even at 3 AM.</p>
       </div>
       <div class="why-card anim d2">
+        <div class="why-icon i2"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="why-num">1:1</div>
         <h3 data-es="Atención Personalizada">Personal Attention</h3>
         <p data-es="Trabajas directamente con nuestro equipo fundador. Sin intermediarios, sin vueltas — solo resultados.">You work directly with our founding team. No account managers, no runaround — just results.</p>
       </div>
       <div class="why-card anim d3">
+        <div class="why-icon i3"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09c-.658.003-1.25.396-1.51 1z"/></svg></div>
         <div class="why-num">100%</div>
         <h3 data-es="Hecho a Medida">Custom Built</h3>
         <p data-es="Nada prefabricado. Cada solución está diseñada según cómo funciona tu negocio realmente.">Nothing off the shelf. Every solution is designed around how your business actually works.</p>
@@ -748,51 +800,21 @@
     <div class="how-steps">
       <div class="how-step anim d1">
         <div class="how-step-num">01</div>
+        <div class="how-step-icon s1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 11.042 11.042 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 11.042 11.042 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <h3 data-es="Agenda una Llamada Gratis">Book a Free Call</h3>
         <p data-es="Conoceremos tu negocio, qué no está funcionando, y dónde la IA puede generar el mayor impacto.">We'll learn about your business, what's not working, and where AI can make the biggest impact.</p>
       </div>
       <div class="how-step anim d2">
         <div class="how-step-num">02</div>
+        <div class="how-step-icon s2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3 data-es="Lo Construimos">We Build It</h3>
         <p data-es="Nuestro equipo diseña y construye tus herramientas de IA — agentes de voz, chatbots, automatizaciones, lo que necesites.">Our team designs and builds your AI tools — voice agents, chatbots, automations, whatever you need.</p>
       </div>
       <div class="how-step anim d3">
         <div class="how-step-num">03</div>
+        <div class="how-step-icon s3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
         <h3 data-es="Tú Creces">You Grow</h3>
         <p data-es="Lánzalo y empieza a ver resultados. Más llamadas contestadas, más clientes capturados, más ingresos.">Go live and start seeing results. More calls answered, more leads captured, more revenue coming in.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="ai-divider"></div>
-<section class="test-sec">
-  <!-- Floating AI elements -->
-  <div class="ai-float ai-float-5"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 12 18.469c-.753 0-1.47-.308-1.988-.823l-.549-.546z"/></svg></div>
-  <div class="ai-float ai-float-6"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1" data-es="TESTIMONIOS">TESTIMONIALS</div>
-      <h2 class="s-title anim d2" data-es="Lo Que Dicen Nuestros Clientes">What Clients Say</h2>
-    </div>
-    <div class="test-grid">
-      <div class="tc anim d1">
-        <div class="tc-stars">★★★★★</div>
-        <p>"The AI voice agent has transformed our business. We now capture 80% of calls that used to go to voicemail. Within 60 days, we booked 40 new appointments we would have lost."</p>
-        <div class="tc-author">Sarah Martinez</div>
-        <div class="tc-role">Med Spa Owner, Miami</div>
-      </div>
-      <div class="tc anim d2">
-        <div class="tc-stars">★★★★★</div>
-        <p>"Setup was seamless. The chatbot was trained on our services in 2 hours and immediately started booking appointments. We've recovered at least $5K in lost leads per month."</p>
-        <div class="tc-author">James Chen</div>
-        <div class="tc-role">Dental Practice Manager, FL</div>
-      </div>
-      <div class="tc anim d3">
-        <div class="tc-stars">★★★★★</div>
-        <p>"FNDI's team understood our business immediately. The ROI was clear in week one. This is not an expense—it's an investment that pays for itself 10 times over."</p>
-        <div class="tc-author">Robert Thompson</div>
-        <div class="tc-role">Home Service Owner, Miami</div>
       </div>
     </div>
   </div>
@@ -886,7 +908,12 @@
   </div>
 </section>
 
+<div class="wave-sep">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#1a1a2e"/></svg>
+</div>
 <section class="cta-sec">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
   <div class="con">
     <h2 data-es="Construyamos Algo Juntos">Let's Build Something Together</h2>
     <p data-es="Agenda una llamada gratis y te mostraremos exactamente cómo la IA puede funcionar para tu negocio.">Book a free call and we'll show you exactly how AI can work for your business.</p>
