@@ -12,8 +12,11 @@
 <meta property="og:description" content="Meet the team behind FNDI — AI solutions built by founders who care about small business.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fndi.tech/about">
-<meta property="og:image" content="https://fndi.tech/favicon.svg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://fndi.tech/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fndi.tech/og-image.png">
 <meta name="twitter:title" content="About FNDI — AI Solutions for Small Business">
 <meta name="twitter:description" content="Meet Stefano and Douglas, the founders building custom AI solutions for small businesses in South Florida.">
 <link rel="canonical" href="https://fndi.tech/about">
@@ -486,6 +489,15 @@ document.addEventListener('DOMContentLoaded',()=>{
   function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
   animate();
 })();
+</script>
+<!-- Cookie Consent -->
+<div id="cookieConsent" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:1rem 2rem;z-index:9999;font-family:'Inter',sans-serif;font-size:0.9rem;box-shadow:0 -4px 20px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+    <p style="margin:0;color:#d1d5db;">We use cookies (Google Analytics) to improve your experience. By continuing to use this site, you consent to our <a href="/privacy" style="color:#a78bfa;text-decoration:underline;">Privacy Policy</a>.</p>
+    <button onclick="acceptCookies()" style="background:#7c3aed;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.85rem;white-space:nowrap;">Got it</button>
+</div>
+<script>
+if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieConsent').style.display='flex';}
+function acceptCookies(){localStorage.setItem('cookieConsent','true');document.getElementById('cookieConsent').style.display='none';}
 </script>
 </body>
 </html>
