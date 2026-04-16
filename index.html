@@ -1522,95 +1522,7 @@ function updateCalc(){
   document.getElementById('calcSavings').textContent='$'+recovered.toLocaleString()+' / year';
 }
 
-/* VOICE DEMO */
-const demoConvo=[
-  {type:'ai',audio:'demo-audio/line0.mp3',text:"Hi, thank you for calling Glow Med Spa! This is Jessica, how can I help you?"},
-  {type:'customer',audio:'demo-audio/line1.mp3',text:"Hey Jessica, I wanted to book a Botox appointment. Do you have anything available this week?"},
-  {type:'ai',audio:'demo-audio/line2.mp3',text:"Of course! Let me check for you real quick. We have openings Thursday at 2pm and Friday at 10am, both with Dr. Martinez. Which works better?"},
-  {type:'customer',audio:'demo-audio/line3.mp3',text:"Thursday at 2 sounds perfect."},
-  {type:'ai',audio:'demo-audio/line4.mp3',text:"Awesome, I've got you down for Thursday at 2pm with Dr. Martinez. Can I grab your name?"},
-  {type:'customer',audio:'demo-audio/line5.mp3',text:"Sarah Johnson."},
-  {type:'ai',audio:'demo-audio/line6.mp3',text:"You're all set Sarah! I'm gonna send you a confirmation text with all the details. Anything else I can help with?"},
-  {type:'customer',audio:'demo-audio/line7.mp3',text:"No that's it, thanks!"},
-  {type:'ai',audio:'demo-audio/line8.mp3',text:"Sounds good! We look forward to seeing you Thursday. Have an amazing day!"}
-];
-let demoTimerInt,demoSecs=0;
-
-function demoUpdateTimer(){
-  demoSecs++;
-  const m=String(Math.floor(demoSecs/60)).padStart(2,'0');
-  const s=String(demoSecs%60).padStart(2,'0');
-  document.getElementById('demoTimer').textContent=m+':'+s;
-}
-
-function demoPlayAudio(src){
-  return new Promise(resolve=>{
-    const a=new Audio(src);
-    a.onended=resolve;
-    a.onerror=()=>{console.error('Audio failed:',src);resolve();};
-    a.play().catch(resolve);
-  });
-}
-
-function demoAddMsg(msg){
-  const chat=document.getElementById('demoChat');
-  const div=document.createElement('div');
-  div.className='demo-msg '+msg.type;
-  div.innerHTML='<span class="speaker">'+(msg.type==='ai'?'Jessica':'Customer')+'</span>'+msg.text;
-  chat.appendChild(div);
-  chat.scrollTop=chat.scrollHeight;
-}
-
-function demoShowTyping(){
-  const chat=document.getElementById('demoChat');
-  const div=document.createElement('div');
-  div.className='demo-typing';div.id='demoTypingInd';
-  div.innerHTML='<span></span><span></span><span></span>';
-  chat.appendChild(div);chat.scrollTop=chat.scrollHeight;
-}
-
-function demoRemoveTyping(){
-  const el=document.getElementById('demoTypingInd');
-  if(el)el.remove();
-}
-
-function demoShowStat(id){
-  document.getElementById(id).classList.add('show');
-}
-
-async function startVoiceDemo(){
-  document.getElementById('demoChat').innerHTML='';
-  document.getElementById('demoReplayBtn').textContent='Playing...';
-  document.getElementById('demoReplayBtn').disabled=true;
-  document.querySelectorAll('.demo-stat-card').forEach(c=>c.classList.remove('show'));
-  demoSecs=0;
-  document.getElementById('demoTimer').textContent='00:00';
-  document.getElementById('demoSoundWave').style.display='flex';
-  clearInterval(demoTimerInt);
-  demoTimerInt=setInterval(demoUpdateTimer,1000);
-
-  await new Promise(r=>setTimeout(r,1000));
-
-  for(let i=0;i<demoConvo.length;i++){
-    const msg=demoConvo[i];
-    if(msg.type==='ai'){demoShowTyping();await new Promise(r=>setTimeout(r,600));}
-    demoRemoveTyping();
-    demoAddMsg(msg);
-    if(i===2)demoShowStat('demoStat1');
-    if(i===4)demoShowStat('demoStat2');
-    if(i===6)demoShowStat('demoStat3');
-    if(i===8)demoShowStat('demoStat4');
-    await demoPlayAudio(msg.audio);
-    await new Promise(r=>setTimeout(r,300));
-  }
-
-  setTimeout(()=>{
-    clearInterval(demoTimerInt);
-    document.getElementById('demoSoundWave').style.display='none';
-    document.getElementById('demoReplayBtn').textContent='↻ Replay Demo';
-    document.getElementById('demoReplayBtn').disabled=false;
-  },1000);
-}
+/* VOICE DEMO — removed, will add better version later */
 
 document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
 
@@ -1825,7 +1737,6 @@ document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
   }, {threshold: 0.2});
   obs.observe(carousel || slides[0]);
 
-  slider.addEventListener('click', (e) => { updatePosition(e.clientX); });
 })();
 
 /* ===== ENHANCED SCROLL ANIMATIONS ===== */
