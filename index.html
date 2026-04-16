@@ -51,7 +51,49 @@
     "contactType": "sales",
     "email": "info@fndi.tech",
     "url": "https://fndi.tech"
-  }
+  },
+  "knowsAbout": ["AI Voice Agents", "AI Chatbots", "Business Automation", "CRM Systems", "Website Development", "Social Media Marketing"],
+  "slogan": "Never Miss Another Customer"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI voice agent for small business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An AI voice agent is a virtual receptionist that answers your business phone calls 24/7 with natural-sounding conversation. It can book appointments, answer FAQs, qualify leads, and transfer urgent calls — so you never miss a customer, even after hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an AI chatbot cost for a small business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FNDI's AI solutions start at $497/month for a single tool (voice agent or chatbot). The most popular Growth plan at $997/month includes both a voice agent and website chatbot. All plans include setup, customization, and ongoing support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can FNDI set up an AI voice agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most AI voice agents and chatbots are fully deployed within 48 hours. We handle all the setup, training, and customization so you can start capturing leads immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of businesses use AI voice agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI voice agents work for any business that receives phone calls — dental offices, med spas, law firms, home service companies, restaurants, salons, gyms, and more. Any business losing customers to missed calls can benefit."
+      }
+    }
+  ]
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -1065,7 +1107,7 @@
               <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
               <div><strong data-es="Ingresos Perdidos">Lost Revenue</strong><span data-es="$2,500+/mes en clientes perdidos">$2,500+/mo in lost customers</span></div>
             </div>
-            <div class="compare-stat bad-stat"><span class="compare-stat-num" data-target="38" data-suffix="%">0%</span> <span data-es="tasa de reservas">booking rate</span></div>
+            <div class="compare-stat bad-stat"><span class="compare-stat-num" data-target="38" data-suffix="%">38%</span> <span data-es="tasa de reservas">booking rate</span></div>
           </div>
           <div class="compare-after">
             <div class="compare-label after-label">
@@ -1084,7 +1126,7 @@
               <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
               <div><strong data-es="Ingresos Recuperados">Recovered Revenue</strong><span data-es="+$4,200/mes en nuevas reservas">+$4,200/mo in new bookings</span></div>
             </div>
-            <div class="compare-stat good-stat"><span class="compare-stat-num" data-target="94" data-suffix="%">0%</span> <span data-es="tasa de reservas">booking rate</span></div>
+            <div class="compare-stat good-stat"><span class="compare-stat-num" data-target="94" data-suffix="%">94%</span> <span data-es="tasa de reservas">booking rate</span></div>
           </div>
         </div>
         <div class="compare-divider" id="compareDivider">
@@ -1376,8 +1418,10 @@ async function aiChat(userText){
     chatHistory.push({role:'assistant',content:reply});
     return reply;
   }catch(e){
-    console.error('Chat error:',e);
-    return "I'm having trouble connecting. You can reach us at support@fndi.tech or <a href='/book' style='color:var(--accent2);text-decoration:underline'>book a call here</a>.";
+    // Fallback to smart hardcoded responses when API is unavailable
+    const fallback=getBotResponse(userText);
+    chatHistory.push({role:'assistant',content:fallback});
+    return fallback;
   }
 }
 
@@ -1641,7 +1685,7 @@ document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
       const suffix = el.dataset.suffix || '';
       animateValue(el, 0, target, 1800, '', suffix);
     });
-  }, {threshold: 0.5});
+  }, {threshold: 0.15, rootMargin: '0px 0px -50px 0px'});
   document.querySelectorAll('.compare-stat-num').forEach(el => compareObs.observe(el));
 })();
 
@@ -1798,46 +1842,14 @@ function toggleChat(){
   document.getElementById('chatBubble').classList.toggle('open');
 }
 
-function sendChat(){
-  const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if(!msg) return;
-  input.value = '';
-
-  const messages = document.getElementById('chatMessages');
-
-  // Add user message
-  const userDiv = document.createElement('div');
-  userDiv.className = 'chat-msg user';
-  userDiv.textContent = msg;
-  messages.appendChild(userDiv);
-  messages.scrollTop = messages.scrollHeight;
-
-  // Show typing indicator
-  const typingDiv = document.createElement('div');
-  typingDiv.className = 'chat-msg bot typing';
-  typingDiv.innerHTML = '<span></span><span></span><span></span>';
-  messages.appendChild(typingDiv);
-  messages.scrollTop = messages.scrollHeight;
-
-  // Generate response after delay
-  setTimeout(() => {
-    typingDiv.remove();
-    const botDiv = document.createElement('div');
-    botDiv.className = 'chat-msg bot';
-    botDiv.textContent = getBotResponse(msg);
-    messages.appendChild(botDiv);
-    messages.scrollTop = messages.scrollHeight;
-  }, 1200 + Math.random() * 800);
-}
-
+/* getBotResponse used as fallback when /api/chat is unavailable */
 function getBotResponse(msg){
   const m = msg.toLowerCase();
   if(m.includes('price') || m.includes('cost') || m.includes('pricing') || m.includes('precio'))
     return "Our plans start at $497/month for a single AI tool (voice agent or chatbot). The Growth plan at $997/mo is our most popular — it includes both. Check out fndi.tech/pricing for full details, or book a free call and we'll find the right fit for you!";
-  if(m.includes('voice') || m.includes('call') || m.includes('phone') || m.includes('llamada'))
+  if(m.includes('voice') || m.includes('phone') || m.includes('llamada'))
     return "Our AI voice agents answer calls 24/7 with natural-sounding conversation. They can book appointments, answer FAQs, qualify leads, and transfer urgent calls. Most businesses see 80%+ call capture rates. Want to hear a demo? Book a free call with our team!";
-  if(m.includes('chatbot') || m.includes('chat') || m.includes('website'))
+  if(m.includes('chatbot') || m.includes('website'))
     return "Our AI chatbots live on your website and engage visitors instantly. They capture lead info, book appointments, answer questions, and qualify prospects — all 24/7. Setup takes about 48 hours. Would you like to see how it would work for your business?";
   if(m.includes('automation') || m.includes('automat'))
     return "We build custom automation workflows that handle repetitive tasks — appointment reminders, follow-up emails, lead routing, review requests, and more. Businesses typically save 15+ hours per month. Want to discuss what we could automate for you?";
@@ -1928,29 +1940,7 @@ async function submitAudit(e){
   <button class="toast-close" onclick="document.getElementById('toast').classList.remove('show')">&times;</button>
 </div>
 
-<!-- CHAT WIDGET -->
-<div class="chat-widget">
-  <div class="chat-bubble" id="chatBubble">
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <div class="chat-header-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 0 1 1h1a4 4 0 0 1 0 8h-1a1 1 0 0 0-1 1v1a4 4 0 0 1-8 0v-1a1 1 0 0 0-1-1H6a4 4 0 0 1 0-8h1a1 1 0 0 0 1-1V6a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div><h4>FNDI AI Assistant</h4><span data-es="En línea ahora">Online now</span></div>
-      </div>
-      <button class="chat-close" onclick="toggleChat()">&times;</button>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-      <div class="chat-msg bot" data-es="¡Hola! Soy el asistente de IA de FNDI. ¿Cómo puedo ayudarte hoy? Pregúntame sobre nuestros agentes de voz, chatbots o cualquier servicio.">Hi there! I'm FNDI's AI assistant. How can I help you today? Ask me about our voice agents, chatbots, or any of our services.</div>
-    </div>
-    <div class="chat-input-wrap">
-      <input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." data-es-placeholder="Escribe un mensaje..." onkeypress="if(event.key==='Enter')sendChat()">
-      <button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-    </div>
-  </div>
-  <button class="chat-btn" onclick="toggleChat()">
-    <div class="chat-pulse"></div>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-  </button>
-</div>
+<!-- Second chat widget removed — consolidated into FNDI AI Advisor widget above -->
 
 <script src="/lang.js"></script>
 </body>
