@@ -3,7 +3,9 @@ cd "$(dirname "$0")"
 echo ""
 echo "🚀 Pushing FNDI website to GitHub..."
 echo ""
-git push --force origin main
+git add -A
+git commit -m "Update FNDI site"
+git push origin main
 PUSH_STATUS=$?
 echo ""
 if [ $PUSH_STATUS -eq 0 ]; then
