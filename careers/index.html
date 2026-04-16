@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at FNDI | Join Our AI Startup Team</title>
+    <meta name="description" content="Join FNDI and help build the future of AI for small businesses. We're hiring talented engineers, sales professionals, and content creators.">
+    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #7c3aed;
+            --accent2: #6d28d9;
+            --surface: #f8f7ff;
+            --text: #1a1a2e;
+            --text2: #4a4a68;
+            --text3: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text2);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.4rem;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Particle Canvas */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%);
+            padding: 2rem;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .hero .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .grad {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text2);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        section p {
+            color: var(--text2);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--surface);
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Why FNDI Cards */
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background: rgba(124, 58, 237, 0.08);
+            border-color: rgba(124, 58, 237, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: var(--text);
+        }
+
+        .card p {
+            color: var(--text2);
+            font-size: 0.95rem;
+        }
+
+        /* Roles Section */
+        .roles {
+            background: #ffffff;
+        }
+
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .role-card {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .role-card:hover {
+            background: rgba(124, 58, 237, 0.08);
+            border-color: rgba(124, 58, 237, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .role-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .role-card p {
+            color: var(--text2);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-apply {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-apply:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Values Section */
+        .values {
+            background: var(--surface);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .value-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .value-card p {
+            color: var(--text2);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 6rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            background: white;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        footer h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--text3);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        footer .tagline {
+            color: var(--text3);
+            font-style: italic;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(124, 58, 237, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text3);
+        }
+
+        /* Animation */
+        .anim {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .anim.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 1rem;
+                background: white;
+                padding: 2rem;
+                border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 80vh;
+                margin-top: 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .roles-grid, .why-cards, .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">FNDI</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/assessment">Free Assessment</a></li>
+                <li><a href="/book" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Join <span class="grad">FNDI</span></h1>
+            <p>We're building the future of small business AI</p>
+            <a href="#roles" class="hero-cta">Explore Roles</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about anim">
+        <div class="container">
+            <h2>About FNDI</h2>
+            <div class="about-content">
+                <p>
+                    We're a young, hungry startup with an execution-first culture. Based in Miami but remote-friendly, we're obsessed with building AI solutions that actually work for small businesses. No fluff, no corporate overhead—just real impact.
+                </p>
+                <p>
+                    Our team moves fast, ships faster, and measures everything. We're not here to perfect; we're here to deliver.
+                </p>
+            </div>
+
+            <h2 style="margin-top: 4rem;">Why Join FNDI?</h2>
+            <div class="why-cards">
+                <div class="card anim">
+                    <h3>Cutting-Edge AI</h3>
+                    <p>Work on real AI voice agents, chatbots, and automation tools that directly impact client success.</p>
+                </div>
+                <div class="card anim">
+                    <h3>Startup Equity</h3>
+                    <p>Early-stage team member? Get equity potential and grow with us as we scale.</p>
+                </div>
+                <div class="card anim">
+                    <h3>Learn Fast</h3>
+                    <p>Growth-focused environment where you'll learn skills and frameworks you won't find in corporate jobs.</p>
+                </div>
+                <div class="card anim">
+                    <h3>Real Impact</h3>
+                    <p>See your work directly improve small business operations—no busy work, just meaningful contributions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Roles Section -->
+    <section class="roles anim" id="roles">
+        <div class="container">
+            <h2>Open Roles</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--text2);">
+                Even if we're not actively hiring, we're always looking for top talent. Send us your resume and let's talk.
+            </p>
+
+            <div class="roles-grid">
+                <div class="role-card anim">
+                    <h3>AI Engineer / Developer</h3>
+                    <p>
+                        Build our AI voice agents and chatbot infrastructure. Python, LLMs, and integration work. You'll own features from conception to production.
+                    </p>
+                    <a href="mailto:careers@fndi.tech" class="btn-apply">Apply Now</a>
+                </div>
+
+                <div class="role-card anim">
+                    <h3>Sales & Business Development</h3>
+                    <p>
+                        Close deals and build client relationships. You'll work directly with founders, close accounts, and drive revenue. Commission + base + equity.
+                    </p>
+                    <a href="mailto:careers@fndi.tech" class="btn-apply">Apply Now</a>
+                </div>
+
+                <div class="role-card anim">
+                    <h3>Content & Social Media</h3>
+                    <p>
+                        Build our brand by creating content about AI, small business, and startup life. You'll post, engage, and help us go viral.
+                    </p>
+                    <a href="mailto:careers@fndi.tech" class="btn-apply">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values anim">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card anim">
+                    <h3>Execution</h3>
+                    <p>Ideas are cheap. Shipping is hard. We pick ideas over discussion.</p>
+                </div>
+                <div class="value-card anim">
+                    <h3>Build in Public</h3>
+                    <p>No hiding. We ship, iterate, and improve. Transparency is trust.</p>
+                </div>
+                <div class="value-card anim">
+                    <h3>Client Obsession</h3>
+                    <p>Every decision is measured by client impact. We win when they win.</p>
+                </div>
+                <div class="value-card anim">
+                    <h3>Move Fast</h3>
+                    <p>Speed > perfection. We iterate quickly and adapt to feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="container" style="margin: 0 2rem;">
+        <div class="cta-section anim">
+            <h2>Don't See Your Role?</h2>
+            <p>Reach out anyway. We're always looking for exceptional people.</p>
+            <a href="mailto:careers@fndi.tech" class="cta-link">Send Us Your Resume</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h3 class="nav-logo" style="color: white;">FNDI</h3>
+                <p class="tagline">AI solutions that work while you sleep.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="/#services">Services</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <a href="tel:+17868430145">(786) 843-0145</a>
+                <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+                <p style="color: var(--text3); margin-top: 1rem;">Miami, FL</p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <a href="https://instagram.com/fndi_tech" target="_blank">Instagram @fndi_tech</a>
+                <a href="mailto:careers@fndi.tech">Careers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FNDI. All rights reserved. Crafted with AI and coffee in Miami.</p>
+        </div>
+    </footer>
+
+    <!-- Particle Canvas Script -->
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 1.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(124, 58, 237, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        initParticles();
+        animate();
+    </script>
+
+    <!-- Navigation and Scroll Effects -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.anim').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

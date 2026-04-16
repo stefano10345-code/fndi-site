@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real results for real businesses. See how FNDI's AI solutions transformed small businesses with voice agents, chatbots, and automation.">
+    <meta name="keywords" content="case studies, AI agents, chatbots, automation, small business solutions">
+    <title>Case Studies & Portfolio | FNDI — AI Results for Small Business</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent2: #6d28d9;
+            --surface: #f8f7ff;
+            --text: #1a1a2e;
+            --text2: #4a4a68;
+            --text3: #6b7280;
+            --border: rgba(124, 58, 237, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+        }
+
+        .btn-nav.secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-nav.secondary:hover {
+            background: var(--surface);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 2rem 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, var(--surface) 100%);
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text2);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grad {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Featured Case Study */
+        .featured-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 2rem;
+        }
+
+        .featured-card {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 3rem;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .featured-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1);
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--surface), rgba(124, 58, 237, 0.1));
+            border-radius: 16px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .featured-content .project-type {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-content p {
+            color: var(--text2);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .featured-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: var(--surface);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tag.demo {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        /* Case Studies Grid */
+        .case-studies-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text2);
+            font-size: 1.1rem;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--surface), rgba(124, 58, 237, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .demo-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .case-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-client {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .case-metrics {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .metric {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text2);
+            font-weight: 400;
+        }
+
+        .case-description {
+            color: var(--text2);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .case-tag {
+            background: var(--surface);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 4rem 2rem;
+            margin: 80px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text2);
+            margin-bottom: 2rem;
+        }
+
+        .btn-g {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-g:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Coming Soon Note */
+        .coming-soon-note {
+            text-align: center;
+            color: var(--text2);
+            font-size: 0.95rem;
+            margin: 60px 0;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        /* Animations */
+        .anim {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .anim.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Particle Canvas */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -8px);
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .featured-card {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 100px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .featured-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .featured-card {
+                padding: 1.5rem;
+            }
+
+            .featured-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .case-card {
+                border-radius: 12px;
+            }
+
+            .case-image {
+                height: 150px;
+            }
+
+            .case-content {
+                padding: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">FNDI</div>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/assessment" class="btn-nav secondary">Free Assessment</a></li>
+                <li><a href="/book" class="btn-nav">Book a Call</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Our Work</h1>
+            <p class="subtitle">Real results for <span class="grad">real businesses</span></p>
+        </section>
+
+        <!-- Featured Case Study -->
+        <div class="featured-container">
+            <div class="featured-card anim">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=600&h=400&fit=crop" alt="Senzaki Hat Co website redesign">
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+                <div class="featured-content">
+                    <div class="project-type">Website Redesign</div>
+                    <h2>Senzaki Hat Co.</h2>
+                    <p>A complete brand refresh and website redesign for a premium hat brand. We're crafting a digital experience that captures their craftsmanship and connects with their audience.</p>
+                    <div class="featured-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Brand Refresh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Studies Grid -->
+        <section class="case-studies-section">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>See how we've transformed businesses with AI solutions</p>
+            </div>
+
+            <div class="cases-grid">
+                <!-- Case 1: AI Voice Agent -->
+                <div class="case-card anim">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Glow Med Spa reception">
+                        <div class="demo-badge">Demo Build</div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-client">Glow Med Spa</div>
+                        <h3 class="case-title">AI Voice Agent</h3>
+                        <div class="case-metrics">
+                            <div class="metric">94%</div>
+                            <div class="metric-label">Booking Rate</div>
+                            <div class="metric" style="margin-top: 0.8rem;">24/7</div>
+                            <div class="metric-label">Availability</div>
+                            <div class="metric" style="margin-top: 0.8rem;">$52K</div>
+                            <div class="metric-label">Revenue Saved</div>
+                        </div>
+                        <p class="case-description">An intelligent voice agent handles booking requests, FAQs, and scheduling around the clock, eliminating missed calls and boosting customer satisfaction.</p>
+                        <span class="case-tag">Voice Agent</span>
+                    </div>
+                </div>
+
+                <!-- Case 2: Website Chatbot -->
+                <div class="case-card anim">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1606768666260-4d79f7fc41bb?w=600&h=400&fit=crop" alt="Harbor Dental clinic">
+                        <div class="demo-badge">Demo Build</div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-client">Harbor Dental</div>
+                        <h3 class="case-title">Website Chatbot</h3>
+                        <div class="case-metrics">
+                            <div class="metric">67%</div>
+                            <div class="metric-label">More Appointments</div>
+                            <div class="metric" style="margin-top: 0.8rem;">Instant</div>
+                            <div class="metric-label">Patient Answers</div>
+                        </div>
+                        <p class="case-description">A smart chatbot answers patient questions about services, hours, insurance, and treatment options instantly, converting more visitors into scheduled appointments.</p>
+                        <span class="case-tag">Chatbot</span>
+                    </div>
+                </div>
+
+                <!-- Case 3: Full Automation Suite -->
+                <div class="case-card anim">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=400&fit=crop" alt="AutoGlow Detailing service">
+                        <div class="demo-badge">Demo Build</div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-client">AutoGlow Detailing</div>
+                        <h3 class="case-title">Full Automation Suite</h3>
+                        <div class="case-metrics">
+                            <div class="metric">85%</div>
+                            <div class="metric-label">Fewer Missed Calls</div>
+                            <div class="metric" style="margin-top: 0.8rem;">3x</div>
+                            <div class="metric-label">Online Bookings</div>
+                        </div>
+                        <p class="case-description">Voice agents, booking automation, and SMS confirmations work together to capture every opportunity, reduce no-shows, and streamline operations.</p>
+                        <span class="case-tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results At a Glance -->
+        <section class="stats-section anim">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="94">0</div>
+                    <div class="stat-label">% Avg Booking Rate Improvement</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="85">0</div>
+                    <div class="stat-label">% Reduction in Missed Calls</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="300">0</div>
+                    <div class="stat-label">% Increase in Online Bookings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">/7 Availability</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section anim">
+            <h2>Want Results Like These?</h2>
+            <p>Let's talk about how AI can transform your business</p>
+            <a href="/book" class="btn-g">Book a Free Call</a>
+        </section>
+
+        <!-- Coming Soon Note -->
+        <div class="coming-soon-note anim">
+            <p>We're just getting started. Check back as we add more client success stories.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>FNDI</h3>
+                <p>AI voice agents, chatbots, and automation for small businesses that want to grow faster.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#pricing">Pricing</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><strong>Email:</strong> <a href="mailto:support@fndi.tech" style="color: rgba(255,255,255,0.7); text-decoration: none;">support@fndi.tech</a></p>
+                <div class="social-links">
+                    <a href="https://instagram.com/fndi_tech" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FNDI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Particle Canvas Background
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 30;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = '#7c3aed';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        function initParticles() {
+            particles.length = 0;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+
+        // Navigation Scroll Effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.style.display = 'none';
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.anim').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-target]');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                // Start animation when counter is visible
+                const counterObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && current === 0) {
+                            updateCounter();
+                            counterObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                counterObserver.observe(counter);
+            });
+        }
+
+        animateCounters();
+    </script>
+</body>
+</html>

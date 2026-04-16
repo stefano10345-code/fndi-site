@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resources & Guides | FNDI — AI Tools for Small Business</title>
+    <meta name="description" content="Explore free AI resources, guides, tools, and blog posts to help your small business grow with voice agents and chatbots.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #7c3aed;
+            --accent2: #6d28d9;
+            --surface: #f8f7ff;
+            --text: #1a1a2e;
+            --text2: #4a4a68;
+            --text3: #6b7280;
+            --white: #ffffff;
+            --border: rgba(124, 58, 237, 0.1);
+            --card-bg: rgba(124, 58, 237, 0.03);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; }
+        h2 { font-size: 2.5rem; line-height: 1.2; }
+        h3 { font-size: 1.75rem; line-height: 1.3; }
+
+        /* Gradient Text */
+        .grad {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text2);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-purple {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-purple:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-g {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+        }
+
+        .btn-g:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero .grad {
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text2);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border);
+            background: transparent;
+            color: var(--text2);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Resources Grid */
+        .resources-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            background: rgba(124, 58, 237, 0.06);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.15);
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .resource-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            color: var(--text);
+        }
+
+        .resource-card p {
+            color: var(--text2);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .resource-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .resource-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .resource-link:hover {
+            gap: 0.75rem;
+            color: var(--accent2);
+        }
+
+        .resource-link::after {
+            content: '→';
+            transition: transform 0.2s ease;
+        }
+
+        .resource-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* Email Capture Section */
+        .email-section {
+            max-width: 700px;
+            margin: 4rem auto 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--surface) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .email-section h2 {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .email-section p {
+            color: var(--text2);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .email-form input {
+            padding: 0.875rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .email-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .email-form button {
+            width: 100%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .cta-section .btn-g {
+            background: white;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .cta-section .btn-g:hover {
+            background: var(--surface);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.15rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .anim {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .anim.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particle Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.25rem; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem;
+                width: 100%;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-section {
+                padding: 0 1rem;
+            }
+
+            .email-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .resources-container {
+                padding: 0 1rem 2rem;
+            }
+
+            .filter-section {
+                gap: 0.5rem;
+                padding: 0 1rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">FNDI</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/assessment" class="btn-purple">Free Assessment</a></li>
+                <li><a href="/contact" class="btn-g">Book a Call</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Resources <span class="grad">&</span> Guides</h1>
+            <p>Free tools and knowledge to help your business grow with AI-powered voice agents and chatbots</p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="guide">Guides</button>
+        <button class="filter-btn" data-filter="blog">Blog</button>
+        <button class="filter-btn" data-filter="tool">Tools</button>
+    </div>
+
+    <!-- Resources Grid -->
+    <section class="resources-container">
+        <div class="resources-grid" id="resourcesGrid">
+            <!-- Resource cards will be inserted here -->
+        </div>
+    </section>
+
+    <!-- Email Capture Section -->
+    <section class="email-section anim">
+        <h2>Get Our Free <span class="grad">AI Playbook</span></h2>
+        <p>Learn the strategies top small businesses use to automate customer interactions and save time.</p>
+        <form class="email-form" action="https://formsubmit.co/stefano@fndi.tech" method="POST">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn-g">Get Free Playbook</button>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://fndi.tech/thank-you">
+        </form>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section anim">
+        <h2>Ready to See AI in Action?</h2>
+        <p>Book a free consultation with our team and discover how AI can transform your business.</p>
+        <a href="/contact" class="btn-g">Book a Call Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>FNDI</h3>
+                <p>AI voice agents and chatbots designed for small businesses. Automate customer interactions, capture every lead, never miss a call.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/fndi_tech" target="_blank" title="Instagram">@</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <div class="footer-links">
+                    <a href="/services">Services</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/portfolio">Portfolio</a>
+                    <a href="/about">About</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="footer-links">
+                    <a href="mailto:support@fndi.tech">support@fndi.tech</a>
+                    <a href="/contact">Get in Touch</a>
+                    <a href="/assessment">Free Assessment</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FNDI. All rights reserved. | <a href="/privacy" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Resource Data
+        const resources = [
+            {
+                id: 1,
+                title: "5 Signs Your Business Needs an AI Voice Agent",
+                description: "Discover the key indicators that show you're losing opportunities without intelligent call handling.",
+                category: "guide",
+                icon: "📋",
+                link: "javascript:void(0);",
+                action: "openEmailCapture"
+            },
+            {
+                id: 2,
+                title: "ROI Calculator: How Much Are Missed Calls Costing You?",
+                description: "Use our interactive calculator to see the real financial impact of missed calls on your bottom line.",
+                category: "tool",
+                icon: "💰",
+                link: "/tools/roi-calculator",
+                linkText: "Use Calculator"
+            },
+            {
+                id: 3,
+                title: "AI Chatbot vs. Voice Agent: Which Do You Need?",
+                description: "Compare the benefits and use cases of chatbots and voice agents to find the perfect fit for your business.",
+                category: "blog",
+                icon: "🤖",
+                link: "/blog/chatbot-vs-voice-agent",
+                linkText: "Read Article"
+            },
+            {
+                id: 4,
+                title: "The Complete Guide to After-Hours Answering",
+                description: "Never let after-hours calls go to voicemail. Learn how to engage customers 24/7 with AI.",
+                category: "blog",
+                icon: "🌙",
+                link: "/blog/after-hours-answering-service-small-business",
+                linkText: "Read Guide"
+            },
+            {
+                id: 5,
+                title: "5 Automations Every Small Business Needs",
+                description: "Free up your team to focus on growth with these essential business automation workflows.",
+                category: "blog",
+                icon: "⚙️",
+                link: "/blog/5-automations-small-business",
+                linkText: "Read Article"
+            },
+            {
+                id: 6,
+                title: "Free Business Assessment",
+                description: "Get a personalized analysis of your customer communication gaps and AI opportunities.",
+                category: "tool",
+                icon: "📊",
+                link: "/assessment",
+                linkText: "Start Assessment"
+            },
+            {
+                id: 7,
+                title: "AI Receptionist for Dental Offices",
+                description: "Specialized guide on how dental practices can leverage AI to handle appointment scheduling and inquiries.",
+                category: "guide",
+                icon: "🦷",
+                link: "/blog/ai-receptionist-dental-offices",
+                linkText: "Read Guide"
+            },
+            {
+                id: 8,
+                title: "Why Small Businesses Lose Customers",
+                description: "Analyze the common pitfalls that cause customer churn and how AI can prevent them.",
+                category: "blog",
+                icon: "📉",
+                link: "/blog/why-small-businesses-lose-customers",
+                linkText: "Read Article"
+            }
+        ];
+
+        // Render Resources
+        function renderResources(filter = 'all') {
+            const grid = document.getElementById('resourcesGrid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? resources : resources.filter(r => r.category === filter);
+
+            filtered.forEach((resource, index) => {
+                const card = document.createElement('div');
+                card.className = 'resource-card anim';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                const linkHref = resource.action ? '#' : resource.link;
+                const linkText = resource.linkText || (resource.category === 'tool' ? 'Download' : 'Read More');
+                const onClickAttr = resource.action ? `onclick="${resource.action}()"` : '';
+
+                card.innerHTML = `
+                    <div class="resource-icon">${resource.icon}</div>
+                    <h3>${resource.title}</h3>
+                    <p>${resource.description}</p>
+                    <div class="resource-meta">
+                        <span class="resource-tag">${resource.category.charAt(0).toUpperCase() + resource.category.slice(1)}</span>
+                        <a href="${linkHref}" class="resource-link" ${onClickAttr}>${linkText}</a>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            // Trigger animations
+            setTimeout(() => {
+                document.querySelectorAll('.anim').forEach(el => {
+                    if (el.offsetParent !== null) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderResources(btn.dataset.filter);
+            });
+        });
+
+        // Mobile hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+        // Particle Canvas
+        class ParticleSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.mouse = { x: 0, y: 0 };
+
+                this.resize();
+                this.init();
+                this.animate();
+
+                window.addEventListener('resize', () => this.resize());
+                document.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            init() {
+                this.particles = [];
+                const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 15000);
+
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 1.5,
+                        opacity: Math.random() * 0.5 + 0.1
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+
+                    if (particle.x < 0) particle.x = this.canvas.width;
+                    if (particle.x > this.canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = this.canvas.height;
+                    if (particle.y > this.canvas.height) particle.y = 0;
+
+                    const dx = particle.x - this.mouse.x;
+                    const dy = particle.y - this.mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        particle.vx += (dx / distance) * 0.3;
+                        particle.vy += (dy / distance) * 0.3;
+                    }
+
+                    particle.vx *= 0.99;
+                    particle.vy *= 0.99;
+
+                    this.ctx.fillStyle = `rgba(124, 58, 237, ${particle.opacity})`;
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    this.ctx.fill();
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize particle system
+        new ParticleSystem(document.getElementById('particleCanvas'));
+
+        // Initial render
+        renderResources();
+    </script>
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+</body>
+</html>

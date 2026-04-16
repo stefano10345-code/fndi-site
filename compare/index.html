@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Agent vs. Receptionist vs. Answering Service | FNDI Comparison</title>
+    <meta name="description" content="Compare FNDI AI voice agents with traditional receptionists and answering services. See cost savings, features, and why businesses are switching to AI.">
+    <meta name="theme-color" content="#7c3aed">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #7c3aed;
+            --accent2: #6d28d9;
+            --surface: #f8f7ff;
+            --text: #1a1a2e;
+            --text2: #4a4a68;
+            --text3: #6b7280;
+            --border: rgba(124, 58, 237, 0.1);
+            --border-dark: rgba(124, 58, 237, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+
+        /* Gradient Text */
+        .grad {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface);
+        }
+
+        .btn-g {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-g:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Animations */
+        .anim {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .anim.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glass Cards */
+        .card-glass {
+            background: rgba(124, 58, 237, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-glass.accent {
+            border: 2px solid var(--accent);
+            background: rgba(124, 58, 237, 0.08);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links .btn {
+            margin-left: 16px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 16px;
+        }
+
+        .hero .subheading {
+            font-size: 1.25rem;
+            color: var(--text2);
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Canvas for particles */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Main content above canvas */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--text2);
+        }
+
+        /* Comparison Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            font-weight: 700;
+            background: var(--surface);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(124, 58, 237, 0.02);
+        }
+
+        .comparison-table .feature-col {
+            font-weight: 600;
+            color: var(--text);
+            min-width: 150px;
+        }
+
+        .comparison-table .fndi-col {
+            background: rgba(124, 58, 237, 0.06);
+            border-left: 3px solid var(--accent);
+        }
+
+        .comparison-table .fndi-col strong {
+            color: var(--accent);
+        }
+
+        .check {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .value {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* The Math Section */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .math-card {
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .math-card.traditional {
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .math-card.fndi {
+            background: rgba(124, 58, 237, 0.08);
+            border: 2px solid var(--accent);
+        }
+
+        .math-card h3 {
+            margin-bottom: 28px;
+            color: var(--text);
+        }
+
+        .math-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .math-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+        }
+
+        .math-item:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            padding-bottom: 0;
+            border-top: 2px solid var(--accent);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .math-item label {
+            color: var(--text2);
+            font-weight: 500;
+        }
+
+        .math-item .amount {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .math-card.fndi .math-item:last-child .amount {
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .faq-item {
+            padding: 32px;
+            border-radius: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+        }
+
+        .faq-item h3 {
+            color: var(--accent);
+            margin-bottom: 16px;
+            font-size: 1.125rem;
+        }
+
+        .faq-item p {
+            color: var(--text2);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(109, 40, 217, 0.05) 100%);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--text2);
+            margin-bottom: 32px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 16px;
+                background: white;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .math-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .math-card {
+                padding: 24px;
+            }
+
+            .table-wrapper {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.125rem; }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 12px;
+            }
+
+            .math-item {
+                font-size: 0.9rem;
+            }
+
+            .faq-item {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 40px 16px;
+            }
+
+            section {
+                padding: 40px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">FNDI</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/assessment" class="btn btn-secondary">Free Assessment</a></li>
+                <li><a href="/book" class="btn btn-g">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content anim">
+                <h1>FNDI AI vs. Traditional Solutions</h1>
+                <p class="subheading">See why businesses are switching to AI</p>
+                <div class="hero-cta">
+                    <a href="/book" class="btn btn-g">Book a Free Demo</a>
+                    <a href="#comparison" class="btn btn-secondary">See Comparison</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section id="comparison" style="background: var(--surface);">
+            <div class="container">
+                <div class="section-title anim">
+                    <h2>Feature Comparison</h2>
+                    <p>See exactly how FNDI AI stacks up against traditional receptionists and answering services</p>
+                </div>
+
+                <div class="table-wrapper anim">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Human Receptionist</th>
+                                <th>Answering Service</th>
+                                <th>FNDI AI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-col">Availability</td>
+                                <td>Business hours</td>
+                                <td>Limited</td>
+                                <td class="fndi-col"><strong>24/7/365</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Cost</td>
+                                <td>$3,500+/mo</td>
+                                <td>$800+/mo</td>
+                                <td class="fndi-col"><strong>From $497/mo</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Booking Rate</td>
+                                <td>Varies</td>
+                                <td>Low</td>
+                                <td class="fndi-col"><strong>94%</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Response Time</td>
+                                <td>Hold time</td>
+                                <td>Minutes</td>
+                                <td class="fndi-col"><strong>Instant</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Languages</td>
+                                <td>1-2</td>
+                                <td>1-2</td>
+                                <td class="fndi-col"><strong>Unlimited</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Scalability</td>
+                                <td><span class="cross">✗</span> Limited</td>
+                                <td><span class="cross">✗</span> Limited</td>
+                                <td class="fndi-col"><strong>Unlimited</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Setup Time</td>
+                                <td>Weeks</td>
+                                <td>Days</td>
+                                <td class="fndi-col"><strong>5-7 days</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Sick Days</td>
+                                <td><span class="cross">✗</span> Yes</td>
+                                <td>N/A</td>
+                                <td class="fndi-col"><strong>Never</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Consistency</td>
+                                <td>Varies</td>
+                                <td>Varies</td>
+                                <td class="fndi-col"><strong>Always Perfect</strong> <span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col">Custom Training</td>
+                                <td><span class="cross">✗</span> Expensive</td>
+                                <td><span class="cross">✗</span> Limited</td>
+                                <td class="fndi-col"><strong>Included</strong> <span class="check">✓</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math Section -->
+        <section>
+            <div class="container">
+                <div class="section-title anim">
+                    <h2>The Math</h2>
+                    <p>Annual cost breakdown comparison</p>
+                </div>
+
+                <div class="math-grid">
+                    <div class="math-card traditional anim">
+                        <h3>Traditional Receptionist</h3>
+                        <div class="math-breakdown">
+                            <div class="math-item">
+                                <label>Annual Salary</label>
+                                <span class="amount">$30,000</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Benefits</label>
+                                <span class="amount">$8,000</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Training</label>
+                                <span class="amount">$2,000</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Coverage Gaps</label>
+                                <span class="amount">$10,000+</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Total Annual Cost</label>
+                                <span class="amount">$50,000+/year</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="math-card fndi anim">
+                        <h3>FNDI AI</h3>
+                        <div class="math-breakdown">
+                            <div class="math-item">
+                                <label>Starter Plan</label>
+                                <span class="amount">$497/mo</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Pro Plan</label>
+                                <span class="amount">$997/mo</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Annual Range</label>
+                                <span class="amount">$5,964 - $11,964</span>
+                            </div>
+                            <div class="math-item">
+                                <label>Total Annual Cost</label>
+                                <span class="amount">Up to $44,000 saved</span>
+                            </div>
+                        </div>
+                        <div class="savings-badge">💰 Save up to 80% annually</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section style="background: var(--surface);">
+            <div class="container">
+                <div class="section-title anim">
+                    <h2>But What About...</h2>
+                    <p>Common questions about AI voice agents</p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item anim">
+                        <h3>Can AI really handle complex calls?</h3>
+                        <p>Absolutely. Our AI is trained to handle objection handling, appointment scheduling, emergency transfers, and detailed information collection. It learns your specific workflows and can handle nuanced conversations with the same professionalism as a seasoned receptionist.</p>
+                    </div>
+
+                    <div class="faq-item anim">
+                        <h3>What if customers prefer talking to a human?</h3>
+                        <p>Our AI gracefully transfers to a human agent at any point during the call. Customers don't feel like they're talking to a robot—they feel like they're getting premium service. In fact, 94% of customers are satisfied with AI handling, and they appreciate the instant response.</p>
+                    </div>
+
+                    <div class="faq-item anim">
+                        <h3>Is it hard to set up?</h3>
+                        <p>No. We handle the entire setup process for you in 5-7 days. Our team integrates with your systems, trains the AI on your specific workflows, and gets everything running smoothly. You'll have a dedicated success manager to ensure everything works perfectly.</p>
+                    </div>
+
+                    <div class="faq-item anim">
+                        <h3>What happens if the AI makes a mistake?</h3>
+                        <p>Human oversight is built in. You get detailed call transcripts, can review interactions, and our AI learns from every call. Plus, you set parameters for what gets escalated. It's more reliable than any single person because it never has a bad day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section>
+            <div class="container">
+                <div class="cta-section anim">
+                    <h2>See the Difference for Yourself</h2>
+                    <p>Book a free demo and see how FNDI AI can transform your customer communication</p>
+                    <a href="/book" class="btn btn-g">Book a Free Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">FNDI</div>
+                    <p class="footer-tagline">AI voice agents & chatbots for small businesses</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/fndi_tech" target="_blank" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path>
+                                <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/#pricing">Pricing</a></li>
+                        <li><a href="/#portfolio">Portfolio</a></li>
+                        <li><a href="/#about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:support@fndi.tech">support@fndi.tech</a></li>
+                        <li><a href="/book">Book a Call</a></li>
+                        <li><a href="/assessment">Free Assessment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 FNDI. All rights reserved. AI voice agents for small businesses.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // Particle Canvas Animation
+        // ============================================
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = Math.min(50, window.innerWidth / 10);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 2 + 1;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(124, 58, 237, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles.length = 0;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(drawParticles);
+        }
+
+        initParticles();
+        drawParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // ============================================
+        // Intersection Observer for Scroll Animations
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.anim').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================
+        // Navigation Mobile Menu
+        // ============================================
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // ============================================
+        // Navbar Scroll Effect
+        // ============================================
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(124, 58, 237, 0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
