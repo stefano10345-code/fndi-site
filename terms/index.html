@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | FNDI</title>
+    <meta name="description" content="FNDI Terms of Service. Read about our service terms, payment policies, and usage agreements.">
+    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --accent: #7c3aed; --accent2: #6d28d9;
+            --surface: #f8f7ff; --text: #1a1a2e;
+            --text2: #4a4a68; --text3: #6b7280;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: #ffffff; line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(124,58,237,0.1); padding: 1rem 2rem; z-index: 1000; transition: all 0.3s ease; }
+        nav.scrolled { background: rgba(255,255,255,0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text2); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; padding: 0.6rem 1.5rem; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; transition: transform 0.2s ease; }
+        .nav-cta:hover { transform: translateY(-2px); }
+        .hamburger { display: none; flex-direction: column; gap: 0.4rem; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
+
+        /* Hero */
+        .hero { min-height: 40vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%); padding: 2rem; margin-top: 60px; }
+        .hero .container { max-width: 800px; text-align: center; }
+        .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .grad { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.15rem; color: var(--text2); line-height: 1.6; }
+
+        /* Content */
+        .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+        .content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text); }
+        .content h2:first-of-type { margin-top: 0; }
+        .content p { color: var(--text2); margin-bottom: 1rem; line-height: 1.8; }
+        .content ul { color: var(--text2); margin: 0 0 1rem 1.5rem; line-height: 1.8; }
+        .content li { margin-bottom: 0.5rem; }
+        .content a { color: var(--accent); text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .last-updated { color: var(--text3); font-size: 0.9rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(124,58,237,0.1); }
+
+        /* Footer */
+        footer { background: var(--text); color: #ffffff; padding: 3rem 2rem 1.5rem; }
+        footer .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
+        footer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 1rem; }
+        footer a { color: var(--text3); text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; transition: color 0.3s ease; }
+        footer a:hover { color: var(--accent); }
+        footer .tagline { color: var(--text3); font-size: 0.9rem; margin-top: 0.5rem; }
+        .footer-bottom { text-align: center; padding: 2rem 0 0.5rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text3); font-size: 0.85rem; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .hamburger { display: flex; }
+            footer .container { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="nav">
+        <div class="container">
+            <a href="/" class="nav-logo">FNDI</a>
+            <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/book" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Terms of <span class="grad">Service</span></h1>
+            <p>Please read these terms carefully before using FNDI's services.</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <h2>1. Agreement to Terms</h2>
+        <p>By accessing or using the FNDI website (fndi.tech) or any of our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use our website or services.</p>
+        <p>FNDI ("we", "us", "our") provides AI-powered business solutions including but not limited to voice agents, chatbots, workflow automation, and website development for small and medium-sized businesses.</p>
+
+        <h2>2. Services</h2>
+        <p>FNDI offers AI solutions tailored to your business needs. The specific deliverables, timelines, and pricing for each project will be outlined in a separate service agreement or proposal provided before work begins. No work is initiated without written or verbal confirmation from the client.</p>
+        <p>We reserve the right to modify, suspend, or discontinue any part of our services at any time with reasonable notice to active clients.</p>
+
+        <h2>3. Payments and Billing</h2>
+        <p>Payment terms, including pricing, billing cycles, and due dates, will be specified in your individual service agreement. Unless otherwise stated:</p>
+        <ul>
+            <li>All fees are quoted in USD.</li>
+            <li>Invoices are due upon the date specified in your agreement.</li>
+            <li>Late payments may result in service suspension until the balance is resolved.</li>
+            <li>We do not store credit card or banking information on our servers.</li>
+        </ul>
+
+        <h2>4. Refunds and Cancellations</h2>
+        <p>Refund and cancellation policies vary by service type and will be outlined in your service agreement. In general:</p>
+        <ul>
+            <li>Monthly subscription services may be canceled with 30 days' written notice.</li>
+            <li>Custom development work that has already been completed is non-refundable.</li>
+            <li>If we fail to deliver agreed-upon services, you may be entitled to a partial or full refund at our discretion.</li>
+        </ul>
+
+        <h2>5. Client Responsibilities</h2>
+        <p>To ensure successful delivery of our services, you agree to:</p>
+        <ul>
+            <li>Provide accurate and timely information needed to complete your project.</li>
+            <li>Respond to requests for feedback or approvals within a reasonable timeframe.</li>
+            <li>Not use our services for any unlawful, abusive, or fraudulent purposes.</li>
+            <li>Not reverse-engineer, copy, or redistribute any proprietary systems we build for you without written permission.</li>
+        </ul>
+
+        <h2>6. Intellectual Property</h2>
+        <p>Upon full payment for services, you own the deliverables we create specifically for your business (websites, custom integrations, content). FNDI retains ownership of our proprietary tools, frameworks, internal systems, and any pre-existing intellectual property used in the creation of your deliverables.</p>
+        <p>We may showcase completed work in our portfolio unless you request otherwise in writing.</p>
+
+        <h2>7. Data and Privacy</h2>
+        <p>We take your data seriously. Any personal or business data you share with us is handled in accordance with our <a href="/privacy">Privacy Policy</a>. We do not sell your data to third parties.</p>
+
+        <h2>8. Third-Party Services</h2>
+        <p>Our solutions may integrate with third-party platforms (such as scheduling tools, CRM systems, or communication platforms). We are not responsible for the terms, availability, or performance of these third-party services. Your use of those services is governed by their own terms and policies.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>FNDI provides services on an "as is" basis. To the fullest extent permitted by law:</p>
+        <ul>
+            <li>We are not liable for any indirect, incidental, consequential, or punitive damages arising from your use of our services.</li>
+            <li>Our total liability for any claim related to our services shall not exceed the total amount you paid us in the 12 months preceding the claim.</li>
+            <li>We are not responsible for lost revenue, data loss, or business interruption caused by factors outside our reasonable control.</li>
+        </ul>
+
+        <h2>10. Disclaimer of Warranties</h2>
+        <p>While we strive to deliver high-quality AI solutions, we do not guarantee specific business outcomes (such as revenue increases, call volumes, or conversion rates). Results vary based on factors including your industry, market conditions, and how the solutions are used.</p>
+
+        <h2>11. Termination</h2>
+        <p>Either party may terminate the service relationship with written notice as specified in the service agreement. Upon termination, we will provide you with any deliverables completed up to that point. Access to FNDI-hosted tools or systems may be revoked upon termination or non-payment.</p>
+
+        <h2>12. Governing Law</h2>
+        <p>These terms are governed by the laws of the State of Florida, United States. Any disputes arising from these terms or our services will be resolved in the courts located in Miami-Dade County, Florida.</p>
+
+        <h2>13. Changes to These Terms</h2>
+        <p>We may update these terms from time to time. If we make significant changes, we'll update the date below and, where possible, notify active clients. Continued use of our website or services after changes are posted constitutes acceptance of the updated terms.</p>
+
+        <h2>14. Contact</h2>
+        <p>If you have questions about these terms, reach out to us:</p>
+        <p>Email: <a href="mailto:stefano@fndi.tech">stefano@fndi.tech</a><br>
+        Phone: <a href="tel:+17868430145">(786) 843-0145</a><br>
+        Location: Miami, FL</p>
+
+        <p class="last-updated">Last updated: April 16, 2026</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h3 class="nav-logo" style="color: white;">FNDI</h3>
+                <p class="tagline">AI solutions that work while you sleep.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="/#services">Services</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/how-it-works">How It Works</a>
+                <a href="/compare">Compare</a>
+                <a href="/about">About</a>
+                <a href="/book">Book a Call</a>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/testimonials">Testimonials</a>
+                <a href="/resources">Guides & Tools</a>
+                <a href="/tools/roi-calculator">ROI Calculator</a>
+                <a href="/blog">Blog</a>
+                <a href="/partners">Partner Program</a>
+                <a href="/careers">Careers</a>
+            </div>
+            <div>
+                <h3>Industries</h3>
+                <a href="/industries/dental">Dental Offices</a>
+                <a href="/industries/med-spas">Med Spas</a>
+                <a href="/industries/law-firms">Law Firms</a>
+                <a href="/industries/restaurants">Restaurants</a>
+                <a href="/industries/salons">Salons</a>
+                <a href="/industries/home-services">Home Services</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <a href="tel:+17868430145">(786) 843-0145</a>
+                <a href="mailto:stefano@fndi.tech">stefano@fndi.tech</a>
+                <p style="color: var(--text3); margin-top: 1rem;">Miami, FL</p>
+            </div>
+            <div>
+                <h3>Legal</h3>
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FNDI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
