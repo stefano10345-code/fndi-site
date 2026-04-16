@@ -678,7 +678,23 @@
   @media(max-width:768px){.chat-bubble{width:calc(100vw - 2rem);right:-1rem;bottom:65px}.toast{left:1rem;right:1rem;max-width:none}.back-top{bottom:1.5rem;right:1rem}.chat-widget{right:4rem}}
 
   /* ===== BEFORE/AFTER COMPARISON SLIDER ===== */
-  .compare-sec{background:var(--surface);overflow:hidden}
+  .compare-sec{background:var(--surface);overflow:hidden;padding-bottom:4rem}
+  .cmp-tabs{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+  .cmp-tab{display:flex;align-items:center;gap:0.4rem;padding:0.6rem 1.2rem;border-radius:12px;border:1px solid var(--glass-border);background:white;color:var(--text2);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif}
+  .cmp-tab:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,58,237,0.04)}
+  .cmp-tab.active{background:var(--accent);color:white;border-color:var(--accent);box-shadow:0 4px 15px rgba(124,58,237,0.25)}
+  .cmp-tab.active svg{stroke:white}
+  .cmp-carousel{position:relative;max-width:900px;margin:0 auto;overflow:hidden}
+  .cmp-slide{display:none;animation:cmpFadeIn 0.5s ease}
+  .cmp-slide.active{display:block}
+  @keyframes cmpFadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+  .cmp-nav{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-top:1.5rem}
+  .cmp-arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--glass-border);background:white;color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+  .cmp-arrow:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 4px 12px rgba(124,58,237,0.12)}
+  .cmp-dots{display:flex;gap:0.5rem;align-items:center}
+  .cmp-dot{width:8px;height:8px;border-radius:50%;background:var(--glass-border);transition:all 0.3s;cursor:pointer}
+  .cmp-dot.active{background:var(--accent);width:24px;border-radius:4px}
+  .cmp-num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;transition:all 0.3s}
   .compare-wrap{max-width:900px;margin:0 auto}
   .compare-slider{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.08);cursor:col-resize;-webkit-user-select:none;user-select:none}
   .compare-side{display:flex;min-height:400px}
@@ -1085,57 +1101,146 @@
     <div class="s-head">
       <div class="s-label anim d1" data-es="ANTES VS DESPUÉS">BEFORE VS AFTER</div>
       <h2 class="s-title anim d2" data-es="Ve la Diferencia que la IA Hace">See the Difference AI Makes</h2>
-      <p class="s-sub anim d3" data-es="Lo que cambia cuando tu negocio funciona con IA 24/7.">What changes when your business runs on AI 24/7.</p>
+      <p class="s-sub anim d3" data-es="Desliza para ver cómo cada herramienta transforma tu negocio.">Swipe through to see how each tool transforms your business.</p>
     </div>
-    <div class="compare-wrap anim d2">
-      <div class="compare-slider" id="compareSlider">
-        <div class="compare-side">
-          <div class="compare-before">
-            <div class="compare-label before-label">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-              <span data-es="Sin IA">Without AI</span>
+    <!-- SERVICE TABS -->
+    <div class="cmp-tabs anim d2" id="cmpTabs">
+      <button class="cmp-tab active" data-slide="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
+        Voice Agents
+      </button>
+      <button class="cmp-tab" data-slide="1">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Chatbots
+      </button>
+      <button class="cmp-tab" data-slide="2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09"/></svg>
+        Automation
+      </button>
+      <button class="cmp-tab" data-slide="3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        CRM
+      </button>
+      <button class="cmp-tab" data-slide="4">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Websites
+      </button>
+    </div>
+    <!-- SLIDES CONTAINER -->
+    <div class="cmp-carousel anim d3" id="cmpCarousel">
+      <!-- SLIDE 1: Voice Agents -->
+      <div class="cmp-slide active" data-idx="0">
+        <div class="compare-slider">
+          <div class="compare-side">
+            <div class="compare-before">
+              <div class="compare-label before-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Without AI</div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><div><strong>Missed Calls</strong><span>62% of calls go to voicemail</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><strong>Slow Response</strong><span>Hours or days to reply</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Lost Revenue</strong><span>$2,500+/mo in lost customers</span></div></div>
+              <div class="compare-stat bad-stat"><span class="cmp-num" data-target="38">38%</span> booking rate</div>
             </div>
-            <div class="compare-item">
-              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
-              <div><strong data-es="Llamadas Perdidas">Missed Calls</strong><span data-es="62% de llamadas van a buzón de voz">62% of calls go to voicemail</span></div>
+            <div class="compare-after">
+              <div class="compare-label after-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> With FNDI AI</div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div><div><strong>24/7 Coverage</strong><span>Every call answered instantly</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><strong>Instant Booking</strong><span>Customers book in seconds</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><strong>Recovered Revenue</strong><span>+$4,200/mo in new bookings</span></div></div>
+              <div class="compare-stat good-stat"><span class="cmp-num" data-target="94">94%</span> booking rate</div>
             </div>
-            <div class="compare-item">
-              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><strong data-es="Respuesta Lenta">Slow Response</strong><span data-es="Horas o días para responder">Hours or days to reply</span></div>
-            </div>
-            <div class="compare-item">
-              <div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-              <div><strong data-es="Ingresos Perdidos">Lost Revenue</strong><span data-es="$2,500+/mes en clientes perdidos">$2,500+/mo in lost customers</span></div>
-            </div>
-            <div class="compare-stat bad-stat"><span class="compare-stat-num" data-target="38" data-suffix="%">38%</span> <span data-es="tasa de reservas">booking rate</span></div>
-          </div>
-          <div class="compare-after">
-            <div class="compare-label after-label">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span data-es="Con FNDI AI">With FNDI AI</span>
-            </div>
-            <div class="compare-item">
-              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div>
-              <div><strong data-es="Cobertura 24/7">24/7 Coverage</strong><span data-es="Cada llamada es contestada al instante">Every call answered instantly</span></div>
-            </div>
-            <div class="compare-item">
-              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-              <div><strong data-es="Reservas Instantáneas">Instant Booking</strong><span data-es="Los clientes agendan en segundos">Customers book in seconds</span></div>
-            </div>
-            <div class="compare-item">
-              <div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-              <div><strong data-es="Ingresos Recuperados">Recovered Revenue</strong><span data-es="+$4,200/mes en nuevas reservas">+$4,200/mo in new bookings</span></div>
-            </div>
-            <div class="compare-stat good-stat"><span class="compare-stat-num" data-target="94" data-suffix="%">94%</span> <span data-es="tasa de reservas">booking rate</span></div>
-          </div>
-        </div>
-        <div class="compare-divider" id="compareDivider">
-          <div class="compare-handle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </div>
       </div>
+      <!-- SLIDE 2: Chatbots -->
+      <div class="cmp-slide" data-idx="1">
+        <div class="compare-slider">
+          <div class="compare-side">
+            <div class="compare-before">
+              <div class="compare-label before-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Without Chatbot</div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><div><strong>Visitors Leave</strong><span>96% of website visitors bounce without converting</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><strong>No Engagement</strong><span>Questions go unanswered after hours</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg></div><div><strong>Lost Leads</strong><span>No way to capture visitor info</span></div></div>
+              <div class="compare-stat bad-stat"><span class="cmp-num" data-target="2">2%</span> website conversion</div>
+            </div>
+            <div class="compare-after">
+              <div class="compare-label after-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> With FNDI Chatbot</div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><strong>Instant Engagement</strong><span>Every visitor greeted and helped in seconds</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div><div><strong>Lead Capture</strong><span>Names, emails, and phone numbers collected automatically</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><strong>Auto Booking</strong><span>Customers schedule appointments right in chat</span></div></div>
+              <div class="compare-stat good-stat"><span class="cmp-num" data-target="18">18%</span> website conversion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 3: Automation -->
+      <div class="cmp-slide" data-idx="2">
+        <div class="compare-slider">
+          <div class="compare-side">
+            <div class="compare-before">
+              <div class="compare-label before-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Manual Work</div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><strong>Time Wasted</strong><span>15+ hours/week on repetitive admin tasks</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div><strong>Human Error</strong><span>Forgotten follow-ups, missed reminders</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Hidden Costs</strong><span>$3,000+/mo in wasted labor</span></div></div>
+              <div class="compare-stat bad-stat"><span class="cmp-num" data-target="15">15</span> hrs/week wasted</div>
+            </div>
+            <div class="compare-after">
+              <div class="compare-label after-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> With FNDI Automation</div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><strong>Runs on Autopilot</strong><span>Reminders, follow-ups, and emails sent automatically</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><strong>Zero Errors</strong><span>Nothing falls through the cracks</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><strong>Time Saved</strong><span>Focus on growing, not admin work</span></div></div>
+              <div class="compare-stat good-stat"><span class="cmp-num" data-target="2">2</span> hrs/week on admin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 4: CRM -->
+      <div class="cmp-slide" data-idx="3">
+        <div class="compare-slider">
+          <div class="compare-side">
+            <div class="compare-before">
+              <div class="compare-label before-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> No CRM</div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><strong>Leads in Sticky Notes</strong><span>Scattered across texts, emails, and paper</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg></div><div><strong>Leads Leak</strong><span>40% of leads never get a follow-up</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><strong>No Visibility</strong><span>No idea which leads are hot or cold</span></div></div>
+              <div class="compare-stat bad-stat"><span class="cmp-num" data-target="22">22%</span> lead close rate</div>
+            </div>
+            <div class="compare-after">
+              <div class="compare-label after-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> With FNDI CRM</div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><strong>One Dashboard</strong><span>Every lead, deal, and conversation in one place</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><strong>Auto Follow-Up</strong><span>Every lead gets contacted within minutes</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><strong>Pipeline Clarity</strong><span>Know exactly where every deal stands</span></div></div>
+              <div class="compare-stat good-stat"><span class="cmp-num" data-target="51">51%</span> lead close rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 5: Websites -->
+      <div class="cmp-slide" data-idx="4">
+        <div class="compare-slider">
+          <div class="compare-side">
+            <div class="compare-before">
+              <div class="compare-label before-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Old Website</div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><strong>Outdated Design</strong><span>Looks unprofessional, kills trust instantly</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><strong>Invisible on Google</strong><span>No SEO means zero organic traffic</span></div></div>
+              <div class="compare-item"><div class="compare-icon bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><strong>Not Mobile-Ready</strong><span>60% of visitors leave on a broken mobile site</span></div></div>
+              <div class="compare-stat bad-stat"><span class="cmp-num" data-target="0">0</span> leads/month from site</div>
+            </div>
+            <div class="compare-after">
+              <div class="compare-label after-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> With FNDI Website</div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><strong>Premium Design</strong><span>Professional site that builds instant credibility</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div><div><strong>SEO Built-In</strong><span>Rank on Google for your services</span></div></div>
+              <div class="compare-item"><div class="compare-icon good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><strong>Conversion Machine</strong><span>Every page designed to turn visitors into leads</span></div></div>
+              <div class="compare-stat good-stat"><span class="cmp-num" data-target="35">35</span> leads/month from site</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- NAV ARROWS + DOTS -->
+    <div class="cmp-nav anim d3">
+      <button class="cmp-arrow" id="cmpPrev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="cmp-dots" id="cmpDots">
+        <span class="cmp-dot active"></span><span class="cmp-dot"></span><span class="cmp-dot"></span><span class="cmp-dot"></span><span class="cmp-dot"></span>
+      </div>
+      <button class="cmp-arrow" id="cmpNext"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
   </div>
 </section>
@@ -1689,33 +1794,88 @@ document.addEventListener('DOMContentLoaded',()=>{updateCalc();});
   document.querySelectorAll('.compare-stat-num').forEach(el => compareObs.observe(el));
 })();
 
-/* ===== BEFORE/AFTER COMPARISON SLIDER ===== */
+/* ===== BEFORE/AFTER CAROUSEL ===== */
 (function(){
-  const slider = document.getElementById('compareSlider');
-  const divider = document.getElementById('compareDivider');
-  if(!slider || !divider) return;
+  const slides = document.querySelectorAll('.cmp-slide');
+  const tabs = document.querySelectorAll('.cmp-tab');
+  const dots = document.querySelectorAll('.cmp-dot');
+  const prevBtn = document.getElementById('cmpPrev');
+  const nextBtn = document.getElementById('cmpNext');
+  if(!slides.length) return;
 
-  let isDragging = false;
+  let current = 0;
+  let autoTimer = null;
 
-  function updatePosition(clientX){
-    const rect = slider.getBoundingClientRect();
-    let pct = ((clientX - rect.left) / rect.width) * 100;
-    pct = Math.max(15, Math.min(85, pct));
-    divider.style.left = pct + '%';
-    const before = slider.querySelector('.compare-before');
-    const after = slider.querySelector('.compare-after');
-    if(before) before.style.flex = '0 0 ' + pct + '%';
-    if(after) after.style.flex = '0 0 ' + (100 - pct) + '%';
+  function goTo(idx){
+    if(idx < 0) idx = slides.length - 1;
+    if(idx >= slides.length) idx = 0;
+    slides[current].classList.remove('active');
+    tabs[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    tabs[current].classList.add('active');
+    dots[current].classList.add('active');
+    animateNums(slides[current]);
+    resetAuto();
   }
 
-  divider.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
-  divider.addEventListener('touchstart', (e) => { isDragging = true; }, {passive: true});
+  function animateNums(slide){
+    slide.querySelectorAll('.cmp-num').forEach(el => {
+      const target = parseInt(el.dataset.target) || 0;
+      const start = 0;
+      const duration = 1200;
+      const startTime = performance.now();
+      function step(now){
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val = Math.round(start + (target - start) * ease);
+        const parent = el.closest('.compare-stat');
+        const isPercent = parent && parent.textContent.includes('rate') || parent && parent.textContent.includes('conversion') || parent && parent.textContent.includes('close');
+        el.textContent = val + (isPercent ? '%' : '');
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
 
-  document.addEventListener('mousemove', (e) => { if(isDragging) updatePosition(e.clientX); });
-  document.addEventListener('touchmove', (e) => { if(isDragging) updatePosition(e.touches[0].clientX); }, {passive: true});
+  tabs.forEach((tab, i) => tab.addEventListener('click', () => goTo(i)));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  if(prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if(nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  document.addEventListener('mouseup', () => { isDragging = false; });
-  document.addEventListener('touchend', () => { isDragging = false; });
+  // Touch swipe support
+  let touchStartX = 0;
+  const carousel = document.getElementById('cmpCarousel');
+  if(carousel){
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){
+        if(diff > 0) goTo(current + 1);
+        else goTo(current - 1);
+      }
+    });
+  }
+
+  // Auto-rotate every 5 seconds
+  function resetAuto(){
+    if(autoTimer) clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+  resetAuto();
+
+  // Animate first slide numbers on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateNums(slides[current]);
+        obs.disconnect();
+      }
+    });
+  }, {threshold: 0.2});
+  obs.observe(carousel || slides[0]);
 
   slider.addEventListener('click', (e) => { updatePosition(e.clientX); });
 })();
