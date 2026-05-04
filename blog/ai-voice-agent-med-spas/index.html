@@ -559,6 +559,102 @@
         .chat-quick-btn:hover { border-color: #7c3aed; color: #7c3aed; background: #f8f7ff; }
         @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); height: 70vh; right: -8px; } }
 
+    
+        /* Mobile Fixes */
+        img, video, svg { max-width: 100%; height: auto; }
+        * { -webkit-text-size-adjust: 100%; }
+
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+
+            /* Footer mobile */
+            .footer-content {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+                align-items: center;
+            }
+
+            /* Nav */
+            .nav-cta { display: none !important; }
+
+            /* Typography */
+            h1 { font-size: 1.75rem !important; }
+            h2 { font-size: 1.4rem !important; }
+            h3 { font-size: 1.15rem !important; }
+
+            /* Sections */
+            section { padding: 2.5rem 1rem !important; }
+
+            /* Hero tweaks */
+            #hero, .hero { height: auto !important; min-height: 300px !important; padding: 3rem 1rem !important; background-attachment: scroll !important; background-size: cover !important; }
+            .hero h1 { font-size: 1.75rem !important; }
+            .hero-subtitle { font-size: 1rem !important; }
+            .hero-ctas, .hero-buttons { flex-direction: column !important; gap: 0.75rem !important; }
+
+            /* Grids */
+            .pricing-grid, .services-grid, .industries-grid,
+            .stats-grid, .steps-grid, .features-grid,
+            .benefit-item, .comparison, .founders-grid,
+            .blog-grid, .team-grid, .tools-grid, .partners-grid,
+            .case-grid, .demo-grid, .resources-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Tables scroll horizontally */
+            .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+            /* Forms */
+            .form-row, .form-group-row { flex-direction: column !important; }
+            input, select, textarea { font-size: 16px !important; } /* Prevent iOS zoom */
+
+            /* Pricing cards */
+            .pricing-card { padding: 1.5rem !important; }
+            .price { font-size: 2rem !important; }
+
+            /* Blog cards */
+            .blog-card { flex-direction: column !important; }
+            .blog-card-image { width: 100% !important; height: 180px !important; }
+
+            /* CTA sections full width */
+            .cta-content, .cta-box { padding: 2rem 1rem !important; }
+
+            /* Inline grids with style attributes */
+            div[style*="grid-template-columns: 1fr 1fr"],
+            div[style*="grid-template-columns:1fr 1fr"],
+            div[style*="grid-template-columns: repeat(2"],
+            div[style*="grid-template-columns: repeat(3"],
+            div[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Flex layouts that should stack */
+            div[style*="display: flex"][style*="gap: 3rem"],
+            div[style*="display: flex"][style*="gap: 4rem"],
+            div[style*="display:flex"][style*="gap:3rem"],
+            div[style*="display:flex"][style*="gap:4rem"] {
+                flex-direction: column !important;
+            }
+
+            /* FAQ */
+            .faq-section { padding: 3rem 1rem !important; }
+            .faq-question { font-size: 0.95rem !important; }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr !important;
+            }
+            .footer-col { margin-bottom: 0.5rem; }
+            h1 { font-size: 1.5rem !important; }
+            h2 { font-size: 1.25rem !important; }
+        }
+
     </style>
 </head>
 <body>
