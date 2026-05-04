@@ -427,20 +427,18 @@
     </style>
 </head>
 <body>
-    <nav id="nav">
-        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
-        <div class="nav-center">
-            <a href="/#services">Services</a>
-            <a href="/#industries">Industries</a>
-            <a href="/#pricing">Pricing</a>
-            <a href="/#about">About</a>
-            <a href="/#portfolio">Portfolio</a>
-            <a href="/book/" class="nav-cta">Get Started</a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 2rem;background:var(--bg-light);transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" class="nav-logo" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
+            FNDI
+            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;">Future Native Digital Intelligence</span>
+        </a>
+        <div class="nav-links" style="display:flex;gap:2.5rem;list-style:none;align-items:center;">
+            <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Services</a>
+            <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Industries</a>
+            <a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a>
+            <a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a>
+            <a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a>
+            <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a>
         </div>
     </nav>
 
@@ -463,30 +461,23 @@
         <!-- Blog cards will be inserted here -->
     </div>
 
-    <footer>
-        <div class="footer-content">
+        <footer>
+        <div class="footer-content" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem;max-width:1200px;margin-left:auto;margin-right:auto;">
             <div class="footer-col">
                 <div class="footer-logo">FNDI</div>
-                <p style="font-size: 0.9rem; color: #999;">Future Native Digital Intelligence. Building AI solutions that scale your business.</p>
-                <div class="footer-socials">
-                    <a href="https://instagram.com" class="social-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        </svg>
+                <p style="margin-bottom:0.3rem;">Future Native Digital Intelligence</p>
+                <p>AI solutions for small businesses.</p>
+                <p style="margin-top:0.5rem;">Based in Miami, FL</p>
+                <p><a href="mailto:info@fndi.tech">info@fndi.tech</a></p>
+                <div class="footer-socials" style="display:flex;gap:1rem;margin-top:1rem;">
+                    <a href="https://instagram.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
-                    <a href="https://linkedin.com" class="social-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect x="2" y="9" width="4" height="12"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
+                    <a href="https://linkedin.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a href="mailto:hello@fndi.tech" class="social-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
+                    <a href="mailto:info@fndi.tech" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </a>
                 </div>
             </div>
@@ -501,26 +492,36 @@
                 <a href="/services/meta-ads/">Meta Ads</a>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/#about">About</a>
-                <a href="/#pricing">Pricing</a>
-                <a href="/#portfolio">Portfolio</a>
-                <a href="/#careers">Careers</a>
-                <a href="/#contact">Contact</a>
-                <a href="/blog/">Blog</a>
+                <h4>Industries</h4>
+                <a href="/industries/dental/">Dental Offices</a>
+                <a href="/industries/med-spas/">Med Spas</a>
+                <a href="/industries/law-firms/">Law Firms</a>
+                <a href="/industries/restaurants/">Restaurants</a>
+                <a href="/industries/salons/">Salons</a>
+                <a href="/industries/home-services/">Home Services</a>
             </div>
             <div class="footer-col">
-                <h4>Industries</h4>
-                <a href="#dental">Dental</a>
-                <a href="#medspas">Medical Spas</a>
-                <a href="#law">Law Firms</a>
-                <a href="#restaurants">Restaurants</a>
-                <a href="#salons">Salons</a>
-                <a href="#homeservices">Home Services</a>
+                <h4>Company</h4>
+                <a href="/about/">About Us</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/blog/">Blog</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/case-studies/">Case Studies</a>
+                <a href="/partners/">Partners</a>
+                <a href="/resources/">Resources</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>Copyright 2026 FNDI. <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+        <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;max-width:1200px;margin:0 auto;">
+            <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">© 2026 FNDI. All rights reserved.</p>
+            <div style="display:flex;gap:2rem;justify-content:center;margin-top:1rem;">
+                <a href="/terms/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Terms of Service</a>
+                <a href="/privacy/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Privacy Policy</a>
+                <a href="/book/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Book a Call</a>
+                <a href="mailto:info@fndi.tech" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Contact</a>
+            </div>
         </div>
     </footer>
 
@@ -532,7 +533,7 @@
                 category: 'industry',
                 excerpt: 'Discover how AI receptionists handle missed calls during procedures, manage after-hours inquiries, and automate appointment reminders while you focus on patient care.',
                 readTime: '6 min read',
-                emoji: '🦷'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>'
             },
             {
                 id: 'ai-voice-agent-med-spas',
@@ -540,7 +541,7 @@
                 category: 'voice-agents',
                 excerpt: 'Med spas are capturing 40% more high-value bookings with AI voice agents that handle consultation calls, follow-ups, and answer common questions automatically.',
                 readTime: '5 min read',
-                emoji: '✨'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>'
             },
             {
                 id: 'ai-answering-service-law-firms',
@@ -548,7 +549,7 @@
                 category: 'industry',
                 excerpt: 'Never lose a case again. Learn how law firms use AI answering services to capture every potential client call with professional intake and after-hours coverage.',
                 readTime: '8 min read',
-                emoji: '⚖️'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>'
             },
             {
                 id: 'ai-phone-system-restaurants',
@@ -556,7 +557,7 @@
                 category: 'industry',
                 excerpt: 'Handle peak-hour call volume, manage reservations intelligently, and even take orders with AI. See how restaurants are automating their phone systems.',
                 readTime: '6 min read',
-                emoji: '🍽️'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
             },
             {
                 id: 'ai-booking-salons-barbershops',
@@ -564,7 +565,7 @@
                 category: 'industry',
                 excerpt: 'Automated scheduling, smart no-show prevention, and waitlist management. Discover how beauty businesses are doubling bookings with AI.',
                 readTime: '7 min read',
-                emoji: '💇'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
             },
             {
                 id: 'ai-answering-home-service-contractors',
@@ -572,7 +573,7 @@
                 category: 'voice-agents',
                 excerpt: 'On-site unavailability costs contractors thousands in missed leads. Learn how AI handles calls while you work, with emergency detection and estimate scheduling.',
                 readTime: '6 min read',
-                emoji: '🔧'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>'
             },
             {
                 id: 'chatbot-vs-voice-agent',
@@ -580,7 +581,7 @@
                 category: 'chatbots',
                 excerpt: 'Comparing text-based and voice AI solutions. Understand the differences, use cases, and when combining both gives you maximum lead capture.',
                 readTime: '7 min read',
-                emoji: '🤖'
+                icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>'
             }
         ];
 
@@ -598,7 +599,7 @@
                 const card = document.createElement('article');
                 card.className = 'blog-card fade-in visible';
                 card.innerHTML = `
-                    <div class="blog-card-image">${article.emoji}</div>
+                    <div class="blog-card-image">${article.icon}</div>
                     <div class="blog-card-content">
                         <div class="blog-category">${article.category.replace('-', ' ')}</div>
                         <h3>${article.title}</h3>

@@ -211,24 +211,20 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-logo-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
-      <div class="nav-logo-text">Harbor <span>Car Rental</span></div>
-    </a>
-    <button class="mob-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
-      <a href="#fleet" data-es="Flota">Fleet</a>
-      <a href="#why" data-es="Por Qué Nosotros">Why Us</a>
-      <a href="#how" data-es="Cómo Funciona">How It Works</a>
-      <a href="#contact" data-es="Contacto">Contact</a>
-      <a href="tel:+17865160659" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (786) 516-0659</a>
-      <a href="#contact" class="nav-cta" data-es="Reservar Ahora">Book Now</a>
-    </div>
-  </div>
-</nav>
+    <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 2rem;background:var(--bg-light);transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" class="nav-logo" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
+            FNDI
+            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;">Future Native Digital Intelligence</span>
+        </a>
+        <div class="nav-links" style="display:flex;gap:2.5rem;list-style:none;align-items:center;">
+            <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Services</a>
+            <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Industries</a>
+            <a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a>
+            <a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a>
+            <a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a>
+            <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a>
+        </div>
+    </nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -251,7 +247,7 @@
           <div class="hero-stat-label" data-es="Vehículos Disponibles">Vehicles Available</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">4.8<span style="font-size:1rem;color:var(--gold)">★</span></div>
+          <div class="hero-stat-num">4.8<span style="font-size:1rem;color:var(--gold)">&#9733;</span></div>
           <div class="hero-stat-label" data-es="Calificación en Google">Google Rating</div>
         </div>
       </div>
@@ -421,19 +417,19 @@
     </div>
     <div class="test-grid">
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p data-es="Excelente servicio. Me entregaron el auto en el hotel en menos de 30 minutos. Muy profesionales.">"Great service. They delivered the car to my hotel in under 30 minutes. Very professional."</p>
         <div class="test-author">Carlos M.</div>
         <div class="test-role" data-es="Visitante de Venezuela">Visitor from Venezuela</div>
       </div>
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p data-es="Los mejores precios en Miami. Alquilé por un mes y me dieron un descuento increíble. 100% recomendado.">"Best prices in Miami. I rented for a month and they gave me an amazing discount. 100% recommended."</p>
         <div class="test-author">Maria L.</div>
         <div class="test-role" data-es="Residente de Miami">Miami Resident</div>
       </div>
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p data-es="El auto estaba impecable y el proceso fue super rápido. Hablan español que es un gran plus para mí.">"Car was spotless and the process was super fast. They speak Spanish which is a big plus for me."</p>
         <div class="test-author">Diego R.</div>
         <div class="test-role" data-es="Viajero de negocios">Business Traveler</div>
@@ -538,41 +534,69 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="ft-grid">
-    <div>
-      <div class="ft-logo">Harbor <span>Car Rental</span></div>
-      <p style="margin-top:0.5rem;max-width:280px;line-height:1.6" data-es="Alquiler de autos confiable y económico en Miami. Servicio personalizado en inglés y español.">Reliable and affordable car rental in Miami. Personalized service in English and Spanish.</p>
-    </div>
-    <div>
-      <h4 data-es="Flota">Fleet</h4>
-      <a href="#fleet" data-es="Económico">Economy</a>
-      <a href="#fleet">SUV</a>
-      <a href="#fleet" data-es="Lujo">Luxury</a>
-      <a href="#fleet">Van / Minivan</a>
-    </div>
-    <div>
-      <h4 data-es="Empresa">Company</h4>
-      <a href="#why" data-es="Por Qué Nosotros">Why Us</a>
-      <a href="#how" data-es="Cómo Funciona">How It Works</a>
-      <a href="#contact" data-es="Contacto">Contact</a>
-    </div>
-    <div>
-      <h4 data-es="Contacto">Contact</h4>
-      <a href="tel:+17865160659">(786) 516-0659</a>
-      <a href="mailto:harborcarrental@gmail.com">harborcarrental@gmail.com</a>
-      <p style="margin-top:0.3rem" data-es="Miami, FL">Miami, FL</p>
-          <div>
-        <h3>Legal</h3>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-    <p>&copy; 2026 Harbor Car Rental. All rights reserved.</p>
-    <p data-es="Sitio web por FNDI">Website by <a href="https://fndi.tech" style="color:var(--sky-light)">FNDI</a></p>
-  </div>
-</footer>
+    <footer>
+        <div class="footer-content" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem;max-width:1200px;margin-left:auto;margin-right:auto;">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="margin-bottom:0.3rem;">Future Native Digital Intelligence</p>
+                <p>AI solutions for small businesses.</p>
+                <p style="margin-top:0.5rem;">Based in Miami, FL</p>
+                <p><a href="mailto:info@fndi.tech">info@fndi.tech</a></p>
+                <div class="footer-socials" style="display:flex;gap:1rem;margin-top:1rem;">
+                    <a href="https://instagram.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:info@fndi.tech" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/industries/dental/">Dental Offices</a>
+                <a href="/industries/med-spas/">Med Spas</a>
+                <a href="/industries/law-firms/">Law Firms</a>
+                <a href="/industries/restaurants/">Restaurants</a>
+                <a href="/industries/salons/">Salons</a>
+                <a href="/industries/home-services/">Home Services</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about/">About Us</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/blog/">Blog</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/case-studies/">Case Studies</a>
+                <a href="/partners/">Partners</a>
+                <a href="/resources/">Resources</a>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;max-width:1200px;margin:0 auto;">
+            <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">© 2026 FNDI. All rights reserved.</p>
+            <div style="display:flex;gap:2rem;justify-content:center;margin-top:1rem;">
+                <a href="/terms/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Terms of Service</a>
+                <a href="/privacy/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Privacy Policy</a>
+                <a href="/book/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Book a Call</a>
+                <a href="mailto:info@fndi.tech" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Contact</a>
+            </div>
+        </div>
+    </footer>
 
 <script>
 // Language toggle

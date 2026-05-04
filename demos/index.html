@@ -117,15 +117,18 @@
     </style>
 </head>
 <body>
-    <nav id="nav">
-        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
-        <div class="nav-center">
-            <a href="/#services">Services</a>
-            <a href="/#industries">Industries</a>
-            <a href="/#pricing">Pricing</a>
-            <a href="/#about">About</a>
-            <a href="/#portfolio">Portfolio</a>
-            <a href="/book/" class="nav-cta">Get Started</a>
+        <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 2rem;background:var(--bg-light);transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" class="nav-logo" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
+            FNDI
+            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;">Future Native Digital Intelligence</span>
+        </a>
+        <div class="nav-links" style="display:flex;gap:2.5rem;list-style:none;align-items:center;">
+            <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Services</a>
+            <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Industries</a>
+            <a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a>
+            <a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a>
+            <a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a>
+            <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a>
         </div>
     </nav>
 
@@ -140,7 +143,7 @@
         <div class="demos-grid">
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Voice Agent</div>
@@ -152,7 +155,7 @@
 
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Voice Agent</div>
@@ -164,7 +167,7 @@
 
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Voice Agent</div>
@@ -182,7 +185,7 @@
         <div class="demos-grid">
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Website Chatbot</div>
@@ -194,7 +197,7 @@
 
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Instagram DM</div>
@@ -206,7 +209,7 @@
 
             <div class="demo-card fade-in">
                 <div class="demo-video">
-                    <div class="play-button">▶️</div>
+                    <div class="play-button">&#9654;</div>
                 </div>
                 <div class="demo-content">
                     <div class="demo-type">Lead Follow-up</div>
@@ -222,17 +225,17 @@
         <h2>Key Features in Our Demos</h2>
         <div class="features">
             <div class="feature fade-in">
-                <div class="feature-icon">🎤</div>
+                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
                 <h3 class="feature-title">Natural Conversation</h3>
                 <p class="feature-desc">AI that sounds human, understands accents, and handles complex questions naturally.</p>
             </div>
             <div class="feature fade-in">
-                <div class="feature-icon">📅</div>
+                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
                 <h3 class="feature-title">Auto-Booking</h3>
                 <p class="feature-desc">Qualifies callers and books appointments directly into your calendar in real-time.</p>
             </div>
             <div class="feature fade-in">
-                <div class="feature-icon">🎯</div>
+                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                 <h3 class="feature-title">Lead Qualification</h3>
                 <p class="feature-desc">Smart questions identify your best prospects and pass qualified leads to your team.</p>
             </div>
@@ -242,37 +245,79 @@
                 <p class="feature-desc">Available 24/7 to answer questions and capture leads your competitors miss.</p>
             </div>
             <div class="feature fade-in">
-                <div class="feature-icon">📊</div>
+                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                 <h3 class="feature-title">Real-Time Analytics</h3>
                 <p class="feature-desc">See exactly which calls came in, who was reached, and what they wanted.</p>
             </div>
             <div class="feature fade-in">
-                <div class="feature-icon">🔄</div>
+                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div>
                 <h3 class="feature-title">Smart Transfer</h3>
                 <p class="feature-desc">Urgent calls transfer to your team with full context instantly.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
+        <footer>
+        <div class="footer-content" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem;max-width:1200px;margin-left:auto;margin-right:auto;">
             <div class="footer-col">
-                <div style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">FNDI</div>
-                <p style="font-size: 0.9rem; color: #999;">Building AI solutions that scale your business.</p>
+                <div class="footer-logo">FNDI</div>
+                <p style="margin-bottom:0.3rem;">Future Native Digital Intelligence</p>
+                <p>AI solutions for small businesses.</p>
+                <p style="margin-top:0.5rem;">Based in Miami, FL</p>
+                <p><a href="mailto:info@fndi.tech">info@fndi.tech</a></p>
+                <div class="footer-socials" style="display:flex;gap:1rem;margin-top:1rem;">
+                    <a href="https://instagram.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:info@fndi.tech" class="social-icon" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4>Solutions</h4>
                 <a href="/services/voice-agents/">Voice Agents</a>
                 <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/industries/dental/">Dental Offices</a>
+                <a href="/industries/med-spas/">Med Spas</a>
+                <a href="/industries/law-firms/">Law Firms</a>
+                <a href="/industries/restaurants/">Restaurants</a>
+                <a href="/industries/salons/">Salons</a>
+                <a href="/industries/home-services/">Home Services</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="/demos">Live Demos</a>
-                <a href="/book">Book a Call</a>
+                <a href="/about/">About Us</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/blog/">Blog</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/case-studies/">Case Studies</a>
+                <a href="/partners/">Partners</a>
+                <a href="/resources/">Resources</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
+        <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;max-width:1200px;margin:0 auto;">
+            <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">© 2026 FNDI. All rights reserved.</p>
+            <div style="display:flex;gap:2rem;justify-content:center;margin-top:1rem;">
+                <a href="/terms/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Terms of Service</a>
+                <a href="/privacy/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Privacy Policy</a>
+                <a href="/book/" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Book a Call</a>
+                <a href="mailto:info@fndi.tech" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Contact</a>
+            </div>
         </div>
     </footer>
 
