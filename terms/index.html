@@ -156,6 +156,31 @@
             }
         }
 
+    
+        /* Chat Widget */
+        .chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
+        .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4); transition: all 0.3s ease; color: white; }
+        .chat-toggle:hover { background: var(--accent-deep); transform: scale(1.05); box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5); }
+        .chat-toggle .chat-icon-open, .chat-toggle .chat-icon-close { position: absolute; transition: opacity 0.2s ease, transform 0.2s ease; }
+        .chat-toggle .chat-icon-close { opacity: 0; transform: rotate(-90deg); }
+        .chat-widget.active .chat-toggle .chat-icon-open { opacity: 0; transform: rotate(90deg); }
+        .chat-widget.active .chat-toggle .chat-icon-close { opacity: 1; transform: rotate(0deg); }
+        .chat-panel { position: absolute; bottom: 72px; right: 0; width: 360px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.95); transition: all 0.3s ease; }
+        .chat-widget.active .chat-panel { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .chat-header { background: var(--accent); padding: 1.25rem; color: white; }
+        .chat-header h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 0.25rem; color: white; }
+        .chat-header p { font-size: 0.8rem; opacity: 0.85; }
+        .chat-header .chat-status { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; opacity: 0.9; margin-top: 0.5rem; }
+        .chat-status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .chat-body { padding: 1.25rem; }
+        .chat-message { background: #f8f7ff; padding: 0.85rem 1rem; border-radius: 12px 12px 12px 4px; font-size: 0.9rem; color: #1a1a2e; line-height: 1.5; margin-bottom: 1rem; }
+        .chat-quick-actions { display: flex; flex-direction: column; gap: 0.5rem; }
+        .chat-quick-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: white; border: 1.5px solid #e5e7eb; border-radius: 10px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #1a1a2e; font-weight: 500; transition: all 0.2s ease; text-decoration: none; }
+        .chat-quick-btn:hover { border-color: #7c3aed; background: #f8f7ff; color: #7c3aed; }
+        .chat-quick-btn svg { flex-shrink: 0; color: #7c3aed; }
+        @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); right: -8px; } }
+
     </style>
 </head>
 <body>
@@ -271,7 +296,49 @@
         <p>For questions about these terms, contact: <strong>legal@fndi.tech</strong></p>
     </div>
 
-        <footer>
+        
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-panel">
+            <div class="chat-header">
+                <h4>FNDI</h4>
+                <p>AI Solutions for Small Business</p>
+                <div class="chat-status">
+                    <span class="chat-status-dot"></span>
+                    We typically respond instantly
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    Hey there! How can we help you today? Pick an option or book a call to chat with our team.
+                </div>
+                <div class="chat-quick-actions">
+                    <a href="/book/" class="chat-quick-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Book a Free Call
+                    </a>
+                    <a href="/assessment/" class="chat-quick-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Free AI Assessment
+                    </a>
+                    <a href="/pricing/" class="chat-quick-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                        View Pricing
+                    </a>
+                    <a href="mailto:info@fndi.tech" class="chat-quick-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="chat-toggle" aria-label="Chat with us">
+            <svg class="chat-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="chat-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+
+    <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">FNDI</div>
@@ -337,5 +404,12 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const chatWidget = document.getElementById('chatWidget');
+        const chatToggle = chatWidget.querySelector('.chat-toggle');
+        chatToggle.addEventListener('click', () => { chatWidget.classList.toggle('active'); });
+        document.addEventListener('click', (e) => { if (!chatWidget.contains(e.target) && chatWidget.classList.contains('active')) { chatWidget.classList.remove('active'); } });
+    </script>
 </body>
 </html>
