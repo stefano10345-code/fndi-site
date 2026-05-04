@@ -1,472 +1,793 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
-<title>AI Website Chatbots | FNDI — Capture Leads 24/7</title>
-<meta name="description" content="Intelligent website chatbots that capture leads, answer questions, and book appointments 24/7. AI-trained on your business to convert more visitors into customers.">
-<meta property="og:title" content="AI Website Chatbots | FNDI">
-<meta property="og:description" content="Capture more leads with an AI chatbot trained on your business. Available 24/7 to answer questions, qualify leads, and book appointments.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fndi.tech/services/chatbots">
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  ::selection{background:rgba(124,58,237,0.2);color:#1a1a2e}
-  :root{
-    --bg:#ffffff;--surface:#f8f7ff;--card:#ffffff;--card2:#f3f0ff;
-    --accent:#7c3aed;--accent2:#6d28d9;--cyan:#7c3aed;--green:#34d399;
-    --text:#1a1a2e;--text2:#4a4a68;--text3:#6b7280;
-    --border:rgba(124,58,237,0.08);--glass:rgba(124,58,237,0.03);--glass-border:rgba(124,58,237,0.1);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
-  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
-  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Chatbots | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
 
-  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim.v{opacity:1;transform:translateY(0)}
-  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}.anim.v.d4{transition-delay:.4s}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
-  nav.scrolled{background:rgba(255,255,255,0.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(124,58,237,0.06)}
-  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
-  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
-  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
-  .n-links{display:flex;align-items:center;gap:0.3rem}
-  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
-  .n-links a:hover{color:var(--text);background:rgba(124,58,237,0.06)}
-  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important}
-  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
-  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
-  @media(max-width:768px){.mob-toggle{display:block}.n-links{position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}.n-links.open{display:flex}.logo small{display:none}}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
 
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 3rem;position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
-  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:600px;height:600px;background:rgba(124,58,237,0.08);top:-10%;left:-10%}
-  .orb2{width:500px;height:500px;background:rgba(34,211,238,0.05);bottom:-15%;right:-10%;animation-delay:2s}
-  .h-content{position:relative;z-index:2;max-width:800px;animation:fadeUp 1s}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
-  .grad{background:linear-gradient(135deg,#6ee7b7,var(--cyan),#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2rem;line-height:1.7}
-  .h-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
-  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
-  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
-  .btn-o{background:rgba(124,58,237,0.04);color:var(--text);border:1px solid rgba(124,58,237,0.15)}
-  .btn-o:hover{background:rgba(124,58,237,0.08);transform:translateY(-2px)}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-  .section{padding:6rem 2rem;position:relative}
-  .con{max-width:1200px;margin:0 auto;position:relative;z-index:2}
-  .s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
-  .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem;letter-spacing:-1px}
-  .s-head{margin-bottom:3.5rem;text-align:center}
-  .s-head .s-sub{font-size:0.95rem;color:var(--text2);line-height:1.7;max-width:700px;margin:0 auto}
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
 
-  .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-  .feat-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;transition:all 0.4s}
-  .feat-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.15);box-shadow:0 12px 40px rgba(124,58,237,0.08)}
-  .feat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
-  .feat-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
-  .feat-card p{font-size:0.82rem;color:var(--text2);line-height:1.6}
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
 
-  .use-cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-  .use-case-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.4s;position:relative;overflow:hidden}
-  .use-case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--cyan))}
-  .use-case-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.15);box-shadow:0 12px 40px rgba(124,58,237,0.08)}
-  .use-case-icon{font-size:2.2rem;margin-bottom:1rem}
-  .use-case-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.8rem}
-  .use-case-card p{font-size:0.82rem;color:var(--text2);line-height:1.6;margin-bottom:1rem}
-  .use-case-card ul{font-size:0.82rem;color:var(--text2);line-height:1.7;list-style:none;padding-left:0}
-  .use-case-card li{margin-bottom:0.5rem;padding-left:1.2rem;position:relative}
-  .use-case-card li::before{content:'▸';position:absolute;left:0;color:var(--green)}
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-  .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem}
-  .process-step{position:relative;padding:2rem;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border)}
-  .process-num{font-family:'Space Grotesk','Inter',sans-serif;font-size:3rem;font-weight:800;color:rgba(124,58,237,0.15);position:absolute;top:1rem;right:1.5rem}
-  .process-step h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
-  .process-step p{font-size:0.82rem;color:var(--text2);line-height:1.6}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  .how-section{background:var(--surface)}
+        nav.scrolled {
+            background: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-  .cta-sec{text-align:center;padding:5rem 2rem;background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%)}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1.5rem}
-  .cta-sec p{font-size:1.02rem;color:var(--text2);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
 
-  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
-  .ft-inner{max-width:1200px;margin:0 auto}
-  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
-  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
-  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
-  footer a:hover{color:var(--accent2)}
-  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
-  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
-  .ft-bottom p{margin:0;font-size:0.75rem}
+        .nav-tagline {
+            font-size: 0.65rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
 
-  .hero-svg{position:relative;z-index:2;margin:2rem auto 0;opacity:0.7;animation:float 6s ease-in-out infinite}
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-  @media(max-width:768px){
-    .section{padding:4rem 1.5rem}
-    .feat-grid{grid-template-columns:1fr}
-    .use-cases-grid{grid-template-columns:1fr}
-    .process-grid{grid-template-columns:1fr}
-  }
+        .nav-center a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-  /* ===== WHITE/PURPLE AI THEME ===== */
-  #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
-  .ai-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.15),rgba(167,139,250,0.25),rgba(124,58,237,0.15),transparent);position:relative;overflow:visible}
-  .ai-divider::after{content:'';position:absolute;top:-2px;left:0;width:60px;height:5px;background:rgba(124,58,237,0.4);border-radius:5px;filter:blur(3px);animation:dividerGlow 4s ease-in-out infinite}
-  @keyframes dividerGlow{0%{left:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 60px);opacity:0}}
+        .nav-center a:hover {
+            color: var(--accent);
+        }
 
-</style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-deep);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8)), url('https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=1200&h=600&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--bg-alt);
+        }
+
+        .section-purple {
+            background: var(--bg-alt-purple);
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .solution-card .icon {
+            margin: 0 auto 1rem;
+        }
+
+        .solution-card h3 {
+            color: var(--text-primary);
+        }
+
+        /* Benefits Section */
+        .benefit-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .benefit-item:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .benefit-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .benefit-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .benefit-stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-desc {
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Section */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-col {
+            padding: 2rem;
+            border-radius: 0.75rem;
+        }
+
+        .comparison-col.without {
+            background: #fee2e2;
+        }
+
+        .comparison-col.with {
+            background: #dbeafe;
+        }
+
+        .comparison-col h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta-dark {
+            background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-dark h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                height: 350px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .benefit-item {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav>
-  <div class="nav-i">
-    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
-    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">☰</button>
-    <div class="n-links">
-      <a href="/#services" data-es="Servicios">Services</a>
-      <a href="/pricing" data-es="Precios">Pricing</a>
-      <a href="/portfolio" data-es="Portafolio">Portfolio</a>
-      <a href="/about" data-es="Acerca de">About</a>
-            <a href="/assessment" style="color:var(--accent);font-weight:600">Free Assessment</a>
-      <a href="/book" class="n-cta" data-es="Reservar una llamada">Book a Call</a>
-    </div>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="h-content">
-    <h1>Capture Every Lead With an <span class="grad">AI Chatbot</span></h1>
-    <p>Never miss a visitor again. Our AI chatbot works 24/7, captures leads, answers questions, and books appointments while you sleep.</p>
-    <div class="h-btns">
-      <a href="/book" class="btn btn-g">Start Your Free Trial</a>
-      <a href="#features" class="btn btn-o" data-es="Ver Cómo Funciona">See How It Works</a>
-    </div>
-    <svg class="hero-svg" viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <!-- Main chat bubble -->
-      <path d="M 60 60 L 240 60 Q 260 60 260 80 L 260 220 Q 260 240 240 240 L 80 240 L 50 270 L 80 240 Q 60 240 60 220 L 60 80 Q 60 60 80 60 Z" fill="none" stroke="#22d3ee" stroke-width="2.5" filter="url(#glow)" opacity="0.8"/>
-      <!-- Message lines -->
-      <line x1="80" y1="90" x2="240" y2="90" stroke="#7c3aed" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
-      <line x1="80" y1="110" x2="220" y2="110" stroke="#34d399" stroke-width="1.5" opacity="0.5" filter="url(#glow)"/>
-      <line x1="80" y1="130" x2="210" y2="130" stroke="#22d3ee" stroke-width="1.5" opacity="0.5" filter="url(#glow)"/>
-      <!-- Typing indicator -->
-      <circle cx="90" cy="160" r="4" fill="#7c3aed" opacity="0.8" filter="url(#glow)"/>
-      <circle cx="115" cy="160" r="4" fill="#22d3ee" opacity="0.6" filter="url(#glow)"/>
-      <circle cx="140" cy="160" r="4" fill="#34d399" opacity="0.4" filter="url(#glow)"/>
-      <!-- Decorative elements -->
-      <circle cx="150" cy="150" r="100" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.15" filter="url(#glow)"/>
-      <circle cx="150" cy="150" r="75" fill="none" stroke="#22d3ee" stroke-width="0.6" opacity="0.1" filter="url(#glow)"/>
-    </svg>
-  </div>
-</div>
-
-<section class="section" id="features">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1" data-es="QUÉ ESTÁ INCLUIDO">WHAT'S INCLUDED</div>
-      <h2 class="s-title anim d2">Everything You Need to Convert More Visitors</h2>
-      <p class="s-sub anim d3">Our AI chatbot is trained on YOUR business, so it gives accurate answers that actually convert visitors into customers.</p>
-    </div>
-    <div class="feat-grid">
-      <div class="feat-card anim d1">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))">⏰</div>
-        <h3>24/7 Lead Capture</h3>
-        <p>Works around the clock — nights, weekends, holidays. Never miss a visitor while you're away. Conversations run on autopilot.</p>
-      </div>
-      <div class="feat-card anim d2">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
-        <h3>Trained on Your Business</h3>
-        <p>We train it on your services, pricing, team bios, FAQs, testimonials, and more. It answers visitor questions accurately, every time.</p>
-      </div>
-      <div class="feat-card anim d3">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(52,211,153,0.15),rgba(52,211,153,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <h3 data-es="Reserva de Citas">Appointment Booking</h3>
-        <p>Integrates directly with your calendar. Visitors book appointments, consultations, or demos without leaving your site. No back-and-forth.</p>
-      </div>
-      <div class="feat-card anim d4">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(251,146,60,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3>Smart Lead Qualification</h3>
-        <p>Asks the right questions naturally. Separates hot leads from tire-kickers. Prioritizes conversations so you focus on the best prospects.</p>
-      </div>
-      <div class="feat-card anim d1">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(96,165,250,0.15),rgba(96,165,250,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>Multi-Platform Support</h3>
-        <p>Works on any website — WordPress, Shopify, Squarespace, custom builds. Mobile-optimized. Takes 2 minutes to install.</p>
-      </div>
-      <div class="feat-card anim d2">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(244,114,182,0.15),rgba(244,114,182,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <h3>Conversation Analytics</h3>
-        <p>See every conversation. Track what questions people ask. Understand your visitors better. Use insights to improve your site and offers.</p>
-      </div>
-      <div class="feat-card anim d3">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Handoff to Human</h3>
-        <p>For complex questions, the chatbot smoothly hands off to a human team member. Conversations are warm, not cold. Your team stays in control.</p>
-      </div>
-      <div class="feat-card anim d4">
-        <div class="feat-icon" style="background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.05))"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
-        <h3>Custom Branding</h3>
-        <p>Match your brand colors, tone, and personality. Chatbot feels like part of your site, not a third-party widget. White label options available.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface)">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1">USE CASES</div>
-      <h2 class="s-title anim d2">Works for Any Business Type</h2>
-      <p class="s-sub anim d3">From retail to services to real estate — our chatbot adapts to how your customers buy.</p>
-    </div>
-    <div class="use-cases-grid">
-      <div class="use-case-card anim d1">
-        <div class="use-case-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-        <h3>E-Commerce</h3>
-        <p>Help customers find products, answer sizing questions, and recover abandoned carts with personalized follow-ups.</p>
-        <ul>
-          <li>Product recommendations</li>
-          <li>Instant order tracking</li>
-          <li>Discount codes & promotions</li>
-          <li>Cart abandonment recovery</li>
-        </ul>
-      </div>
-      <div class="use-case-card anim d2">
-        <div class="use-case-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <h3>Service Businesses</h3>
-        <p>Capture leads 24/7. Answer pricing questions. Book consultations and service appointments automatically.</p>
-        <ul>
-          <li>Service pricing & packages</li>
-          <li>Appointment scheduling</li>
-          <li>Lead qualification</li>
-          <li>Service area questions</li>
-        </ul>
-      </div>
-      <div class="use-case-card anim d3">
-        <div class="use-case-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>Real Estate</h3>
-        <p>Qualify buyers, answer property questions, schedule showings, and capture contact info for follow-up.</p>
-        <ul>
-          <li>Property details & specs</li>
-          <li>Showing schedules</li>
-          <li>Buyer pre-qualification</li>
-          <li>Mortgage questions</li>
-        </ul>
-      </div>
-      <div class="use-case-card anim d4">
-        <div class="use-case-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Healthcare</h3>
-        <p>Answer patient questions, book appointments, and gather patient info before visits — HIPAA compliant.</p>
-        <ul>
-          <li>Appointment scheduling</li>
-          <li>Insurance & billing questions</li>
-          <li>Patient intake forms</li>
-          <li>After-hours guidance</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section how-section">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1">HOW IT WORKS</div>
-      <h2 class="s-title anim d2">4 Simple Steps to Live Chatbot</h2>
-      <p class="s-sub anim d3">From start to capturing leads takes less than a week.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step anim d1">
-        <div class="process-num">01</div>
-        <h3 data-es="Llamada de Descubrimiento">Discovery Call</h3>
-        <p>We learn about your business, customers, goals, and pain points. Share your website, FAQs, and key talking points. Takes 1 hour.</p>
-      </div>
-      <div class="process-step anim d2">
-        <div class="process-num">02</div>
-        <h3>Train the AI</h3>
-        <p>We configure and train the chatbot with all your business data. Test it thoroughly to ensure answers are perfect. QA takes 1-2 days.</p>
-      </div>
-      <div class="process-step anim d3">
-        <div class="process-num">03</div>
-        <h3>Install & Test</h3>
-        <p>Add one line of code to your website. We test it on desktop, mobile, and across browsers. You approve before it goes live.</p>
-      </div>
-      <div class="process-step anim d4">
-        <div class="process-num">04</div>
-        <h3>Go Live & Scale</h3>
-        <p>Chatbot goes live. Starts capturing leads immediately. We optimize based on conversations. You see results in your first week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1">RESULTS</div>
-      <h2 class="s-title anim d2">What Our Clients See</h2>
-    </div>
-    <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem;text-align:center;max-width:700px;margin:0 auto" class="anim d1">
-      <div style="color:#fbbf24;margin-bottom:1rem;font-size:1.1rem;letter-spacing:0.3rem">★★★★★</div>
-      <p style="font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-style:italic">"Within 30 days of installing the chatbot, we more than doubled our qualified leads. Our visitors love the instant responses — they get answers at 2 AM without waiting for us to email back. It's like having a sales rep on our site 24/7. The ROI was immediate. Best investment we made this year."</p>
-      <div style="font-weight:700;color:var(--text);font-size:0.95rem">Jessica Chen</div>
-      <div style="font-size:0.82rem;color:var(--text3)">Fitness Studio Owner, Miami FL</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface)">
-  <div class="con">
-    <div class="s-head">
-      <div class="s-label anim d1">PRICING</div>
-      <h2 class="s-title anim d2">Simple, Transparent Pricing</h2>
-      <p class="s-sub anim d3">No surprises. No overages. Scale as you grow.</p>
-    </div>
-    <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem;text-align:center;max-width:500px;margin:0 auto" class="anim d1">
-      <div style="font-size:0.85rem;color:var(--text3);margin-bottom:1rem">Starting at</div>
-      <div style="font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--green);margin:1.5rem 0">$150<span style="font-size:0.6em;color:var(--text2)">/month</span></div>
-      <p style="color:var(--text2);margin-bottom:1.5rem;font-size:0.9rem">Plus one-time setup (custom training & optimization)</p>
-      <div style="text-align:left;margin:2rem 0;padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Trained on your business</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Captures lead info automatically</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Books appointments into your calendar</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Handles unlimited conversations</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Works on any website platform</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Full conversation transcripts & analytics</div>
-        <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;font-size:0.88rem;color:var(--text2)"><span style="color:var(--green);font-weight:700;flex-shrink:0">✓</span>Monthly optimization & updates</div>
-      </div>
-      <a href="/book" class="btn btn-g">Start Your Free Trial</a>
-      <p style="font-size:0.78rem;color:var(--text3);margin-top:1.5rem">14-day free trial. No credit card required. Cancel anytime.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-sec">
-  <div class="con">
-    <h2>Ready to Capture More Leads?</h2>
-    <p>See how an AI chatbot can double your qualified leads in 30 days. Join 80+ Miami businesses using FNDI's chatbot to convert 24/7.</p>
-    <a href="/book" class="btn btn-g">Schedule Your Free Demo</a>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-inner">
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
-      <div style="max-width:300px">
-        <div class="ft-logo"><span>FNDI</span></div>
-        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7" data-es="Inteligencia Digital Nativa del Futuro">Future Native Digital Intelligence</p>
-        <p style="margin-top:0.8rem" data-es="Soluciones de IA para pequeños negocios. Con sede en Miami.">AI solutions for small businesses. Based in Miami.</p>
-        <div style="display:flex;gap:1rem;margin-top:1rem">
-          <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
-      </div>
-      <div>
-        <h4 data-es="Enlaces">Links</h4>
-        <a href="/#services" data-es="Servicios">Services</a>
-        <a href="/pricing" data-es="Precios">Pricing</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/compare">Compare</a>
-        <a href="/about" data-es="Acerca de">About</a>
-        <a href="/book" data-es="Reservar una llamada">Book a Call</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/testimonials">Testimonials</a>
-        <a href="/resources">Guides & Tools</a>
-        <a href="/tools/roi-calculator">ROI Calculator</a>
-        <a href="/blog">Blog</a>
-        <a href="/partners">Partner Program</a>
-        <a href="/careers">Careers</a>
-      </div>
-      <div>
-        <h4>Industries</h4>
-        <a href="/industries/dental">Dental Offices</a>
-        <a href="/industries/med-spas">Med Spas</a>
-        <a href="/industries/law-firms">Law Firms</a>
-        <a href="/industries/restaurants">Restaurants</a>
-        <a href="/industries/salons">Salons</a>
-        <a href="/industries/home-services">Home Services</a>
-      </div>
-      <div>
-        <h4 data-es="Contacto">Contact</h4>
-        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-        <a href="tel:+17868430145">(786) 843-0145</a>
-        <p style="margin-top:0.3rem">Miami, FL</p>
-            <div>
-        <h3>Legal</h3>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <p>© 2026 FNDI. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
-<script>
-window.addEventListener('scroll',()=>{
-  const nav=document.querySelector('nav');
-  if(window.scrollY>10) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Website Chatbots</h1>
+            <p class="hero-subtitle">Engage every visitor. AI chatbots that answer questions, capture leads, and book meetings instantly, 24/7.</p>
+            <div class="hero-ctas">
+                <a href="/book/" class="btn btn-primary">Get Started</a>
+                <a href="/book/" class="btn btn-secondary">Book a Call</a>
+            </div>
+        </div>
+    </section>
 
-document.addEventListener('DOMContentLoaded',()=>{
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('v');
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
-});
-</script>
-<script src="/lang.js"></script>
-<script>
-/* ===== AI PARTICLE MESH ===== */
-(function(){
-  const canvas=document.getElementById('particleCanvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  let w,h,particles=[];
-  const PC=45,CD=160,SP=0.25;
-  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
-  window.addEventListener('resize',resize);resize();
-  class P{constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-0.5)*SP;this.vy=(Math.random()-0.5)*SP;this.r=Math.random()*1.5+0.8;this.c=Math.random()>0.5?'124,58,237':'167,139,250';this.a=Math.random()*0.4+0.15;}
-  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1;}
-  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();}}
-  for(let i=0;i<PC;i++)particles.push(new P());
-  function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
-  animate();
-})();
-</script>
+    <section class="section-alt">
+        <h2>The Problem</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Your website gets traffic but visitors leave without connecting with you. Typical website conversion is just 2%, and most inquiries come during after-hours when no one responds.</p>
+        <div class="problem-grid">
+            <div class="problem-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
+                </svg>
+                <h3>Visitors Bounce</h3>
+                <p>75% of visitors leave without engaging. No live chat means they find a competitor instead.</p>
+            </div>
+            <div class="problem-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" style="color: var(--accent);"/>
+                </svg>
+                <h3>No Lead Capture</h3>
+                <p>Leads disappear. Without chat, you can't capture emails or contact info from interested visitors.</p>
+            </div>
+            <div class="problem-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
+                </svg>
+                <h3>Lost Revenue</h3>
+                <p>At just 2% conversion, most traffic is wasted. Better engagement could triple your leads.</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="section-purple">
+        <h2>Our Solution</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">FNDI chatbots engage visitors in real-time, answer FAQs, qualify leads, and book meetings automatically. No human required—your AI works 24/7.</p>
+        <div class="solution-grid">
+            <div class="solution-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" style="color: var(--accent);"/>
+                </svg>
+                <h3>Instant Responses</h3>
+                <p>Visitors get immediate answers to common questions. No waiting, no human delay.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
+                </svg>
+                <h3>Lead Qualification</h3>
+                <p>Smart questions identify your best prospects before they ever leave your site.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10m7 8H3a2 2 0 01-2-2V7a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z" style="color: var(--accent);"/>
+                </svg>
+                <h3>Auto-Booking</h3>
+                <p>Visitors can book calls, demos, or consultations directly through chat.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
+                </svg>
+                <h3>24/7 Availability</h3>
+                <p>Chat runs around the clock. Capture leads from every timezone, every day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <h2>Why Chatbots Drive Results</h2>
+        <div style="margin-top: 3rem;">
+            <div class="benefit-item fade-in">
+                <div>
+                    <div class="benefit-stat">18%</div>
+                    <div class="benefit-title">Conversion Rate</div>
+                    <p class="benefit-desc">Websites with AI chatbots see 18% conversion vs. 2% without. That's 9x more leads from the same traffic.</p>
+                </div>
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border);">
+                    <p style="color: var(--text-secondary);">Natural conversations that feel human. Your chatbot learns your products and services.</p>
+                </div>
+            </div>
+            <div class="benefit-item fade-in">
+                <div>
+                    <div class="benefit-stat">100%</div>
+                    <div class="benefit-title">Lead Capture</div>
+                    <p class="benefit-desc">Never miss a visitor inquiry again. Every interested person gets their info captured, even at 3am.</p>
+                </div>
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border);">
+                    <p style="color: var(--text-secondary);">Instant sync with your CRM. Leads appear in your dashboard automatically.</p>
+                </div>
+            </div>
+            <div class="benefit-item fade-in">
+                <div>
+                    <div class="benefit-stat">Save</div>
+                    <div class="benefit-title">$10k/month</div>
+                    <p class="benefit-desc">Replace live chat staff costs with AI. No hiring, no salaries, no scheduling headaches.</p>
+                </div>
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border);">
+                    <p style="color: var(--text-secondary);">Fully customizable. Train it on your FAQ, pricing, and policies in hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-purple">
+        <h2>Before vs After</h2>
+        <div class="comparison">
+            <div class="comparison-col without">
+                <h3>Without Chatbot</h3>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
+                    </svg>
+                    <span>2% website conversion</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
+                    </svg>
+                    <span>Lost after-hours leads</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
+                    </svg>
+                    <span>Expensive live chat team</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
+                    </svg>
+                    <span>Manual follow-up</span>
+                </div>
+            </div>
+            <div class="comparison-col with">
+                <h3>With FNDI Chatbots</h3>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
+                    </svg>
+                    <span>18% conversion rate</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
+                    </svg>
+                    <span>24/7 lead capture</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
+                    </svg>
+                    <span>AI handles everything</span>
+                </div>
+                <div class="comparison-item">
+                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
+                    </svg>
+                    <span>Auto-sync with CRM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-dark">
+        <h2>Turn Website Visitors Into Customers</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">9x more conversions with AI chatbots. No staff required.</p>
+        <a href="/book/" class="btn btn-primary">Book a Free Call</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Future Native Digital Intelligence. Building AI solutions that scale your business.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@fndi.tech" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/#about">About</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/#portfolio">Portfolio</a>
+                <a href="/#careers">Careers</a>
+                <a href="/#contact">Contact</a>
+                <a href="/#blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/#dental">Dental</a>
+                <a href="/#medspas">Medical Spas</a>
+                <a href="/#law">Law Firms</a>
+                <a href="/#restaurants">Restaurants</a>
+                <a href="/#salons">Salons</a>
+                <a href="/#homeservices">Home Services</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="/#terms">Terms</a> | <a href="/#privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        const hamburger = document.getElementById('hamburger');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

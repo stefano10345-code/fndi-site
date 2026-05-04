@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers at FNDI | Join Our AI Startup Team</title>
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-    <meta name="description" content="Join FNDI and help build the future of AI for small businesses. We're hiring talented engineers, sales professionals, and content creators.">
-    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+    <title>Careers | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,797 +12,426 @@
         gtag('js', new Date());
         gtag('config', 'G-YSFXDYZ46B');
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --accent: #7c3aed;
-            --accent2: #6d28d9;
-            --surface: #f8f7ff;
-            --text: #1a1a2e;
-            --text2: #4a4a68;
-            --text3: #6b7280;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: #ffffff;
+            color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--bg-light);
         }
 
-        /* Navigation */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-            padding: 1rem 2rem;
             z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
             transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        nav.scrolled {
+            background: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .nav-logo {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-primary);
             text-decoration: none;
-        }
-
-        .nav-links {
             display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text2);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-        }
-
-        .hamburger {
-            display: none;
             flex-direction: column;
-            gap: 0.4rem;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Particle Canvas */
-        #particleCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%);
-            padding: 2rem;
-            margin-top: 60px;
-            position: relative;
-        }
-
-        .hero .container {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
             line-height: 1.2;
         }
 
-        .grad {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .nav-tagline { font-size: 0.65rem; color: var(--text-tertiary); font-weight: 500; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; }
+        .nav-center a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.3s ease; }
+        .nav-center a:hover { color: var(--accent); }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
+        .nav-cta:hover { background: var(--accent-deep); }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text2);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
+        .hero {
+            margin-top: 80px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
             color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 10px;
+        }
+
+        .hero-content { max-width: 600px; padding: 2rem; }
+        .hero h1 { color: white; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; line-height: 1.5; }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
         }
 
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-        }
+        .btn-primary { background: white; color: var(--accent); }
+        .btn-primary:hover { background: #f0f0f0; }
 
-        /* Container */
-        .container {
+        section {
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
-        /* Sections */
-        section {
-            padding: 6rem 2rem;
-        }
+        .section-alt { background: var(--bg-alt); }
+        .section-purple { background: var(--bg-alt-purple); }
 
-        section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--text);
-        }
-
-        section p {
-            color: var(--text2);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--surface);
-        }
-
-        .about-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Why FNDI Cards */
-        .why-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .card {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 1rem 0;
-            color: var(--text);
-        }
-
-        .card p {
-            color: var(--text2);
-            font-size: 0.95rem;
-        }
-
-        /* Roles Section */
-        .roles {
-            background: #ffffff;
-        }
-
-        .roles-grid {
+        .culture-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
-        .role-card {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
-            padding: 2.5rem;
-            text-align: center;
+        .culture-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
-        .role-card:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .role-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-
-        .role-card p {
-            color: var(--text2);
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .btn-apply {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-apply:hover {
+        .culture-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
         }
 
-        /* Values Section */
-        .values {
-            background: var(--surface);
+        .culture-card h3 { color: var(--accent); margin-bottom: 0.75rem; }
+        .culture-card p { color: var(--text-secondary); }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
+
+        .job-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        .job-title { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .job-type { display: inline-block; background: var(--bg-alt-purple); color: var(--accent); padding: 0.35rem 0.75rem; border-radius: 0.35rem; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+        .job-desc { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .job-link { color: var(--accent); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .job-link:hover { color: var(--accent-deep); }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .perk-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .perk-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .perk-item h4 { color: var(--text-primary); margin-bottom: 0.25rem; }
+        .perk-item p { color: var(--text-secondary); font-size: 0.95rem; }
 
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .value-card {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .value-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-
-        .value-card p {
-            color: var(--text2);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin: 6rem 2rem;
-        }
-
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        .cta-link {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid white;
-            transition: all 0.3s ease;
-        }
-
-        .cta-link:hover {
             background: white;
-            color: var(--accent);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: center;
         }
 
-        /* Footer */
+        .value-card h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .value-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
         footer {
-            background: var(--text);
-            color: white;
-            padding: 4rem 2rem 2rem;
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
         }
 
-        footer .container {
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
-        footer h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 1rem;
-        }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; }
+        .footer-col a { display: block; color: #999; text-decoration: none; margin-bottom: 0.75rem; transition: color 0.3s ease; font-size: 0.95rem; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .footer-socials { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .social-icon:hover { background: var(--accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #666; font-size: 0.9rem; }
+        .footer-bottom a { color: #999; text-decoration: none; margin: 0 1rem; transition: color 0.3s ease; }
+        .footer-bottom a:hover { color: var(--accent); }
 
-        footer a {
-            color: var(--text3);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        footer a:hover {
-            color: var(--accent);
-        }
-
-        footer .tagline {
-            color: var(--text3);
-            font-style: italic;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(124, 58, 237, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--text3);
-        }
-
-        /* Animation */
-        .anim {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .anim.visible {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            nav .container {
-                flex-wrap: wrap;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                gap: 1rem;
-                background: white;
-                padding: 2rem;
-                border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                min-height: 80vh;
-                margin-top: 80px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-
-            .roles-grid, .why-cards, .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            footer .container {
-                grid-template-columns: 1fr;
-            }
+            .nav-center { display: none; }
+            .hero { height: 350px; }
+            section { padding: 3rem 1.5rem; }
+            h2 { font-size: 1.75rem; }
         }
     </style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
 </head>
 <body>
-    <canvas id="particleCanvas"></canvas>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="/" class="nav-logo">FNDI</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/pricing">Pricing</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/assessment">Free Assessment</a></li>
-                <li><a href="/book" class="nav-cta">Book a Call</a></li>
-            </ul>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Join <span class="grad">FNDI</span></h1>
-            <p>We're building the future of small business AI</p>
-            <a href="#roles" class="hero-cta">Explore Roles</a>
+        <div class="hero-content">
+            <h1>Join the FNDI Team</h1>
+            <p class="hero-subtitle">Build cutting-edge AI solutions alongside a talented team. We're looking for passionate people who want to transform how businesses use technology.</p>
+            <a href="#jobs" class="btn btn-primary">View Open Positions</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about anim">
-        <div class="container">
-            <h2>About FNDI</h2>
-            <div class="about-content">
-                <p>
-                    We're a young, hungry startup with an execution-first culture. Based in Miami but remote-friendly, we're obsessed with building AI solutions that actually work for small businesses. No fluff, no corporate overhead—just real impact.
-                </p>
-                <p>
-                    Our team moves fast, ships faster, and measures everything. We're not here to perfect; we're here to deliver.
-                </p>
-            </div>
+    <section class="section-alt">
+        <h2>Our Culture</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">We're building a company where innovation meets impact, and every team member drives real results for our clients.</p>
 
-            <h2 style="margin-top: 4rem;">Why Join FNDI?</h2>
-            <div class="why-cards">
-                <div class="card anim">
-                    <h3>Cutting-Edge AI</h3>
-                    <p>Work on real AI voice agents, chatbots, and automation tools that directly impact client success.</p>
-                </div>
-                <div class="card anim">
-                    <h3>Startup Equity</h3>
-                    <p>Early-stage team member? Get equity potential and grow with us as we scale.</p>
-                </div>
-                <div class="card anim">
-                    <h3>Learn Fast</h3>
-                    <p>Growth-focused environment where you'll learn skills and frameworks you won't find in corporate jobs.</p>
-                </div>
-                <div class="card anim">
-                    <h3>Real Impact</h3>
-                    <p>See your work directly improve small business operations—no busy work, just meaningful contributions.</p>
-                </div>
+        <div class="culture-grid">
+            <div class="culture-card fade-in">
+                <h3>Remote First</h3>
+                <p>Work from anywhere. We trust our team to deliver great results, wherever they are.</p>
+            </div>
+            <div class="culture-card fade-in">
+                <h3>Learn & Grow</h3>
+                <p>Access to training, courses, and mentorship. We invest in your professional development.</p>
+            </div>
+            <div class="culture-card fade-in">
+                <h3>Direct Impact</h3>
+                <p>Your work directly impacts client success. You'll see the real-world results of what you build.</p>
+            </div>
+            <div class="culture-card fade-in">
+                <h3>Competitive Pay</h3>
+                <p>Market-rate salary plus performance bonuses. Your contributions are rewarded.</p>
             </div>
         </div>
     </section>
 
-    <!-- Open Roles Section -->
-    <section class="roles anim" id="roles">
-        <div class="container">
-            <h2>Open Roles</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: var(--text2);">
-                Even if we're not actively hiring, we're always looking for top talent. Send us your resume and let's talk.
-            </p>
+    <section id="jobs">
+        <h2>Open Positions</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">We're hiring talented people to join our rapidly growing team.</p>
 
-            <div class="roles-grid">
-                <div class="role-card anim">
-                    <h3>AI Engineer / Developer</h3>
-                    <p>
-                        Build our AI voice agents and chatbot infrastructure. Python, LLMs, and integration work. You'll own features from conception to production.
-                    </p>
-                    <a href="mailto:stefano@fndi.tech" class="btn-apply">Apply Now</a>
+        <div class="jobs-grid">
+            <div class="job-card fade-in">
+                <div class="job-type">Full-Time</div>
+                <div class="job-title">AI/ML Engineer</div>
+                <p class="job-desc">Help us build and optimize our AI voice agents and automation systems. You'll work with cutting-edge LLM technology and help scale our platform to thousands of businesses.</p>
+                <a href="mailto:careers@fndi.tech?subject=AI%20Engineer%20Position" class="job-link">Apply Now →</a>
+            </div>
+
+            <div class="job-card fade-in">
+                <div class="job-type">Full-Time</div>
+                <div class="job-title">Sales Representative</div>
+                <p class="job-desc">Build client relationships and close deals. You'll work with business owners across multiple industries, helping them understand how AI can transform their operations.</p>
+                <a href="mailto:careers@fndi.tech?subject=Sales%20Rep%20Position" class="job-link">Apply Now →</a>
+            </div>
+
+            <div class="job-card fade-in">
+                <div class="job-type">Full-Time</div>
+                <div class="job-title">Customer Success Manager</div>
+                <p class="job-desc">Be the trusted advisor for our clients. You'll ensure they get maximum ROI from their AI systems and help them scale their deployments.</p>
+                <a href="mailto:careers@fndi.tech?subject=CSM%20Position" class="job-link">Apply Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-purple">
+        <h2>Benefits & Perks</h2>
+        <div class="perks-grid">
+            <div class="perk-item fade-in">
+                <div class="perk-icon">💰</div>
+                <div>
+                    <h4>Competitive Salary</h4>
+                    <p>Market-rate pay plus performance bonuses</p>
                 </div>
-
-                <div class="role-card anim">
-                    <h3>Sales & Business Development</h3>
-                    <p>
-                        Close deals and build client relationships. You'll work directly with founders, close accounts, and drive revenue. Commission + base + equity.
-                    </p>
-                    <a href="mailto:stefano@fndi.tech" class="btn-apply">Apply Now</a>
+            </div>
+            <div class="perk-item fade-in">
+                <div class="perk-icon">🏥</div>
+                <div>
+                    <h4>Health Insurance</h4>
+                    <p>Medical, dental, and vision coverage</p>
                 </div>
-
-                <div class="role-card anim">
-                    <h3>Content & Social Media</h3>
-                    <p>
-                        Build our brand by creating content about AI, small business, and startup life. You'll post, engage, and help us go viral.
-                    </p>
-                    <a href="mailto:stefano@fndi.tech" class="btn-apply">Apply Now</a>
+            </div>
+            <div class="perk-item fade-in">
+                <div class="perk-icon">📚</div>
+                <div>
+                    <h4>Learning Budget</h4>
+                    <p>$1,000/year for courses and conferences</p>
+                </div>
+            </div>
+            <div class="perk-item fade-in">
+                <div class="perk-icon">🏠</div>
+                <div>
+                    <h4>Remote-First</h4>
+                    <p>Work from anywhere, anytime</p>
+                </div>
+            </div>
+            <div class="perk-item fade-in">
+                <div class="perk-icon">🎯</div>
+                <div>
+                    <h4>Performance Bonus</h4>
+                    <p>Up to 20% annual bonus</p>
+                </div>
+            </div>
+            <div class="perk-item fade-in">
+                <div class="perk-icon">🎉</div>
+                <div>
+                    <h4>Team Events</h4>
+                    <p>Regular meetups and virtual team activities</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="values anim">
-        <div class="container">
-            <h2>Our Values</h2>
-            <div class="values-grid">
-                <div class="value-card anim">
-                    <h3>Execution</h3>
-                    <p>Ideas are cheap. Shipping is hard. We pick ideas over discussion.</p>
-                </div>
-                <div class="value-card anim">
-                    <h3>Build in Public</h3>
-                    <p>No hiding. We ship, iterate, and improve. Transparency is trust.</p>
-                </div>
-                <div class="value-card anim">
-                    <h3>Client Obsession</h3>
-                    <p>Every decision is measured by client impact. We win when they win.</p>
-                </div>
-                <div class="value-card anim">
-                    <h3>Move Fast</h3>
-                    <p>Speed > perfection. We iterate quickly and adapt to feedback.</p>
-                </div>
+    <section class="section-alt">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <h4>Excellence</h4>
+                <p>We deliver exceptional work that exceeds client expectations.</p>
+            </div>
+            <div class="value-card fade-in">
+                <h4>Innovation</h4>
+                <p>We embrace new ideas and aren't afraid to challenge the status quo.</p>
+            </div>
+            <div class="value-card fade-in">
+                <h4>Integrity</h4>
+                <p>We're honest, transparent, and do what we say we'll do.</p>
+            </div>
+            <div class="value-card fade-in">
+                <h4>Collaboration</h4>
+                <p>We work together to achieve ambitious goals and lift each other up.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <div class="container" style="margin: 0 2rem;">
-        <div class="cta-section anim">
-            <h2>Don't See Your Role?</h2>
-            <p>Reach out anyway. We're always looking for exceptional people.</p>
-            <a href="mailto:stefano@fndi.tech" class="cta-link">Send Us Your Resume</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div>
-                <h3 class="nav-logo" style="color: white;">FNDI</h3>
-                <p class="tagline">AI solutions that work while you sleep.</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Building AI solutions that scale your business.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <a href="/#services">Services</a>
-                <a href="/pricing">Pricing</a>
-                <a href="/how-it-works">How It Works</a>
-                <a href="/compare">Compare</a>
-                <a href="/about">About</a>
-                <a href="/book">Book a Call</a>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
             </div>
-            <div>
-                <h3>Resources</h3>
-                <a href="/case-studies">Case Studies</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="/resources">Guides & Tools</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/blog">Blog</a>
-                <a href="/partners">Partner Program</a>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/#about">About</a>
                 <a href="/careers">Careers</a>
-            </div>
-            <div>
-                <h3>Industries</h3>
-                <a href="/industries/dental">Dental Offices</a>
-                <a href="/industries/med-spas">Med Spas</a>
-                <a href="/industries/law-firms">Law Firms</a>
-                <a href="/industries/restaurants">Restaurants</a>
-                <a href="/industries/salons">Salons</a>
-                <a href="/industries/home-services">Home Services</a>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <a href="tel:+17868430145">(786) 843-0145</a>
-                <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-                <p style="color: var(--text3); margin-top: 1rem;">Miami, FL</p>
-            </div>
-            <div>
-                <h3>Follow Us</h3>
-                <a href="https://instagram.com/fndi_tech" target="_blank">Instagram @fndi_tech</a>
-                <a href="mailto:stefano@fndi.tech">Careers</a>
-            </div>
-        </div>
-            <div>
-                <h3>Legal</h3>
-                <a href="/terms">Terms of Service</a>
-                <a href="/privacy">Privacy Policy</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FNDI. All rights reserved. | <a href="/terms" style="color:var(--text3);">Terms</a> | <a href="/privacy" style="color:var(--text3);">Privacy</a></p>
+            <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
         </div>
     </footer>
 
-    <!-- Particle Canvas Script -->
     <script>
-        const canvas = document.getElementById('particleCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particles = [];
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 1.5;
-                this.opacity = Math.random() * 0.5 + 0.2;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(124, 58, 237, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        initParticles();
-        animate();
-    </script>
-
-    <!-- Navigation and Scroll Effects -->
-    <script>
-        const navbar = document.getElementById('navbar');
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                nav.classList.add('scrolled');
             } else {
-                navbar.classList.remove('scrolled');
+                nav.classList.remove('scrolled');
             }
         });
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        document.querySelectorAll('.anim').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>

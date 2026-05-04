@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How It Works | FNDI — AI Setup in 2 Weeks</title>
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-    <meta name="description" content="Learn how FNDI sets up your AI voice agent, chatbot, or automation tools in just 2 weeks. From discovery to launch.">
-    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+    <title>How It Works | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,922 +12,299 @@
         gtag('js', new Date());
         gtag('config', 'G-YSFXDYZ46B');
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --accent: #7c3aed;
-            --accent2: #6d28d9;
-            --surface: #f8f7ff;
-            --text: #1a1a2e;
-            --text2: #4a4a68;
-            --text3: #6b7280;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); background-color: var(--bg-light); }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-            padding: 1rem 2rem;
             z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
             transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
+        nav.scrolled { background: var(--bg-light); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; flex-direction: column; }
+        .nav-tagline { font-size: 0.65rem; color: var(--text-tertiary); }
+        .nav-center { display: flex; gap: 2rem; align-items: center; }
+        .nav-center a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.3s ease; }
+        .nav-center a:hover { color: var(--accent); }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text2);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 0.4rem;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Particle Canvas */
-        #particleCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%);
-            padding: 2rem;
-            margin-top: 60px;
-            position: relative;
-        }
-
-        .hero .container {
-            max-width: 800px;
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0.05));
             text-align: center;
         }
 
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
+        .hero h1 { margin-bottom: 1rem; }
 
-        .grad {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-alt { background: var(--bg-alt); }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text2);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Sections */
-        section {
-            padding: 6rem 2rem;
-        }
-
-        section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--text);
-        }
-
-        section p {
-            color: var(--text2);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Timeline Section */
         .timeline {
-            background: var(--surface);
-        }
-
-        .timeline-container {
-            max-width: 900px;
-            margin: 0 auto;
             position: relative;
-        }
-
-        .timeline-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-            position: relative;
-        }
-
-        .timeline-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 5%;
-            right: 5%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            z-index: 0;
-            border-radius: 2px;
-        }
-
-        .timeline-step {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-step:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .timeline-dot {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-        }
-
-        .timeline-step h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        .timeline-step .subtitle {
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .timeline-step p {
-            color: var(--text2);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* What You Get Section */
-        .deliverables {
-            background: #ffffff;
-        }
-
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .deliverable-card {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
+        .timeline-item {
+            position: relative;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
             padding: 2rem;
-            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .deliverable-card:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.2);
-            transform: translateY(-5px);
-        }
+        .timeline-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-4px); }
 
-        .deliverable-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .deliverable-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        .deliverable-card p {
-            color: var(--text2);
-            font-size: 0.9rem;
-        }
-
-        /* FAQ Section */
-        .faq {
-            background: var(--surface);
-        }
-
-        .faq-container {
-            max-width: 700px;
-            margin: 3rem auto 0;
-        }
-
-        .faq-item {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            border-radius: 14px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: rgba(124, 58, 237, 0.2);
-            background: rgba(124, 58, 237, 0.08);
-        }
-
-        .faq-question {
-            background: rgba(124, 58, 237, 0.05);
-            padding: 1.5rem;
-            cursor: pointer;
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 2rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            color: white;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            color: var(--text);
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .faq-question:hover {
-            background: rgba(124, 58, 237, 0.1);
+        .step-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .step-title { font-size: 1.3rem; color: var(--text-primary); margin: 1rem 0 0.75rem; }
+        .step-time { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+        .step-desc { color: var(--text-secondary); margin-bottom: 1rem; }
+
+        .details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
         }
 
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-            color: var(--accent);
-        }
+        .details-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .details-list { list-style: none; }
+        .details-list li { color: var(--text-secondary); font-size: 0.9rem; padding: 0.3rem 0; }
 
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--text2);
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            max-height: 500px;
-        }
-
-        /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin: 6rem 2rem;
+            padding: 3rem;
+            border-radius: 1rem;
+            margin-top: 3rem;
         }
 
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
+        .cta-section h3 { color: white; margin-bottom: 1rem; }
+        .cta-section p { margin-bottom: 2rem; font-size: 1.05rem; }
 
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
+        .btn-cta {
             background: white;
             color: var(--accent);
             padding: 1rem 2.5rem;
-            border-radius: 10px;
+            border-radius: 0.5rem;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            display: inline-block;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-        /* Animation */
-        .anim {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .anim.visible {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        /* Footer */
         footer {
-            background: var(--text);
-            color: white;
-            padding: 4rem 2rem 2rem;
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
         }
 
-        footer .container {
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
-        footer h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 1rem;
-        }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; }
+        .footer-col a { display: block; color: #999; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #666; }
 
-        footer a {
-            color: var(--text3);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        footer a:hover {
-            color: var(--accent);
-        }
-
-        footer .tagline {
-            color: var(--text3);
-            font-style: italic;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(124, 58, 237, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--text3);
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            nav .container {
-                flex-wrap: wrap;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                gap: 1rem;
-                background: white;
-                padding: 2rem;
-                border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                min-height: 80vh;
-                margin-top: 80px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-
-            .timeline-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-wrapper::before {
-                display: none;
-            }
-
-            .deliverables-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .faq-question {
-                font-size: 0.95rem;
-                padding: 1rem;
-            }
-
-            .faq-answer {
-                padding: 0 1rem;
-            }
-
-            .faq-item.active .faq-answer {
-                padding: 0 1rem 1rem;
-            }
-
-            footer .container {
-                grid-template-columns: 1fr;
-            }
+            .nav-center { display: none; }
+            .hero { padding: 3rem 1rem; }
+            .timeline { grid-template-columns: 1fr; }
+            section { padding: 3rem 1rem; }
         }
     </style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
 </head>
 <body>
-    <canvas id="particleCanvas"></canvas>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="/" class="nav-logo">FNDI</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/pricing">Pricing</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/assessment">Free Assessment</a></li>
-                <li><a href="/book" class="nav-cta">Book a Call</a></li>
-            </ul>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>How It <span class="grad">Works</span></h1>
-            <p>From first call to fully automated — in 2 weeks</p>
-            <a href="#timeline" class="hero-cta">See Our Process</a>
-        </div>
+        <h1>How It Works</h1>
+        <p style="color: var(--text-secondary); font-size: 1.1rem;">From discovery to launch in 4 simple steps. You'll have your AI system live and handling calls within 48 hours.</p>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline anim" id="timeline">
-        <div class="container timeline-container">
-            <h2>Our 4-Step Process</h2>
-            <div class="timeline-wrapper">
-                <div class="timeline-step anim">
-                    <div class="timeline-dot">1</div>
-                    <h3>Discovery Call</h3>
-                    <div class="subtitle">15 minutes</div>
-                    <p>
-                        We learn about your business, pain points, and goals. You tell us what's broken, we tell you what's possible.
-                    </p>
-                </div>
+    <section class="section-alt">
+        <h2>The FNDI Process</h2>
 
-                <div class="timeline-step anim">
-                    <div class="timeline-dot">2</div>
-                    <h3>Custom Strategy</h3>
-                    <div class="subtitle">48 hours</div>
-                    <p>
-                        You get a custom AI plan showing exactly which tools we'll build and the ROI you can expect.
-                    </p>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="step-number">1</div>
+                <div class="step-icon">📞</div>
+                <h3 class="step-title">Discovery Call</h3>
+                <div class="step-time">Day 1 — 30 minutes</div>
+                <p class="step-desc">We analyze your business, understand your challenges, and design the perfect AI system for you.</p>
+                <div class="details">
+                    <div class="details-title">What to expect:</div>
+                    <ul class="details-list">
+                        <li>Overview of your business & goals</li>
+                        <li>Analysis of your call patterns</li>
+                        <li>Demo of relevant AI tools</li>
+                        <li>Custom quote & timeline</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-step anim">
-                    <div class="timeline-dot">3</div>
-                    <h3>Build & Launch</h3>
-                    <div class="subtitle">5-7 business days</div>
-                    <p>
-                        We build your AI voice agent, chatbot, or automation tools. You approve everything before it goes live.
-                    </p>
+            <div class="timeline-item fade-in">
+                <div class="step-number">2</div>
+                <div class="step-icon">⚙️</div>
+                <h3 class="step-title">Custom Build</h3>
+                <div class="step-time">Day 1-2 — 6-12 hours</div>
+                <p class="step-desc">Our team builds your AI agent, customizes it for your business, and integrates it with your systems.</p>
+                <div class="details">
+                    <div class="details-title">What we do:</div>
+                    <ul class="details-list">
+                        <li>Train AI on your FAQ & processes</li>
+                        <li>Connect to your calendar & CRM</li>
+                        <li>Set up phone forwarding</li>
+                        <li>Create custom prompts & flows</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-step anim">
-                    <div class="timeline-dot">4</div>
-                    <h3>Optimize & Grow</h3>
-                    <div class="subtitle">Ongoing</div>
-                    <p>
-                        We monitor performance, tune responses, and expand your automation over time. Monthly reports show real numbers.
-                    </p>
+            <div class="timeline-item fade-in">
+                <div class="step-number">3</div>
+                <div class="step-icon">🚀</div>
+                <h3 class="step-title">Launch & Train</h3>
+                <div class="step-time">Day 2 — 2-4 hours</div>
+                <p class="step-desc">We launch your AI agent and train your team on how to use it and optimize performance.</p>
+                <div class="details">
+                    <div class="details-title">What happens:</div>
+                    <ul class="details-list">
+                        <li>Go-live with live testing</li>
+                        <li>Team training session</li>
+                        <li>Real-time monitoring</li>
+                        <li>Quick adjustments as needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="step-number">4</div>
+                <div class="step-icon">📈</div>
+                <h3 class="step-title">Optimize & Scale</h3>
+                <div class="step-time">Ongoing</div>
+                <p class="step-desc">We monitor performance, gather feedback, and continuously improve your AI system.</p>
+                <div class="details">
+                    <div class="details-title">Monthly activities:</div>
+                    <ul class="details-list">
+                        <li>Performance analytics review</li>
+                        <li>Call quality monitoring</li>
+                        <li>AI prompt optimization</li>
+                        <li>New feature rollouts</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- What You Get Section -->
-    <section class="deliverables anim">
-        <div class="container">
-            <h2>What You Get</h2>
-            <div class="deliverables-grid">
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">🤖</div>
-                    <h3>AI Voice Agent</h3>
-                    <p>Automated phone system that handles customer calls, schedules, and inquiries 24/7.</p>
-                </div>
-
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">💬</div>
-                    <h3>Website Chatbot</h3>
-                    <p>Intelligent chatbot that answers questions, qualifies leads, and books appointments.</p>
-                </div>
-
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">⚙️</div>
-                    <h3>Automation Workflows</h3>
-                    <p>Custom automation that integrates with your existing tools and processes.</p>
-                </div>
-
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">📊</div>
-                    <h3>Analytics Dashboard</h3>
-                    <p>Real-time insights into your AI performance, calls handled, and ROI metrics.</p>
-                </div>
-
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">🛠️</div>
-                    <h3>Ongoing Support</h3>
-                    <p>Dedicated support team available to optimize, adjust, and scale your AI.</p>
-                </div>
-
-                <div class="deliverable-card anim">
-                    <div class="deliverable-icon">🚀</div>
-                    <h3>Launch Support</h3>
-                    <p>Full launch coordination, team training, and day-one support to ensure success.</p>
-                </div>
-            </div>
+        <div class="cta-section">
+            <h3>Ready to Get Started?</h3>
+            <p>Schedule your free discovery call and see exactly how we'll transform your customer service.</p>
+            <a href="/book/" class="btn-cta">Book Your Call Today</a>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq anim">
-        <div class="container">
-            <h2>Common Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How long does setup actually take?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        From discovery call to live launch: 2 weeks on average. The discovery call happens same-day or next day. We deliver your custom strategy within 48 hours. Build and launch takes 5-7 business days. The whole process is fast because we focus on what matters most to your business.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do I need technical skills to use this?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Not at all. Our AI systems are designed to be simple to use and manage. We handle all the technical setup and configuration. You get a simple dashboard to monitor performance and adjust settings. If you need changes, we handle them for you.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I cancel anytime if it doesn't work for me?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, you can cancel your subscription anytime. Our goal is to deliver real value from day one, so if you're not seeing results, we'll work with you to optimize. Most of our clients stick around because the AI actually works.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do you measure ROI?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        We track metrics that matter: calls handled, leads generated, time saved, customer satisfaction, and revenue impact. You get monthly reports showing these numbers. Most clients see ROI within the first 30-60 days.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <div class="container" style="margin: 0 2rem;">
-        <div class="cta-section anim">
-            <h2>Ready to Automate?</h2>
-            <p>Start with a free discovery call and get a custom AI plan in 48 hours.</p>
-            <a href="/book" class="cta-button">Start Your Free Discovery Call</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div>
-                <h3 class="nav-logo" style="color: white;">FNDI</h3>
-                <p class="tagline">AI solutions that work while you sleep.</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Building AI solutions that scale your business.</p>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <a href="/#services">Services</a>
-                <a href="/pricing">Pricing</a>
-                <a href="/how-it-works">How It Works</a>
-                <a href="/compare">Compare</a>
-                <a href="/about">About</a>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
                 <a href="/book">Book a Call</a>
-            </div>
-            <div>
-                <h3>Resources</h3>
-                <a href="/case-studies">Case Studies</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="/resources">Guides & Tools</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/blog">Blog</a>
-                <a href="/partners">Partner Program</a>
-                <a href="/careers">Careers</a>
-            </div>
-            <div>
-                <h3>Industries</h3>
-                <a href="/industries/dental">Dental Offices</a>
-                <a href="/industries/med-spas">Med Spas</a>
-                <a href="/industries/law-firms">Law Firms</a>
-                <a href="/industries/restaurants">Restaurants</a>
-                <a href="/industries/salons">Salons</a>
-                <a href="/industries/home-services">Home Services</a>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <a href="tel:+17868430145">(786) 843-0145</a>
-                <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-                <p style="color: var(--text3); margin-top: 1rem;">Miami, FL</p>
-            </div>
-            <div>
-                <h3>Follow Us</h3>
-                <a href="https://instagram.com/fndi_tech" target="_blank">Instagram @fndi_tech</a>
-                <a href="/careers">Careers</a>
-            </div>
-        </div>
-            <div>
-                <h3>Legal</h3>
-                <a href="/terms">Terms of Service</a>
-                <a href="/privacy">Privacy Policy</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FNDI. All rights reserved. | <a href="/terms" style="color:var(--text3);">Terms</a> | <a href="/privacy" style="color:var(--text3);">Privacy</a></p>
+            <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
         </div>
     </footer>
 
-    <!-- Particle Canvas Script -->
     <script>
-        const canvas = document.getElementById('particleCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particles = [];
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 1.5;
-                this.opacity = Math.random() * 0.5 + 0.2;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(124, 58, 237, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        initParticles();
-        animate();
-    </script>
-
-    <!-- Navigation and Scroll Effects -->
-    <script>
-        const navbar = document.getElementById('navbar');
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        document.querySelectorAll('.anim').forEach(el => {
-            observer.observe(el);
-        });
-
-        // FAQ toggle functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                item.classList.toggle('active');
-            });
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>

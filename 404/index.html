@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+    <style>
+        :root { --accent: #7c3aed; --accent-deep: #6d28d9; --bg-light: #ffffff; --text-primary: #1a1a2e; --text-secondary: #4a4a68; --text-tertiary: #6b7280; --footer-dark: #0f0f23; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.02)); min-height: 100vh; display: flex; flex-direction: column; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 6rem; line-height: 1; margin-bottom: 1rem; background: linear-gradient(135deg, var(--accent), var(--accent-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin-bottom: 1rem; }
+
+        nav { padding: 1.5rem 2rem; display: flex; justify-content: space-between; }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; }
+
+        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; max-width: 800px; margin: 0 auto; }
+        .content p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+
+        .suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .suggestion-link {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-link:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .suggestion-icon { font-size: 2rem; }
+        .suggestion-label { font-weight: 600; color: var(--accent); font-size: 0.9rem; }
+
+        footer { background: var(--footer-dark); color: #ccc; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: auto; }
+        footer a { color: #999; text-decoration: none; }
+
+        @media (max-width: 768px) { h1 { font-size: 3.5rem; } h2 { font-size: 1.4rem; } .content p { font-size: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">FNDI</a>
+        <a href="/book/" class="nav-cta">Get Started</a>
+    </nav>
+
+    <div class="content">
+        <div>
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>Hmm, looks like this page doesn't exist. It might have moved, or maybe you took a wrong turn. Let's get you back on track.</p>
+
+            <div class="suggestions">
+                <a href="/" class="suggestion-link">
+                    <div class="suggestion-icon">🏠</div>
+                    <div class="suggestion-label">Home</div>
+                </a>
+                <a href="/services/voice-agents/" class="suggestion-link">
+                    <div class="suggestion-icon">🤖</div>
+                    <div class="suggestion-label">Voice Agents</div>
+                </a>
+                <a href="/case-studies" class="suggestion-link">
+                    <div class="suggestion-icon">📊</div>
+                    <div class="suggestion-label">Case Studies</div>
+                </a>
+                <a href="/book/" class="suggestion-link">
+                    <div class="suggestion-icon">📅</div>
+                    <div class="suggestion-label">Book a Call</div>
+                </a>
+                <a href="/how-it-works" class="suggestion-link">
+                    <div class="suggestion-icon">⚙️</div>
+                    <div class="suggestion-label">How It Works</div>
+                </a>
+                <a href="/compare" class="suggestion-link">
+                    <div class="suggestion-icon">⚖️</div>
+                    <div class="suggestion-label">Compare</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
+    </footer>
+</body>
+</html>

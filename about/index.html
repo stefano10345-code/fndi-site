@@ -1,495 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
-<title>About Us | FNDI — Meet the Founders</title>
-<meta name="description" content="Meet the founders of FNDI. Stefano Fernandini and Douglas O'Keefe are building AI solutions that help small businesses grow.">
-<meta property="og:title" content="About Us | FNDI">
-<meta property="og:description" content="Meet the team behind FNDI — AI solutions built by founders who care about small business.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fndi.tech/about">
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
-<meta name="twitter:title" content="About FNDI — AI Solutions for Small Business">
-<meta name="twitter:description" content="Meet Stefano and Douglas, the founders building custom AI solutions for small businesses in South Florida.">
-<link rel="canonical" href="https://fndi.tech/about">
-<meta name="keywords" content="FNDI founders, about FNDI, AI startup South Florida, Stefano Fernandini, Douglas O'Keefe, small business AI company">
-<meta name="robots" content="index, follow">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  ::selection{background:rgba(124,58,237,0.2);color:#1a1a2e}
-  :root{
-    --bg:#ffffff;--surface:#f8f7ff;--card:#ffffff;--card2:#f3f0ff;
-    --accent:#7c3aed;--accent2:#6d28d9;--accent3:#5b21b6;
-    --cyan:#7c3aed;--green:#34d399;--pink:#a855f7;--yellow:#fbbf24;
-    --text:#1a1a2e;--text2:#4a4a68;--text3:#6b7280;
-    --border:rgba(124,58,237,0.08);--glow:rgba(124,58,237,0.1);
-    --glass:rgba(124,58,237,0.03);--glass-border:rgba(124,58,237,0.1);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
-  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FNDI — Meet the Founders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
 
-  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim.v{opacity:1;transform:translateY(0)}
-  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* NAV */
-  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
-  nav.scrolled{background:rgba(255,255,255,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(124,58,237,0.06)}
-  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
-  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
-  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
-  .n-links{display:flex;align-items:center;gap:0.3rem}
-  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
-  .n-links a:hover{color:var(--text);background:rgba(124,58,237,0.06)}
-  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
-  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,58,237,0.45)!important}
-  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
 
-  /* HERO */
-  .hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
-  .h-bg{position:absolute;inset:0;z-index:0}
-  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:600px;height:600px;background:rgba(124,58,237,0.08);top:-15%;left:-10%}
-  .orb2{width:450px;height:450px;background:rgba(34,211,238,0.05);bottom:-15%;right:-8%;animation-delay:3s}
-  .h-content{position:relative;z-index:2;max-width:700px;animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1)}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:1.2rem;letter-spacing:-2px}
-  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.05rem;color:var(--text2);max-width:550px;margin:0 auto;line-height:1.7}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-  /* SECTIONS */
-  section{padding:5rem 2rem;position:relative}
-  .con{max-width:1000px;margin:0 auto;position:relative;z-index:2}
-  .s-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
-  .s-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;margin-bottom:1rem;letter-spacing:-1px;line-height:1.15}
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
 
-  /* STORY */
-  .story-sec{background:var(--surface)}
-  .story-content{max-width:700px;margin:0 auto}
-  .story-content p{font-size:1rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem}
-  .story-content p:last-child{margin-bottom:0}
-  .story-highlight{border-left:3px solid var(--accent);padding-left:1.5rem;margin:2.5rem 0;font-size:1.1rem;color:var(--text);font-weight:500;line-height:1.7;font-style:italic}
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
 
-  /* TIMELINE */
-  .timeline-sec{background:var(--bg)}
-  .timeline{position:relative;max-width:700px;margin:0 auto;padding-left:40px}
-  .timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(124,58,237,0.1))}
-  .tl-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
-  .tl-item:last-child{margin-bottom:0}
-  .tl-dot{position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid white;box-shadow:0 0 0 3px rgba(124,58,237,0.15)}
-  .tl-date{font-size:0.7rem;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.3rem}
-  .tl-item h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.3rem}
-  .tl-item p{font-size:0.85rem;color:var(--text2);line-height:1.6}
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-  /* FOUNDERS */
-  .founders-sec{background:var(--surface)}
-  .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
-  .founder-card{background:white;border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;position:relative;transition:all 0.4s}
-  .founder-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.12);box-shadow:0 16px 50px rgba(124,58,237,0.08)}
-  .founder-photo-placeholder{width:100%;height:280px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk','Inter',sans-serif;font-size:4rem;font-weight:800;letter-spacing:2px}
-  .founder-photo-placeholder.sf-bg{background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(167,139,250,0.08));color:var(--accent)}
-  .founder-photo-placeholder.do-bg{background:linear-gradient(135deg,rgba(34,211,238,0.12),rgba(52,211,153,0.08));color:var(--accent2)}
-  .founder-info{padding:2rem}
-  .founder-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.2rem}
-  .founder-role{font-size:0.82rem;color:var(--accent2);font-weight:600;margin-bottom:1rem}
-  .founder-bio{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem}
-  .founder-links{display:flex;gap:1rem}
-  .founder-links a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;transition:color 0.3s;padding:0.4rem 0.8rem;border-radius:8px;background:rgba(124,58,237,0.04)}
-  .founder-links a:hover{color:var(--accent2);background:rgba(124,58,237,0.08)}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  /* NUMBERS */
-  .numbers-sec{background:var(--bg)}
-  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2rem}
-  .number-card{text-align:center;padding:2rem 1rem}
-  .number-val{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.8rem;font-weight:800;color:var(--accent);line-height:1}
-  .number-label{font-size:0.78rem;color:var(--text2);margin-top:0.5rem;line-height:1.4}
+        nav.scrolled {
+            background: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-  /* VALUES */
-  .values-sec{background:var(--surface)}
-  .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
-  .value-card{padding:2rem;border-radius:16px;background:white;border:1px solid var(--glass-border);transition:all 0.3s}
-  .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(124,58,237,0.06)}
-  .value-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(167,139,250,0.04))}
-  .value-icon svg{stroke:var(--accent)}
-  .value-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
-  .value-card p{font-size:0.85rem;color:var(--text2);line-height:1.7}
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
 
-  /* SCROLL ANIMATIONS */
-  .anim-left{opacity:0;transform:translateX(-60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim-left.v{opacity:1;transform:translateX(0)}
-  .anim-right{opacity:0;transform:translateX(60px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim-right.v{opacity:1;transform:translateX(0)}
-  .anim-scale{opacity:0;transform:scale(0.85);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim-scale.v{opacity:1;transform:scale(1)}
+        .nav-tagline {
+            font-size: 0.65rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
 
-  /* CTA */
-  .cta-sec{text-align:center;padding:5rem 2rem}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;margin-bottom:1rem}
-  .cta-sec p{font-size:1rem;color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
-  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
-  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
-  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-  /* FOOTER */
-  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
-  .ft-inner{max-width:1200px;margin:0 auto}
-  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
-  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
-  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
-  footer a:hover{color:var(--accent2)}
-  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
-  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
-  .ft-bottom p{margin:0;font-size:0.75rem}
+        .nav-center a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    .mob-toggle{display:block}
-    .n-links{position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}
-    .n-links.open{display:flex}
-    .logo small{display:none}
-    section{padding:3.5rem 1.5rem}
-    .founders-grid{grid-template-columns:1fr}
-    .values-grid{grid-template-columns:1fr}
-    .numbers-grid{grid-template-columns:1fr 1fr}
-    .founder-photo-placeholder{height:200px;font-size:3rem}
-  }
+        .nav-center a:hover {
+            color: var(--accent);
+        }
 
-  /* ===== WHITE/PURPLE AI THEME ===== */
-  #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
-  .ai-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.15),rgba(167,139,250,0.25),rgba(124,58,237,0.15),transparent);position:relative;overflow:visible}
-  .ai-divider::after{content:'';position:absolute;top:-2px;left:0;width:60px;height:5px;background:rgba(124,58,237,0.4);border-radius:5px;filter:blur(3px);animation:dividerGlow 4s ease-in-out infinite}
-  @keyframes dividerGlow{0%{left:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 60px);opacity:0}}
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
 
-</style>
+        .nav-cta:hover {
+            background: var(--accent-deep);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--bg-alt);
+        }
+
+        .section-purple {
+            background: var(--bg-alt-purple);
+        }
+
+        /* Story Section */
+        .story-content {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .story-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .story-highlight {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            background: rgba(124, 58, 237, 0.05);
+            padding: 1.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 2rem auto;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), rgba(124, 58, 237, 0.1));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Founder Cards */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .founder-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .founder-card:hover {
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .founder-photo {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(167, 139, 250, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .founder-info {
+            padding: 2rem;
+        }
+
+        .founder-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .founder-role {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .founder-bio {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Numbers Section */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .number-card {
+            padding: 2rem;
+        }
+
+        .number-stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .number-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-dark {
+            background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .cta-dark h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-dark p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                height: 350px;
+                margin-top: 70px;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-i">
-    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
-    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
-    <div class="n-links">
-      <a href="/#services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about" style="color:var(--text)">About</a>
-            <a href="/assessment" style="color:var(--accent);font-weight:600">Free Assessment</a>
-      <a href="/book" class="n-cta">Book a Call</a>
-    </div>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="h-bg">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-  </div>
-  <div class="h-content">
-    <h1><span class="grad" data-es="La Gente Detrás de FNDI">The People Behind FNDI</span></h1>
-    <p data-es="Dos fundadores, una misión: dar a las pequeñas empresas acceso a las mismas herramientas de IA que utilizan las grandes empresas.">Two founders, one mission: give small businesses access to the same AI tools that big companies use.</p>
-  </div>
-</div>
-
-<section class="story-sec">
-  <div class="con">
-    <div class="s-label anim d1" data-es="NUESTRA HISTORIA">OUR STORY</div>
-    <h2 class="s-title anim d2" data-es="Por Qué Construimos Esto">Why We Built This</h2>
-    <div class="story-content anim d3">
-      <p data-es="Nos conocimos en middle school en Miami. Siempre supimos que íbamos a construir algo juntos. Cuando vimos cuántos negocios pequeños estaban perdiendo clientes — llamadas que iban a buzón de voz, leads que nunca recibían respuesta, citas que se olvidaban — mientras las grandes corporaciones tenían equipos completos y presupuestos millonarios dedicados a la IA, no lo pensamos dos veces.">We met in middle school in Miami. We always knew we'd build something together. When we saw how many small businesses were losing customers — calls going to voicemail, leads that never got a response, appointments being forgotten — while big corporations had entire teams and million-dollar budgets dedicated to AI, we didn't think twice.</p>
-      <p data-es="Vimos el problema y al día siguiente ya estábamos construyendo. No pedimos permiso. Así somos nosotros.">We saw the problem and the next day we were already building. We didn't ask for permission. That's just how we move.</p>
-      <div class="story-highlight" data-es="No se trata de la idea — se trata de la ejecución. Cualquiera puede ver un problema. Nosotros decidimos resolverlo. Nuestra misión: dar a los balnearios, contratistas, consultorios dentales y restaurantes acceso a las mismas herramientas de IA que usan las empresas Fortune 500, sin el precio de Fortune 500.">It's not about the idea — it's about the execution. Anybody can see a problem. We chose to solve it. Our mission: give the local med spa, the contractor, the dental office, the restaurant owner access to the same powerful AI tools that Fortune 500 companies use — without the Fortune 500 price tag.</div>
-      <p>FNDI stands for <strong style="color:var(--text)">Future Native Digital Intelligence</strong>. We believe the future of business is native to AI — and we're here to build that future with you. Every voice agent, chatbot, website, and automation we create is designed around one thing: helping your business grow.</p>
-      <p data-es="Estamos basados en Miami y trabajamos con empresas en todo South Florida y más allá. Ya sea que seas una operación de una sola persona o un equipo en crecimiento, si estás listo para dejar de dejar dinero en la mesa, estamos listos para construir.">We're based in Miami, and we work with businesses across South Florida and beyond. Whether you're a one-person operation or a growing team, if you're ready to stop leaving money on the table, we're ready to build.</p>
-    </div>
-  </div>
-</section>
-
-<div class="ai-divider"></div>
-
-<!-- TIMELINE -->
-<section class="timeline-sec">
-  <div class="con">
-    <div style="text-align:center">
-      <div class="s-label anim d1" data-es="NUESTRO CAMINO">OUR JOURNEY</div>
-      <h2 class="s-title anim d2" data-es="De una Idea a la Acción">From Idea to Action</h2>
-    </div>
-    <div class="timeline">
-      <div class="tl-item anim d1">
-        <div class="tl-dot"></div>
-        <div class="tl-date" data-es="La Idea">The Idea</div>
-        <h3 data-es="Vimos el Problema">We Saw the Problem</h3>
-        <p data-es="Pequeñas empresas en Miami pierden miles de dólares en llamadas perdidas, leads sin responder y tareas manuales. Las grandes corporaciones tienen IA y automatización — los negocios locales merecen lo mismo.">Small businesses across Miami are losing thousands to missed calls, unresponsive leads, and manual tasks. Big corporations have AI and automation — local businesses deserve the same.</p>
-      </div>
-      <div class="tl-item anim d2">
-        <div class="tl-dot"></div>
-        <div class="tl-date" data-es="Marzo 2026">March 2026</div>
-        <h3 data-es="FNDI Nace">FNDI Is Born</h3>
-        <p data-es="Después de ver cuántos negocios locales estaban perdiendo clientes por no poder responder llamadas ni dar seguimiento a leads, Stefano y Mac lanzaron FNDI con una misión clara: dar a las pequeñas empresas acceso a herramientas de IA de clase empresarial.">After seeing how many local businesses were losing customers because they couldn't answer calls or follow up on leads, Stefano and Mac launched FNDI with a clear mission: give small businesses access to enterprise-grade AI tools.</p>
-      </div>
-      <div class="tl-item anim d3">
-        <div class="tl-dot"></div>
-        <div class="tl-date" data-es="Ahora">Now</div>
-        <h3 data-es="Abiertos para Negocios">Open for Business</h3>
-        <p data-es="Estamos aceptando nuestros primeros clientes. Agentes de voz, chatbots, automatización, sitios web — si necesitas IA para tu negocio, estamos listos para construirlo contigo.">We're taking on our first clients. Voice agents, chatbots, automation, websites — if your business needs AI, we're ready to build it with you.</p>
-      </div>
-      <div class="tl-item anim d3">
-        <div class="tl-dot"></div>
-        <div class="tl-date" data-es="Lo que viene">What's Next</div>
-        <h3 data-es="Creciendo Contigo">Growing With You</h3>
-        <p data-es="Nuestro objetivo es convertirnos en el socio de IA de referencia para pequeñas empresas en South Florida y más allá. Esto es solo el comienzo.">Our goal is to become the go-to AI partner for small businesses across South Florida and beyond. This is just the beginning.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="ai-divider"></div>
-
-<!-- FOUNDERS -->
-<section class="founders-sec">
-  <div class="con">
-    <div style="text-align:center">
-      <div class="s-label anim d1" data-es="EL EQUIPO">THE TEAM</div>
-      <h2 class="s-title anim d2" data-es="Conoce a los Fundadores">Meet the Founders</h2>
-    </div>
-    <div class="founders-grid">
-      <div class="founder-card anim anim-left d1">
-        <div class="founder-photo-placeholder sf-bg">SF</div>
-        <div class="founder-info">
-          <div class="founder-name" data-es="Stefano Fernandini">Stefano Fernandini</div>
-          <div class="founder-role" data-es="Co-Fundador • Visión y Estrategia">Co-Founder &bull; Vision & Strategy</div>
-          <div class="founder-bio" data-es="Nacido y criado en Miami. No soy de escuela — soy de hacer. He trabajado en múltiples industrias y aprendí haciendo, no leyendo libros. Cuando vi cuántos clientes los negocios pequeños estaban perdiendo por llamadas perdidas y sistemas anticuados, no esperé. Al día siguiente ya estábamos construyendo. Todo se trata de la ejecución — las ideas no importan si no actúas. En FNDI, lidero la visión y la estrategia de clientes — trabajo directamente con cada negocio para diseñar soluciones de IA que realmente marquen la diferencia. Me aseguro de que cada herramienta que construimos resuelva un problema real.">Born and raised in Miami. I'm not a classroom guy — I'm a learner by doing. I've worked across multiple industries and built real experience in the field. When I saw how many customers small businesses were losing to missed calls and outdated systems, I didn't wait. The next day we were already building. It's all about execution — ideas don't matter if you don't act on them. At FNDI, I lead the vision and client strategy — I work directly with every business to design AI solutions that actually move the needle. Every tool we build has to solve a real problem, not just a hypothetical one.</div>
-          <div class="founder-links">
-            <a href="mailto:stefano@fndi.tech"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> stefano@fndi.tech</a>
-            <a href="tel:+17868430145"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> (786) 843-0145</a>
-          </div>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/portfolio/">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
-      </div>
-      <div class="founder-card anim anim-right d2">
-        <div class="founder-photo-placeholder do-bg">DO</div>
-        <div class="founder-info">
-          <div class="founder-name" data-es="Douglas O'Keefe">Douglas O'Keefe</div>
-          <div class="founder-role" data-es="Co-Fundador • Ingeniería de IA y Desarrollo">Co-Founder &bull; AI Engineering & Development</div>
-          <div class="founder-bio" data-es="Estudiante de ingeniería mecánica que se adentró profundamente en el desarrollo de IA de forma independiente. No viene de informática — construyó sistemas completos de IA desde cero con un enfoque de ingeniero: sistemático, desde primeros principios. Ha co-fundado y lanzado múltiples emprendimientos antes de FNDI. Co-fundó FNDI porque las empresas locales merecen acceso a la misma IA que las grandes compañías acaparan — y sabe cómo construirla, desplegarla y hacer que realmente funcione.">Mechanical engineering student who went deep into AI development independently — not from a CS background, but built full-stack AI systems from the ground up. Brings an engineer's approach to problem-solving: systematic, first-principles, build it until it works. Has been building businesses since before FNDI — co-founded and shipped multiple ventures. Got pulled into AI early and now builds systems to optimize business operations using the same agentic technology that Fortune 500 companies are spending millions to figure out. Co-founded FNDI because local businesses deserve access to the same AI that big companies hoard.</div>
-          <div class="founder-links">
-            <a href="mailto:dokeefe@fndi.tech"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> dokeefe@fndi.tech</a>
-            <a href="tel:+17867778283"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> (786) 777-8283</a>
-          </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<div class="ai-divider"></div>
-
-<!-- BY THE NUMBERS -->
-<section class="numbers-sec">
-  <div class="con">
-    <div style="text-align:center">
-      <div class="s-label anim d1" data-es="LO QUE OFRECEMOS">WHAT WE BRING</div>
-      <h2 class="s-title anim d2" data-es="Construido Para Resultados">Built for Results</h2>
-    </div>
-    <div class="numbers-grid">
-      <div class="number-card anim anim-scale d1">
-        <div class="number-val">24/7</div>
-        <div class="number-label" data-es="Cobertura de IA para tu negocio">AI coverage for your business</div>
-      </div>
-      <div class="number-card anim anim-scale d2">
-        <div class="number-val">&lt;48h</div>
-        <div class="number-label" data-es="Lanzamiento de agentes de voz y chatbots">Voice agent & chatbot launch time</div>
-      </div>
-      <div class="number-card anim anim-scale d3">
-        <div class="number-val">1:1</div>
-        <div class="number-label" data-es="Acceso directo a los fundadores">Direct founder access on every project</div>
-      </div>
-      <div class="number-card anim anim-scale d3">
-        <div class="number-val" data-count="100" data-suffix="%">0%</div>
-        <div class="number-label" data-es="Soluciones personalizadas, nada prefabricado">Custom solutions, nothing off the shelf</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="ai-divider"></div>
-
-<!-- VALUES -->
-<section class="values-sec">
-  <div class="con">
-    <div style="text-align:center">
-      <div class="s-label anim d1" data-es="LO QUE REPRESENTAMOS">WHAT WE STAND FOR</div>
-      <h2 class="s-title anim d2" data-es="Nuestros Valores">Our Values</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card anim anim-scale d1">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
-        <h3 data-es="Resultados Sobre Todo">Results Over Everything</h3>
-        <p data-es="No construimos cosas que se vean bien pero no funcionen. Cada solución que entregamos se mide por una cosa: ¿creció tu negocio?">We don't build things that look cool but don't work. Every solution we deliver is measured by one thing: did it grow your business?</p>
-      </div>
-      <div class="value-card anim anim-scale d2">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 data-es="Fundadores, No Freelancers">Founders, Not Freelancers</h3>
-        <p data-es="No estás trabajando con una agencia aleatoria. Estás trabajando con las personas que construyeron esta empresa y pusieron su nombre en ella.">You're not working with a random agency. You're working with the people who built this company and put their name on it.</p>
-      </div>
-      <div class="value-card anim anim-scale d3">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3 data-es="Muévete Rápido, Construye Bien">Move Fast, Build Right</h3>
-        <p data-es="No tardamos meses en entregar. Construimos rápido, iteramos basándonos en datos reales y obtenemos resultados mientras otros aún están escribiendo propuestas.">We don't take months to deliver. We build fast, iterate based on real data, and get you results while others are still writing proposals.</p>
-      </div>
-      <div class="value-card anim anim-scale d4">
-        <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-        <h3 data-es="Crece Con Vosotros">Grow With You</h3>
-        <p data-es="No estamos aquí para un proyecto y desaparecemos. Somos socios a largo plazo invertidos en ver el éxito de tu negocio mes tras mes.">We're not here for one project and gone. We're long-term partners invested in seeing your business succeed month after month.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-sec">
-  <div class="con">
-    <h2 data-es="Hablemos Sobre Tu Negocio">Let's Talk About Your Business</h2>
-    <p data-es="Reserva una llamada gratuita con nuestro equipo. Sin presión, sin presentaciones, solo una conversación real sobre cómo la IA puede ayudarte a crecer.">Book a free call with our team. No pressure, no pitch decks — just a real conversation about how AI can help you grow.</p>
-    <a href="/book" class="btn btn-g" data-es="Reservar una Llamada Gratuita">Book a Free Call</a>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-inner">
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
-      <div style="max-width:300px">
-        <div class="ft-logo"><span>FNDI</span></div>
-        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
-        <p style="margin-top:0.8rem" data-es="Soluciones de IA para pequeñas empresas. Con sede en Miami.">AI solutions for small businesses. Based in Miami.</p>
-        <div style="display:flex;gap:1rem;margin-top:1rem">
-          <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About FNDI</h1>
+            <p class="hero-subtitle">Two founders on a mission to give small businesses the same AI tools that big corporations use — without the big corporation price tag.</p>
         </div>
-      </div>
-      <div>
-        <h4 data-es="Enlaces">Links</h4>
-        <a href="/#services">Services</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/compare">Compare</a>
-        <a href="/about">About</a>
-        <a href="/book">Book a Call</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/testimonials">Testimonials</a>
-        <a href="/resources">Guides & Tools</a>
-        <a href="/tools/roi-calculator">ROI Calculator</a>
-        <a href="/blog">Blog</a>
-        <a href="/partners">Partner Program</a>
-        <a href="/careers">Careers</a>
-      </div>
-      <div>
-        <h4>Industries</h4>
-        <a href="/industries/dental">Dental Offices</a>
-        <a href="/industries/med-spas">Med Spas</a>
-        <a href="/industries/law-firms">Law Firms</a>
-        <a href="/industries/restaurants">Restaurants</a>
-        <a href="/industries/salons">Salons</a>
-        <a href="/industries/home-services">Home Services</a>
-      </div>
-      <div>
-        <h4 data-es="Contacto">Contact</h4>
-        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-        <a href="tel:+17868430145">(786) 843-0145</a>
-        <p style="margin-top:0.3rem">Miami, FL</p>
-            <div>
-        <h3>Legal</h3>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <p>&copy; 2026 FNDI. All rights reserved. | <a href="/terms" style="color:var(--text3);">Terms</a> | <a href="/privacy" style="color:var(--text3);">Privacy</a></p>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-window.addEventListener('scroll',()=>{
-  const nav=document.querySelector('nav');
-  if(window.scrollY>10) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+    <section class="section-alt">
+        <h2>Our Story</h2>
+        <div class="story-content">
+            <p>Stefano Fernandini and Douglas O'Keefe met in middle school in Miami. They always knew they'd build something together. When they saw how many small businesses were losing revenue to missed calls, unresponsive leads, and outdated systems — while big corporations had entire teams and million-dollar budgets dedicated to AI — they didn't think twice.</p>
+            <div class="story-highlight">
+                "It's not about the idea. It's about execution. We saw the problem and started building the next day. Our mission: give small businesses in South Florida the same powerful AI tools that Fortune 500 companies use — without the Fortune 500 price tag."
+            </div>
+            <p>FNDI stands for <strong>Future Native Digital Intelligence</strong>. The name says it all: the future of business is native to AI. Every voice agent, chatbot, website, and automation tool we build is designed around one thing — helping your business grow.</p>
+        </div>
+    </section>
 
-/* ANIMATED COUNTERS */
-function animateValue(el, end, duration, prefix, suffix){
-  const startTime = performance.now();
-  function step(now){
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(end * ease);
-    el.textContent = (prefix || '') + current.toLocaleString() + (suffix || '');
-    if(progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-const numObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(!entry.isIntersecting || entry.target.dataset.counted) return;
-    entry.target.dataset.counted = 'true';
-    const el = entry.target;
-    const count = parseInt(el.dataset.count) || 0;
-    const prefix = el.dataset.prefix || '';
-    const suffix = el.dataset.suffix || '';
-    animateValue(el, count, 2000, prefix, suffix);
-  });
-}, {threshold: 0.5});
-document.querySelectorAll('.number-val[data-count]').forEach(el => numObs.observe(el));
+    <section>
+        <h2>The Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">The Idea</div>
+                <h3>We Saw the Problem</h3>
+                <p>Small businesses across Miami are losing thousands to missed calls, unresponsive leads, and manual tasks. Big corporations have AI. Local businesses deserve the same.</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">March 2026</div>
+                <h3>FNDI Is Born</h3>
+                <p>Stefano and Douglas launch FNDI with a clear mission: give small businesses access to enterprise-grade AI tools they can actually afford.</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Now</div>
+                <h3>Open for Business</h3>
+                <p>We're taking on our first clients. Voice agents, chatbots, automation, websites — if your business needs AI, we're ready to build it.</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">What's Next</div>
+                <h3>Growing Together</h3>
+                <p>Our goal: become the go-to AI partner for small businesses across South Florida and beyond. This is just the beginning.</p>
+            </div>
+        </div>
+    </section>
 
-/* SCROLL OBSERVER */
-document.addEventListener('DOMContentLoaded',()=>{
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('v');
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.anim,.anim-left,.anim-right,.anim-scale').forEach(el=>obs.observe(el));
-});
-</script>
-<script src="/lang.js"></script>
-<script>
-/* ===== AI PARTICLE MESH ===== */
-(function(){
-  const canvas=document.getElementById('particleCanvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  let w,h,particles=[];
-  const PC=45,CD=160,SP=0.25;
-  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
-  window.addEventListener('resize',resize);resize();
-  class P{constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-0.5)*SP;this.vy=(Math.random()-0.5)*SP;this.r=Math.random()*1.5+0.8;this.c=Math.random()>0.5?'124,58,237':'167,139,250';this.a=Math.random()*0.4+0.15;}
-  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1;}
-  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();}}
-  for(let i=0;i<PC;i++)particles.push(new P());
-  function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
-  animate();
-})();
-</script>
+    <section class="section-purple">
+        <h2>Meet the Founders</h2>
+        <div class="founders-grid">
+            <div class="founder-card fade-in">
+                <div class="founder-photo">SF</div>
+                <div class="founder-info">
+                    <div class="founder-name">Stefano Fernandini</div>
+                    <div class="founder-role">Co-Founder • Vision & Strategy</div>
+                    <p class="founder-bio">Born and raised in Miami. A doer by nature. When Stefano saw clients leaving money on the table due to missed calls and bad systems, he knew the answer: AI. At FNDI, he leads client vision and strategy — working directly with each business to design solutions that move the needle.</p>
+                </div>
+            </div>
+            <div class="founder-card fade-in">
+                <div class="founder-photo">DO</div>
+                <div class="founder-info">
+                    <div class="founder-name">Douglas O'Keefe</div>
+                    <div class="founder-role">Co-Founder • AI Engineering</div>
+                    <p class="founder-bio">Mechanical engineer turned AI specialist. Douglas built full-stack AI systems from the ground up — not from a CS textbook, but from first principles and real-world problems. He brings an engineer's approach: systematic, reliable, and built to scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="section-alt">
+        <h2>By the Numbers</h2>
+        <div class="numbers-grid">
+            <div class="number-card fade-in">
+                <div class="number-stat">24/7</div>
+                <div class="number-label">AI coverage for your business</div>
+            </div>
+            <div class="number-card fade-in">
+                <div class="number-stat">&lt;48h</div>
+                <div class="number-label">Voice agent launch time</div>
+            </div>
+            <div class="number-card fade-in">
+                <div class="number-stat">1:1</div>
+                <div class="number-label">Direct founder access</div>
+            </div>
+            <div class="number-card fade-in">
+                <div class="number-stat">100%</div>
+                <div class="number-label">Custom solutions</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-purple">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m7.5-2.25A9.75 9.75 0 1 0 1.5 12c4.52 0 8.627 1.937 11.375 5.053"/>
+                </svg>
+                <h3>Results First</h3>
+                <p>We don't build things that look cool but don't work. We measure success by one metric: did your business grow?</p>
+            </div>
+            <div class="value-card fade-in">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <h3>Move Fast</h3>
+                <p>We don't take months to deliver. We build fast, test with real data, and get you results while others are still writing proposals.</p>
+            </div>
+            <div class="value-card fade-in">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 0 0-5.856-1.487M7 20H2v-2a3 3 0 0 1 5.856-1.487M18 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                </svg>
+                <h3>Direct Access</h3>
+                <p>You work with the founders, not a random agency. We put our names on everything we build.</p>
+            </div>
+            <div class="value-card fade-in">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m0 0l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5"/>
+                </svg>
+                <h3>Long-term Partners</h3>
+                <p>We're not here for one project. We're invested in your success month after month, year after year.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-dark">
+        <h2>Ready to Build Together?</h2>
+        <p>Book a free call with our team. No pitch decks, no pressure — just a real conversation about how AI can grow your business.</p>
+        <a href="/book/" class="btn btn-primary">Book a Free Call</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Future Native Digital Intelligence. Building AI solutions that scale your business.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@fndi.tech" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about/">About</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/blog/">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/#dental">Dental</a>
+                <a href="/#medspas">Medical Spas</a>
+                <a href="/#law">Law Firms</a>
+                <a href="/#restaurants">Restaurants</a>
+                <a href="/#salons">Salons</a>
+                <a href="/#homeservices">Home Services</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="/#terms">Terms</a> | <a href="/#privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        const hamburger = document.getElementById('hamburger');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

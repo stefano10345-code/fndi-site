@@ -1,443 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
-<title>Blog | FNDI — AI Insights for Small Business</title>
-<meta name="description" content="Tips, insights, and guides on using AI voice agents, chatbots, and automation to grow your small business. From FNDI, the AI partner for local businesses.">
-<meta property="og:title" content="Blog | FNDI — AI Insights for Small Business">
-<meta property="og:description" content="Tips and guides on using AI voice agents, chatbots, and automation to grow your small business.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fndi.tech/blog">
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
-<meta name="twitter:title" content="FNDI Blog — AI Tips for Small Business">
-<meta name="twitter:description" content="Guides on AI voice agents, chatbots, and automation for local businesses.">
-<link rel="canonical" href="https://fndi.tech/blog">
-<meta name="keywords" content="AI voice agent blog, chatbot tips, small business automation, AI for small business, virtual receptionist guide, FNDI blog">
-<meta name="robots" content="index, follow">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "FNDI Blog",
-  "description": "Tips, insights, and guides on using AI to grow your small business",
-  "url": "https://fndi.tech/blog",
-  "publisher": {
-    "@type": "Organization",
-    "name": "FNDI",
-    "url": "https://fndi.tech"
-  },
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Why Small Businesses Are Losing $50K+ a Year to Missed Calls",
-      "author": {"@type": "Person", "name": "Stefano Fernandini"},
-      "datePublished": "2026-04-01",
-      "url": "https://fndi.tech/blog/why-small-businesses-lose-customers",
-      "description": "Every call that goes to voicemail is a potential customer walking away. Here's how AI voice agents are changing that."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Chatbot vs. Voice Agent: Which One Does Your Business Need?",
-      "author": {"@type": "Person", "name": "Douglas O'Keefe"},
-      "datePublished": "2026-04-05",
-      "url": "https://fndi.tech/blog/chatbot-vs-voice-agent",
-      "description": "They both answer questions and book appointments, but they work in completely different ways. We break it down."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "5 Automations Every Small Business Should Set Up Today",
-      "author": {"@type": "Person", "name": "Stefano Fernandini"},
-      "datePublished": "2026-04-10",
-      "url": "https://fndi.tech/blog/5-automations-small-business",
-      "description": "Five simple automations that can save you 10+ hours a week and help you capture leads you're currently losing."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "AI Receptionist for Dental Offices: The Complete Guide",
-      "author": {"@type": "Person", "name": "Stefano Fernandini"},
-      "datePublished": "2026-04-12",
-      "url": "https://fndi.tech/blog/ai-receptionist-dental-offices",
-      "description": "How dental practices are using AI to answer every patient call, book appointments, and eliminate no-shows."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Why Every Med Spa Needs an AI Voice Agent in 2026",
-      "author": {"@type": "Person", "name": "Douglas O'Keefe"},
-      "datePublished": "2026-04-13",
-      "url": "https://fndi.tech/blog/ai-voice-agent-med-spas",
-      "description": "How med spas are using AI voice agents to capture every consultation inquiry and grow revenue."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "AI Answering Service for Law Firms: Capture Every Potential Client",
-      "author": {"@type": "Person", "name": "Stefano Fernandini"},
-      "datePublished": "2026-04-14",
-      "url": "https://fndi.tech/blog/ai-answering-service-law-firms",
-      "description": "How law firms use AI answering services to capture every potential client call and never miss a case."
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "After Hours Answering Service: Why AI Beats Traditional Options",
-      "author": {"@type": "Person", "name": "Douglas O'Keefe"},
-      "datePublished": "2026-04-15",
-      "url": "https://fndi.tech/blog/after-hours-answering-service-small-business",
-      "description": "Comparing voicemail, call centers, live answering services, and AI for after-hours business call handling."
-    }
-  ]
-}
-</script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  ::selection{background:rgba(124,58,237,0.2);color:#1a1a2e}
-  :root{
-    --bg:#ffffff;--surface:#f8f7ff;--card:#ffffff;--card2:#f3f0ff;
-    --accent:#7c3aed;--accent2:#6d28d9;--cyan:#7c3aed;--green:#34d399;
-    --text:#1a1a2e;--text2:#4a4a68;--text3:#6b7280;
-    --border:rgba(124,58,237,0.08);--glass:rgba(124,58,237,0.03);--glass-border:rgba(124,58,237,0.1);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
-  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | FNDI — AI Insights for Small Business</title>
+    <meta name="description" content="Tips, insights, and guides on using AI voice agents, chatbots, and automation to grow your small business. From FNDI, the AI partner for small businesses.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
 
-  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim.v{opacity:1;transform:translateY(0)}
-  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
-  nav.scrolled{background:rgba(255,255,255,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(124,58,237,0.06)}
-  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
-  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
-  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
-  .n-links{display:flex;align-items:center;gap:0.3rem}
-  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
-  .n-links a:hover{color:var(--text);background:rgba(124,58,237,0.06)}
-  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
-  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
-  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
 
-  .hero{padding:10rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
-  .h-bg{position:absolute;inset:0;z-index:0}
-  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:500px;height:500px;background:rgba(34,211,238,0.06);top:-10%;left:-5%}
-  .orb2{width:400px;height:400px;background:rgba(124,58,237,0.05);bottom:-10%;right:-5%;animation-delay:3s}
-  .h-content{position:relative;z-index:2;max-width:600px;margin:0 auto;animation:fadeUp 1s}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem;letter-spacing:-2px}
-  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.02rem;color:var(--text2);line-height:1.7}
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
 
-  section{padding:4rem 2rem;position:relative}
-  .con{max-width:900px;margin:0 auto;position:relative;z-index:2}
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
 
-  /* FEATURED POST */
-  .featured{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden;transition:all 0.4s;cursor:pointer;text-decoration:none;display:block;color:inherit}
-  .featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--cyan))}
-  .featured:hover{border-color:rgba(124,58,237,0.15);transform:translateY(-4px);box-shadow:0 16px 50px rgba(124,58,237,0.08)}
-  .featured .tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;background:rgba(124,58,237,0.08);padding:0.3rem 0.8rem;border-radius:6px}
-  .featured h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.6rem;line-height:1.3}
-  .featured .excerpt{font-size:0.92rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
-  .featured .meta{display:flex;align-items:center;gap:1rem;font-size:0.78rem;color:var(--text3)}
-  .featured .read{color:var(--accent2);font-weight:600;font-size:0.85rem}
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
 
-  /* POST GRID */
-  .posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-  .post-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:2rem;transition:all 0.4s;cursor:pointer;text-decoration:none;display:block;color:inherit}
-  .post-card:hover{border-color:rgba(124,58,237,0.12);transform:translateY(-4px);box-shadow:0 12px 40px rgba(124,58,237,0.06)}
-  .post-card .tag{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.8rem}
-  .post-card h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
-  .post-card .excerpt{font-size:0.85rem;color:var(--text2);line-height:1.65;margin-bottom:1.2rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .post-card .meta{font-size:0.75rem;color:var(--text3)}
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
 
-  /* CTA */
-  .cta-sec{text-align:center;padding:5rem 2rem;background:var(--surface);margin-top:2rem}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:0.8rem}
-  .cta-sec p{font-size:0.95rem;color:var(--text2);margin-bottom:1.5rem;max-width:450px;margin-left:auto;margin-right:auto}
-  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
-  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
-  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
-  .ft-inner{max-width:1200px;margin:0 auto}
-  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
-  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
-  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
-  footer a:hover{color:var(--accent2)}
-  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
-  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
-  .ft-bottom p{margin:0;font-size:0.75rem}
+        nav.scrolled {
+            background: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-  @media(max-width:768px){
-    .mob-toggle{display:block}
-    .n-links{position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}
-    .n-links.open{display:flex}
-    .logo small{display:none}
-    section{padding:3rem 1.5rem}
-    .posts-grid{grid-template-columns:1fr}
-  }
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
 
-  /* ===== WHITE/PURPLE AI THEME ===== */
-  #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
-  .ai-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.15),rgba(167,139,250,0.25),rgba(124,58,237,0.15),transparent);position:relative;overflow:visible}
-  .ai-divider::after{content:'';position:absolute;top:-2px;left:0;width:60px;height:5px;background:rgba(124,58,237,0.4);border-radius:5px;filter:blur(3px);animation:dividerGlow 4s ease-in-out infinite}
-  @keyframes dividerGlow{0%{left:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 60px);opacity:0}}
+        .nav-tagline {
+            font-size: 0.65rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
 
-</style>
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-center a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-deep);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-alt-purple), var(--bg-alt));
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border);
+            background: var(--bg-light);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active:hover {
+            background: var(--accent-deep);
+            border-color: var(--accent-deep);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            width: fit-content;
+        }
+
+        .blog-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            flex: 1;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .blog-read-time {
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+        }
+
+        .blog-read-more {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            color: var(--accent-deep);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 3rem 1.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem 3rem;
+            }
+
+            .filter-section {
+                padding: 1.5rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-i">
-    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
-    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
-    <div class="n-links">
-      <a href="/#services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about">About</a>
-            <a href="/assessment" style="color:var(--accent);font-weight:600">Free Assessment</a>
-      <a href="/book" class="n-cta">Book a Call</a>
-    </div>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="h-bg">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-  </div>
-  <div class="h-content">
-    <h1><span class="grad" data-es="El Blog de FNDI">The FNDI Blog</span></h1>
-    <p data-es="Consejos, perspectivas y conversación real sobre cómo usar IA para hacer crecer tu negocio.">Tips, insights, and real talk about using AI to grow your business.</p>
-  </div>
-</div>
-
-<section>
-  <div class="con">
-
-    <!-- FEATURED POST -->
-    <div class="featured anim d1" onclick="document.getElementById('post1').scrollIntoView({behavior:'smooth'})">
-      <div class="tag" data-es="Destacado">Featured</div>
-      <h2 data-es="Por qué las pequeñas empresas pierden $50K+ anuales por llamadas perdidas">Why Small Businesses Are Losing $50K+ a Year to Missed Calls</h2>
-      <p class="excerpt" data-es="Cada llamada que va al buzón de voz es un cliente potencial que se va">Every call that goes to voicemail is a potential customer walking away. For most small businesses, that adds up to tens of thousands in lost revenue annually. Here's how AI voice agents are changing that — and why it matters more than ever.</p>
-      <div class="meta">
-        <span data-es="Stefano Fernandini">Stefano Fernandini</span>
-        <span>&#183;</span>
-        <span data-es="5 minutos de lectura">5 min read</span>
-        <span>&#183;</span>
-        <span data-es="Abril 2026">April 2026</span>
-      </div>
-    </div>
-
-    <!-- POST GRID -->
-    <div class="posts-grid">
-      <div class="post-card anim d2" onclick="document.getElementById('post2').scrollIntoView({behavior:'smooth'})">
-        <div class="tag" data-es="Conceptos Básicos de IA">AI Basics</div>
-        <h3 data-es="Chatbot vs. Agente de Voz: ¿Cuál necesita tu negocio?">Chatbot vs. Voice Agent: Which One Does Your Business Need?</h3>
-        <p class="excerpt" data-es="Ambos responden preguntas y reservan citas, pero funcionan de formas completamente diferentes. Te mostramos cuándo usar un chatbot, cuándo usar un agente de voz, y cuándo necesitas ambos.">They both answer questions and book appointments, but they work in completely different ways. We break down when to use a chatbot, when to use a voice agent, and when you need both.</p>
-        <div class="meta" data-es="Douglas O'Keefe &#183; 4 minutos de lectura">Douglas O'Keefe &#183; 4 min read</div>
-      </div>
-      <div class="post-card anim d3" onclick="document.getElementById('post3').scrollIntoView({behavior:'smooth'})">
-        <div class="tag" data-es="Crecimiento">Growth</div>
-        <h3 data-es="5 automatizaciones que toda pequeña empresa debería configurar hoy">5 Automations Every Small Business Should Set Up Today</h3>
-        <p class="excerpt" data-es="No necesitas un presupuesto grande para empezar a automatizar. Estas cinco automatizaciones simples pueden ahorrarte 10+ horas por semana y ayudarte a capturar leads que actualmente estás perdiendo.">You don't need a big budget to start automating. These five simple automations can save you 10+ hours a week and help you capture leads you're currently losing.</p>
-        <div class="meta" data-es="Stefano Fernandini &#183; 6 minutos de lectura">Stefano Fernandini &#183; 6 min read</div>
-      </div>
-      <a href="/blog/ai-receptionist-dental-offices" class="post-card anim d2" style="text-decoration:none;color:inherit">
-        <div class="tag">Dental</div>
-        <h3>AI Receptionist for Dental Offices: The Complete Guide</h3>
-        <p class="excerpt">How dental practices are using AI to answer every patient call, book appointments, handle insurance questions, and eliminate no-shows — automatically.</p>
-        <div class="meta">Stefano Fernandini &#183; 7 min read</div>
-      </a>
-      <a href="/blog/ai-voice-agent-med-spas" class="post-card anim d3" style="text-decoration:none;color:inherit">
-        <div class="tag">Med Spa</div>
-        <h3>Why Every Med Spa Needs an AI Voice Agent in 2026</h3>
-        <p class="excerpt">Med spas lose thousands in revenue from missed consultation calls. Learn how AI voice agents capture every Botox, filler, and laser inquiry 24/7.</p>
-        <div class="meta">Douglas O'Keefe &#183; 7 min read</div>
-      </a>
-      <a href="/blog/ai-answering-service-law-firms" class="post-card anim d2" style="text-decoration:none;color:inherit">
-        <div class="tag">Legal</div>
-        <h3>AI Answering Service for Law Firms: Capture Every Potential Client</h3>
-        <p class="excerpt">A missed call at a law firm isn't just an inconvenience — it's a $5,000+ case walking out the door. Here's how AI changes that.</p>
-        <div class="meta">Stefano Fernandini &#183; 7 min read</div>
-      </a>
-      <a href="/blog/after-hours-answering-service-small-business" class="post-card anim d3" style="text-decoration:none;color:inherit">
-        <div class="tag">Guide</div>
-        <h3>After Hours Answering Service: Why AI Beats Traditional Options</h3>
-        <p class="excerpt">Voicemail, call centers, live answering services, or AI? We compare every after-hours option so you can pick what's right for your business.</p>
-        <div class="meta">Douglas O'Keefe &#183; 7 min read</div>
-      </a>
-    </div>
-
-    <!-- FULL ARTICLES -->
-    <div id="post1" style="padding-top:5rem;margin-top:-2rem">
-      <div class="anim d1" style="background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:3rem;margin-bottom:2rem">
-        <div style="font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem">FEATURED &#183; APRIL 2026</div>
-        <h2 style="font-family:'Space Grotesk','Inter',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;line-height:1.25">Why Small Businesses Are Losing $50K+ a Year to Missed Calls</h2>
-        <p style="font-size:0.82rem;color:var(--text3);margin-bottom:2rem">By Stefano Fernandini &#183; 5 min read</p>
-
-        <div style="font-size:0.95rem;color:var(--text2);line-height:1.85">
-          <p style="margin-bottom:1.2rem">Think about the last time you called a business and nobody picked up. Did you leave a voicemail? Probably not. You moved on and called the next one. That's exactly what your customers are doing when you miss their calls.</p>
-          <p style="margin-bottom:1.2rem">For the average small business, missed calls add up fast. If you're getting 20 calls a day and missing even 30% of them, that's 6 missed opportunities daily. If even half of those would have converted into paying customers, and your average job is worth $500, that's $1,500 a day — or over $45,000 a month in potential revenue you're leaving on the table.</p>
-          <p style="margin-bottom:1.2rem">The problem isn't that business owners don't care. It's that you're busy doing the actual work — meeting with clients, managing your team, running operations. You can't be glued to the phone 24/7. And hiring a full-time receptionist costs $35K-$50K a year before benefits.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">That's where AI voice agents come in.</strong> An AI voice agent answers every single call — day or night, weekends, holidays — with a natural, human-sounding voice. It greets callers, answers their questions about your services and pricing, books appointments directly into your calendar, and sends you a summary of every conversation.</p>
-          <p style="margin-bottom:1.2rem">The best part? It costs a fraction of what a human receptionist would, and it never calls in sick, never puts people on hold, and never forgets to follow up.</p>
-          <p style="margin-bottom:1.2rem">We've seen businesses go from missing 40% of their calls to capturing 95%+ within the first week of setting up an AI voice agent. That's not a small improvement — it's a fundamental shift in how many customers you can serve.</p>
-          <p>If you're a small business owner and you know you're missing calls, this is the single highest-ROI investment you can make right now. <a href="/book" style="color:var(--accent2);text-decoration:underline;font-weight:600">Book a free call</a> and we'll show you exactly how it works.</p>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
-      </div>
-    </div>
-
-    <div id="post2" style="padding-top:3rem">
-      <div class="anim d1" style="background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:3rem;margin-bottom:2rem">
-        <div style="font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">AI BASICS &#183; APRIL 2026</div>
-        <h2 style="font-family:'Space Grotesk','Inter',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;line-height:1.25">Chatbot vs. Voice Agent: Which One Does Your Business Need?</h2>
-        <p style="font-size:0.82rem;color:var(--text3);margin-bottom:2rem">By Douglas O'Keefe &#183; 4 min read</p>
-
-        <div style="font-size:0.95rem;color:var(--text2);line-height:1.85">
-          <p style="margin-bottom:1.2rem">We get this question all the time: "Do I need a chatbot or a voice agent?" The short answer is — it depends on how your customers reach you. The longer answer? You probably want both. But let's break it down.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">A chatbot</strong> lives on your website. When a visitor lands on your page, the chatbot pops up and offers to help. It can answer questions about your services, collect contact information, schedule appointments, and even qualify leads — all through text. It works 24/7 and captures people who are browsing your site but might not pick up the phone.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">A voice agent</strong> handles phone calls. When someone calls your business number, the AI picks up with a natural voice, has a real conversation, answers their questions, and books them in. It's like having the world's most reliable receptionist on your team.</p>
-          <p style="margin-bottom:1.2rem">Here's a simple rule: if most of your leads come through phone calls (contractors, medical offices, service businesses), start with a voice agent. If most of your traffic is online (e-commerce, tech, professional services), start with a chatbot. If you get both? Set up both.</p>
-          <p>The two tools work even better together. A visitor might browse your site and chat with the bot, then call you the next day and the voice agent picks up. Both conversations get logged, and you have a complete picture of that lead. That's the power of having your whole customer experience covered.</p>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-    </div>
+    </nav>
 
-    <div id="post3" style="padding-top:3rem">
-      <div class="anim d1" style="background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:3rem;margin-bottom:2rem">
-        <div style="font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:1rem">GROWTH &#183; APRIL 2026</div>
-        <h2 style="font-family:'Space Grotesk','Inter',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;line-height:1.25">5 Automations Every Small Business Should Set Up Today</h2>
-        <p style="font-size:0.82rem;color:var(--text3);margin-bottom:2rem">By Stefano Fernandini &#183; 6 min read</p>
-
-        <div style="font-size:0.95rem;color:var(--text2);line-height:1.85">
-          <p style="margin-bottom:1.2rem">Automation isn't just for big companies with engineering teams. If you're a small business owner spending hours on repetitive tasks every week, these five automations can give you that time back — starting today.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">1. Appointment Reminders</strong> — No-shows kill your schedule and your revenue. Set up automatic text and email reminders 24 hours and 1 hour before every appointment. Most businesses see no-show rates drop by 50-70% just from this one automation.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">2. Lead Follow-Up</strong> — When someone fills out a form on your website, every minute counts. Automate an instant response that thanks them, confirms their info, and lets them know you'll be in touch. Then trigger a follow-up sequence over the next few days. Speed-to-lead is everything.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">3. Review Requests</strong> — After every completed job or appointment, automatically send a text asking for a Google review. The best time to ask is right after you've delivered great work. This one automation can transform your online reputation in weeks.</p>
-          <p style="margin-bottom:1.2rem"><strong style="color:var(--text)">4. Invoice & Payment Reminders</strong> — Stop chasing people for payment. Automate invoices that go out the moment a job is done, with reminders at 3, 7, and 14 days if they haven't paid. Professional, consistent, and zero effort on your end.</p>
-          <p>5. <strong style="color:var(--text)">Social Media Scheduling</strong> — Batch your content once a week and schedule it to post automatically. You stay visible and consistent without spending 30 minutes a day on Instagram. Pair this with AI-generated captions and you've got a content machine running on autopilot.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Insights & Resources</h1>
+            <p class="hero-subtitle">Learn how AI voice agents, chatbots, and automation help small businesses capture leads and scale revenue.</p>
         </div>
-      </div>
+    </section>
+
+    <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All Articles</button>
+        <button class="filter-btn" data-filter="voice-agents">AI Voice Agents</button>
+        <button class="filter-btn" data-filter="chatbots">Chatbots</button>
+        <button class="filter-btn" data-filter="industry">Industry</button>
+        <button class="filter-btn" data-filter="business">Business</button>
     </div>
 
-  </div>
-</section>
+    <div class="blog-grid" id="blogGrid">
+        <!-- Blog cards will be inserted here -->
+    </div>
 
-<section class="cta-sec">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 data-es="¿Quieres que la IA trabaje para tu negocio?">Want AI Working for Your Business?</h2>
-    <p data-es="Hablemos sobre lo que la automatización e IA pueden hacer por ti específicamente.">Let's talk about what automation and AI can do for you specifically.</p>
-    <a href="/book" class="btn btn-g" data-es="Reserva una llamada gratuita">Book a Free Call</a>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-inner">
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
-      <div style="max-width:300px">
-        <div class="ft-logo"><span>FNDI</span></div>
-        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
-        <p style="margin-top:0.8rem" data-es="Soluciones de IA para pequeñas empresas. Con base en Miami.">AI solutions for small businesses. Based in Miami.</p>
-        <div style="display:flex;gap:1rem;margin-top:1rem">
-          <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Future Native Digital Intelligence. Building AI solutions that scale your business.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@fndi.tech" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/#about">About</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/#portfolio">Portfolio</a>
+                <a href="/#careers">Careers</a>
+                <a href="/#contact">Contact</a>
+                <a href="/blog/">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="#dental">Dental</a>
+                <a href="#medspas">Medical Spas</a>
+                <a href="#law">Law Firms</a>
+                <a href="#restaurants">Restaurants</a>
+                <a href="#salons">Salons</a>
+                <a href="#homeservices">Home Services</a>
+            </div>
         </div>
-      </div>
-      <div>
-        <h4 data-es="Enlaces">Links</h4>
-        <a href="/#services" data-es="Servicios">Services</a>
-        <a href="/pricing" data-es="Precios">Pricing</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/compare">Compare</a>
-        <a href="/about" data-es="Acerca de">About</a>
-        <a href="/book" data-es="Reservar una llamada">Book a Call</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/testimonials">Testimonials</a>
-        <a href="/resources">Guides & Tools</a>
-        <a href="/tools/roi-calculator">ROI Calculator</a>
-        <a href="/blog">Blog</a>
-        <a href="/partners">Partner Program</a>
-        <a href="/careers">Careers</a>
-      </div>
-      <div>
-        <h4>Industries</h4>
-        <a href="/industries/dental">Dental Offices</a>
-        <a href="/industries/med-spas">Med Spas</a>
-        <a href="/industries/law-firms">Law Firms</a>
-        <a href="/industries/restaurants">Restaurants</a>
-        <a href="/industries/salons">Salons</a>
-        <a href="/industries/home-services">Home Services</a>
-      </div>
-      <div>
-        <h4 data-es="Contacto">Contact</h4>
-        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-        <a href="tel:+17868430145">(786) 843-0145</a>
-        <p style="margin-top:0.3rem" data-es="Miami, FL">Miami, FL</p>
-            <div>
-        <h3>Legal</h3>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <p data-es="© 2026 FNDI. Todos los derechos reservados.">&copy; 2026 FNDI. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+        </div>
+    </footer>
 
-<script>
-window.addEventListener('scroll',()=>{
-  const nav=document.querySelector('nav');
-  if(window.scrollY>10) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
-document.addEventListener('DOMContentLoaded',()=>{
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('v')});
-  },{threshold:0.1});
-  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
-});
-</script>
-<script src="/lang.js"></script>
-<script>
-/* ===== AI PARTICLE MESH ===== */
-(function(){
-  const canvas=document.getElementById('particleCanvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  let w,h,particles=[];
-  const PC=45,CD=160,SP=0.25;
-  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
-  window.addEventListener('resize',resize);resize();
-  class P{constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-0.5)*SP;this.vy=(Math.random()-0.5)*SP;this.r=Math.random()*1.5+0.8;this.c=Math.random()>0.5?'124,58,237':'167,139,250';this.a=Math.random()*0.4+0.15;}
-  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1;}
-  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();}}
-  for(let i=0;i<PC;i++)particles.push(new P());
-  function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
-  animate();
-})();
-</script>
+    <script>
+        const articles = [
+            {
+                id: 'ai-receptionist-dental-offices',
+                title: 'Why Every Dental Office Needs an AI Receptionist in 2026',
+                category: 'industry',
+                excerpt: 'Discover how AI receptionists handle missed calls during procedures, manage after-hours inquiries, and automate appointment reminders while you focus on patient care.',
+                readTime: '6 min read',
+                emoji: '🦷'
+            },
+            {
+                id: 'ai-voice-agent-med-spas',
+                title: 'How AI Voice Agents Are Transforming Med Spas',
+                category: 'voice-agents',
+                excerpt: 'Med spas are capturing 40% more high-value bookings with AI voice agents that handle consultation calls, follow-ups, and answer common questions automatically.',
+                readTime: '5 min read',
+                emoji: '✨'
+            },
+            {
+                id: 'ai-answering-service-law-firms',
+                title: 'AI Answering Services for Law Firms: A Complete Guide',
+                category: 'industry',
+                excerpt: 'Never lose a case again. Learn how law firms use AI answering services to capture every potential client call with professional intake and after-hours coverage.',
+                readTime: '8 min read',
+                emoji: '⚖️'
+            },
+            {
+                id: 'ai-phone-system-restaurants',
+                title: 'The Smart Restaurant Phone System: AI for Dining',
+                category: 'industry',
+                excerpt: 'Handle peak-hour call volume, manage reservations intelligently, and even take orders with AI. See how restaurants are automating their phone systems.',
+                readTime: '6 min read',
+                emoji: '🍽️'
+            },
+            {
+                id: 'ai-booking-salons-barbershops',
+                title: 'AI Booking for Salons & Barbershops: End No-Shows Forever',
+                category: 'industry',
+                excerpt: 'Automated scheduling, smart no-show prevention, and waitlist management. Discover how beauty businesses are doubling bookings with AI.',
+                readTime: '7 min read',
+                emoji: '💇'
+            },
+            {
+                id: 'ai-answering-home-service-contractors',
+                title: 'Never Miss a Lead: AI Answering for Home Service Contractors',
+                category: 'voice-agents',
+                excerpt: 'On-site unavailability costs contractors thousands in missed leads. Learn how AI handles calls while you work, with emergency detection and estimate scheduling.',
+                readTime: '6 min read',
+                emoji: '🔧'
+            },
+            {
+                id: 'chatbot-vs-voice-agent',
+                title: 'Chatbot vs. Voice Agent: Which Does Your Business Need?',
+                category: 'chatbots',
+                excerpt: 'Comparing text-based and voice AI solutions. Understand the differences, use cases, and when combining both gives you maximum lead capture.',
+                readTime: '7 min read',
+                emoji: '🤖'
+            }
+        ];
 
+        const blogGrid = document.getElementById('blogGrid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        function renderArticles(filter = 'all') {
+            blogGrid.innerHTML = '';
+
+            const filtered = filter === 'all'
+                ? articles
+                : articles.filter(a => a.category === filter);
+
+            filtered.forEach(article => {
+                const card = document.createElement('article');
+                card.className = 'blog-card fade-in visible';
+                card.innerHTML = `
+                    <div class="blog-card-image">${article.emoji}</div>
+                    <div class="blog-card-content">
+                        <div class="blog-category">${article.category.replace('-', ' ')}</div>
+                        <h3>${article.title}</h3>
+                        <p class="blog-excerpt">${article.excerpt}</p>
+                        <div class="blog-meta">
+                            <span class="blog-read-time">${article.readTime}</span>
+                            <a href="/blog/${article.id}/" class="blog-read-more">Read More →</a>
+                        </div>
+                    </div>
+                `;
+                blogGrid.appendChild(card);
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderArticles(btn.dataset.filter);
+            });
+        });
+
+        // Initial render
+        renderArticles();
+
+        // Scroll animation
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demos | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
+    <style>
+        :root { --accent: #7c3aed; --accent-deep: #6d28d9; --bg-light: #ffffff; --bg-alt: #f8f9fc; --bg-alt-purple: #f8f7ff; --text-primary: #1a1a2e; --text-secondary: #4a4a68; --text-tertiary: #6b7280; --border: #e5e7eb; --footer-dark: #0f0f23; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); background-color: var(--bg-light); }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 2rem; background: transparent; transition: all 0.3s ease; display: flex; justify-content: space-between; align-items: center; }
+        nav.scrolled { background: var(--bg-light); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; flex-direction: column; }
+        .nav-tagline { font-size: 0.65rem; color: var(--text-tertiary); }
+        .nav-center { display: flex; gap: 2rem; align-items: center; }
+        .nav-center a { text-decoration: none; color: var(--text-secondary); font-weight: 500; }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; }
+
+        .hero { margin-top: 80px; padding: 5rem 2rem; background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0.05)); text-align: center; }
+        .hero h1 { margin-bottom: 1rem; }
+
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-alt { background: var(--bg-alt); }
+        .section-purple { background: var(--bg-alt-purple); }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+
+        .demo-video {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-video:hover { transform: scale(1.05); }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .demo-video:hover .play-button {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .demo-content { padding: 2rem; }
+        .demo-type { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: 600; margin-bottom: 0.75rem; }
+        .demo-title { font-size: 1.3rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.75rem; }
+        .demo-desc { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .demo-cta { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .feature-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .feature-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .feature-desc { color: var(--text-secondary); font-size: 0.9rem; }
+
+        footer { background: var(--footer-dark); color: #ccc; padding: 3rem 2rem 1rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; }
+        .footer-col a { display: block; color: #999; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #666; }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) { .nav-center { display: none; } .hero { padding: 3rem 1rem; } section { padding: 3rem 1rem; } }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Live Demos</h1>
+        <p style="color: var(--text-secondary); font-size: 1.1rem;">Experience FNDI AI in action. See how our voice agents and chatbots handle real customer interactions.</p>
+    </section>
+
+    <section class="section-alt">
+        <h2>Voice Agent Demos</h2>
+
+        <div class="demos-grid">
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Voice Agent</div>
+                    <h3 class="demo-title">Dental Practice Call</h3>
+                    <p class="demo-desc">Watch how our AI answers a call for a dental practice, qualifies the patient, and books an appointment.</p>
+                    <a href="#" class="demo-cta">Listen to Demo →</a>
+                </div>
+            </div>
+
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Voice Agent</div>
+                    <h3 class="demo-title">Restaurant Reservation</h3>
+                    <p class="demo-desc">See how our AI handles a restaurant inquiry, takes a reservation, and transfers urgent requests to staff.</p>
+                    <a href="#" class="demo-cta">Listen to Demo →</a>
+                </div>
+            </div>
+
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Voice Agent</div>
+                    <h3 class="demo-title">Legal Firm Intake</h3>
+                    <p class="demo-desc">Listen as our AI qualifies a legal case, gathers information, and schedules a consultation with an attorney.</p>
+                    <a href="#" class="demo-cta">Listen to Demo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-purple">
+        <h2>Chatbot Demos</h2>
+
+        <div class="demos-grid">
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Website Chatbot</div>
+                    <h3 class="demo-title">Service Business Chatbot</h3>
+                    <p class="demo-desc">See how visitors interact with a chatbot that answers questions, qualifies leads, and books appointments 24/7.</p>
+                    <a href="#" class="demo-cta">View Demo →</a>
+                </div>
+            </div>
+
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Instagram DM</div>
+                    <h3 class="demo-title">DM Automation</h3>
+                    <p class="demo-desc">Watch how our AI responds to Instagram DM inquiries instantly, qualifying leads and moving conversations forward.</p>
+                    <a href="#" class="demo-cta">View Demo →</a>
+                </div>
+            </div>
+
+            <div class="demo-card fade-in">
+                <div class="demo-video">
+                    <div class="play-button">▶️</div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-type">Lead Follow-up</div>
+                    <h3 class="demo-title">Automated Follow-up</h3>
+                    <p class="demo-desc">See how our system automatically follows up with leads via SMS, email, and more to increase conversions.</p>
+                    <a href="#" class="demo-cta">View Demo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <h2>Key Features in Our Demos</h2>
+        <div class="features">
+            <div class="feature fade-in">
+                <div class="feature-icon">🎤</div>
+                <h3 class="feature-title">Natural Conversation</h3>
+                <p class="feature-desc">AI that sounds human, understands accents, and handles complex questions naturally.</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">📅</div>
+                <h3 class="feature-title">Auto-Booking</h3>
+                <p class="feature-desc">Qualifies callers and books appointments directly into your calendar in real-time.</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Lead Qualification</h3>
+                <p class="feature-desc">Smart questions identify your best prospects and pass qualified leads to your team.</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Instant Response</h3>
+                <p class="feature-desc">Available 24/7 to answer questions and capture leads your competitors miss.</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Real-Time Analytics</h3>
+                <p class="feature-desc">See exactly which calls came in, who was reached, and what they wanted.</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Smart Transfer</h3>
+                <p class="feature-desc">Urgent calls transfer to your team with full context instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Building AI solutions that scale your business.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/demos">Live Demos</a>
+                <a href="/book">Book a Call</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

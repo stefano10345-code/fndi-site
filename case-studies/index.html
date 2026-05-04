@@ -3,14 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Real results for real businesses. See how FNDI's AI solutions transformed small businesses with voice agents, chatbots, and automation.">
-    <meta name="keywords" content="case studies, AI agents, chatbots, automation, small business solutions">
-    <title>Case Studies & Portfolio | FNDI — AI Results for Small Business</title>
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-    <!-- Google Analytics -->
+    <title>Case Studies | FNDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,955 +12,363 @@
         gtag('js', new Date());
         gtag('config', 'G-YSFXDYZ46B');
     </script>
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --accent: #7c3aed;
-            --accent2: #6d28d9;
-            --surface: #f8f7ff;
-            --text: #1a1a2e;
-            --text2: #4a4a68;
-            --text3: #6b7280;
-            --border: rgba(124, 58, 237, 0.1);
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); line-height: 1.6; background-color: var(--bg-light); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+            left: 0;
+            right: 0;
             z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
             transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
         }
 
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        nav.scrolled { background: var(--bg-light); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; flex-direction: column; line-height: 1.2; }
+        .nav-tagline { font-size: 0.65rem; color: var(--text-tertiary); font-weight: 500; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; }
+        .nav-center a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.3s ease; }
+        .nav-center a:hover { color: var(--accent); }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
+        .nav-cta:hover { background: var(--accent-deep); }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .btn-nav {
-            background: var(--accent);
-            color: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav:hover {
-            background: var(--accent2);
-            transform: translateY(-2px);
-        }
-
-        .btn-nav.secondary {
-            background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-nav.secondary:hover {
-            background: var(--surface);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            margin: 4px 0;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
         .hero {
-            padding: 120px 2rem 80px;
-            text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, var(--surface) 100%);
-            margin-top: 70px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            color: var(--text2);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .grad {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Featured Case Study */
-        .featured-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 2rem;
-        }
-
-        .featured-card {
-            background: rgba(124, 58, 237, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            padding: 3rem;
-            align-items: center;
-            transition: all 0.4s ease;
-        }
-
-        .featured-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1);
-        }
-
-        .featured-image {
-            background: linear-gradient(135deg, var(--surface), rgba(124, 58, 237, 0.1));
-            border-radius: 16px;
-            height: 300px;
+            margin-top: 80px;
+            height: 450px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop') center/cover;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--text2);
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .coming-soon-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--accent);
             color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
         }
 
-        .featured-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
+        .hero-content { max-width: 600px; padding: 2rem; }
+        .hero h1 { color: white; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
 
-        .featured-content .project-type {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .featured-content p {
-            color: var(--text2);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .featured-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .tag {
-            background: var(--surface);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .tag.demo {
-            background: rgba(124, 58, 237, 0.1);
-            color: var(--accent);
-            border: 1px solid var(--border);
-        }
-
-        /* Case Studies Grid */
-        .case-studies-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title p {
-            color: var(--text2);
-            font-size: 1.1rem;
-        }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-alt { background: var(--bg-alt); }
 
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .case-card {
-            background: rgba(124, 58, 237, 0.03);
+            background: white;
+            border-radius: 0.75rem;
             border: 1px solid var(--border);
-            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
+            transition: all 0.3s ease;
         }
 
-        .case-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
-            transform: translateY(-4px);
-        }
+        .case-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.1); transform: translateY(-4px); }
 
-        .case-image {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, var(--surface), rgba(124, 58, 237, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text2);
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .demo-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--text2);
-            padding: 0.4rem 0.8rem;
-            border-radius: 16px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid var(--border);
-        }
-
-        .case-content {
+        .case-header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            color: white;
             padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
 
-        .case-client {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .case-industry { font-size: 0.9rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+        .case-client { font-size: 1.4rem; font-weight: 700; margin-top: 0.5rem; }
 
-        .case-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--text);
-        }
+        .case-body { padding: 2rem; }
+        .case-label { font-size: 0.8rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .case-title { color: var(--text-primary); margin-bottom: 1rem; font-weight: 700; }
+        .case-text { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; }
 
-        .case-metrics {
-            background: var(--surface);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1.2rem;
+        .metrics-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .metric {
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 0.3rem;
-        }
-
-        .metric-label {
-            font-size: 0.85rem;
-            color: var(--text2);
-            font-weight: 400;
-        }
-
-        .case-description {
-            color: var(--text2);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            flex: 1;
-            line-height: 1.6;
-        }
-
-        .case-tag {
-            background: var(--surface);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            width: fit-content;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 4rem 2rem;
-            margin: 80px 0;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 0.5rem;
             text-align: center;
         }
 
-        .stat-item {
-            padding: 2rem 1rem;
-        }
+        .metric-number { font-size: 1.8rem; font-weight: 700; color: var(--accent); font-family: 'Space Grotesk', sans-serif; }
+        .metric-label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem; }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.95;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--text2);
-            margin-bottom: 2rem;
-        }
-
-        .btn-g {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-g:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-        }
-
-        /* Coming Soon Note */
-        .coming-soon-note {
-            text-align: center;
-            color: var(--text2);
-            font-size: 0.95rem;
-            margin: 60px 0;
-            padding: 2rem;
-            background: var(--surface);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        /* Animations */
-        .anim {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .anim.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Footer */
         footer {
-            background: var(--text);
-            color: white;
-            padding: 4rem 2rem 2rem;
-            margin-top: 80px;
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
         }
 
-        .footer-container {
+        .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-section h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; }
+        .footer-col a { display: block; color: #999; text-decoration: none; margin-bottom: 0.75rem; transition: color 0.3s ease; font-size: 0.95rem; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .footer-socials { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .social-icon:hover { background: var(--accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #666; font-size: 0.9rem; }
+        .footer-bottom a { color: #999; text-decoration: none; margin: 0 1rem; transition: color 0.3s ease; }
+        .footer-bottom a:hover { color: var(--accent); }
 
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* Particle Canvas */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        main {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(8px, 8px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(8px, -8px);
-            }
-
-            .nav-container {
-                padding: 1rem;
-            }
-
-            .featured-card {
-                grid-template-columns: 1fr;
-                padding: 2rem;
-                gap: 2rem;
-            }
-
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 100px 1.5rem 60px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .featured-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0.8rem;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .featured-card {
-                padding: 1.5rem;
-            }
-
-            .featured-content h2 {
-                font-size: 1.2rem;
-            }
-
-            .case-card {
-                border-radius: 12px;
-            }
-
-            .case-image {
-                height: 150px;
-            }
-
-            .case-content {
-                padding: 1.5rem;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
+            .nav-center { display: none; }
+            .hero { height: 350px; }
+            .cases-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 1.5rem; }
         }
     </style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
 </head>
 <body>
-    <canvas id="particles"></canvas>
-
-    <nav>
-        <div class="nav-container">
-            <div class="logo">FNDI</div>
-            <ul class="nav-links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#pricing">Pricing</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/assessment" class="btn-nav secondary">Free Assessment</a></li>
-                <li><a href="/book" class="btn-nav">Book a Call</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#about">About</a>
+            <a href="/#portfolio">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Our Work</h1>
-            <p class="subtitle">Real results for <span class="grad">real businesses</span></p>
-        </section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Real Results. Real Businesses.</h1>
+            <p class="hero-subtitle">See how FNDI AI solutions have transformed customer service and revenue for businesses across multiple industries.</p>
+        </div>
+    </section>
 
-        <!-- Projects Coming Soon -->
-        <div class="featured-container">
-            <div class="featured-card anim" style="text-align:center;padding:60px 40px;">
-                <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    <section class="section-alt">
+        <h2>Case Studies</h2>
+        <div class="cases-grid">
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Dental</div>
+                    <div class="case-client">Smile Dental Co.</div>
                 </div>
-                <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;margin-bottom:12px;">Projects Coming Soon</h2>
-                <p style="color:var(--text2);font-size:1.1rem;max-width:500px;margin:0 auto;">We're currently building out AI solutions for our first clients. Check back soon to see real results and case studies.</p>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Missed Appointments & Dropped Calls</div>
+                    <p class="case-text">40+ calls missed daily during peak hours. Manual scheduling causing 20% no-show rate.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">AI Voice Agent</div>
+                    <p class="case-text">Deployed FNDI voice agent to answer calls 24/7, qualify patients, and auto-book appointments.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">94%</div>
+                            <div class="metric-label">Booking Rate</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">+35%</div>
+                            <div class="metric-label">Revenue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Med Spa</div>
+                    <div class="case-client">Glow Wellness Spa</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Off-Hours Lead Loss</div>
+                    <p class="case-text">Prospects calling after 5pm went to voicemail. No follow-up automation.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">24/7 AI + Chatbot</div>
+                    <p class="case-text">Voice agent handles after-hours calls and questions. Website chatbot qualifies prospects.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">47</div>
+                            <div class="metric-label">Bookings/Month</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">$28K</div>
+                            <div class="metric-label">Revenue Recovered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Salon</div>
+                    <div class="case-client">Luxe Hair Studio</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Slow Response to DMs</div>
+                    <p class="case-text">Instagram DM messages sat unanswered for hours. Leads went to competitors.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">DM Automation + Reminders</div>
+                    <p class="case-text">AI responds to Instagram inquiries in seconds. Automated appointment reminders reduce no-shows.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">3x</div>
+                            <div class="metric-label">More Clients</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">15%</div>
+                            <div class="metric-label">Less No-Shows</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Law Firm</div>
+                    <div class="case-client">Justice Legal Group</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Long Lead Qualification</div>
+                    <p class="case-text">Paralegals spending 8+ hours weekly on initial intake calls.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">AI Intake Assistant</div>
+                    <p class="case-text">Voice agent qualifies cases and gathers info. Only ready prospects sent to attorneys.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">12hrs</div>
+                            <div class="metric-label">Saved/Week</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">67%</div>
+                            <div class="metric-label">Better Quals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Restaurant</div>
+                    <div class="case-client">Urban Eats Bistro</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Understaffed During Rush</div>
+                    <p class="case-text">Calls dropped during lunch/dinner rush. Reservation system outdated.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">AI Reservation Agent</div>
+                    <p class="case-text">Voice agent handles reservations, waitlist, and menu questions. Syncs with POS.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">+28%</div>
+                            <div class="metric-label">Reservations</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">100%</div>
+                            <div class="metric-label">Call Capture</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <div class="case-industry">Home Services</div>
+                    <div class="case-client">ProFix Home Services</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-label">Challenge</div>
+                    <div class="case-title">Quotes Taking Too Long</div>
+                    <p class="case-text">Admin team spending 3+ hours daily on initial inquiry calls.</p>
+                    <div class="case-label" style="margin-top:1.5rem;">Solution</div>
+                    <div class="case-title">AI Quoting System</div>
+                    <p class="case-text">Voice agent gathers project details and provides instant quote. High-value leads to team.</p>
+                    <div class="metrics-row">
+                        <div class="metric fade-in">
+                            <div class="metric-number">8hrs</div>
+                            <div class="metric-label">Saved/Week</div>
+                        </div>
+                        <div class="metric fade-in">
+                            <div class="metric-number">+42%</div>
+                            <div class="metric-label">Conversion</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section anim">
-            <h2>Ready to Be Our Next Success Story?</h2>
-            <p>Let's talk about how AI can transform your business</p>
-            <a href="/book" class="btn-g">Book a Free Call</a>
-        </section>
-    </main>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>FNDI</h3>
-                <p>AI voice agents, chatbots, and automation for small businesses that want to grow faster.</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Building AI solutions that scale your business.</p>
             </div>
-            <div class="footer-section">
-                <h3>Links</h3>
-                <ul class="footer-links">
-                    <li><a href="/#services">Services</a></li>
-                    <li><a href="/pricing">Pricing</a></li>
-                    <li><a href="/how-it-works">How It Works</a></li>
-                    <li><a href="/compare">Compare</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/book">Book a Call</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
             </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul class="footer-links">
-                    <li><a href="/case-studies">Case Studies</a></li>
-                    <li><a href="/testimonials">Testimonials</a></li>
-                    <li><a href="/resources">Guides & Tools</a></li>
-                    <li><a href="/tools/roi-calculator">ROI Calculator</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/partners">Partner Program</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/book">Book a Call</a>
             </div>
-            <div class="footer-section">
-                <h3>Industries</h3>
-                <ul class="footer-links">
-                    <li><a href="/industries/dental">Dental Offices</a></li>
-                    <li><a href="/industries/med-spas">Med Spas</a></li>
-                    <li><a href="/industries/law-firms">Law Firms</a></li>
-                    <li><a href="/industries/restaurants">Restaurants</a></li>
-                    <li><a href="/industries/salons">Salons</a></li>
-                    <li><a href="/industries/home-services">Home Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> <a href="mailto:support@fndi.tech" style="color: rgba(255,255,255,0.7); text-decoration: none;">support@fndi.tech</a></p>
-                <div class="social-links">
-                    <a href="https://instagram.com/fndi_tech" target="_blank">Instagram</a>
-                </div>
-            </div>
-        <div class="footer-section">
-            <h3>Legal</h3>
-            <ul class="footer-links">
-                <li><a href="/terms">Terms of Service</a></li>
-                <li><a href="/privacy">Privacy Policy</a></li>
-            </ul>
         </div>
-    </div>
-    <div class="footer-bottom">
-            <p>&copy; 2026 FNDI. All rights reserved. | <a href="/terms" style="color:var(--text3);">Terms</a> | <a href="/privacy" style="color:var(--text3);">Privacy</a></p>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Particle Canvas Background
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 30;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.5;
-                this.speedY = (Math.random() - 0.5) * 0.5;
-                this.opacity = Math.random() * 0.5 + 0.2;
-                this.color = '#7c3aed';
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.opacity;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.globalAlpha = 1;
-            }
-        }
-
-        function initParticles() {
-            particles.length = 0;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let particle of particles) {
-                particle.update();
-                particle.draw();
-            }
-
-            requestAnimationFrame(animateParticles);
-        }
-
-        initParticles();
-        animateParticles();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles();
-        });
-
-        // Navigation Scroll Effect
-        const nav = document.querySelector('nav');
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
 
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.style.display = 'none';
-            });
-        });
-
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(entries => {
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, observerOptions);
 
-        document.querySelectorAll('.anim').forEach(element => {
-            observer.observe(element);
-        });
-
-        // Animated Counter
-        function animateCounters() {
-            const counters = document.querySelectorAll('[data-target]');
-
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-
-                // Start animation when counter is visible
-                const counterObserver = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && current === 0) {
-                            updateCounter();
-                            counterObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                counterObserver.observe(counter);
-            });
-        }
-
-        animateCounters();
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>

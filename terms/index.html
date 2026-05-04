@@ -4,233 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | FNDI</title>
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-    <meta name="description" content="FNDI Terms of Service. Read about our service terms, payment policies, and usage agreements.">
-    <meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-YSFXDYZ46B');
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
     <style>
+        :root { --accent: #7c3aed; --accent-deep: #6d28d9; --bg-light: #ffffff; --bg-alt: #f8f9fc; --text-primary: #1a1a2e; --text-secondary: #4a4a68; --text-tertiary: #6b7280; --border: #e5e7eb; --footer-dark: #0f0f23; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --accent: #7c3aed; --accent2: #6d28d9;
-            --surface: #f8f7ff; --text: #1a1a2e;
-            --text2: #4a4a68; --text3: #6b7280;
-        }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: #ffffff; line-height: 1.6; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); background-color: var(--bg-light); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin: 2rem 0 1rem; }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.5rem; margin-top: 2.5rem; }
+        h3 { font-size: 1.2rem; color: var(--accent); }
 
-        /* Navigation */
-        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(124,58,237,0.1); padding: 1rem 2rem; z-index: 1000; transition: all 0.3s ease; }
-        nav.scrolled { background: rgba(255,255,255,0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text2); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
-        .nav-links a:hover { color: var(--accent); }
-        .nav-cta { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; padding: 0.6rem 1.5rem; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; transition: transform 0.2s ease; }
-        .nav-cta:hover { transform: translateY(-2px); }
-        .hamburger { display: none; flex-direction: column; gap: 0.4rem; cursor: pointer; }
-        .hamburger span { width: 25px; height: 3px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 2rem; background: var(--bg-light); box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; justify-content: space-between; }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .nav-center { display: flex; gap: 2rem; }
+        .nav-center a { text-decoration: none; color: var(--text-secondary); font-weight: 500; }
+        .nav-cta { background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; }
 
-        /* Hero */
-        .hero { min-height: 40vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%); padding: 2rem; margin-top: 60px; }
-        .hero .container { max-width: 800px; text-align: center; }
-        .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
-        .grad { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { font-size: 1.15rem; color: var(--text2); line-height: 1.6; }
+        .content { max-width: 900px; margin: 0 auto; padding: 150px 2rem 5rem; }
+        .last-updated { color: var(--text-tertiary); font-size: 0.95rem; margin-bottom: 2rem; }
 
-        /* Content */
-        .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-        .content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text); }
-        .content h2:first-of-type { margin-top: 0; }
-        .content p { color: var(--text2); margin-bottom: 1rem; line-height: 1.8; }
-        .content ul { color: var(--text2); margin: 0 0 1rem 1.5rem; line-height: 1.8; }
-        .content li { margin-bottom: 0.5rem; }
-        .content a { color: var(--accent); text-decoration: none; }
-        .content a:hover { text-decoration: underline; }
-        .last-updated { color: var(--text3); font-size: 0.9rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(124,58,237,0.1); }
+        p { margin-bottom: 1rem; color: var(--text-secondary); }
+        ul { margin-left: 2rem; margin-bottom: 1rem; color: var(--text-secondary); }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--text-primary); font-weight: 600; }
 
-        /* Footer */
-        footer { background: var(--text); color: #ffffff; padding: 3rem 2rem 1.5rem; }
-        footer .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
-        footer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 1rem; }
-        footer a { color: var(--text3); text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; transition: color 0.3s ease; }
-        footer a:hover { color: var(--accent); }
-        footer .tagline { color: var(--text3); font-size: 0.9rem; margin-top: 0.5rem; }
-        .footer-bottom { text-align: center; padding: 2rem 0 0.5rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text3); font-size: 0.85rem; }
+        footer { background: var(--footer-dark); color: #ccc; padding: 3rem 2rem 1rem; margin-top: 5rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; }
+        .footer-col a { display: block; color: #999; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #666; }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-            .nav-links.active { display: flex; }
-            .hamburger { display: flex; }
-            footer .container { grid-template-columns: 1fr 1fr; }
-        }
+        @media (max-width: 768px) { .nav-center { display: none; } .content { padding: 120px 1rem 3rem; } }
     </style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
 </head>
 <body>
-
-    <nav id="nav">
-        <div class="container">
-            <a href="/" class="nav-logo">FNDI</a>
-            <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/pricing">Pricing</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/book" class="nav-cta">Book a Call</a></li>
-            </ul>
+    <nav>
+        <a href="/" class="nav-logo">FNDI</a>
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/privacy">Privacy</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Terms of <span class="grad">Service</span></h1>
-            <p>Please read these terms carefully before using FNDI's services.</p>
-        </div>
-    </section>
-
     <div class="content">
-        <h2>1. Agreement to Terms</h2>
-        <p>By accessing or using the FNDI website (fndi.tech) or any of our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use our website or services.</p>
-        <p>FNDI ("we", "us", "our") provides AI-powered business solutions including but not limited to voice agents, chatbots, workflow automation, and website development for small and medium-sized businesses.</p>
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: May 2026</p>
 
-        <h2>2. Services</h2>
-        <p>FNDI offers AI solutions tailored to your business needs. The specific deliverables, timelines, and pricing for each project will be outlined in a separate service agreement or proposal provided before work begins. No work is initiated without written or verbal confirmation from the client.</p>
-        <p>We reserve the right to modify, suspend, or discontinue any part of our services at any time with reasonable notice to active clients.</p>
+        <h2>1. Service Description</h2>
+        <p>FNDI (Future Native Digital Intelligence) provides AI-powered customer service solutions including voice agents, chatbots, and automation systems. Our services are provided on a Software-as-a-Service (SaaS) basis.</p>
 
-        <h2>3. Payments and Billing</h2>
-        <p>Payment terms, including pricing, billing cycles, and due dates, will be specified in your individual service agreement. Unless otherwise stated:</p>
+        <h2>2. User Obligations</h2>
+        <p>You agree to:</p>
         <ul>
-            <li>All fees are quoted in USD.</li>
-            <li>Invoices are due upon the date specified in your agreement.</li>
-            <li>Late payments may result in service suspension until the balance is resolved.</li>
-            <li>We do not store credit card or banking information on our servers.</li>
+            <li>Use our services only for lawful purposes</li>
+            <li>Not engage in harassment, abuse, or harmful conduct</li>
+            <li>Maintain accurate account information</li>
+            <li>Not reverse-engineer or attempt to extract our AI models</li>
+            <li>Comply with all applicable laws and regulations</li>
+            <li>Not share your account credentials with unauthorized parties</li>
         </ul>
 
-        <h2>4. Refunds and Cancellations</h2>
-        <p>Refund and cancellation policies vary by service type and will be outlined in your service agreement. In general:</p>
-        <ul>
-            <li>Monthly subscription services may be canceled with 30 days' written notice.</li>
-            <li>Custom development work that has already been completed is non-refundable.</li>
-            <li>If we fail to deliver agreed-upon services, you may be entitled to a partial or full refund at our discretion.</li>
-        </ul>
+        <h2>3. Payment Terms</h2>
+        <p>Pricing is based on your selected plan. Invoices are issued monthly in advance. Payment is due within 30 days of invoice date. Late payments may result in service suspension.</p>
 
-        <h2>5. Client Responsibilities</h2>
-        <p>To ensure successful delivery of our services, you agree to:</p>
-        <ul>
-            <li>Provide accurate and timely information needed to complete your project.</li>
-            <li>Respond to requests for feedback or approvals within a reasonable timeframe.</li>
-            <li>Not use our services for any unlawful, abusive, or fraudulent purposes.</li>
-            <li>Not reverse-engineer, copy, or redistribute any proprietary systems we build for you without written permission.</li>
-        </ul>
+        <h2>4. Intellectual Property</h2>
+        <p>FNDI retains all rights to our AI technology, software, and platform. You retain rights to your data. You grant FNDI a license to use your data to improve our services (anonymized).</p>
 
-        <h2>6. Intellectual Property</h2>
-        <p>Upon full payment for services, you own the deliverables we create specifically for your business (websites, custom integrations, content). FNDI retains ownership of our proprietary tools, frameworks, internal systems, and any pre-existing intellectual property used in the creation of your deliverables.</p>
-        <p>We may showcase completed work in our portfolio unless you request otherwise in writing.</p>
+        <h2>5. Data & Privacy</h2>
+        <p>Your data is handled according to our Privacy Policy. We maintain industry-standard security measures to protect your information. We comply with GDPR, CCPA, and other privacy regulations.</p>
 
-        <h2>7. Data and Privacy</h2>
-        <p>We take your data seriously. Any personal or business data you share with us is handled in accordance with our <a href="/privacy">Privacy Policy</a>. We do not sell your data to third parties.</p>
+        <h2>6. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, FNDI shall not be liable for indirect, incidental, or consequential damages. Our total liability is limited to the amount you paid in the 12 months preceding the claim.</p>
 
-        <h2>8. Third-Party Services</h2>
-        <p>Our solutions may integrate with third-party platforms (such as scheduling tools, CRM systems, or communication platforms). We are not responsible for the terms, availability, or performance of these third-party services. Your use of those services is governed by their own terms and policies.</p>
+        <h2>7. Service Level Agreement</h2>
+        <p>FNDI aims for 99.5% uptime. Scheduled maintenance may cause temporary downtime. We will notify you of planned maintenance 48 hours in advance.</p>
 
-        <h2>9. Limitation of Liability</h2>
-        <p>FNDI provides services on an "as is" basis. To the fullest extent permitted by law:</p>
-        <ul>
-            <li>We are not liable for any indirect, incidental, consequential, or punitive damages arising from your use of our services.</li>
-            <li>Our total liability for any claim related to our services shall not exceed the total amount you paid us in the 12 months preceding the claim.</li>
-            <li>We are not responsible for lost revenue, data loss, or business interruption caused by factors outside our reasonable control.</li>
-        </ul>
+        <h2>8. Termination</h2>
+        <p>Either party may terminate with 30 days written notice. Upon termination, we will provide your data in a standard format. Monthly fees are non-refundable for the current billing period.</p>
 
-        <h2>10. Disclaimer of Warranties</h2>
-        <p>While we strive to deliver high-quality AI solutions, we do not guarantee specific business outcomes (such as revenue increases, call volumes, or conversion rates). Results vary based on factors including your industry, market conditions, and how the solutions are used.</p>
+        <h2>9. Changes to Terms</h2>
+        <p>We may update these terms. Changes take effect 30 days after posting. Continued use constitutes acceptance of updated terms.</p>
 
-        <h2>11. Termination</h2>
-        <p>Either party may terminate the service relationship with written notice as specified in the service agreement. Upon termination, we will provide you with any deliverables completed up to that point. Access to FNDI-hosted tools or systems may be revoked upon termination or non-payment.</p>
+        <h2>10. Governing Law</h2>
+        <p>These terms are governed by the laws of the State of Florida, USA. Any disputes shall be resolved in the courts of Miami-Dade County, Florida.</p>
 
-        <h2>12. Governing Law</h2>
-        <p>These terms are governed by the laws of the State of Florida, United States. Any disputes arising from these terms or our services will be resolved in the courts located in Miami-Dade County, Florida.</p>
-
-        <h2>13. Changes to These Terms</h2>
-        <p>We may update these terms from time to time. If we make significant changes, we'll update the date below and, where possible, notify active clients. Continued use of our website or services after changes are posted constitutes acceptance of the updated terms.</p>
-
-        <h2>14. Contact</h2>
-        <p>If you have questions about these terms, reach out to us:</p>
-        <p>Email: <a href="mailto:stefano@fndi.tech">stefano@fndi.tech</a><br>
-        Phone: <a href="tel:+17868430145">(786) 843-0145</a><br>
-        Location: Miami, FL</p>
-
-        <p class="last-updated">Last updated: April 16, 2026</p>
+        <h2>11. Contact</h2>
+        <p>For questions about these terms, contact: <strong>legal@fndi.tech</strong></p>
     </div>
 
     <footer>
-        <div class="container">
-            <div>
-                <h3 class="nav-logo" style="color: white;">FNDI</h3>
-                <p class="tagline">AI solutions that work while you sleep.</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>FNDI</h4>
+                <p style="font-size: 0.9rem;">Building AI solutions that scale your business.</p>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <a href="/#services">Services</a>
-                <a href="/pricing">Pricing</a>
-                <a href="/how-it-works">How It Works</a>
-                <a href="/compare">Compare</a>
-                <a href="/about">About</a>
-                <a href="/book">Book a Call</a>
-            </div>
-            <div>
-                <h3>Resources</h3>
-                <a href="/case-studies">Case Studies</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="/resources">Guides & Tools</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/blog">Blog</a>
-                <a href="/partners">Partner Program</a>
-                <a href="/careers">Careers</a>
-            </div>
-            <div>
-                <h3>Industries</h3>
-                <a href="/industries/dental">Dental Offices</a>
-                <a href="/industries/med-spas">Med Spas</a>
-                <a href="/industries/law-firms">Law Firms</a>
-                <a href="/industries/restaurants">Restaurants</a>
-                <a href="/industries/salons">Salons</a>
-                <a href="/industries/home-services">Home Services</a>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <a href="tel:+17868430145">(786) 843-0145</a>
-                <a href="mailto:stefano@fndi.tech">stefano@fndi.tech</a>
-                <p style="color: var(--text3); margin-top: 1rem;">Miami, FL</p>
-            </div>
-            <div>
-                <h3>Legal</h3>
+            <div class="footer-col">
+                <h4>Company</h4>
                 <a href="/terms">Terms of Service</a>
                 <a href="/privacy">Privacy Policy</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FNDI. All rights reserved.</p>
+            <p>Copyright 2026 FNDI.</p>
         </div>
     </footer>
-
-    <script>
-        window.addEventListener('scroll', () => {
-            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
-        });
-    </script>
-
 </body>
 </html>

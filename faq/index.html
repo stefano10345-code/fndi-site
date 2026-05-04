@@ -1,396 +1,718 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="atJwxq465v21X5fLosK2hw8qqVB9yTnxBi-HT-hCYSY">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSFXDYZ46B');</script>
-<title>FAQ | FNDI — Frequently Asked Questions</title>
-<meta name="description" content="Common questions about FNDI's AI voice agents, chatbots, automation, pricing, and how we work with small businesses.">
-<meta property="og:title" content="FAQ | FNDI">
-<meta property="og:description" content="Common questions about FNDI's AI solutions for small businesses.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fndi.tech/faq">
-<meta property="og:image" content="https://fndi.tech/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  ::selection{background:rgba(124,58,237,0.2);color:#1a1a2e}
-  :root{
-    --bg:#ffffff;--surface:#f8f7ff;--card:#ffffff;--card2:#f3f0ff;
-    --accent:#7c3aed;--accent2:#6d28d9;--cyan:#7c3aed;--green:#34d399;
-    --text:#1a1a2e;--text2:#4a4a68;--text3:#6b7280;
-    --border:rgba(124,58,237,0.08);--glass:rgba(124,58,237,0.03);--glass-border:rgba(124,58,237,0.1);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;opacity:0;animation:pageLoad 0.6s ease 0.1s forwards}
-  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  @keyframes pageLoad{from{opacity:0}to{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | FNDI — Common Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
 
-  .anim{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-  .anim.v{opacity:1;transform:translateY(0)}
-  .anim.v.d1{transition-delay:.1s}.anim.v.d2{transition-delay:.2s}.anim.v.d3{transition-delay:.3s}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 2rem;transition:all 0.4s}
-  nav.scrolled{background:rgba(255,255,255,0.85);backdrop-filter:blur(32px) saturate(1.2);border-bottom:1px solid var(--glass-border);box-shadow:0 4px 30px rgba(124,58,237,0.06)}
-  .nav-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-  .logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:6px;display:flex;flex-direction:column;text-decoration:none;line-height:1}
-  .logo span{background:linear-gradient(135deg,#c4b5fd,var(--cyan),#c4b5fd);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
-  .logo small{font-family:'Inter',sans-serif;font-size:0.5rem;color:var(--text3);letter-spacing:2.5px;font-weight:500;margin-top:2px;text-transform:uppercase;opacity:0.6}
-  .n-links{display:flex;align-items:center;gap:0.3rem}
-  .n-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:10px;transition:all 0.25s}
-  .n-links a:hover{color:var(--text);background:rgba(124,58,237,0.06)}
-  .n-cta{background:var(--accent)!important;color:white!important;font-weight:600!important;box-shadow:0 2px 12px rgba(124,58,237,0.2)!important}
-  .n-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
-  .mob-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
 
-  .hero{padding:10rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
-  .h-bg{position:absolute;inset:0;z-index:0}
-  .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
-  .orb1{width:500px;height:500px;background:rgba(124,58,237,0.07);top:-10%;right:-5%}
-  .h-content{position:relative;z-index:2;max-width:600px;margin:0 auto;animation:fadeUp 1s}
-  h1{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem;letter-spacing:-2px}
-  .grad{background:linear-gradient(135deg,#a78bfa,var(--cyan),#6ee7b7,#a78bfa);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
-  .hero p{font-size:1.02rem;color:var(--text2);line-height:1.7}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-  section{padding:4rem 2rem;position:relative}
-  .con{max-width:800px;margin:0 auto;position:relative;z-index:2}
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
 
-  /* FAQ ACCORDION */
-  .faq-category{margin-bottom:3rem}
-  .faq-category:last-child{margin-bottom:0}
-  .faq-cat-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:1.2rem;padding-left:0.5rem}
-  .faq-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;margin-bottom:0.8rem;overflow:hidden;transition:all 0.3s}
-  .faq-item:hover{border-color:rgba(124,58,237,0.1)}
-  .faq-item.open{border-color:rgba(124,58,237,0.15);box-shadow:0 4px 24px rgba(124,58,237,0.05)}
-  .faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
-  .faq-q h3{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.95rem;font-weight:600;line-height:1.4}
-  .faq-toggle{width:28px;height:28px;border-radius:8px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--accent2);flex-shrink:0;transition:all 0.3s}
-  .faq-item.open .faq-toggle{background:var(--accent);color:white;transform:rotate(45deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1)}
-  .faq-a-inner{padding:0 1.5rem 1.3rem;font-size:0.88rem;color:var(--text2);line-height:1.75}
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
 
-  /* CTA */
-  .cta-sec{text-align:center;padding:5rem 2rem;background:var(--surface);margin-top:2rem}
-  .cta-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:0.8rem}
-  .cta-sec p{font-size:0.95rem;color:var(--text2);margin-bottom:1.5rem;max-width:450px;margin-left:auto;margin-right:auto}
-  .btn{padding:0.85rem 2rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:0.5rem}
-  .btn-g{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;box-shadow:0 4px 20px rgba(124,58,237,0.25)}
-  .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.4)}
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-  footer{background:var(--surface);border-top:1px solid var(--glass-border);padding:4rem 2rem 2rem}
-  .ft-inner{max-width:1200px;margin:0 auto}
-  .ft-logo{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.3rem}
-  .ft-logo span{background:linear-gradient(135deg,#a78bfa,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  footer h4{font-family:'Space Grotesk','Inter',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
-  footer a{color:var(--text3);text-decoration:none;font-size:0.82rem;display:block;padding:0.3rem 0;transition:color 0.3s}
-  footer a:hover{color:var(--accent2)}
-  footer p{font-size:0.78rem;color:var(--text3);line-height:1.6}
-  .ft-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;margin-top:2rem;display:flex;justify-content:center}
-  .ft-bottom p{margin:0;font-size:0.75rem}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  @media(max-width:768px){
-    .mob-toggle{display:block}
-    .n-links{position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem;gap:0.3rem;border-bottom:1px solid var(--glass-border);display:none;z-index:999}
-    .n-links.open{display:flex}
-    .logo small{display:none}
-    section{padding:3rem 1.5rem}
-  }
+        nav.scrolled {
+            background: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-  /* ===== WHITE/PURPLE AI THEME ===== */
-  #particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
-  .ai-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.15),rgba(167,139,250,0.25),rgba(124,58,237,0.15),transparent);position:relative;overflow:visible}
-  .ai-divider::after{content:'';position:absolute;top:-2px;left:0;width:60px;height:5px;background:rgba(124,58,237,0.4);border-radius:5px;filter:blur(3px);animation:dividerGlow 4s ease-in-out infinite}
-  @keyframes dividerGlow{0%{left:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 60px);opacity:0}}
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
 
-</style>
-<meta name="twitter:image" content="https://fndi.tech/og-image.png">
+        .nav-tagline {
+            font-size: 0.65rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-center a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-deep);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(109, 40, 217, 0.03));
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--bg-alt);
+        }
+
+        .section-purple {
+            background: var(--bg-alt-purple);
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .faq-category {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-category h3 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ Item */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.08);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-alt);
+        }
+
+        .faq-question h4 {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            color: var(--accent);
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--bg-alt);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-dark {
+            background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .cta-dark h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-dark p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-dark);
+            color: #ccc;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                margin-top: 70px;
+                padding: 3rem 1.5rem;
+            }
+
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-i">
-    <a href="/" class="logo"><span>FNDI</span><small>Future Native Digital Intelligence</small></a>
-    <button class="mob-toggle" onclick="document.querySelector('.n-links').classList.toggle('open')">&#9776;</button>
-    <div class="n-links">
-      <a href="/#services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about">About</a>
-            <a href="/assessment" style="color:var(--accent);font-weight:600">Free Assessment</a>
-      <a href="/book" class="n-cta">Book a Call</a>
-    </div>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="h-bg"><div class="orb orb1"></div></div>
-  <div class="h-content">
-    <h1><span class="grad" data-es="Preguntas Frecuentes">Frequently Asked Questions</span></h1>
-    <p data-es="Todo lo que necesitas saber sobre trabajar con FNDI.">Everything you need to know about working with FNDI.</p>
-  </div>
-</div>
-
-<section>
-  <div class="con">
-
-    <div class="faq-category anim d1">
-      <div class="faq-cat-title" data-es="GENERAL">GENERAL</div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Qué es FNDI?">What is FNDI?</h3>
-          <div class="faq-toggle">+</div>
+    <nav id="nav">
+        <a href="/" class="nav-logo">FNDI <span class="nav-tagline">Future Native Digital Intelligence</span></a>
+        <div class="nav-center">
+            <a href="/#services">Services</a>
+            <a href="/#industries">Industries</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/portfolio/">Portfolio</a>
+            <a href="/book/" class="nav-cta">Get Started</a>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="FNDI significa Inteligencia Digital Nativa del Futuro. Somos una empresa de soluciones de IA con sede en Miami que construye agentes de voz, chatbots, sitios web, herramientas de automatización, sistemas CRM y gestión de redes sociales para pequeñas empresas. Nuestro objetivo es darte las mismas herramientas poderosas que usan las grandes empresas, a un precio que tenga sentido.">FNDI stands for Future Native Digital Intelligence. We're an AI solutions company based in Miami that builds voice agents, chatbots, websites, automation tools, CRM systems, and social media management for small businesses. Our goal is to give you the same powerful tools that big companies use — at a price that makes sense.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Para quién es FNDI?">Who is FNDI for?</h3>
-          <div class="faq-toggle">+</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Trabajamos con pequeñas y medianas empresas: balnearios, consultorios dentales, contratistas, restaurantes, agentes inmobiliarios, firmas legales y más. Si eres un negocio que quiere dejar de perder llamadas, capturar más clientes y automatizar trabajo repetitivo, podemos ayudarte.">We work with small to mid-sized businesses — med spas, dental offices, contractors, restaurants, real estate agents, law firms, and more. If you're a business that wants to stop missing calls, capture more leads, and automate repetitive work, we can help.</div></div>
-      </div>
+    </nav>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Dónde están basados?">Where are you based?</h3>
-          <div class="faq-toggle">+</div>
+    <section class="hero">
+        <h1>Frequently Asked Questions</h1>
+        <p class="hero-subtitle">Find answers to common questions about FNDI services, pricing, and implementation.</p>
+    </section>
+
+    <section class="section-purple">
+        <div class="faq-categories">
+            <!-- General Category -->
+            <div class="faq-category">
+                <h3>General</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>What is an AI voice agent?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>An AI voice agent is a conversational system that answers phone calls and interacts with callers naturally. Unlike traditional voicemail or phone trees, our agents understand natural speech, answer questions, book appointments, qualify leads, and transfer urgent calls to your team — all 24/7.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>How does FNDI differ from other AI companies?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're not a faceless tech company. You work directly with the founders, Stefano and Douglas. We build custom solutions specifically for your business — not templates. We care about your results, not just transactions. Every dollar you spend is meant to grow your business.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>What industries do you serve?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We specialize in service-based businesses: dental offices, med spas, law firms, restaurants, salons, and home services. Any business that relies on appointments, consultations, or customer service can benefit from our AI solutions. If you're not sure, book a call and let's talk.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Category -->
+            <div class="faq-category">
+                <h3>Technical</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>How long does setup take?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most projects launch within 7-14 business days. Voice agents and chatbots can go live in as little as 48 hours. Websites and full automation setups take a bit longer. We'll give you a specific timeline after our initial call.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>Will your AI work with my existing systems?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. We integrate with most popular booking systems (Acuity, Calendly, etc.), CRMs (Salesforce, Pipedrive, etc.), and business tools. If we don't support something, we can build a custom integration. Compatibility is one of our first questions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>How is my data protected?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your data is encrypted in transit and at rest. We comply with industry standards for data security and privacy. We don't sell your data or use it for AI training without explicit permission. For specific compliance needs (HIPAA, CCPA, etc.), we can discuss during your consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>Can the AI handle complex conversations?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Our agents understand accents, dialects, background noise, and complex requests. If a conversation gets too complex, the AI knows when to transfer to a human. We train each agent on your specific business workflows and FAQs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Category -->
+            <div class="faq-category">
+                <h3>Pricing</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>Are there setup fees?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, there's a one-time setup fee that covers AI training, system integration, testing, and a launch session with our team. This ensures your agent is properly configured from day one. We'll quote the exact amount after understanding your needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>Can I upgrade or downgrade anytime?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Change plans anytime. We'll prorate the difference so you only pay for what you use. No penalties, no hassles.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>What if I need something custom?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That's our Custom plan. Pick and choose any services, add multi-location support, API integrations, white-label options, or anything else you need. We'll build it and quote accordingly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Category -->
+            <div class="faq-category">
+                <h3>Support</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>What kind of support do I get?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Support depends on your plan. Starter includes email support. Growth includes priority support. Premium includes 24/7 dedicated support and direct founder access. All plans include initial training and ongoing optimization.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>How do I measure success?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We track metrics like call volume, appointment bookings, lead quality, and customer satisfaction. Most plans include monthly or weekly reports. Premium plans get real-time analytics dashboards so you can see results as they happen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>Can I cancel anytime?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. All plans are month-to-month with no long-term contracts. Cancel anytime without penalties. That said, most clients stay because they see results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <h4>How do I get started?</h4>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Book a free call with our team. We'll ask about your business, goals, and current pain points. Then we'll recommend a plan and timeline. No pressure, no obligation — just a real conversation about how we can help.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Estamos basados en Miami, Florida y servimos principalmente a empresas en South Florida. Dicho esto, todo lo que construimos funciona de forma remota, así que podemos trabajar con empresas en cualquier lugar.">We're based in Miami, Florida and primarily serve businesses across South Florida. That said, everything we build works remotely, so we can work with businesses anywhere.</div></div>
-      </div>
-    </div>
+    </section>
 
-    <div class="faq-category anim d2">
-      <div class="faq-cat-title" data-es="SERVICIOS Y PRODUCTOS">SERVICES & PRODUCTS</div>
+    <section class="cta-dark">
+        <h2>Still Have Questions?</h2>
+        <p>Book a free call with our team. We're here to answer anything about FNDI and how we can grow your business.</p>
+        <a href="/book/" class="btn btn-primary">Book a Free Call</a>
+    </section>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Qué hace exactamente un agente de voz de IA?">What does an AI voice agent actually do?</h3>
-          <div class="faq-toggle">+</div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="font-size: 0.9rem; color: #999;">Future Native Digital Intelligence. Building AI solutions that scale your business.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@fndi.tech" class="social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about/">About</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/blog/">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/#dental">Dental</a>
+                <a href="/#medspas">Medical Spas</a>
+                <a href="/#law">Law Firms</a>
+                <a href="/#restaurants">Restaurants</a>
+                <a href="/#salons">Salons</a>
+                <a href="/#homeservices">Home Services</a>
+            </div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Un agente de voz de IA responde las llamadas telefónicas de tu negocio 24/7 con una voz natural que suena como un humano. Puede saludar a los llamantes, responder preguntas comunes sobre tus servicios, reservar citas, tomar mensajes y enrutar llamadas urgentes, todo sin intervención humana. Piénsalo como una recepcionista que nunca duerme.">An AI voice agent answers your business phone calls 24/7 with a natural, human-sounding voice. It can greet callers, answer common questions about your services, book appointments, take messages, and route urgent calls — all without any human intervention. Think of it as a receptionist that never sleeps.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Cuál es la diferencia entre un chatbot y un agente de voz?">What's the difference between a chatbot and a voice agent?</h3>
-          <div class="faq-toggle">+</div>
+        <div class="footer-bottom">
+            <p>Copyright 2026 FNDI. <a href="/#terms">Terms</a> | <a href="/#privacy">Privacy</a></p>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Un agente de voz maneja llamadas telefónicas: habla y escucha en tiempo real por teléfono. Un chatbot vive en tu sitio web y maneja conversaciones basadas en texto con visitantes. Ambos pueden responder preguntas, reservar citas y capturar clientes, solo a través de diferentes canales. Muchos de nuestros clientes usan ambos.">A voice agent handles phone calls — it speaks and listens in real time over the phone. A chatbot lives on your website and handles text-based conversations with visitors. Both can answer questions, book appointments, and capture leads, just through different channels. Many of our clients use both.</div></div>
-      </div>
+    </footer>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Puede construir un sitio web también?">Can you build me a website too?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Absolutamente. Construimos sitios web modernos, rápidos y amigables con dispositivos móviles diseñados para convertir visitantes en clientes. Cada sitio que construimos viene con herramientas de IA integradas: chatbots, formularios de captura de clientes, análisis y más. Manejamos todo desde el diseño hasta la implementación.">Absolutely. We build modern, fast, mobile-friendly websites that are designed to convert visitors into customers. Every site we build comes with AI tools integrated — chatbots, lead capture forms, analytics, and more. We handle everything from design to deployment.</div></div>
-      </div>
+    <script>
+        const nav = document.getElementById('nav');
+        const hamburger = document.getElementById('hamburger');
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Qué tipo de automatizaciones puede configurar?">What kind of automations can you set up?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Casi cualquier cosa repetitiva. Recordatorios de citas, correos de seguimiento, generación de facturas, enrutamiento de clientes, solicitudes de revisión, publicación en redes sociales, entrada de datos: si lo estás haciendo manualmente y sigue un patrón, podemos automatizarlo. Mapearemos tu flujo de trabajo y construiremos automatizaciones en torno a cómo realmente opera tu negocio.">Pretty much anything repetitive. Appointment reminders, follow-up emails, invoice generation, lead routing, review requests, social media posting, data entry — if you're doing it manually and it follows a pattern, we can automate it. We'll map out your workflow and build automations around how your business actually operates.</div></div>
-      </div>
-    </div>
-
-    <div class="faq-category anim d3">
-      <div class="faq-cat-title" data-es="PRECIOS Y PROCESO">PRICING & PROCESS</div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Cuánto cuesta?">How much does it cost?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">It depends on what you need. We offer different tiers and custom packages based on your business size and goals. Check out our <a href="/pricing" style="color:var(--accent2);text-decoration:underline">pricing page</a> for details, or book a free call and we'll put together a quote based on exactly what you need.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Cuánto tiempo tarda en comenzar?">How long does it take to get started?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="La mayoría de los proyectos están funcionando en 1-2 semanas. Configuraciones simples como un agente de voz o chatbot pueden estar en vivo en solo unos pocos días. Los proyectos más grandes como sitios web completos con múltiples automatizaciones pueden tardar un poco más. Nos movemos rápido porque sabemos que tu negocio no puede esperar.">Most projects are up and running within 1-2 weeks. Simple setups like a voice agent or chatbot can be live in just a few days. Larger projects like full websites with multiple automations may take a bit longer. We move fast because we know your business can't wait.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Necesito firmar un contrato a largo plazo?">Do I need to sign a long-term contract?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="No. Ofrecemos planes mensuales sin compromisos a largo plazo. Creemos que nuestro trabajo habla por sí solo: si ves resultados, querrás quedarte. Si no, eres libre de irte en cualquier momento.">No. We offer monthly plans with no long-term commitments. We believe our work speaks for itself — if you're seeing results, you'll want to stay. If not, you're free to go at any time.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Qué pasa después de que el proyecto está construido?">What happens after the project is built?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="No desaparecemos. Ofrecemos apoyo continuo, monitoreo y optimización. Tus herramientas de IA se vuelven más inteligentes con el tiempo a medida que las ajustamos según datos reales. Siempre tendrás una línea directa a nuestro equipo fundador si necesitas algo.">We don't disappear. We offer ongoing support, monitoring, and optimization. Your AI tools get smarter over time as we fine-tune them based on real data. You'll always have a direct line to our founding team if you need anything.</div></div>
-      </div>
-    </div>
-
-    <div class="faq-category anim d1">
-      <div class="faq-cat-title" data-es="TÉCNICO">TECHNICAL</div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Necesito conocimiento técnico?">Do I need any technical knowledge?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Para nada. Manejamos todo: configuración, integración, capacitación e implementación. Solo dinos qué necesita tu negocio y lo construimos. Si puedes usar un teléfono y revisar tu correo, puedes usar nuestras herramientas.">Not at all. We handle everything — setup, integration, training, and deployment. You just tell us what your business needs and we build it. If you can use a phone and check your email, you can use our tools.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="El IA sonará robótico?">Will the AI sound robotic?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="No. Utilizamos la última tecnología de voz de IA que suena natural y humana. La mayoría de los llamantes ni siquiera se darán cuenta de que están hablando con IA. Podemos personalizar la voz, el tono y la personalidad para que coincidan con tu marca.">No. We use the latest AI voice technology that sounds natural and human. Most callers won't even realize they're talking to AI. We can customize the voice, tone, and personality to match your brand.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <h3 data-es="Se puede entrenar la IA en mi negocio específico?">Can the AI be trained on my specific business?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner" data-es="Sí, eso es exactamente lo que hace que nuestras herramientas sean efectivas. Cada agente de voz y chatbot que construimos se entrena en tus servicios, precios, horarios, políticas y preguntas frecuentes. Conoce tu negocio como lo haría tu mejor empleado.">Yes — that's exactly what makes our tools effective. Every voice agent and chatbot we build is trained on your services, pricing, hours, policies, and FAQs. It knows your business like your best employee would.</div></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="cta-sec">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 data-es="Aún tienes preguntas?">Still Have Questions?</h2>
-    <p data-es="Estamos felices de charlar. Reserva una llamada gratuita o envíanos un mensaje.">We're happy to chat. Book a free call or send us a message.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="/book" class="btn btn-g">Book a Free Call</a>
-      <a href="/contact" class="btn" style="background:rgba(124,58,237,0.04);color:var(--text);border:1px solid rgba(124,58,237,0.15)" data-es="Contáctenos">Contact Us</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-inner">
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem">
-      <div style="max-width:300px">
-        <div class="ft-logo"><span>FNDI</span></div>
-        <p style="margin-top:0.3rem;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);opacity:0.7">Future Native Digital Intelligence</p>
-        <p style="margin-top:0.8rem" data-es="Soluciones de IA para pequeñas empresas. Con sede en Miami.">AI solutions for small businesses. Based in Miami.</p>
-        <div style="display:flex;gap:1rem;margin-top:1rem">
-          <a href="https://www.instagram.com/fndi_tech/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="mailto:support@fndi.tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4 data-es="Enlaces">Links</h4>
-        <a href="/#services">Services</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/compare">Compare</a>
-        <a href="/about">About</a>
-        <a href="/book">Book a Call</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/testimonials">Testimonials</a>
-        <a href="/resources">Guides & Tools</a>
-        <a href="/tools/roi-calculator">ROI Calculator</a>
-        <a href="/blog">Blog</a>
-        <a href="/partners">Partner Program</a>
-        <a href="/careers">Careers</a>
-      </div>
-      <div>
-        <h4>Industries</h4>
-        <a href="/industries/dental">Dental Offices</a>
-        <a href="/industries/med-spas">Med Spas</a>
-        <a href="/industries/law-firms">Law Firms</a>
-        <a href="/industries/restaurants">Restaurants</a>
-        <a href="/industries/salons">Salons</a>
-        <a href="/industries/home-services">Home Services</a>
-      </div>
-      <div>
-        <h4 data-es="Contacto">Contact</h4>
-        <a href="mailto:support@fndi.tech">support@fndi.tech</a>
-        <a href="tel:+17868430145">(786) 843-0145</a>
-        <p style="margin-top:0.3rem">Miami, FL</p>
-            <div>
-        <h3>Legal</h3>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <p>&copy; 2026 FNDI. All rights reserved. | <a href="/terms" style="color:var(--text3);">Terms</a> | <a href="/privacy" style="color:var(--text3);">Privacy</a></p>
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleFaq(el){
-  const item=el.parentElement;
-  const answer=item.querySelector('.faq-a');
-  const inner=answer.querySelector('.faq-a-inner');
-  const wasOpen=item.classList.contains('open');
-
-  // Close all
-  document.querySelectorAll('.faq-item.open').forEach(i=>{
-    i.classList.remove('open');
-    i.querySelector('.faq-a').style.maxHeight='0';
-  });
-
-  // Open clicked (if it wasn't already open)
-  if(!wasOpen){
-    item.classList.add('open');
-    answer.style.maxHeight=inner.scrollHeight+'px';
-  }
-}
-
-window.addEventListener('scroll',()=>{
-  const nav=document.querySelector('nav');
-  if(window.scrollY>10) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
-document.addEventListener('DOMContentLoaded',()=>{
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('v')});
-  },{threshold:0.1});
-  document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
-});
-</script>
-<script src="/lang.js"></script>
-<script>
-/* ===== AI PARTICLE MESH ===== */
-(function(){
-  const canvas=document.getElementById('particleCanvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  let w,h,particles=[];
-  const PC=45,CD=160,SP=0.25;
-  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;}
-  window.addEventListener('resize',resize);resize();
-  class P{constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-0.5)*SP;this.vy=(Math.random()-0.5)*SP;this.r=Math.random()*1.5+0.8;this.c=Math.random()>0.5?'124,58,237':'167,139,250';this.a=Math.random()*0.4+0.15;}
-  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1;}
-  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();}}
-  for(let i=0;i<PC;i++)particles.push(new P());
-  function animate(){ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){particles[i].update();particles[i].draw();for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<CD){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(124,58,237,'+(0.06*(1-d/CD))+')';ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(animate);}
-  animate();
-})();
-</script>
-
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
