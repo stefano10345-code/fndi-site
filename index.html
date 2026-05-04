@@ -103,6 +103,10 @@
             color: #ffffff;
         }
 
+        nav.hero-visible .hamburger span {
+            background: #ffffff;
+        }
+
         nav.scrolled .nav-logo {
             color: var(--text-primary);
         }
@@ -133,7 +137,7 @@
         }
 
         .nav-links {
-            display: none;
+            display: flex;
             gap: 2.5rem;
             list-style: none;
         }
@@ -151,7 +155,7 @@
         }
 
         .nav-cta {
-            display: none;
+            display: flex;
             gap: 1rem;
             align-items: center;
         }
@@ -191,7 +195,7 @@
         }
 
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
@@ -869,7 +873,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="main-nav">
+    <nav id="main-nav" class="hero-visible">
         <a href="#" class="nav-logo">
             FNDI
             <span>Future Native Digital Intelligence</span>
@@ -1065,7 +1069,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <span class="section-label">Who We Help</span>
             </div>
-            <h2 class="section-title">Built for Businesses Like Yours</h2>
+            <h2 class="section-title" style="text-align: center; margin-top: 0.5rem;">Built for Businesses Like Yours</h2>
             <div class="industries-grid">
                 <a href="/industries/dental/" class="industry-card reveal">
                     <h3>Dental Offices</h3>
@@ -1177,21 +1181,22 @@
             </div>
             <div class="footer-col">
                 <h4>Solutions</h4>
-                <a href="#services">AI Voice Agents</a>
-                <a href="#services">Website Chatbots</a>
-                <a href="#services">Website Development</a>
-                <a href="#services">Business Automation</a>
-                <a href="#services">CRM Solutions</a>
-                <a href="#services">Social Media & Ads</a>
+                <a href="/services/voice-agents/">AI Voice Agents</a>
+                <a href="/services/chatbots/">Website Chatbots</a>
+                <a href="/services/websites/">Web Development</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM Solutions</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="#about">About</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#careers">Careers</a>
-                <a href="#contact">Contact</a>
-                <a href="#blog">Blog</a>
+                <a href="/about/">About</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/blog/">Blog</a>
             </div>
             <div class="footer-col">
                 <h4>Industries</h4>
@@ -1206,8 +1211,8 @@
         <div class="footer-bottom">
             <p>© 2026 FNDI. All rights reserved.</p>
             <div class="footer-bottom-links">
-                <a href="#terms">Terms of Service</a>
-                <a href="#privacy">Privacy Policy</a>
+                <a href="/terms/">Terms of Service</a>
+                <a href="/privacy/">Privacy Policy</a>
                 <a href="mailto:info@fndi.tech">Contact</a>
             </div>
         </div>
@@ -1308,23 +1313,11 @@
             });
         }
 
-        // Show nav links/cta on desktop
-        const navLinks = document.querySelector('.nav-links');
-        const navCta = document.querySelector('.nav-cta');
-        if (window.innerWidth > 768) {
-            if (navLinks) navLinks.style.display = 'flex';
-            if (navCta) navCta.style.display = 'flex';
-        }
-
+        // Handle resize for mobile menu
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                if (navLinks) navLinks.style.display = 'flex';
-                if (navCta) navCta.style.display = 'flex';
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
-            } else {
-                if (navLinks) navLinks.style.display = 'none';
-                if (navCta) navCta.style.display = 'none';
             }
         });
 
