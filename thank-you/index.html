@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | FNDI</title>
+    <meta name="description" content="Thanks for reaching out to FNDI. We'll be in touch shortly.">
+    <meta property="og:title" content="Thank You | FNDI">
+    <meta property="og:description" content="Thanks for reaching out. We'll get back to you within 24 hours.">
+    <meta property="og:image" content="https://fndi.tech/og-image.png">
+    <link rel="canonical" href="https://fndi.tech/thank-you/">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo span {
+            font-size: 0.6rem;
+            font-weight: 400;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta a {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .nav-cta a:hover {
+            background: var(--accent-deep);
+        }
+
+        /* Thank You Content */
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .thank-you-content {
+            max-width: 600px;
+        }
+
+        .thank-you-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .thank-you-content h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .thank-you-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .what-next {
+            background: var(--bg-alt-purple);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .what-next h3 {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: var(--accent-deep);
+        }
+
+        .next-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .next-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .step-text {
+            padding-top: 0.25rem;
+        }
+
+        .step-text strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .step-text span {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+        .thank-you-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-deep);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+            padding: 0.2rem 0;
+            font-size: 0.83rem;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .footer-col p {
+            font-size: 0.83rem;
+            line-height: 1.5;
+        }
+
+        .footer-col p a {
+            display: inline;
+            padding: 0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .social-icon {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0 !important;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #fff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta {
+                display: none !important;
+            }
+
+            .hamburger {
+                display: flex !important;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .thank-you-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #hero, .hero { height: auto !important; min-height: 300px !important; padding: 3rem 1rem !important; background-attachment: scroll !important; background-size: cover !important; }
+            h1 { font-size: 1.75rem !important; }
+            h2 { font-size: 1.4rem !important; }
+            section { padding: 2.5rem 1rem !important; }
+            input, select, textarea { font-size: 16px !important; }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr !important;
+            }
+
+            .footer-col { margin-bottom: 0.5rem; }
+            h1 { font-size: 1.5rem !important; }
+            h2 { font-size: 1.25rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="nav-logo">
+            FNDI
+            <span>Future Native Digital Intelligence</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/services/voice-agents/">Services</a></li>
+            <li><a href="/industries/dental/">Industries</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="/book/">Book a Call</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Thank You Content -->
+    <section class="thank-you-section">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h1>We Got Your Message</h1>
+            <p>Thanks for reaching out to FNDI. Our team reviews every submission personally and we'll get back to you within 24 hours — usually much sooner.</p>
+
+            <div class="what-next">
+                <h3>What Happens Next</h3>
+                <div class="next-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <strong>We review your info</strong>
+                        <span>Our team looks at your business and goals to prepare tailored recommendations.</span>
+                    </div>
+                </div>
+                <div class="next-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <strong>We reach out to you</strong>
+                        <span>You'll hear from us via email within 24 hours to schedule a discovery call.</span>
+                    </div>
+                </div>
+                <div class="next-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <strong>Free strategy session</strong>
+                        <span>We'll walk you through exactly how AI can save you time and grow your revenue.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thank-you-buttons">
+                <a href="/book/" class="btn-primary">Skip the Wait — Book a Call Now</a>
+                <a href="/" class="btn-outline">Back to Homepage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">FNDI</div>
+                <p style="margin-bottom: 0.3rem;">Future Native Digital Intelligence</p>
+                <p>AI solutions for small businesses.</p>
+                <p style="margin-top: 0.5rem;">Based in Miami, FL</p>
+                <p><a href="mailto:info@fndi.tech">info@fndi.tech</a></p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/fndi_tech/" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="https://www.linkedin.com/company/fnditech/" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:info@fndi.tech" class="social-icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="/services/voice-agents/">Voice Agents</a>
+                <a href="/services/chatbots/">Chatbots</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/automation/">Automation</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/meta-ads/">Meta Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="/industries/dental/">Dental Offices</a>
+                <a href="/industries/med-spas/">Med Spas</a>
+                <a href="/industries/law-firms/">Law Firms</a>
+                <a href="/industries/restaurants/">Restaurants</a>
+                <a href="/industries/salons/">Salons</a>
+                <a href="/industries/home-services/">Home Services</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about/">About Us</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/blog/">Blog</a>
+                <a href="/careers/">Careers</a>
+                <a href="/contact/">Contact</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/case-studies/">Case Studies</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/partners/">Partners</a>
+                <a href="/resources/">Resources</a>
+                <a href="/compare/">Compare</a>
+                <a href="/how-it-works/">How It Works</a>
+                <a href="/demos/">Demos</a>
+                <a href="/assessment/">Free Assessment</a>
+                <a href="/book/">Book a Call</a>
+                <a href="/onboarding/">Client Onboarding</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FNDI. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/terms/">Terms of Service</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/book/">Book a Call</a>
+                <a href="mailto:info@fndi.tech">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
