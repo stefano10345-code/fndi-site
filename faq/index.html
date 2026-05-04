@@ -421,20 +421,71 @@
     </style>
 </head>
 <body>
-        <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 2rem;background:var(--bg-light);transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
-        <a href="/" class="nav-logo" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
+            <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;padding:0 2rem;background:var(--bg-light,#fff);display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <a href="/" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
             FNDI
-            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;">Future Native Digital Intelligence</span>
+            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;color:var(--text-tertiary,#6b7280);">Future Native Digital Intelligence</span>
         </a>
-        <div class="nav-links" style="display:flex;gap:2.5rem;list-style:none;align-items:center;">
-            <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Services</a>
-            <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Industries</a>
-            <a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a>
-            <a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a>
-            <a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a>
-            <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a>
+        <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;align-items:center;margin:0;padding:0;">
+            <li class="nav-dd" style="position:relative;">
+                <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;display:flex;align-items:center;gap:0.35rem;padding:0.5rem 0;">Services <span class="dd-arrow" style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--text-secondary,#4a4a68);transition:transform 0.3s;"></span></a>
+                <div class="dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:0.75rem 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.25s;pointer-events:none;">
+                    <a href="/services/voice-agents/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">AI Voice Agents</a>
+                    <a href="/services/chatbots/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Website Chatbots</a>
+                    <a href="/services/websites/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Web Development</a>
+                    <a href="/services/automation/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Automation</a>
+                    <a href="/services/crm/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">CRM Solutions</a>
+                    <a href="/services/social-media/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Social Media</a>
+                    <a href="/services/meta-ads/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Meta Ads</a>
+                </div>
+            </li>
+            <li class="nav-dd" style="position:relative;">
+                <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;display:flex;align-items:center;gap:0.35rem;padding:0.5rem 0;">Industries <span class="dd-arrow" style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--text-secondary,#4a4a68);transition:transform 0.3s;"></span></a>
+                <div class="dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:0.75rem 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.25s;pointer-events:none;">
+                    <a href="/industries/dental/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Dental Offices</a>
+                    <a href="/industries/med-spas/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Med Spas</a>
+                    <a href="/industries/law-firms/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Law Firms</a>
+                    <a href="/industries/restaurants/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Restaurants</a>
+                    <a href="/industries/salons/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Salons</a>
+                    <a href="/industries/home-services/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Home Services</a>
+                </div>
+            </li>
+            <li><a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a></li>
+            <li><a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a></li>
+            <li><a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a></li>
+            <li><a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a></li>
+        </ul>
+        <div id="hamburger" onclick="document.getElementById('mob-menu').classList.toggle('active');this.classList.toggle('active');" style="display:none;flex-direction:column;gap:5px;cursor:pointer;width:24px;">
+            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
+            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
+            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
         </div>
     </nav>
+    <div id="mob-menu" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:1.5rem;flex-direction:column;gap:0.25rem;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:80vh;overflow-y:auto;">
+        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:0 0 0.3rem;">Services</div>
+        <a href="/services/voice-agents/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">AI Voice Agents</a>
+        <a href="/services/chatbots/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Website Chatbots</a>
+        <a href="/services/websites/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Web Development</a>
+        <a href="/services/automation/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Automation</a>
+        <a href="/services/crm/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">CRM Solutions</a>
+        <a href="/services/social-media/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Social Media</a>
+        <a href="/services/meta-ads/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Meta Ads</a>
+        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:1rem 0 0.3rem;border-top:1px solid #e5e7eb;margin-top:0.5rem;">Industries</div>
+        <a href="/industries/dental/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Dental Offices</a>
+        <a href="/industries/med-spas/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Med Spas</a>
+        <a href="/industries/law-firms/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Law Firms</a>
+        <a href="/industries/restaurants/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Restaurants</a>
+        <a href="/industries/salons/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Salons</a>
+        <a href="/industries/home-services/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Home Services</a>
+        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:1rem 0 0.3rem;border-top:1px solid #e5e7eb;margin-top:0.5rem;">More</div>
+        <a href="/pricing/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Pricing</a>
+        <a href="/about/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">About</a>
+        <a href="/portfolio/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Portfolio</a>
+        <a href="/blog/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Blog</a>
+        <a href="/contact/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Contact</a>
+        <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;text-align:center;margin-top:0.5rem;">Get Started</a>
+    </div>
+    <style>.nav-dd:hover .dd-menu{opacity:1!important;visibility:visible!important;pointer-events:all!important}.dd-menu a:hover{background:#f8f7ff;color:#7c3aed!important}.nav-dd:hover .dd-arrow{transform:rotate(180deg)}@media(max-width:768px){.nav-links{display:none!important}#hamburger{display:flex!important}#mob-menu.active{display:flex!important}}</style>
 
     <section class="hero">
         <h1>Frequently Asked Questions</h1>
