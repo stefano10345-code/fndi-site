@@ -18,56 +18,51 @@
             --accent: #7c3aed;
             --accent-deep: #6d28d9;
             --accent-light: #ede9fe;
-            --bg-light: #ffffff;
-            --bg-alt: #f8f9fc;
-            --bg-alt-purple: #f8f7ff;
-            --text-primary: #1a1a2e;
+            --bg: #fafafa;
+            --card: #ffffff;
+            --sidebar: #0f0f23;
+            --text: #1a1a2e;
             --text-secondary: #4a4a68;
-            --text-tertiary: #6b7280;
-            --border: #e5e7eb;
-            --footer-dark: #0f0f23;
+            --text-muted: #9ca3af;
+            --border: #f0f0f0;
             --green: #10b981;
-            --green-light: #d1fae5;
             --red: #ef4444;
-            --red-light: #fee2e2;
-            --yellow: #f59e0b;
-            --yellow-light: #fef3c7;
             --blue: #3b82f6;
-            --blue-light: #dbeafe;
+            --amber: #f59e0b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-alt);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
             min-height: 100vh;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
-        /* Login Screen */
+        /* ─── Login ─── */
         .login-screen {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #f8f7ff 0%, #ede9fe 100%);
+            background: var(--sidebar);
         }
 
         .login-card {
-            background: #fff;
+            background: var(--card);
             border-radius: 20px;
-            padding: 3rem;
-            max-width: 420px;
+            padding: 3rem 2.5rem;
+            max-width: 400px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.3);
         }
 
         .login-logo {
@@ -76,56 +71,60 @@
             font-weight: 700;
             color: var(--accent);
             text-align: center;
-            margin-bottom: 0.25rem;
         }
 
-        .login-subtitle {
+        .login-sub {
             text-align: center;
-            color: var(--text-tertiary);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 2.5rem;
         }
 
         .login-card label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-secondary);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .login-card input {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.85rem 1rem;
             border: 1.5px solid var(--border);
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 0.95rem;
             margin-bottom: 1.25rem;
             transition: border-color 0.2s;
             font-family: 'Inter', sans-serif;
+            background: #fafafa;
         }
 
         .login-card input:focus {
             outline: none;
             border-color: var(--accent);
+            background: #fff;
         }
 
         .login-btn {
             width: 100%;
-            padding: 0.9rem;
+            padding: 0.95rem;
             background: var(--accent);
             color: #fff;
             border: none;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.2s;
             font-family: 'Inter', sans-serif;
         }
 
         .login-btn:hover {
             background: var(--accent-deep);
+            transform: translateY(-1px);
         }
 
         .login-error {
@@ -136,439 +135,486 @@
             display: none;
         }
 
-        /* Dashboard Layout */
-        .dashboard {
-            display: none;
-        }
+        /* ─── Dashboard Layout ─── */
+        .dashboard { display: none; }
+        .dashboard.active { display: flex; min-height: 100vh; }
 
-        .dashboard.active {
-            display: block;
-        }
-
-        .dash-header {
-            background: #fff;
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2rem;
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: var(--sidebar);
+            padding: 1.75rem 0;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
+            flex-direction: column;
+            position: fixed;
             top: 0;
+            bottom: 0;
+            left: 0;
             z-index: 100;
         }
 
-        .dash-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
+        .sidebar-logo {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .dash-user {
+        .sidebar-logo h2 {
+            color: #fff;
+            font-size: 1.35rem;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-logo span {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .sidebar-nav {
+            padding: 1.25rem 0.75rem;
+            flex: 1;
+        }
+
+        .nav-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-        }
-
-        .dash-user-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .dash-user-plan {
-            font-size: 0.75rem;
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .dash-logout {
-            background: none;
-            border: 1px solid var(--border);
-            padding: 0.4rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
+            gap: 0.65rem;
+            padding: 0.65rem 0.85rem;
+            border-radius: 10px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.15s;
+            margin-bottom: 2px;
             cursor: pointer;
-            color: var(--text-tertiary);
+        }
+
+        .nav-item:hover {
+            color: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .nav-item.active {
+            color: #c4b5fd;
+            background: rgba(124,58,237,0.12);
+        }
+
+        .nav-item svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+        }
+
+        .sidebar-user {
+            padding: 1rem 1rem 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .user-card {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.5rem;
+        }
+
+        .user-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .user-info p {
+            font-size: 0.82rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .user-info span {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .logout-btn {
+            display: block;
+            width: 100%;
+            margin-top: 0.65rem;
+            padding: 0.5rem;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.78rem;
+            cursor: pointer;
             transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
         }
 
-        .dash-logout:hover {
-            border-color: var(--red);
-            color: var(--red);
+        .logout-btn:hover {
+            border-color: rgba(239,68,68,0.4);
+            color: #ef4444;
         }
 
-        .dash-body {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        /* Main Content */
+        .main {
+            flex: 1;
+            margin-left: 220px;
+            padding: 2.5rem;
+            max-width: 1100px;
         }
 
-        .dash-welcome {
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 2rem;
         }
 
-        .dash-welcome h1 {
+        .main-header h1 {
             font-size: 1.75rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 4px;
         }
 
-        .dash-welcome p {
-            color: var(--text-tertiary);
-            font-size: 0.95rem;
+        .main-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .date-badge {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-weight: 500;
         }
 
         /* Stat Cards */
-        .stat-grid {
+        .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
         }
 
-        .stat-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
+        .stat {
+            background: var(--card);
             border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.4rem 1.25rem;
         }
 
         .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
+            font-size: 0.72rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .stat-value {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
+            font-size: 1.85rem;
             font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.35rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.3rem;
         }
 
-        .stat-change {
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .stat-change.positive { color: var(--green); }
-        .stat-change.negative { color: var(--red); }
-
-        /* Pipeline Section */
-        .section-card {
-            background: #fff;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.2rem;
-        }
-
-        .section-header span {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-        }
-
-        /* Funnel */
-        .funnel {
-            display: flex;
-            gap: 0.75rem;
-            align-items: stretch;
-        }
-
-        .funnel-stage {
-            flex: 1;
-            text-align: center;
-            padding: 1.25rem 0.75rem;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .funnel-stage:nth-child(1) { background: var(--blue-light); }
-        .funnel-stage:nth-child(2) { background: var(--accent-light); }
-        .funnel-stage:nth-child(3) { background: var(--yellow-light); }
-        .funnel-stage:nth-child(4) { background: var(--green-light); }
-        .funnel-stage:nth-child(5) { background: #f0fdf4; }
-
-        .funnel-count {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .funnel-stage:nth-child(1) .funnel-count { color: var(--blue); }
-        .funnel-stage:nth-child(2) .funnel-count { color: var(--accent); }
-        .funnel-stage:nth-child(3) .funnel-count { color: var(--yellow); }
-        .funnel-stage:nth-child(4) .funnel-count { color: var(--green); }
-        .funnel-stage:nth-child(5) .funnel-count { color: #059669; }
-
-        .funnel-label {
+        .stat-delta {
             font-size: 0.78rem;
-            color: var(--text-secondary);
             font-weight: 600;
         }
 
-        .funnel-value {
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-            margin-top: 0.35rem;
+        .stat-delta.up { color: var(--green); }
+        .stat-delta.down { color: var(--red); }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
-        .funnel-arrow {
+        .card-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            color: var(--text-tertiary);
-            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
         }
 
-        /* Revenue Chart */
-        .revenue-chart {
-            height: 220px;
+        .card-header h3 {
+            font-size: 1rem;
+        }
+
+        .card-header span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Two-column layout */
+        .row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Revenue Bars */
+        .bars {
             display: flex;
             align-items: flex-end;
-            gap: 0.5rem;
-            padding: 1rem 0;
+            gap: 8px;
+            height: 140px;
         }
 
-        .chart-bar-group {
+        .bar-col {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.4rem;
+            gap: 6px;
+            height: 100%;
+            justify-content: flex-end;
         }
 
-        .chart-bar {
+        .bar {
             width: 100%;
-            max-width: 40px;
             border-radius: 6px 6px 0 0;
-            transition: all 0.3s;
+            transition: opacity 0.2s;
             cursor: pointer;
-            position: relative;
         }
 
-        .chart-bar:hover {
-            opacity: 0.8;
-        }
+        .bar:hover { opacity: 0.8; }
 
-        .chart-bar.current { background: var(--accent); }
-        .chart-bar.previous { background: var(--border); }
-
-        .chart-label {
-            font-size: 0.7rem;
-            color: var(--text-tertiary);
+        .bar-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
             font-weight: 500;
         }
 
-        /* Deals Table */
-        .deals-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* Pipeline Progress */
+        .pipeline-item {
+            margin-bottom: 1rem;
         }
 
-        .deals-table th {
-            text-align: left;
-            padding: 0.75rem 1rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-tertiary);
-            border-bottom: 1px solid var(--border);
+        .pipeline-item:last-child { margin-bottom: 0; }
+
+        .pipeline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .pipeline-name {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .pipeline-count {
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        .deals-table td {
-            padding: 0.85rem 1rem;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #f3f4f6;
+        .pipeline-track {
+            height: 6px;
+            background: #f3f4f6;
+            border-radius: 3px;
+            overflow: hidden;
         }
 
-        .deals-table tr:last-child td {
-            border-bottom: none;
+        .pipeline-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.6s ease;
         }
 
-        .deal-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .deal-stage {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .deal-stage.new { background: var(--blue-light); color: var(--blue); }
-        .deal-stage.qualified { background: var(--accent-light); color: var(--accent); }
-        .deal-stage.proposal { background: var(--yellow-light); color: var(--yellow); }
-        .deal-stage.won { background: var(--green-light); color: var(--green); }
-        .deal-stage.lost { background: var(--red-light); color: var(--red); }
-
-        .deal-value {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-        }
-
-        /* Conversion Rates */
-        .conversion-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-
-        .conversion-item {
-            text-align: center;
-            padding: 1rem;
-            border-radius: 12px;
-            background: var(--bg-alt);
-        }
-
-        .conversion-rate {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .conversion-label {
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-            margin-top: 0.25rem;
-        }
-
-        /* Support CTA */
-        .support-cta {
-            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-            border-radius: 16px;
-            padding: 2rem;
-            color: #fff;
+        /* Activity Feed */
+        .activity-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 1.5rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #f9f9f9;
         }
 
-        .support-cta h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+        .activity-item:last-child { border-bottom: none; }
+
+        .activity-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .support-cta p {
-            opacity: 0.85;
+        .activity-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .activity-name {
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
-        .support-cta a {
+        .activity-service {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .activity-right {
+            text-align: right;
+        }
+
+        .activity-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .activity-stage {
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .stage-won { color: var(--green); }
+        .stage-proposal { color: var(--amber); }
+        .stage-qualified { color: var(--accent); }
+        .stage-new { color: var(--blue); }
+        .stage-lost { color: var(--red); }
+
+        /* CTA */
+        .cta-bar {
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .cta-bar h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .cta-bar p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.85rem;
+        }
+
+        .cta-btn {
             background: #fff;
             color: var(--accent);
-            padding: 0.7rem 1.5rem;
+            padding: 0.65rem 1.5rem;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             white-space: nowrap;
             transition: transform 0.2s;
         }
 
-        .support-cta a:hover {
-            transform: translateY(-1px);
+        .cta-btn:hover { transform: translateY(-1px); }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
         }
 
-        /* Mobile */
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2.5px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ─── Mobile ─── */
+        .mobile-header {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--sidebar);
+            position: sticky;
+            top: 0;
+            z-index: 101;
+        }
+
+        .mobile-header h2 {
+            color: #fff;
+            font-size: 1.15rem;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
+        }
+
         @media (max-width: 768px) {
-            .stat-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .funnel {
-                flex-direction: column;
-            }
-
-            .funnel-arrow {
-                transform: rotate(90deg);
-                justify-content: center;
-            }
-
-            .conversion-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .dash-body {
-                padding: 1.25rem;
-            }
-
-            .dash-header {
-                padding: 1rem;
-            }
-
-            .support-cta {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.25rem;
-            }
-
-            .revenue-chart {
-                height: 160px;
-            }
-
-            .dash-user-name {
-                display: none;
-            }
+            .sidebar { display: none; }
+            .mobile-header { display: flex; }
+            .main { margin-left: 0; padding: 1.25rem; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .row { grid-template-columns: 1fr; }
+            .main-header h1 { font-size: 1.35rem; }
+            .cta-bar { flex-direction: column; text-align: center; gap: 1rem; }
+            .login-card { margin: 1rem; padding: 2rem 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .stat-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .conversion-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .deals-table {
-                font-size: 0.8rem;
-            }
-
-            .deals-table th, .deals-table td {
-                padding: 0.6rem 0.5rem;
-            }
+            .stats { grid-template-columns: 1fr; }
+            .main { padding: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Login Screen -->
+    <!-- Login -->
     <div class="login-screen" id="loginScreen">
         <div class="login-card">
             <div class="login-logo">FNDI</div>
-            <p class="login-subtitle">Client Dashboard</p>
+            <p class="login-sub">Client Dashboard</p>
             <form id="loginForm">
-                <label for="loginEmail">Email</label>
+                <label>Email</label>
                 <input type="email" id="loginEmail" placeholder="your@email.com" required>
-                <label for="loginPassword">Password</label>
+                <label>Password</label>
                 <input type="password" id="loginPassword" placeholder="Enter your password" required>
                 <button type="submit" class="login-btn">Sign In</button>
             </form>
@@ -578,259 +624,172 @@
 
     <!-- Dashboard -->
     <div class="dashboard" id="dashboard">
-        <header class="dash-header">
-            <a href="/" class="dash-logo">FNDI</a>
-            <div class="dash-user">
-                <span class="dash-user-name" id="dashUserName">Miami Dental Co.</span>
-                <span class="dash-user-plan">Growth Plan</span>
-                <button class="dash-logout" id="logoutBtn">Log out</button>
-            </div>
-        </header>
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <h2>FNDI</h2>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
 
-        <main class="dash-body">
-            <div class="dash-welcome">
-                <h1>Pipeline & Revenue</h1>
-                <p>Here's how your AI systems are performing this month.</p>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <h2>FNDI</h2>
+                <span>Client Portal</span>
             </div>
-
-            <!-- Stat Cards -->
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Total Revenue (May)</div>
-                    <div class="stat-value">$18,450</div>
-                    <div class="stat-change positive">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
-                        +23% vs last month
+            <nav class="sidebar-nav">
+                <a class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    Overview
+                </a>
+                <a class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    Pipeline
+                </a>
+                <a class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    Revenue
+                </a>
+                <a class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    Contacts
+                </a>
+                <a class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    Reports
+                </a>
+            </nav>
+            <div class="sidebar-user">
+                <div class="user-card">
+                    <div class="user-avatar" id="userAvatar">MD</div>
+                    <div class="user-info">
+                        <p id="userName">Miami Dental</p>
+                        <span id="userPlan">Growth Plan</span>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Deals in Pipeline</div>
-                    <div class="stat-value">34</div>
-                    <div class="stat-change positive">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
-                        +8 new this week
-                    </div>
+                <button class="logout-btn" id="logoutBtn">Sign out</button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+            <div class="main-header">
+                <div>
+                    <h1 id="greeting">Good morning</h1>
+                    <p>Here's your business at a glance</p>
                 </div>
-                <div class="stat-card">
+                <span class="date-badge" id="dateBadge">May 2026</span>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats" id="statsGrid">
+                <div class="stat">
+                    <div class="stat-label">Revenue</div>
+                    <div class="stat-value" id="statRevenue">--</div>
+                    <div class="stat-delta up" id="statRevenueDelta">&nbsp;</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Pipeline Value</div>
+                    <div class="stat-value" id="statPipeline">--</div>
+                    <div class="stat-delta up" id="statPipelineDelta">&nbsp;</div>
+                </div>
+                <div class="stat">
                     <div class="stat-label">Win Rate</div>
-                    <div class="stat-value">38%</div>
-                    <div class="stat-change positive">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
-                        +5% vs last month
-                    </div>
+                    <div class="stat-value" id="statWinRate">--</div>
+                    <div class="stat-delta up" id="statWinDelta">&nbsp;</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Avg Deal Size</div>
-                    <div class="stat-value">$1,280</div>
-                    <div class="stat-change negative">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>
-                        -3% vs last month
+                <div class="stat">
+                    <div class="stat-label">Avg Deal</div>
+                    <div class="stat-value" id="statAvgDeal">--</div>
+                    <div class="stat-delta" id="statAvgDelta">&nbsp;</div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Revenue trend</h3>
+                        <span>Last 6 months</span>
+                    </div>
+                    <div class="bars" id="revenueChart"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Pipeline stages</h3>
+                        <span id="pipelineTotal"></span>
+                    </div>
+                    <div id="pipelineStages"></div>
+                </div>
+            </div>
+
+            <!-- Activity -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent activity</h3>
+                    <span>Latest deals</span>
+                </div>
+                <div id="activityFeed">
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading your data...</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Pipeline Funnel -->
-            <div class="section-card">
-                <div class="section-header">
-                    <h2>Lead Pipeline</h2>
-                    <span>Total pipeline value: $43,520</span>
-                </div>
-                <div class="funnel">
-                    <div class="funnel-stage">
-                        <div class="funnel-count">14</div>
-                        <div class="funnel-label">New Leads</div>
-                        <div class="funnel-value">$17,920</div>
-                    </div>
-                    <div class="funnel-arrow">&rarr;</div>
-                    <div class="funnel-stage">
-                        <div class="funnel-count">9</div>
-                        <div class="funnel-label">Qualified</div>
-                        <div class="funnel-value">$11,520</div>
-                    </div>
-                    <div class="funnel-arrow">&rarr;</div>
-                    <div class="funnel-stage">
-                        <div class="funnel-count">6</div>
-                        <div class="funnel-label">Proposal Sent</div>
-                        <div class="funnel-value">$7,680</div>
-                    </div>
-                    <div class="funnel-arrow">&rarr;</div>
-                    <div class="funnel-stage">
-                        <div class="funnel-count">3</div>
-                        <div class="funnel-label">Negotiation</div>
-                        <div class="funnel-value">$3,840</div>
-                    </div>
-                    <div class="funnel-arrow">&rarr;</div>
-                    <div class="funnel-stage">
-                        <div class="funnel-count">2</div>
-                        <div class="funnel-label">Won</div>
-                        <div class="funnel-value">$2,560</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Conversion Rates -->
-            <div class="section-card">
-                <div class="section-header">
-                    <h2>Conversion Rates</h2>
-                    <span>Stage-to-stage performance</span>
-                </div>
-                <div class="conversion-grid">
-                    <div class="conversion-item">
-                        <div class="conversion-rate">64%</div>
-                        <div class="conversion-label">New &rarr; Qualified</div>
-                    </div>
-                    <div class="conversion-item">
-                        <div class="conversion-rate">67%</div>
-                        <div class="conversion-label">Qualified &rarr; Proposal</div>
-                    </div>
-                    <div class="conversion-item">
-                        <div class="conversion-rate">50%</div>
-                        <div class="conversion-label">Proposal &rarr; Negotiation</div>
-                    </div>
-                    <div class="conversion-item">
-                        <div class="conversion-rate">67%</div>
-                        <div class="conversion-label">Negotiation &rarr; Won</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Monthly Revenue -->
-            <div class="section-card">
-                <div class="section-header">
-                    <h2>Monthly Revenue</h2>
-                    <span>Last 6 months</span>
-                </div>
-                <div class="revenue-chart" id="revenueChart"></div>
-                <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 0.5rem;">
-                    <span style="font-size: 0.8rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 0.4rem;"><span style="width: 12px; height: 12px; background: var(--accent); border-radius: 3px; display: inline-block;"></span> This year</span>
-                    <span style="font-size: 0.8rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 0.4rem;"><span style="width: 12px; height: 12px; background: var(--border); border-radius: 3px; display: inline-block;"></span> Last year</span>
-                </div>
-            </div>
-
-            <!-- Recent Deals -->
-            <div class="section-card">
-                <div class="section-header">
-                    <h2>Recent Deals</h2>
-                    <span>Last 10 activities</span>
-                </div>
-                <table class="deals-table">
-                    <thead>
-                        <tr>
-                            <th>Contact</th>
-                            <th>Service</th>
-                            <th>Stage</th>
-                            <th>Value</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="deal-name">Sarah Mitchell</td>
-                            <td>Voice Agent + CRM</td>
-                            <td><span class="deal-stage won">Won</span></td>
-                            <td class="deal-value">$2,400</td>
-                            <td>May 4</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Dr. James Park</td>
-                            <td>Full Automation Suite</td>
-                            <td><span class="deal-stage proposal">Proposal</span></td>
-                            <td class="deal-value">$3,200</td>
-                            <td>May 3</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Bella Salon & Spa</td>
-                            <td>Chatbot + Booking</td>
-                            <td><span class="deal-stage qualified">Qualified</span></td>
-                            <td class="deal-value">$1,800</td>
-                            <td>May 2</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Torres Law Group</td>
-                            <td>Voice Agent</td>
-                            <td><span class="deal-stage new">New Lead</span></td>
-                            <td class="deal-value">$997</td>
-                            <td>May 2</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Fresh Bites Kitchen</td>
-                            <td>Website + Chatbot</td>
-                            <td><span class="deal-stage won">Won</span></td>
-                            <td class="deal-value">$1,600</td>
-                            <td>May 1</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Glow Med Spa</td>
-                            <td>Full Package</td>
-                            <td><span class="deal-stage proposal">Proposal</span></td>
-                            <td class="deal-value">$4,500</td>
-                            <td>Apr 30</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Mike's HVAC Pro</td>
-                            <td>Voice Agent</td>
-                            <td><span class="deal-stage lost">Lost</span></td>
-                            <td class="deal-value">$697</td>
-                            <td>Apr 29</td>
-                        </tr>
-                        <tr>
-                            <td class="deal-name">Smile Dental Care</td>
-                            <td>CRM + Automation</td>
-                            <td><span class="deal-stage qualified">Qualified</span></td>
-                            <td class="deal-value">$2,100</td>
-                            <td>Apr 28</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Support CTA -->
-            <div class="support-cta">
+            <!-- CTA -->
+            <div class="cta-bar">
                 <div>
                     <h3>Need help or want to upgrade?</h3>
-                    <p>Your dedicated account manager is one message away.</p>
+                    <p>Your account manager is one message away.</p>
                 </div>
-                <a href="https://wa.me/17868430145?text=Hi%20I%20need%20help%20with%20my%20FNDI%20dashboard" target="_blank">Message Us</a>
+                <a href="https://wa.me/17868430145?text=Hi%20I%20need%20help%20with%20my%20FNDI%20account" target="_blank" class="cta-btn">Message Us</a>
             </div>
         </main>
     </div>
 
     <script>
-        // Sample login credentials (replace with real auth later)
-        const DEMO_USERS = {
-            'demo@fndi.tech': { password: 'fndi2026', name: 'Miami Dental Co.', plan: 'Growth Plan' },
-            'client@example.com': { password: 'demo123', name: 'Bella Salon & Spa', plan: 'Starter Plan' }
+        // ─── Demo Credentials ───
+        const USERS = {
+            'demo@fndi.tech': { password: 'fndi2026', name: 'Miami Dental Co.', initials: 'MD', plan: 'Growth Plan' },
+            'client@example.com': { password: 'demo123', name: 'Bella Salon & Spa', initials: 'BS', plan: 'Starter Plan' }
         };
 
         const loginScreen = document.getElementById('loginScreen');
         const dashboard = document.getElementById('dashboard');
         const loginForm = document.getElementById('loginForm');
         const loginError = document.getElementById('loginError');
-        const logoutBtn = document.getElementById('logoutBtn');
 
-        // Check if already logged in
-        if (sessionStorage.getItem('fndi_logged_in')) {
-            showDashboard(JSON.parse(sessionStorage.getItem('fndi_user')));
+        // Set greeting
+        const hour = new Date().getHours();
+        document.getElementById('greeting').textContent =
+            hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+
+        // Set date
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const now = new Date();
+        document.getElementById('dateBadge').textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+        // Check session
+        if (sessionStorage.getItem('fndi_dash')) {
+            showDashboard(JSON.parse(sessionStorage.getItem('fndi_dash')));
         }
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            if (DEMO_USERS[email] && DEMO_USERS[email].password === password) {
-                const user = DEMO_USERS[email];
-                sessionStorage.setItem('fndi_logged_in', 'true');
-                sessionStorage.setItem('fndi_user', JSON.stringify(user));
-                showDashboard(user);
+            const pw = document.getElementById('loginPassword').value;
+            if (USERS[email] && USERS[email].password === pw) {
+                sessionStorage.setItem('fndi_dash', JSON.stringify(USERS[email]));
+                showDashboard(USERS[email]);
             } else {
                 loginError.style.display = 'block';
             }
         });
 
-        logoutBtn.addEventListener('click', () => {
-            sessionStorage.removeItem('fndi_logged_in');
-            sessionStorage.removeItem('fndi_user');
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            sessionStorage.removeItem('fndi_dash');
             loginScreen.style.display = 'flex';
             dashboard.classList.remove('active');
         });
@@ -838,32 +797,110 @@
         function showDashboard(user) {
             loginScreen.style.display = 'none';
             dashboard.classList.add('active');
-            document.getElementById('dashUserName').textContent = user.name;
-            document.querySelector('.dash-user-plan').textContent = user.plan;
-            renderChart();
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userPlan').textContent = user.plan;
+            document.getElementById('userAvatar').textContent = user.initials;
+            loadData();
         }
 
-        // Revenue Chart
-        function renderChart() {
-            const chart = document.getElementById('revenueChart');
-            const data = [
-                { month: 'Dec', current: 9200, previous: 7100 },
-                { month: 'Jan', current: 11400, previous: 8200 },
-                { month: 'Feb', current: 10800, previous: 9500 },
-                { month: 'Mar', current: 14200, previous: 10100 },
-                { month: 'Apr', current: 15600, previous: 11800 },
-                { month: 'May', current: 18450, previous: 12400 }
+        // ─── Load Data ───
+        async function loadData() {
+            try {
+                const res = await fetch('/api/dashboard?endpoint=/opportunities/search');
+                if (res.ok) {
+                    const data = await res.json();
+                    renderLiveData(data);
+                } else {
+                    renderSampleData();
+                }
+            } catch (e) {
+                renderSampleData();
+            }
+        }
+
+        function renderLiveData(data) {
+            // Process GHL opportunity data when API is connected
+            // For now fall back to sample
+            renderSampleData();
+        }
+
+        function renderSampleData() {
+            // Stats
+            document.getElementById('statRevenue').textContent = '$18.4k';
+            document.getElementById('statRevenueDelta').innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg> +23%';
+            document.getElementById('statRevenueDelta').className = 'stat-delta up';
+
+            document.getElementById('statPipeline').textContent = '$43.5k';
+            document.getElementById('statPipelineDelta').textContent = '34 deals';
+            document.getElementById('statPipelineDelta').className = 'stat-delta up';
+
+            document.getElementById('statWinRate').textContent = '38%';
+            document.getElementById('statWinDelta').innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg> +5%';
+
+            document.getElementById('statAvgDeal').textContent = '$1,280';
+            document.getElementById('statAvgDelta').textContent = '-3%';
+            document.getElementById('statAvgDelta').className = 'stat-delta down';
+
+            // Revenue Chart
+            const chartData = [
+                { m: 'Dec', v: 9200 }, { m: 'Jan', v: 11400 }, { m: 'Feb', v: 10800 },
+                { m: 'Mar', v: 14200 }, { m: 'Apr', v: 15600 }, { m: 'May', v: 18450 }
+            ];
+            const max = Math.max(...chartData.map(d => d.v));
+            const colors = ['#ede9fe','#ede9fe','#ede9fe','#ede9fe','#c4b5fd','#7c3aed'];
+
+            document.getElementById('revenueChart').innerHTML = chartData.map((d, i) => `
+                <div class="bar-col">
+                    <div class="bar" style="height:${(d.v / max) * 100}%;background:${colors[i]}" title="$${d.v.toLocaleString()}"></div>
+                    <span class="bar-label">${d.m}</span>
+                </div>
+            `).join('');
+
+            // Pipeline
+            const stages = [
+                { name: 'New leads', count: 14, pct: 100, color: '#3b82f6' },
+                { name: 'Qualified', count: 9, pct: 64, color: '#7c3aed' },
+                { name: 'Proposal sent', count: 6, pct: 43, color: '#f59e0b' },
+                { name: 'Negotiation', count: 3, pct: 21, color: '#10b981' },
+                { name: 'Won', count: 2, pct: 14, color: '#059669' }
             ];
 
-            const maxVal = Math.max(...data.map(d => Math.max(d.current, d.previous)));
-
-            chart.innerHTML = data.map(d => `
-                <div class="chart-bar-group">
-                    <div style="display: flex; gap: 4px; align-items: flex-end; height: 100%; width: 100%; justify-content: center;">
-                        <div class="chart-bar previous" style="height: ${(d.previous / maxVal) * 100}%" title="Last year: $${d.previous.toLocaleString()}"></div>
-                        <div class="chart-bar current" style="height: ${(d.current / maxVal) * 100}%" title="This year: $${d.current.toLocaleString()}"></div>
+            document.getElementById('pipelineTotal').textContent = '34 total deals';
+            document.getElementById('pipelineStages').innerHTML = stages.map(s => `
+                <div class="pipeline-item">
+                    <div class="pipeline-row">
+                        <span class="pipeline-name">${s.name}</span>
+                        <span class="pipeline-count">${s.count}</span>
                     </div>
-                    <div class="chart-label">${d.month}</div>
+                    <div class="pipeline-track">
+                        <div class="pipeline-fill" style="width:${s.pct}%;background:${s.color}"></div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Activity Feed
+            const deals = [
+                { name: 'Sarah Mitchell', initials: 'SM', service: 'Voice Agent + CRM', value: '$2,400', stage: 'Won', cls: 'stage-won', bg: '#d1fae5', color: '#065f46' },
+                { name: 'Dr. James Park', initials: 'JP', service: 'Full Automation Suite', value: '$3,200', stage: 'Proposal', cls: 'stage-proposal', bg: '#fef3c7', color: '#92400e' },
+                { name: 'Bella Salon & Spa', initials: 'BS', service: 'Chatbot + Booking', value: '$1,800', stage: 'Qualified', cls: 'stage-qualified', bg: '#ede9fe', color: '#5b21b6' },
+                { name: 'Torres Law Group', initials: 'TL', service: 'Voice Agent', value: '$997', stage: 'New Lead', cls: 'stage-new', bg: '#dbeafe', color: '#1e40af' },
+                { name: 'Fresh Bites Kitchen', initials: 'FB', service: 'Website + Chatbot', value: '$1,600', stage: 'Won', cls: 'stage-won', bg: '#d1fae5', color: '#065f46' },
+                { name: 'Glow Med Spa', initials: 'GM', service: 'Full Package', value: '$4,500', stage: 'Proposal', cls: 'stage-proposal', bg: '#fef3c7', color: '#92400e' }
+            ];
+
+            document.getElementById('activityFeed').innerHTML = deals.map(d => `
+                <div class="activity-item">
+                    <div class="activity-left">
+                        <div class="activity-avatar" style="background:${d.bg};color:${d.color}">${d.initials}</div>
+                        <div>
+                            <div class="activity-name">${d.name}</div>
+                            <div class="activity-service">${d.service}</div>
+                        </div>
+                    </div>
+                    <div class="activity-right">
+                        <div class="activity-value">${d.value}</div>
+                        <div class="activity-stage ${d.cls}">${d.stage}</div>
+                    </div>
                 </div>
             `).join('');
         }
