@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | FNDI</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSFXDYZ46B');
+    </script>
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-deep: #6d28d9;
+            --accent-light: #ede9fe;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fc;
+            --bg-alt-purple: #f8f7ff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --border: #e5e7eb;
+            --footer-dark: #0f0f23;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --yellow: #f59e0b;
+            --yellow-light: #fef3c7;
+            --blue: #3b82f6;
+            --blue-light: #dbeafe;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-alt);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f7ff 0%, #ede9fe 100%);
+        }
+
+        .login-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.1);
+        }
+
+        .login-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .login-subtitle {
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .login-card label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            transition: border-color 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .login-card input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .login-btn:hover {
+            background: var(--accent-deep);
+        }
+
+        .login-error {
+            color: var(--red);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dash-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .dash-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .dash-user {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .dash-user-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .dash-user-plan {
+            font-size: 0.75rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .dash-logout {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--text-tertiary);
+            transition: all 0.2s;
+        }
+
+        .dash-logout:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .dash-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dash-welcome {
+            margin-bottom: 2rem;
+        }
+
+        .dash-welcome h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .dash-welcome p {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+        }
+
+        /* Stat Cards */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stat-change.positive { color: var(--green); }
+        .stat-change.negative { color: var(--red); }
+
+        /* Pipeline Section */
+        .section-card {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.2rem;
+        }
+
+        .section-header span {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Funnel */
+        .funnel {
+            display: flex;
+            gap: 0.75rem;
+            align-items: stretch;
+        }
+
+        .funnel-stage {
+            flex: 1;
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .funnel-stage:nth-child(1) { background: var(--blue-light); }
+        .funnel-stage:nth-child(2) { background: var(--accent-light); }
+        .funnel-stage:nth-child(3) { background: var(--yellow-light); }
+        .funnel-stage:nth-child(4) { background: var(--green-light); }
+        .funnel-stage:nth-child(5) { background: #f0fdf4; }
+
+        .funnel-count {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .funnel-stage:nth-child(1) .funnel-count { color: var(--blue); }
+        .funnel-stage:nth-child(2) .funnel-count { color: var(--accent); }
+        .funnel-stage:nth-child(3) .funnel-count { color: var(--yellow); }
+        .funnel-stage:nth-child(4) .funnel-count { color: var(--green); }
+        .funnel-stage:nth-child(5) .funnel-count { color: #059669; }
+
+        .funnel-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .funnel-value {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: 0.35rem;
+        }
+
+        .funnel-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Revenue Chart */
+        .revenue-chart {
+            height: 220px;
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            padding: 1rem 0;
+        }
+
+        .chart-bar-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .chart-bar {
+            width: 100%;
+            max-width: 40px;
+            border-radius: 6px 6px 0 0;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .chart-bar:hover {
+            opacity: 0.8;
+        }
+
+        .chart-bar.current { background: var(--accent); }
+        .chart-bar.previous { background: var(--border); }
+
+        .chart-label {
+            font-size: 0.7rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        /* Deals Table */
+        .deals-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .deals-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+
+        .deals-table td {
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .deals-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .deal-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .deal-stage {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .deal-stage.new { background: var(--blue-light); color: var(--blue); }
+        .deal-stage.qualified { background: var(--accent-light); color: var(--accent); }
+        .deal-stage.proposal { background: var(--yellow-light); color: var(--yellow); }
+        .deal-stage.won { background: var(--green-light); color: var(--green); }
+        .deal-stage.lost { background: var(--red-light); color: var(--red); }
+
+        .deal-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Conversion Rates */
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .conversion-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background: var(--bg-alt);
+        }
+
+        .conversion-rate {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .conversion-label {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: 0.25rem;
+        }
+
+        /* Support CTA */
+        .support-cta {
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            border-radius: 16px;
+            padding: 2rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .support-cta h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .support-cta p {
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
+
+        .support-cta a {
+            background: #fff;
+            color: var(--accent);
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s;
+        }
+
+        .support-cta a:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .funnel {
+                flex-direction: column;
+            }
+
+            .funnel-arrow {
+                transform: rotate(90deg);
+                justify-content: center;
+            }
+
+            .conversion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dash-body {
+                padding: 1.25rem;
+            }
+
+            .dash-header {
+                padding: 1rem;
+            }
+
+            .support-cta {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.25rem;
+            }
+
+            .revenue-chart {
+                height: 160px;
+            }
+
+            .dash-user-name {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .conversion-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .deals-table {
+                font-size: 0.8rem;
+            }
+
+            .deals-table th, .deals-table td {
+                padding: 0.6rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">FNDI</div>
+            <p class="login-subtitle">Client Dashboard</p>
+            <form id="loginForm">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            <p class="login-error" id="loginError">Invalid credentials. Please try again.</p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <header class="dash-header">
+            <a href="/" class="dash-logo">FNDI</a>
+            <div class="dash-user">
+                <span class="dash-user-name" id="dashUserName">Miami Dental Co.</span>
+                <span class="dash-user-plan">Growth Plan</span>
+                <button class="dash-logout" id="logoutBtn">Log out</button>
+            </div>
+        </header>
+
+        <main class="dash-body">
+            <div class="dash-welcome">
+                <h1>Pipeline & Revenue</h1>
+                <p>Here's how your AI systems are performing this month.</p>
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Revenue (May)</div>
+                    <div class="stat-value">$18,450</div>
+                    <div class="stat-change positive">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                        +23% vs last month
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Deals in Pipeline</div>
+                    <div class="stat-value">34</div>
+                    <div class="stat-change positive">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                        +8 new this week
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Win Rate</div>
+                    <div class="stat-value">38%</div>
+                    <div class="stat-change positive">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                        +5% vs last month
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Deal Size</div>
+                    <div class="stat-value">$1,280</div>
+                    <div class="stat-change negative">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>
+                        -3% vs last month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Funnel -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Lead Pipeline</h2>
+                    <span>Total pipeline value: $43,520</span>
+                </div>
+                <div class="funnel">
+                    <div class="funnel-stage">
+                        <div class="funnel-count">14</div>
+                        <div class="funnel-label">New Leads</div>
+                        <div class="funnel-value">$17,920</div>
+                    </div>
+                    <div class="funnel-arrow">&rarr;</div>
+                    <div class="funnel-stage">
+                        <div class="funnel-count">9</div>
+                        <div class="funnel-label">Qualified</div>
+                        <div class="funnel-value">$11,520</div>
+                    </div>
+                    <div class="funnel-arrow">&rarr;</div>
+                    <div class="funnel-stage">
+                        <div class="funnel-count">6</div>
+                        <div class="funnel-label">Proposal Sent</div>
+                        <div class="funnel-value">$7,680</div>
+                    </div>
+                    <div class="funnel-arrow">&rarr;</div>
+                    <div class="funnel-stage">
+                        <div class="funnel-count">3</div>
+                        <div class="funnel-label">Negotiation</div>
+                        <div class="funnel-value">$3,840</div>
+                    </div>
+                    <div class="funnel-arrow">&rarr;</div>
+                    <div class="funnel-stage">
+                        <div class="funnel-count">2</div>
+                        <div class="funnel-label">Won</div>
+                        <div class="funnel-value">$2,560</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversion Rates -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Conversion Rates</h2>
+                    <span>Stage-to-stage performance</span>
+                </div>
+                <div class="conversion-grid">
+                    <div class="conversion-item">
+                        <div class="conversion-rate">64%</div>
+                        <div class="conversion-label">New &rarr; Qualified</div>
+                    </div>
+                    <div class="conversion-item">
+                        <div class="conversion-rate">67%</div>
+                        <div class="conversion-label">Qualified &rarr; Proposal</div>
+                    </div>
+                    <div class="conversion-item">
+                        <div class="conversion-rate">50%</div>
+                        <div class="conversion-label">Proposal &rarr; Negotiation</div>
+                    </div>
+                    <div class="conversion-item">
+                        <div class="conversion-rate">67%</div>
+                        <div class="conversion-label">Negotiation &rarr; Won</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Revenue -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Monthly Revenue</h2>
+                    <span>Last 6 months</span>
+                </div>
+                <div class="revenue-chart" id="revenueChart"></div>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 0.5rem;">
+                    <span style="font-size: 0.8rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 0.4rem;"><span style="width: 12px; height: 12px; background: var(--accent); border-radius: 3px; display: inline-block;"></span> This year</span>
+                    <span style="font-size: 0.8rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 0.4rem;"><span style="width: 12px; height: 12px; background: var(--border); border-radius: 3px; display: inline-block;"></span> Last year</span>
+                </div>
+            </div>
+
+            <!-- Recent Deals -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Recent Deals</h2>
+                    <span>Last 10 activities</span>
+                </div>
+                <table class="deals-table">
+                    <thead>
+                        <tr>
+                            <th>Contact</th>
+                            <th>Service</th>
+                            <th>Stage</th>
+                            <th>Value</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="deal-name">Sarah Mitchell</td>
+                            <td>Voice Agent + CRM</td>
+                            <td><span class="deal-stage won">Won</span></td>
+                            <td class="deal-value">$2,400</td>
+                            <td>May 4</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Dr. James Park</td>
+                            <td>Full Automation Suite</td>
+                            <td><span class="deal-stage proposal">Proposal</span></td>
+                            <td class="deal-value">$3,200</td>
+                            <td>May 3</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Bella Salon & Spa</td>
+                            <td>Chatbot + Booking</td>
+                            <td><span class="deal-stage qualified">Qualified</span></td>
+                            <td class="deal-value">$1,800</td>
+                            <td>May 2</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Torres Law Group</td>
+                            <td>Voice Agent</td>
+                            <td><span class="deal-stage new">New Lead</span></td>
+                            <td class="deal-value">$997</td>
+                            <td>May 2</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Fresh Bites Kitchen</td>
+                            <td>Website + Chatbot</td>
+                            <td><span class="deal-stage won">Won</span></td>
+                            <td class="deal-value">$1,600</td>
+                            <td>May 1</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Glow Med Spa</td>
+                            <td>Full Package</td>
+                            <td><span class="deal-stage proposal">Proposal</span></td>
+                            <td class="deal-value">$4,500</td>
+                            <td>Apr 30</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Mike's HVAC Pro</td>
+                            <td>Voice Agent</td>
+                            <td><span class="deal-stage lost">Lost</span></td>
+                            <td class="deal-value">$697</td>
+                            <td>Apr 29</td>
+                        </tr>
+                        <tr>
+                            <td class="deal-name">Smile Dental Care</td>
+                            <td>CRM + Automation</td>
+                            <td><span class="deal-stage qualified">Qualified</span></td>
+                            <td class="deal-value">$2,100</td>
+                            <td>Apr 28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Support CTA -->
+            <div class="support-cta">
+                <div>
+                    <h3>Need help or want to upgrade?</h3>
+                    <p>Your dedicated account manager is one message away.</p>
+                </div>
+                <a href="https://wa.me/17868430145?text=Hi%20I%20need%20help%20with%20my%20FNDI%20dashboard" target="_blank">Message Us</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Sample login credentials (replace with real auth later)
+        const DEMO_USERS = {
+            'demo@fndi.tech': { password: 'fndi2026', name: 'Miami Dental Co.', plan: 'Growth Plan' },
+            'client@example.com': { password: 'demo123', name: 'Bella Salon & Spa', plan: 'Starter Plan' }
+        };
+
+        const loginScreen = document.getElementById('loginScreen');
+        const dashboard = document.getElementById('dashboard');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        // Check if already logged in
+        if (sessionStorage.getItem('fndi_logged_in')) {
+            showDashboard(JSON.parse(sessionStorage.getItem('fndi_user')));
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (DEMO_USERS[email] && DEMO_USERS[email].password === password) {
+                const user = DEMO_USERS[email];
+                sessionStorage.setItem('fndi_logged_in', 'true');
+                sessionStorage.setItem('fndi_user', JSON.stringify(user));
+                showDashboard(user);
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            sessionStorage.removeItem('fndi_logged_in');
+            sessionStorage.removeItem('fndi_user');
+            loginScreen.style.display = 'flex';
+            dashboard.classList.remove('active');
+        });
+
+        function showDashboard(user) {
+            loginScreen.style.display = 'none';
+            dashboard.classList.add('active');
+            document.getElementById('dashUserName').textContent = user.name;
+            document.querySelector('.dash-user-plan').textContent = user.plan;
+            renderChart();
+        }
+
+        // Revenue Chart
+        function renderChart() {
+            const chart = document.getElementById('revenueChart');
+            const data = [
+                { month: 'Dec', current: 9200, previous: 7100 },
+                { month: 'Jan', current: 11400, previous: 8200 },
+                { month: 'Feb', current: 10800, previous: 9500 },
+                { month: 'Mar', current: 14200, previous: 10100 },
+                { month: 'Apr', current: 15600, previous: 11800 },
+                { month: 'May', current: 18450, previous: 12400 }
+            ];
+
+            const maxVal = Math.max(...data.map(d => Math.max(d.current, d.previous)));
+
+            chart.innerHTML = data.map(d => `
+                <div class="chart-bar-group">
+                    <div style="display: flex; gap: 4px; align-items: flex-end; height: 100%; width: 100%; justify-content: center;">
+                        <div class="chart-bar previous" style="height: ${(d.previous / maxVal) * 100}%" title="Last year: $${d.previous.toLocaleString()}"></div>
+                        <div class="chart-bar current" style="height: ${(d.current / maxVal) * 100}%" title="This year: $${d.current.toLocaleString()}"></div>
+                    </div>
+                    <div class="chart-label">${d.month}</div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
