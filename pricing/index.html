@@ -427,7 +427,7 @@
             }
 
             .pricing-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
 
             section {
@@ -771,12 +771,23 @@
 
     <section class="section-purple">
         <h2>Our Plans</h2>
-        <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <!-- Annual Toggle -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <span id="monthlyLabel" style="font-weight: 600; color: var(--text-primary); font-size: 1rem;">Monthly</span>
+            <label style="position: relative; display: inline-block; width: 56px; height: 30px; cursor: pointer;">
+                <input type="checkbox" id="billingToggle" style="opacity: 0; width: 0; height: 0;">
+                <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #d1d5db; border-radius: 30px; transition: 0.3s;" id="toggleSlider"></span>
+                <span style="position: absolute; content: ''; height: 22px; width: 22px; left: 4px; top: 4px; background: white; border-radius: 50%; transition: 0.3s; z-index: 1;" id="toggleCircle"></span>
+            </label>
+            <span id="annualLabel" style="font-weight: 500; color: var(--text-tertiary); font-size: 1rem;">Annual <span style="background: var(--green); color: white; padding: 0.2rem 0.6rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; margin-left: 0.25rem;">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid" style="grid-template-columns: repeat(4, 1fr);">
             <!-- Starter -->
             <div class="pricing-card">
                 <h3 class="plan-name">Starter</h3>
                 <p class="plan-desc">Perfect for getting started</p>
-                <div class="price">$300<span class="price-period">/month</span></div>
+                <div class="price"><span class="monthly-price">$300</span><span class="annual-price" style="display:none;">$240</span><span class="price-period">/month</span></div>
                 <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $297</p>
                 <ul class="plan-features">
                     <li>FNDI dashboard access</li>
@@ -793,7 +804,7 @@
                 <div class="popular-badge">Most Popular</div>
                 <h3 class="plan-name">Growth</h3>
                 <p class="plan-desc">For scaling businesses</p>
-                <div class="price">$497<span class="price-period">/month</span></div>
+                <div class="price"><span class="monthly-price">$497</span><span class="annual-price" style="display:none;">$397</span><span class="price-period">/month</span></div>
                 <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $497 &middot; Includes everything in Starter, plus:</p>
                 <ul class="plan-features">
                     <li>4 email campaigns per month</li>
@@ -810,7 +821,7 @@
             <div class="pricing-card">
                 <h3 class="plan-name">Dominate</h3>
                 <p class="plan-desc">Full-scale AI automation</p>
-                <div class="price">$997<span class="price-period">/month</span></div>
+                <div class="price"><span class="monthly-price">$997</span><span class="annual-price" style="display:none;">$797</span><span class="price-period">/month</span></div>
                 <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $747 &middot; Includes everything in Growth, plus:</p>
                 <ul class="plan-features">
                     <li>Synthflow AI receptionist</li>
@@ -822,6 +833,24 @@
                     <li>Priority support from team</li>
                 </ul>
                 <a href="/book/" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <!-- Custom -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Custom</h3>
+                <p class="plan-desc">Build your own package</p>
+                <div class="price">Let's Talk</div>
+                <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">Custom setup &middot; Tailored to your business</p>
+                <ul class="plan-features">
+                    <li>Multi-location support</li>
+                    <li>Custom API integrations</li>
+                    <li>White-label options</li>
+                    <li>Dedicated account manager</li>
+                    <li>Volume pricing</li>
+                    <li>SLA guarantees</li>
+                    <li>Custom workflows &amp; automations</li>
+                </ul>
+                <a href="/book/" class="btn btn-secondary">Book a Call</a>
             </div>
         </div>
 
@@ -843,6 +872,7 @@
                     <th>Starter</th>
                     <th>Growth</th>
                     <th>Dominate</th>
+                    <th>Custom</th>
                 </tr>
             </thead>
             <tbody>
@@ -851,15 +881,18 @@
                     <td>$300</td>
                     <td>$497</td>
                     <td>$997</td>
+                    <td>Custom</td>
                 </tr>
                 <tr>
                     <td>One-Time Setup</td>
                     <td>$297</td>
                     <td>$497</td>
                     <td>$747</td>
+                    <td>Custom</td>
                 </tr>
                 <tr>
                     <td>FNDI Dashboard</td>
+                    <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
@@ -869,15 +902,18 @@
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>Prebuilt Automations</td>
                     <td>3</td>
                     <td>5</td>
                     <td>All</td>
+                    <td>Custom</td>
                 </tr>
                 <tr>
                     <td>Missed-Call Text Back</td>
+                    <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
@@ -887,10 +923,12 @@
                     <td>—</td>
                     <td>4/month</td>
                     <td>4/month</td>
+                    <td>Custom</td>
                 </tr>
                 <tr>
                     <td>SMS Setup + Workflows</td>
                     <td>—</td>
+                    <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                 </tr>
@@ -899,10 +937,12 @@
                     <td>—</td>
                     <td>✓</td>
                     <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>SEO Article + On-Page SEO</td>
                     <td>—</td>
+                    <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                 </tr>
@@ -911,11 +951,13 @@
                     <td>—</td>
                     <td>—</td>
                     <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>Speed-to-Lead (SMS + Email in 5 min)</td>
                     <td>—</td>
                     <td>—</td>
+                    <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
@@ -923,11 +965,13 @@
                     <td>—</td>
                     <td>—</td>
                     <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>Appointment Reminders</td>
                     <td>—</td>
                     <td>—</td>
+                    <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
@@ -935,11 +979,13 @@
                     <td>—</td>
                     <td>—</td>
                     <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>Monthly Strategy Call</td>
                     <td>—</td>
                     <td>—</td>
+                    <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
@@ -947,12 +993,14 @@
                     <td>Monthly</td>
                     <td>Monthly</td>
                     <td>Monthly + Strategy</td>
+                    <td>Custom</td>
                 </tr>
                 <tr>
                     <td>Support</td>
                     <td>Standard</td>
                     <td>Standard</td>
                     <td>Priority</td>
+                    <td>Dedicated</td>
                 </tr>
             </tbody>
         </table>
@@ -1168,6 +1216,38 @@
         function sendQuick(text) { sendMessage(text); }
         chatSend.addEventListener('click', () => sendMessage(chatInput.value));
         chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(chatInput.value); } });
+    </script>
+
+    <script>
+        const toggle = document.getElementById('billingToggle');
+        const slider = document.getElementById('toggleSlider');
+        const circle = document.getElementById('toggleCircle');
+        const monthlyLabel = document.getElementById('monthlyLabel');
+        const annualLabel = document.getElementById('annualLabel');
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const annualPrices = document.querySelectorAll('.annual-price');
+
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                slider.style.background = '#7c3aed';
+                circle.style.transform = 'translateX(26px)';
+                monthlyLabel.style.fontWeight = '500';
+                monthlyLabel.style.color = 'var(--text-tertiary)';
+                annualLabel.style.fontWeight = '600';
+                annualLabel.style.color = 'var(--text-primary)';
+                monthlyPrices.forEach(el => el.style.display = 'none');
+                annualPrices.forEach(el => el.style.display = 'inline');
+            } else {
+                slider.style.background = '#d1d5db';
+                circle.style.transform = 'translateX(0)';
+                monthlyLabel.style.fontWeight = '600';
+                monthlyLabel.style.color = 'var(--text-primary)';
+                annualLabel.style.fontWeight = '500';
+                annualLabel.style.color = 'var(--text-tertiary)';
+                monthlyPrices.forEach(el => el.style.display = 'inline');
+                annualPrices.forEach(el => el.style.display = 'none');
+            }
+        });
     </script>
 </body>
 </html>
