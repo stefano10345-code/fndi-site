@@ -766,24 +766,24 @@
 
     <section class="hero">
         <h1>Simple, Transparent Pricing</h1>
-        <p class="hero-subtitle">Pick a plan that grows with your business. No setup fees. No long-term contracts. No surprises.</p>
+        <p class="hero-subtitle">Pick a plan that grows with your business. No long-term contracts. No surprises.</p>
     </section>
 
     <section class="section-purple">
         <h2>Our Plans</h2>
-        <div class="pricing-grid">
+        <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
             <!-- Starter -->
             <div class="pricing-card">
                 <h3 class="plan-name">Starter</h3>
                 <p class="plan-desc">Perfect for getting started</p>
-                <div class="price">$497<span class="price-period">/month</span></div>
+                <div class="price">$300<span class="price-period">/month</span></div>
+                <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $297</p>
                 <ul class="plan-features">
-                    <li>1 AI voice agent</li>
-                    <li>Basic chatbot</li>
-                    <li>24/7 availability</li>
-                    <li>Appointment booking</li>
-                    <li>Monthly reports</li>
-                    <li>Email support</li>
+                    <li>FNDI dashboard access</li>
+                    <li>Website chat widget (leads pushed to CRM)</li>
+                    <li>3 prebuilt automations (contact capture, cart abandonment follow-up, order/appointment follow-up)</li>
+                    <li>Missed-call text back</li>
+                    <li>Monthly performance report (leads, growth, conversation activity, response rate)</li>
                 </ul>
                 <a href="/book/" class="btn btn-secondary">Get Started</a>
             </div>
@@ -793,52 +793,44 @@
                 <div class="popular-badge">Most Popular</div>
                 <h3 class="plan-name">Growth</h3>
                 <p class="plan-desc">For scaling businesses</p>
+                <div class="price">$497<span class="price-period">/month</span></div>
+                <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $497 &middot; Includes everything in Starter, plus:</p>
+                <ul class="plan-features">
+                    <li>4 email campaigns per month</li>
+                    <li>SMS number setup</li>
+                    <li>2 additional SMS workflow automations</li>
+                    <li>Review request automation</li>
+                    <li>1 SEO article delivered</li>
+                    <li>On-page SEO optimization</li>
+                </ul>
+                <a href="/book/" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <!-- Dominate -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Dominate</h3>
+                <p class="plan-desc">Full-scale AI automation</p>
                 <div class="price">$997<span class="price-period">/month</span></div>
+                <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1.5rem;">One-time setup: $747 &middot; Includes everything in Growth, plus:</p>
                 <ul class="plan-features">
-                    <li>2 AI voice agents</li>
-                    <li>Advanced chatbot</li>
-                    <li>Lead capture tools</li>
-                    <li>3 automation workflows</li>
-                    <li>Weekly reports</li>
-                    <li>Priority support</li>
-                    <li>CRM integration</li>
+                    <li>Synthflow AI receptionist</li>
+                    <li>Speed-to-lead automation (Meta lead triggers personalized SMS + email within 5 minutes)</li>
+                    <li>Re-engagement campaign (automated 30/60/90 day follow-up)</li>
+                    <li>Appointment reminder sequence (24hr and 1hr pre-appointment)</li>
+                    <li>Post-appointment/purchase sequence (review request + survey)</li>
+                    <li>Monthly strategy call</li>
+                    <li>Priority support from team</li>
                 </ul>
                 <a href="/book/" class="btn btn-primary">Get Started</a>
             </div>
+        </div>
 
-            <!-- Premium -->
-            <div class="pricing-card">
-                <h3 class="plan-name">Premium</h3>
-                <p class="plan-desc">Everything we offer</p>
-                <div class="price">$1,997<span class="price-period">/month</span></div>
-                <ul class="plan-features">
-                    <li>Unlimited AI agents</li>
-                    <li>Custom chatbot</li>
-                    <li>Website development</li>
-                    <li>Unlimited automation</li>
-                    <li>Real-time analytics</li>
-                    <li>24/7 support</li>
-                    <li>Direct founder access</li>
-                </ul>
-                <a href="/book/" class="btn btn-primary">Get Started</a>
-            </div>
-
-            <!-- Custom -->
-            <div class="pricing-card">
-                <h3 class="plan-name">Custom</h3>
-                <p class="plan-desc">Build your own package</p>
-                <div class="price">Let's Talk<span class="price-period"></span></div>
-                <ul class="plan-features">
-                    <li>Multi-location support</li>
-                    <li>API integrations</li>
-                    <li>White-label options</li>
-                    <li>Dedicated manager</li>
-                    <li>Volume pricing</li>
-                    <li>SLA guarantees</li>
-                    <li>Custom workflows</li>
-                </ul>
-                <a href="/book/" class="btn btn-secondary">Book a Call</a>
-            </div>
+        <!-- Ads Add-On -->
+        <div style="max-width: 600px; margin: 2.5rem auto 0; background: white; border: 2px solid var(--accent); border-radius: 0.75rem; padding: 2rem; text-align: center;">
+            <h3 style="margin-bottom: 0.5rem;">Ads Management Add-On</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Available with any plan</p>
+            <div class="price" style="margin-bottom: 0.5rem;">15%<span class="price-period"> commission on ad spend</span></div>
+            <p style="font-size: 0.9rem; color: var(--text-tertiary);">We manage your Meta Ads, Google Ads, and paid campaigns — you only pay a percentage of what you spend on ads.</p>
         </div>
     </section>
 
@@ -850,59 +842,117 @@
                     <th>Feature</th>
                     <th>Starter</th>
                     <th>Growth</th>
-                    <th>Premium</th>
-                    <th>Custom</th>
+                    <th>Dominate</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>AI Voice Agent</td>
-                    <td>✓</td>
+                    <td>Monthly Price</td>
+                    <td>$300</td>
+                    <td>$497</td>
+                    <td>$997</td>
+                </tr>
+                <tr>
+                    <td>One-Time Setup</td>
+                    <td>$297</td>
+                    <td>$497</td>
+                    <td>$747</td>
+                </tr>
+                <tr>
+                    <td>FNDI Dashboard</td>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
-                    <td>Chatbot</td>
-                    <td>Basic</td>
+                    <td>Website Chat Widget</td>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
-                    <td>Automation Workflows</td>
-                    <td>—</td>
+                    <td>Prebuilt Automations</td>
                     <td>3</td>
-                    <td>Unlimited</td>
-                    <td>Unlimited</td>
+                    <td>5</td>
+                    <td>All</td>
                 </tr>
                 <tr>
-                    <td>Website Development</td>
-                    <td>—</td>
-                    <td>—</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>CRM Setup</td>
-                    <td>—</td>
+                    <td>Missed-Call Text Back</td>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
                 </tr>
                 <tr>
-                    <td>Reports</td>
+                    <td>Email Campaigns</td>
+                    <td>—</td>
+                    <td>4/month</td>
+                    <td>4/month</td>
+                </tr>
+                <tr>
+                    <td>SMS Setup + Workflows</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Review Request Automation</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>SEO Article + On-Page SEO</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>AI Receptionist (Synthflow)</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Speed-to-Lead (SMS + Email in 5 min)</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Re-Engagement Campaign (30/60/90 day)</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Appointment Reminders</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Post-Appointment Sequence</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Monthly Strategy Call</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Performance Reports</td>
                     <td>Monthly</td>
-                    <td>Weekly</td>
-                    <td>Real-time</td>
-                    <td>Real-time</td>
+                    <td>Monthly</td>
+                    <td>Monthly + Strategy</td>
                 </tr>
                 <tr>
                     <td>Support</td>
-                    <td>Email</td>
+                    <td>Standard</td>
+                    <td>Standard</td>
                     <td>Priority</td>
-                    <td>24/7 Dedicated</td>
-                    <td>SLA Guaranteed</td>
                 </tr>
             </tbody>
         </table>
