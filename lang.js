@@ -91,6 +91,16 @@
   // Page-specific translations
   var pages = {
     '/': {
+      'Example ad. Tap through it.':'Anuncio de ejemplo. Tócalo y avanza.',
+      'Quote request':'Solicitud de cotización',
+      '1 of 3':'1 de 3',
+      '2 of 3':'2 de 3',
+      '3 of 3':'3 de 3',
+      'Your photo or video':'Tu foto o video',
+      'Sent.':'Enviado.',
+      'Your Business Here will reach out soon.':'Tu Negocio Aquí te contactará pronto.',
+      'New lead':'Nuevo prospecto',
+      'Just now':'Ahora mismo',
       'Example lead ad':'Anuncio de ejemplo',
       'Try it. This is what your customers see.':'Pruébalo. Esto es lo que ven tus clientes.',
       'Your Business Here':'Tu Negocio Aquí',

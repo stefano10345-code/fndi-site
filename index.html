@@ -12,7 +12,7 @@
     <meta property="og:title" content="FNDI | Never Miss Another Customer Again">
     <meta property="og:description" content="We help local businesses get more customers. Custom-built, not off-the-shelf.">
     <meta property="og:image" content="https://fndi.tech/og-image.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#000000">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
@@ -104,80 +104,103 @@
                 </div>
             </div>
 
-            <div class="call demo" id="leadDemo" aria-label="Example of a lead ad for your business. Click through it.">
-                <div class="call-top">
-                    <span class="call-dot"></span>
-                    <div>
-                        <strong>Example lead ad</strong>
-                        <small>Try it. This is what your customers see.</small>
+            <div class="demo" id="leadDemo" aria-label="Example of a lead ad for your business. Tap through it.">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-island" aria-hidden="true"></div>
+
+                        <div class="demo-step active" data-step="ad">
+                        <div class="biz">
+                            <span class="biz-avatar" aria-hidden="true"></span>
+                            <div><strong>Your Business Here</strong><small>Sponsored</small></div>
+                        </div>
+                            <div class="ad-creative">
+                                <small>Your photo or video</small>
+                                <div>
+                                    <p class="ad-offer">Your offer here</p>
+                                    <p class="ad-sub">Shown to people near you</p>
+                                </div>
+                            </div>
+                            <div class="ad-bar">
+                                <div><strong>Get a free quote</strong><small>Takes 30 seconds</small></div>
+                                <button type="button" class="demo-btn" data-next>Get Quote</button>
+                            </div>
+                        </div>
+
+                        <div class="demo-step" data-step="need">
+                        <div class="biz">
+                            <span class="biz-avatar" aria-hidden="true"></span>
+                            <div><strong>Your Business Here</strong><small>Quote request</small></div>
+                            <span class="count">1 of 3</span>
+                        </div>
+                            <div class="form-body">
+                                <div class="form-track"><span class="on"></span><span></span><span></span></div>
+                                <p class="demo-q">What are you looking for?</p>
+                                <div class="demo-options" data-answer="leadNeed">
+                                    <button type="button">A quote</button>
+                                    <button type="button">To book an appointment</button>
+                                    <button type="button">Just a question</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="demo-step" data-step="when">
+                        <div class="biz">
+                            <span class="biz-avatar" aria-hidden="true"></span>
+                            <div><strong>Your Business Here</strong><small>Quote request</small></div>
+                            <span class="count">2 of 3</span>
+                        </div>
+                            <div class="form-body">
+                                <div class="form-track"><span class="on"></span><span class="on"></span><span></span></div>
+                                <p class="demo-q">When do you need it?</p>
+                                <div class="demo-options" data-answer="leadWhen">
+                                    <button type="button">As soon as possible</button>
+                                    <button type="button">This week</button>
+                                    <button type="button">This month</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="demo-step" data-step="contact">
+                        <div class="biz">
+                            <span class="biz-avatar" aria-hidden="true"></span>
+                            <div><strong>Your Business Here</strong><small>Quote request</small></div>
+                            <span class="count">3 of 3</span>
+                        </div>
+                            <div class="form-body">
+                                <div class="form-track"><span class="on"></span><span class="on"></span><span class="on"></span></div>
+                                <p class="demo-q">Confirm your contact info</p>
+                                <dl class="demo-fields">
+                                    <div><dt>Name</dt><dd>Alex Rivera</dd></div>
+                                    <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
+                                    <div><dt>Email</dt><dd>alex@example.com</dd></div>
+                                </dl>
+                                <p class="demo-hint">Filled in automatically from their profile.</p>
+                                <button type="button" class="demo-btn wide" data-next>Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="demo-step" data-step="done">
+                            <div class="sent">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="22" r="20"/><path d="M14 22.5l5.5 5.5L30.5 16"/></svg>
+                                <p class="demo-q">Sent.</p>
+                                <p>Your Business Here will reach out soon.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="demo-screen">
-                    <div class="demo-step active" data-step="ad">
-                        <div class="ad-head">
-                            <span class="ad-avatar" aria-hidden="true"></span>
-                            <div>
-                                <strong>Your Business Here</strong>
-                                <small>Sponsored</small>
-                            </div>
-                        </div>
-                        <div class="ad-creative">
-                            <p class="ad-offer">Your offer here</p>
-                            <p class="ad-sub">Shown to people near you</p>
-                        </div>
-                        <div class="ad-bar">
-                            <div>
-                                <strong>Get a free quote</strong>
-                                <small>Takes 30 seconds</small>
-                            </div>
-                            <button type="button" class="demo-btn" data-next>Get Quote</button>
-                        </div>
-                    </div>
+                <aside class="lead-card" aria-live="polite">
+                    <div class="lead-top"><span class="lead-dot"></span><strong>New lead</strong><small>Just now</small></div>
+                    <p class="lead-name">Alex Rivera</p>
+                    <dl class="lead-rows">
+                        <div><dt>Wants</dt><dd id="leadNeed"></dd></div>
+                        <div><dt>When</dt><dd id="leadWhen"></dd></div>
+                        <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
+                    </dl>
+                </aside>
 
-                    <div class="demo-step" data-step="need">
-                        <p class="demo-q">What are you looking for?</p>
-                        <div class="demo-options" data-answer="need">
-                            <button type="button">A quote</button>
-                            <button type="button">To book an appointment</button>
-                            <button type="button">Just a question</button>
-                        </div>
-                    </div>
-
-                    <div class="demo-step" data-step="when">
-                        <p class="demo-q">When do you need it?</p>
-                        <div class="demo-options" data-answer="when">
-                            <button type="button">As soon as possible</button>
-                            <button type="button">This week</button>
-                            <button type="button">This month</button>
-                        </div>
-                    </div>
-
-                    <div class="demo-step" data-step="contact">
-                        <p class="demo-q">Confirm your contact info</p>
-                        <dl class="demo-fields">
-                            <div><dt>Name</dt><dd>Alex Rivera</dd></div>
-                            <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
-                            <div><dt>Email</dt><dd>alex@example.com</dd></div>
-                        </dl>
-                        <p class="demo-hint">Filled in automatically from their profile.</p>
-                        <button type="button" class="demo-btn wide" data-next>Submit</button>
-                    </div>
-
-                    <div class="demo-step" data-step="lead">
-                        <p class="demo-q">New lead for Your Business Here</p>
-                        <dl class="demo-fields">
-                            <div><dt>Name</dt><dd>Alex Rivera</dd></div>
-                            <div><dt>Wants</dt><dd id="leadNeed"></dd></div>
-                            <div><dt>When</dt><dd id="leadWhen"></dd></div>
-                            <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
-                        </dl>
-                        <p class="demo-hint">This is what lands with you, ready for a call back.</p>
-                        <button type="button" class="demo-btn wide ghost" data-restart>Start over</button>
-                    </div>
-                </div>
-
-                <div class="demo-progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                <p class="demo-caption"><span>Example ad. Tap through it.</span><button type="button" data-restart>Start over</button></p>
             </div>
         </div>
     </section>

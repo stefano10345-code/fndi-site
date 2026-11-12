@@ -17,28 +17,25 @@ const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Hero demo: a clickable example of a lead ad and its form
+// Hero demo: a tappable example lead ad, and the lead it produces
 (function () {
     const demo = document.getElementById('leadDemo');
     if (!demo) return;
     const steps = [...demo.querySelectorAll('.demo-step')];
-    const dots = [...demo.querySelectorAll('.demo-progress span')];
     let at = 0;
     function show(i) {
         at = i;
         steps.forEach((s, n) => s.classList.toggle('active', n === i));
-        dots.forEach((d, n) => d.classList.toggle('on', n <= i));
+        demo.classList.toggle('done', i === steps.length - 1);
     }
     demo.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => show(at + 1)));
     demo.querySelectorAll('.demo-options').forEach(group => {
         group.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
-            const out = document.getElementById(group.dataset.answer === 'need' ? 'leadNeed' : 'leadWhen');
-            out.textContent = b.textContent;
+            document.getElementById(group.dataset.answer).textContent = b.textContent;
             show(at + 1);
         }));
     });
     demo.querySelector('[data-restart]').addEventListener('click', () => show(0));
-    show(0);
 })();
 
 // FAQ
