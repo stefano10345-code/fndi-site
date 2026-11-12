@@ -27,6 +27,7 @@ onScroll();
         at = i;
         steps.forEach((s, n) => s.classList.toggle('active', n === i));
         demo.classList.toggle('done', i === steps.length - 1);
+        demo.classList.toggle('sheet', i > 0);
     }
     demo.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => show(at + 1)));
     demo.querySelectorAll('.demo-options').forEach(group => {
