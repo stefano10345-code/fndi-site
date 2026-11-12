@@ -1,0 +1,26 @@
+{
+  "path": "/contact/",
+  "strings": {
+    "Get in Touch": "Ponte en contacto",
+    "Have a question about FNDI, or want to talk about getting your business more customers? We would like to hear from you.": "¿Tienes una pregunta sobre FNDI o quieres hablar de cómo conseguir más clientes para tu negocio? Nos gustaría saber de ti.",
+    "Contact Details": "Datos de contacto",
+    "Email": "Correo",
+    "support@fndi.tech": "support@fndi.tech",
+    "Phone": "Teléfono",
+    "(786) 843-0145": "(786) 843-0145",
+    "Location": "Ubicación",
+    "Miami, FL. We serve clients across South Florida and beyond.": "Miami, FL. Atendemos clientes en todo el sur de Florida y más allá.",
+    "Hours": "Horario",
+    "Monday to Friday, 9am to 6pm EST": "Lunes a viernes, de 9am a 6pm EST",
+    "Response time": "Tiempo de respuesta",
+    "We respond to all inquiries within one business day.": "Respondemos todas las consultas en un día hábil.",
+    "Send Us a Message": "Envíanos un mensaje",
+    "Tell us a little about your business and what you need. We will reply by email.": "Cuéntanos un poco sobre tu negocio y lo que necesitas. Te responderemos por correo.",
+    "Your Name": "Tu nombre",
+    "Email Address": "Correo electrónico",
+    "Phone Number": "Número de teléfono",
+    "Company Name": "Nombre de la empresa",
+    "Tell Us About Your Project": "Cuéntanos sobre tu proyecto",
+    "Send Message": "Enviar mensaje"
+  }
+}

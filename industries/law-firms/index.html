@@ -6,1088 +6,227 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon-180x180.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Answering Service for Law Firms | FNDI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Marketing for Law Firms | FNDI</title>
+    <meta name="description" content="Facebook and Instagram ads, intake pages and follow-up that help law firms in Miami get more consultation requests.">
+    <meta property="og:title" content="Marketing for Law Firms | FNDI">
+    <meta property="og:description" content="Facebook and Instagram ads, intake pages and follow-up that help law firms in Miami get more consultation requests.">
+    <meta property="og:image" content="https://fndi.tech/og-image.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSFXDYZ46B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YSFXDYZ46B');
+        document.documentElement.classList.add('js');
     </script>
-    <style>
-        :root {
-            --accent: #7c3aed;
-            --accent-deep: #6d28d9;
-            --bg-light: #ffffff;
-            --bg-alt: #f8f9fc;
-            --bg-alt-purple: #f8f7ff;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a68;
-            --text-tertiary: #6b7280;
-            --border: #e5e7eb;
-            --footer-dark: #0f0f23;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-primary);
-            line-height: 1.6;
-            background-color: var(--bg-light);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            background: transparent;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav.scrolled {
-            background: var(--bg-light);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .nav-tagline {
-            font-size: 0.65rem;
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-
-        .nav-center {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-center a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-center a:hover {
-            color: var(--accent);
-        }
-
-        .nav-cta {
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--accent-deep);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 0.5rem;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-primary);
-            border-radius: 2px;
-        }
-
-        .hero {
-            margin-top: 80px;
-            height: 500px;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80') center/cover;
-            display: flex;
-            align-items: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--accent);
-        }
-
-        .btn-primary:hover {
-            background: #f0f0f0;
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-alt {
-            background: var(--bg-alt);
-        }
-
-        .section-purple {
-            background: var(--bg-alt-purple);
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .problem-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        .icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1rem;
-        }
-
-        .problem-card h3 {
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .problem-card p {
-            color: var(--text-secondary);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .solution-card .icon {
-            margin: 0 auto 1rem;
-        }
-
-        .solution-card h3 {
-            color: var(--text-primary);
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            position: relative;
-        }
-
-        .timeline-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .timeline-number {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-        }
-
-        .timeline-item h3 {
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-item p {
-            color: var(--text-secondary);
-        }
-
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .comparison-col {
-            padding: 2rem;
-            border-radius: 0.75rem;
-        }
-
-        .comparison-col.without {
-            background: #fee2e2;
-        }
-
-        .comparison-col.with {
-            background: #dbeafe;
-        }
-
-        .comparison-col h3 {
-            margin-bottom: 1.5rem;
-        }
-
-        .comparison-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .comparison-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .testimonial {
-            background: white;
-            border: 2px solid var(--accent);
-            padding: 3rem 2rem;
-            border-radius: 0.75rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .testimonial-quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-title {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent-deep), var(--accent));
-            color: white;
-            padding: 4rem 2rem;
-            border-radius: 0.75rem;
-            margin: 2rem 0;
-        }
-
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .cta-dark {
-            background: linear-gradient(135deg, var(--accent-deep), var(--accent));
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .cta-dark h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .nav-center {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                height: 350px;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-            }
-
-            .comparison {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 3rem 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-        }
-    
-        /* Footer */
-        footer {
-            background: var(--footer-dark);
-            padding: 4rem 2rem 1rem;
-            color: #ffffff;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-col h4 {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            color: #ffffff;
-        }
-
-        .footer-col a {
-            display: block;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.88rem;
-            line-height: 1.4;
-            padding: 0.25rem 0;
-            transition: color 0.3s ease;
-        }
-
-        .footer-col p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
-
-        .footer-col a:hover {
-            color: #ffffff;
-        }
-
-        .footer-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: #ffffff;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .footer-bottom-links {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-        }
-
-    
-        
-
-    
-        /* Chat Widget */
-        .chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
-        .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(124,58,237,0.4); transition: all 0.3s ease; color: white; }
-        .chat-toggle:hover { background: var(--accent-deep); transform: scale(1.05); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
-        .chat-toggle .chat-icon-open, .chat-toggle .chat-icon-close { position: absolute; transition: opacity 0.2s ease, transform 0.2s ease; }
-        .chat-toggle .chat-icon-close { opacity: 0; transform: rotate(-90deg); }
-        .chat-widget.active .chat-toggle .chat-icon-open { opacity: 0; transform: rotate(90deg); }
-        .chat-widget.active .chat-toggle .chat-icon-close { opacity: 1; transform: rotate(0deg); }
-        .chat-panel { position: absolute; bottom: 72px; right: 0; width: 380px; height: 520px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.95); transition: all 0.3s ease; display: flex; flex-direction: column; }
-        .chat-widget.active .chat-panel { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
-        .chat-header { background: var(--accent); padding: 1.1rem 1.25rem; color: white; flex-shrink: 0; }
-        .chat-header h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 0.15rem; color: white; }
-        .chat-header p { font-size: 0.78rem; opacity: 0.85; margin: 0; }
-        .chat-header .chat-status { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; opacity: 0.9; margin-top: 0.4rem; }
-        .chat-status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
-        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        .chat-messages { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
-        .chat-messages::-webkit-scrollbar { width: 4px; }
-        .chat-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
-        .chat-msg { max-width: 85%; padding: 0.75rem 1rem; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
-        .chat-msg.bot { background: #f8f7ff; border-radius: 12px 12px 12px 4px; color: #1a1a2e; align-self: flex-start; }
-        .chat-msg.user { background: #7c3aed; color: white; border-radius: 12px 12px 4px 12px; align-self: flex-end; }
-        .chat-msg.typing { display: flex; gap: 4px; align-items: center; padding: 0.85rem 1.2rem; }
-        .chat-msg.typing span { width: 7px; height: 7px; background: rgba(124,58,237,0.4); border-radius: 50%; animation: typingBounce 1.4s ease-in-out infinite; }
-        .chat-msg.typing span:nth-child(2) { animation-delay: 0.2s; }
-        .chat-msg.typing span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
-        .chat-input-area { padding: 0.75rem 1rem; border-top: 1px solid #e5e7eb; display: flex; gap: 0.5rem; flex-shrink: 0; background: white; }
-        .chat-input { flex: 1; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 0.65rem 0.85rem; font-family: 'Inter', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
-        .chat-input:focus { border-color: #7c3aed; }
-        .chat-send { width: 40px; height: 40px; border-radius: 10px; background: #7c3aed; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; transition: background 0.2s; flex-shrink: 0; }
-        .chat-send:hover { background: #6d28d9; }
-        .chat-send:disabled { background: #e5e7eb; cursor: not-allowed; }
-        .chat-quick-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-        .chat-quick-btn { padding: 0.4rem 0.75rem; background: white; border: 1.5px solid #e5e7eb; border-radius: 20px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.78rem; color: #4a4a68; font-weight: 500; transition: all 0.2s; text-decoration: none; }
-        .chat-quick-btn:hover { border-color: #7c3aed; color: #7c3aed; background: #f8f7ff; }
-        @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); height: 70vh; right: -8px; } }
-
-    
-        /* Mobile Fixes */
-        img, video, svg { max-width: 100%; height: auto; }
-        * { -webkit-text-size-adjust: 100%; }
-
-        @media (max-width: 768px) {
-            body { overflow-x: hidden; }
-
-            /* Footer mobile */
-            .footer-content {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 1.5rem !important;
-            }
-
-            .footer-bottom-links {
-                flex-direction: column !important;
-                gap: 0.5rem !important;
-                align-items: center;
-            }
-
-            /* Nav */
-            .nav-cta { display: none !important; }
-
-            /* Typography */
-            h1 { font-size: 1.75rem !important; }
-            h2 { font-size: 1.4rem !important; }
-            h3 { font-size: 1.15rem !important; }
-
-            /* Sections */
-            section { padding: 2.5rem 1rem !important; }
-
-            /* Hero tweaks */
-            #hero, .hero { height: auto !important; min-height: 300px !important; padding: 3rem 1rem !important; background-attachment: scroll !important; background-size: cover !important; }
-            .hero h1 { font-size: 1.75rem !important; }
-            .hero-subtitle { font-size: 1rem !important; }
-            .hero-ctas, .hero-buttons { flex-direction: column !important; gap: 0.75rem !important; }
-
-            /* Grids */
-            .pricing-grid, .services-grid, .industries-grid,
-            .stats-grid, .steps-grid, .features-grid,
-            .benefit-item, .comparison, .founders-grid,
-            .blog-grid, .team-grid, .tools-grid, .partners-grid,
-            .case-grid, .demo-grid, .resources-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
-            }
-
-            /* Tables scroll horizontally */
-            .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-            /* Forms */
-            .form-row, .form-group-row { flex-direction: column !important; }
-            input, select, textarea { font-size: 16px !important; } /* Prevent iOS zoom */
-
-            /* Pricing cards */
-            .pricing-card { padding: 1.5rem !important; }
-            .price { font-size: 2rem !important; }
-
-            /* Blog cards */
-            .blog-card { flex-direction: column !important; }
-            .blog-card-image { width: 100% !important; height: 180px !important; }
-
-            /* CTA sections full width */
-            .cta-content, .cta-box { padding: 2rem 1rem !important; }
-
-            /* Inline grids with style attributes */
-            div[style*="grid-template-columns: 1fr 1fr"],
-            div[style*="grid-template-columns:1fr 1fr"],
-            div[style*="grid-template-columns: repeat(2"],
-            div[style*="grid-template-columns: repeat(3"],
-            div[style*="grid-template-columns: repeat(4"] {
-                grid-template-columns: 1fr !important;
-            }
-
-            /* Flex layouts that should stack */
-            div[style*="display: flex"][style*="gap: 3rem"],
-            div[style*="display: flex"][style*="gap: 4rem"],
-            div[style*="display:flex"][style*="gap:3rem"],
-            div[style*="display:flex"][style*="gap:4rem"] {
-                flex-direction: column !important;
-            }
-
-            /* FAQ */
-            .faq-section { padding: 3rem 1rem !important; }
-            .faq-question { font-size: 0.95rem !important; }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr !important;
-            }
-            .footer-col { margin-bottom: 0.5rem; }
-            h1 { font-size: 1.5rem !important; }
-            h2 { font-size: 1.25rem !important; }
-        }
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-            <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;padding:0 2rem;background:var(--bg-light,#fff);display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
-        <a href="/" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary,#1a1a2e);text-decoration:none;display:flex;flex-direction:column;line-height:1.1;">
-            FNDI
-            <span style="font-size:0.55rem;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-top:2px;color:var(--text-tertiary,#6b7280);">Future Native Digital Intelligence</span>
-        </a>
-        <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;align-items:center;margin:0;padding:0;">
-            <li class="nav-dd" style="position:relative;">
-                <a href="/services/voice-agents/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;display:flex;align-items:center;gap:0.35rem;padding:0.5rem 0;">Services <span class="dd-arrow" style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--text-secondary,#4a4a68);transition:transform 0.3s;"></span></a>
-                <div class="dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:0.75rem 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.25s;pointer-events:none;">
-                    <a href="/services/voice-agents/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">AI Voice Agents</a>
-                    <a href="/services/chatbots/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Website Chatbots</a>
-                    <a href="/services/websites/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Web Development</a>
-                    <a href="/services/automation/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Automation</a>
-                    <a href="/services/crm/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">CRM Solutions</a>
-                    <a href="/services/social-media/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Social Media</a>
-                    <a href="/services/meta-ads/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Meta Ads</a>
+    <!-- shell:nav -->
+    <nav id="main-nav">
+        <a href="/" class="nav-logo" aria-label="FNDI home">FNDI<span>Future Native Digital Intelligence</span></a>
+        <ul class="nav-links">
+            <li>
+                <a href="#services">Services <span class="dropdown-arrow"></span></a>
+                <div class="nav-dropdown">
+                    <a href="/services/meta-ads/">Meta Ads</a>
+                    <a href="/services/websites/">Web Development</a>
+                    <a href="/services/social-media/">Social Media</a>
+                    <a href="/services/crm/">CRM Solutions</a>
+                    <a href="/services/automation/">Automation</a>
                 </div>
             </li>
-            <li class="nav-dd" style="position:relative;">
-                <a href="/industries/dental/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;display:flex;align-items:center;gap:0.35rem;padding:0.5rem 0;">Industries <span class="dd-arrow" style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--text-secondary,#4a4a68);transition:transform 0.3s;"></span></a>
-                <div class="dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:0.75rem 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.25s;pointer-events:none;">
-                    <a href="/industries/dental/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Dental Offices</a>
-                    <a href="/industries/med-spas/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Med Spas</a>
-                    <a href="/industries/law-firms/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Law Firms</a>
-                    <a href="/industries/restaurants/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Restaurants</a>
-                    <a href="/industries/salons/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Salons</a>
-                    <a href="/industries/home-services/" style="display:block;padding:0.6rem 1.25rem;color:#4a4a68;text-decoration:none;font-size:0.9rem;font-weight:500;">Home Services</a>
+            <li>
+                <a href="#industries">Industries <span class="dropdown-arrow"></span></a>
+                <div class="nav-dropdown">
+                    <a href="/industries/dental/">Dental Offices</a>
+                    <a href="/industries/med-spas/">Med Spas</a>
+                    <a href="/industries/law-firms/">Law Firms</a>
+                    <a href="/industries/restaurants/">Restaurants</a>
+                    <a href="/industries/salons/">Salons</a>
+                    <a href="/industries/home-services/">Home Services</a>
                 </div>
             </li>
-            <li><a href="/pricing/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Pricing</a></li>
-            <li><a href="/about/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">About</a></li>
-            <li><a href="/portfolio/" style="color:var(--text-secondary,#4a4a68);text-decoration:none;font-weight:500;font-size:0.95rem;">Portfolio</a></li>
-            <li><a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;">Get Started</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
         </ul>
-        <div id="hamburger" onclick="document.getElementById('mob-menu').classList.toggle('active');this.classList.toggle('active');" style="display:none;flex-direction:column;gap:5px;cursor:pointer;width:24px;">
-            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
-            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
-            <span style="width:100%;height:2px;background:var(--text-primary,#1a1a2e);transition:all 0.3s;"></span>
+        <div class="nav-cta">
+            <a href="/book/" class="btn btn-primary">Get Started</a>
         </div>
-    </nav>
-    <div id="mob-menu" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:1.5rem;flex-direction:column;gap:0.25rem;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:80vh;overflow-y:auto;">
-        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:0 0 0.3rem;">Services</div>
-        <a href="/services/voice-agents/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">AI Voice Agents</a>
-        <a href="/services/chatbots/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Website Chatbots</a>
-        <a href="/services/websites/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Web Development</a>
-        <a href="/services/automation/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Automation</a>
-        <a href="/services/crm/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">CRM Solutions</a>
-        <a href="/services/social-media/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Social Media</a>
-        <a href="/services/meta-ads/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Meta Ads</a>
-        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:1rem 0 0.3rem;border-top:1px solid #e5e7eb;margin-top:0.5rem;">Industries</div>
-        <a href="/industries/dental/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Dental Offices</a>
-        <a href="/industries/med-spas/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Med Spas</a>
-        <a href="/industries/law-firms/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Law Firms</a>
-        <a href="/industries/restaurants/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Restaurants</a>
-        <a href="/industries/salons/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Salons</a>
-        <a href="/industries/home-services/" style="padding:0.5rem 0 0.5rem 1rem;color:#6b7280;text-decoration:none;font-size:0.9rem;">Home Services</a>
-        <div style="font-size:0.7rem;font-weight:700;color:var(--accent,#7c3aed);text-transform:uppercase;letter-spacing:0.1em;padding:1rem 0 0.3rem;border-top:1px solid #e5e7eb;margin-top:0.5rem;">More</div>
-        <a href="/pricing/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Pricing</a>
-        <a href="/about/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">About</a>
-        <a href="/portfolio/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Portfolio</a>
-        <a href="/blog/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Blog</a>
-        <a href="/contact/" style="padding:0.6rem 0;color:#4a4a68;text-decoration:none;font-weight:500;">Contact</a>
-        <a href="/book/" style="background:var(--accent,#7c3aed);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;text-align:center;margin-top:0.5rem;">Get Started</a>
-    </div>
-    <style>.nav-dd:hover .dd-menu{opacity:1!important;visibility:visible!important;pointer-events:all!important}.dd-menu a:hover{background:#f8f7ff;color:#7c3aed!important}.nav-dd:hover .dd-arrow{transform:rotate(180deg)}@media(max-width:768px){.nav-links{display:none!important}#hamburger{display:flex!important}#mob-menu.active{display:flex!important}}</style>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>AI Answering Service for Law Firms</h1>
-            <p class="hero-subtitle">Never miss a potential client again. AI that answers calls professionally, qualifies cases, and routes urgent matters instantly.</p>
-            <div class="hero-ctas">
-                <a href="#cta" class="btn btn-primary">Get Your Free Audit</a>
-                <a href="#cta" class="btn btn-secondary">See How It Works</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-alt">
-        <h2>The Challenge for Law Firms</h2>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Prospective clients are time-sensitive. 60% won't leave a voicemail, and 42% hire the first firm that picks up. A missed call today means a client paying your competitor tomorrow.</p>
-        <div class="problem-grid">
-            <div class="problem-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" style="color: var(--accent);"/>
-                </svg>
-                <h3>First Call Wins Clients</h3>
-                <p>42% of prospects hire the first firm that answers. Missed calls mean lost cases and revenue to competitors.</p>
-            </div>
-            <div class="problem-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" style="color: var(--accent);"/>
-                </svg>
-                <h3>Intake Process Bottleneck</h3>
-                <p>Intake specialists tied up screening calls limits partner availability. Prospects wait or call elsewhere.</p>
-            </div>
-            <div class="problem-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
-                </svg>
-                <h3>After-Hours Leads Lost</h3>
-                <p>Prospects calling after 5pm, weekends, or during trials can't reach anyone. Emergency cases go unanswered.</p>
-            </div>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-item fade-in">
-                <div class="stat-number">42%</div>
-                <div class="stat-label">hire first responder firm</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number">60%</div>
-                <div class="stat-label">never leave voicemail</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number">3 hrs</div>
-                <div class="stat-label">typical response time lost</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-purple">
-        <h2>How FNDI Solves This</h2>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">FNDI's AI answers every call 24/7, qualifies cases immediately, captures critical intake information, and routes urgent matters to partners in seconds. Your firm never loses a potential client again.</p>
-        <div class="solution-grid">
-            <div class="solution-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" style="color: var(--accent);"/>
-                </svg>
-                <h3>24/7 Case Intake</h3>
-                <p>AI answers every call, asks intelligent intake questions, captures case details, and identifies case type and urgency automatically.</p>
-            </div>
-            <div class="solution-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" style="color: var(--accent);"/>
-                </svg>
-                <h3>Smart Case Routing</h3>
-                <p>AI qualifies urgency, routes emergency matters to on-call partners instantly, and schedules routine consultations with available attorneys.</p>
-            </div>
-            <div class="solution-card fade-in">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" style="color: var(--accent);"/>
-                </svg>
-                <h3>Immediate Response</h3>
-                <p>Prospects get professional answers to common questions (contingency, rates, process) in seconds. No more voicemail tag.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-alt">
-        <h2>The Results Your Firm Will See</h2>
-        <div class="comparison">
-            <div class="comparison-col without">
-                <h3>Without AI Service</h3>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
-                    </svg>
-                    <span>60% of calls unanswered</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
-                    </svg>
-                    <span>No after-hours response</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
-                    </svg>
-                    <span>Manual intake process</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="color: #dc2626; stroke-width: 3;"/>
-                    </svg>
-                    <span>Partners handling screens</span>
-                </div>
-            </div>
-            <div class="comparison-col with">
-                <h3>With FNDI AI Service</h3>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
-                    </svg>
-                    <span>100% of calls answered</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
-                    </svg>
-                    <span>Emergency routing 24/7</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
-                    </svg>
-                    <span>Automatic smart intake</span>
-                </div>
-                <div class="comparison-item">
-                    <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" style="color: #16a34a; stroke-width: 3;"/>
-                    </svg>
-                    <span>Partners focus on billable</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-purple">
-        <h2>How It Works in 3 Steps</h2>
-        <div class="timeline">
-            <div class="timeline-item fade-in">
-                <div class="timeline-number">1</div>
-                <h3>Prospect Calls Anytime</h3>
-                <p>Potential client calls your firm number 24/7/365. AI answers professionally on the first ring, never a voicemail.</p>
-            </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-number">2</div>
-                <h3>Instant Qualification</h3>
-                <p>AI asks smart intake questions, identifies case type and urgency, and captures all critical details in your system automatically.</p>
-            </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-number">3</div>
-                <h3>Smart Routing & Follow-Up</h3>
-                <p>Emergency cases route to on-call partners immediately. Routine matters schedule with available attorneys. Everyone gets touched within hours.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-alt">
-        <h2>Trusted by Law Firms Across the Country</h2>
-        <div class="testimonial fade-in">
-            <p class="testimonial-quote">"We were hemorrhaging potential clients because prospects couldn't reach us after hours. FNDI's AI now captures intake information from every single call, 24/7. We've increased client retentions by 35% and reduced partner time on screenings by 20 hours per week. It's profoundly changed our practice."</p>
-            <div class="testimonial-author">Michael Chen</div>
-            <div class="testimonial-title">Managing Partner, Chen & Associates, San Francisco CA</div>
-        </div>
-    </section>
-
-    <section id="cta" class="cta-section">
-        <h2>Ready to Never Miss a Client Again?</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Get a consultation on how FNDI captures missed leads and improves case quality through intelligent intake.</p>
-        <form class="cta-form" action="https://formsubmit.co/support@fndi.tech" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://fndi.tech/thank-you/">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" name="phone" placeholder="Your Phone Number">
-            </div>
-            <div class="form-group">
-                <textarea name="message" placeholder="Your practice areas (optional)"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Your Consultation</button>
-        </form>
-    </section>
-
-        
-    <!-- Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-panel">
-            <div class="chat-header">
-                <h4>FNDI AI Advisor</h4>
-                <p>Ask me anything about our services</p>
-                <div class="chat-status"><span class="chat-status-dot"></span> Online now</div>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="chat-msg bot">Hey! I'm the FNDI AI Advisor. What kind of business do you run? I'd love to show you how AI can help you grow.</div>
-                <div class="chat-quick-actions" id="chatQuickActions">
-                    <button class="chat-quick-btn" onclick="sendQuick('What services do you offer?')">Your services</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('How much does it cost?')">Pricing</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('I run a dental office')">I have a dental office</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('I want to book a call')">Book a call</button>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." autocomplete="off">
-                <button class="chat-send" id="chatSend" aria-label="Send">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                </button>
-            </div>
-        </div>
-        <button class="chat-toggle" aria-label="Chat with us">
-            <svg class="chat-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            <svg class="chat-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
         </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-section-label">Services</div>
+        <a href="/services/meta-ads/">Meta Ads</a>
+        <a href="/services/websites/">Web Development</a>
+        <a href="/services/social-media/">Social Media</a>
+        <a href="/services/crm/">CRM Solutions</a>
+        <a href="/services/automation/">Automation</a>
+        <div class="mobile-section-label">Industries</div>
+        <a href="/industries/dental/">Dental Offices</a>
+        <a href="/industries/med-spas/">Med Spas</a>
+        <a href="/industries/law-firms/">Law Firms</a>
+        <a href="/industries/restaurants/">Restaurants</a>
+        <a href="/industries/salons/">Salons</a>
+        <a href="/industries/home-services/">Home Services</a>
+        <div class="mobile-section-label">More</div>
+        <a href="/pricing/">Pricing</a>
+        <a href="/about/">About</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/book/" class="btn btn-primary">Get Started</a>
     </div>
 
+    <!-- /shell:nav -->
+
+    <main>
+        <section class="page-hero">
+            <div class="wrap">
+                <h1>More consultation requests for your law firm</h1>
+                <p class="lede">We run Facebook and Instagram ads built around the kinds of cases you take, send people to a simple intake page, and make sure each inquiry gets a prompt reply from your office.</p>
+                <div class="hero-buttons">
+                    <a href="/book/" class="btn btn-primary">Book a Free Call</a>
+                    <a href="/pricing/" class="btn btn-outline">See pricing</a>
+                </div>
+            </div>
+        </section>
+        <section class="band">
+            <div class="wrap">
+                <div class="head">
+                    <h2>Campaigns organized by case type</h2>
+                    <p class="lede">Someone dealing with an immigration question and someone hurt in a car accident need to hear different things. We do not run one general ad for the whole firm.</p>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <h3>One practice area per campaign</h3>
+                        <p>Personal injury, immigration, family law and estate planning each get their own ads and budget, so you can put more behind the matters you want.</p>
+                    </div>
+                    <div class="item">
+                        <h3>A message that fits the situation</h3>
+                        <p>Each ad speaks to what the person is going through and offers a clear next step, usually a consultation with your office.</p>
+                    </div>
+                    <div class="item">
+                        <h3>The area and language you serve</h3>
+                        <p>We target the counties you practice in and can run ads in English and Spanish to reach the people your firm serves.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band-wash">
+            <div class="wrap">
+                <div class="head">
+                    <h2>Advertising that respects the rules</h2>
+                    <p class="lede">Lawyer advertising is regulated, and your name is on every ad. We are marketers, not attorneys, so nothing runs without your review.</p>
+                </div>
+                <div class="versus">
+                    <div>
+                        <h3>What we leave out</h3>
+                        <ul>
+                            <li>Promises or predictions about case results</li>
+                            <li>Comparisons with other firms that cannot be backed up</li>
+                            <li>Pressure tactics aimed at people in a hard moment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>What we do</h3>
+                        <ul>
+                            <li>Describe your practice areas and how a consultation works</li>
+                            <li>Include the disclaimers your firm requires</li>
+                            <li>Send every ad and page to you for approval before it goes live</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="band">
+            <div class="wrap split">
+                <div>
+                    <h2>An intake process that does not lose people</h2>
+                    <p>People looking for a lawyer often contact more than one firm. A simple form and a prompt reply give your office a fair chance at the conversation.</p>
+                </div>
+                <div class="points">
+                    <div>
+                        <h4>A short intake page</h4>
+                        <p>A page for each practice area with a few questions about the matter, so your staff knows what the inquiry is about before calling.</p>
+                    </div>
+                    <div>
+                        <h4>Prompt acknowledgment</h4>
+                        <p>Each person gets a text and an email confirming you received the request, with a link to schedule a consultation.</p>
+                    </div>
+                    <div>
+                        <h4>A clear list for your staff</h4>
+                        <p>Every inquiry is tracked in one place with its case type and status, so no one is left waiting for a call back.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="band band-ink">
+            <div class="wrap audit">
+                <div>
+                    <h2>Tell us about your firm</h2>
+                    <p class="lede">Send a few details and one of the founders will get back to you to set up a free call. Pricing is custom, and most projects launch within 7 to 14 business days.</p>
+                </div>
+                <form class="audit-form" action="https://formsubmit.co/support@fndi.tech" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://fndi.tech/thank-you/">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="phone">Phone Number (optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel">
+                    </div>
+                    <div class="form-group full">
+                        <label for="message">Your practice areas (optional)</label>
+                        <textarea id="message" name="message" placeholder="Your practice areas"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request a Free Call</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- shell:footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">FNDI</div>
-                <p style="margin-bottom: 0.3rem;">Future Native Digital Intelligence</p>
-                <p>AI solutions for small businesses.</p>
-                <p style="margin-top: 0.5rem;">Based in Miami, FL</p>
-                <p><a href="mailto:support@fndi.tech">support@fndi.tech</a></p>
+                <p>Future Native Digital Intelligence</p>
+                <p>More customers for local businesses.</p>
+                <p>Based in Miami, FL</p>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/fndi_tech/" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                    <a href="https://www.linkedin.com/company/fnditech/" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="mailto:support@fndi.tech" class="social-icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.instagram.com/fndi_tech/" class="social-icon" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4"/><circle cx="9" cy="9" r="3.2"/><circle cx="13" cy="5" r=".6" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/company/fnditech/" class="social-icon" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="2.5"/><path d="M5.8 8v4.5M5.8 5.6v.1M8.6 12.5V8m0 2.2c0-1.4 1-2.2 2-2.2s1.8.7 1.8 2.2v2.3"/></svg></a>
+                    <a href="mailto:support@fndi.tech" class="social-icon" aria-label="Email"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3.5" width="14" height="11" rx="2"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Solutions</h4>
-                <a href="/services/voice-agents/">Voice Agents</a>
-                <a href="/services/chatbots/">Chatbots</a>
-                <a href="/services/websites/">Websites</a>
-                <a href="/services/automation/">Automation</a>
-                <a href="/services/crm/">CRM</a>
-                <a href="/services/social-media/">Social Media</a>
                 <a href="/services/meta-ads/">Meta Ads</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/automation/">Automation</a>
             </div>
             <div class="footer-col">
                 <h4>Industries</h4>
@@ -1102,27 +241,19 @@
                 <h4>Company</h4>
                 <a href="/about/">About Us</a>
                 <a href="/pricing/">Pricing</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/blog/">Blog</a>
-                <a href="/careers/">Careers</a>
-                <a href="/contact/">Contact</a>
+                <a href="/how-it-works/">How It Works</a>
                 <a href="/faq/">FAQ</a>
-                <a href="/case-studies/">Case Studies</a>
+                <a href="/careers/">Careers</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/partners/">Partners</a>
-                <a href="/resources/">Resources</a>
-                <a href="/compare/">Compare</a>
-                <a href="/how-it-works/">How It Works</a>
-                <a href="/demos/">Demos</a>
-                <a href="/assessment/">Free Assessment</a>
+                <h4>Get in touch</h4>
                 <a href="/book/">Book a Call</a>
-                <a href="/onboarding/">Client Onboarding</a>
+                <a href="/contact/">Contact</a>
+                <a href="mailto:support@fndi.tech">support@fndi.tech</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FNDI. All rights reserved.</p>
+            <p>© 2026 FNDI. All rights reserved.</p>
             <div class="footer-bottom-links">
                 <a href="/terms/">Terms of Service</a>
                 <a href="/privacy/">Privacy Policy</a>
@@ -1132,53 +263,8 @@
         </div>
     </footer>
 
-    <script>
-        const nav = document.getElementById('nav');
-        const hamburger = document.getElementById('hamburger');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-
-        <script>
-        const chatWidget = document.getElementById('chatWidget');
-        const chatToggle = chatWidget.querySelector('.chat-toggle');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const chatSend = document.getElementById('chatSend');
-        let chatHistory = [];
-        let isTyping = false;
-        chatToggle.addEventListener('click', () => { chatWidget.classList.toggle('active'); if (chatWidget.classList.contains('active')) chatInput.focus(); });
-        function addMessage(text, role) { const msg = document.createElement('div'); msg.className = 'chat-msg ' + role; msg.textContent = text; chatMessages.appendChild(msg); chatMessages.scrollTop = chatMessages.scrollHeight; }
-        function showTyping() { const t = document.createElement('div'); t.className = 'chat-msg bot typing'; t.id = 'typingIndicator'; t.innerHTML = '<span></span><span></span><span></span>'; chatMessages.appendChild(t); chatMessages.scrollTop = chatMessages.scrollHeight; }
-        function hideTyping() { const t = document.getElementById('typingIndicator'); if (t) t.remove(); }
-        async function sendMessage(text) { if (!text.trim() || isTyping) return; const qa = document.getElementById('chatQuickActions'); if (qa) qa.remove(); addMessage(text, 'user'); chatHistory.push({ role: 'user', content: text }); chatInput.value = ''; isTyping = true; chatSend.disabled = true; showTyping(); try { const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: chatHistory }) }); const data = await res.json(); hideTyping(); const reply = data.reply || "Sorry, something went wrong. Try again!"; addMessage(reply, 'bot'); chatHistory.push({ role: 'assistant', content: reply }); } catch (e) { hideTyping(); addMessage("Hmm, I'm having trouble connecting. Try again in a moment!", 'bot'); } isTyping = false; chatSend.disabled = false; chatInput.focus(); }
-        function sendQuick(text) { sendMessage(text); }
-        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-        chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(chatInput.value); } });
-    </script>
+    <script src="/site.js"></script>
 <script src="/lang.js"></script>
+    <!-- /shell:footer -->
 </body>
 </html>

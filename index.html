@@ -6,11 +6,11 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon-180x180.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FNDI — AI Voice Agents & Automation for Small Businesses</title>
-    <meta name="description" content="AI voice agents, chatbots, and automation tools that help small businesses answer every call, book appointments, and grow revenue 24/7.">
-    <meta name="keywords" content="AI voice agents, chatbots, business automation, appointment booking, customer service automation">
-    <meta property="og:title" content="FNDI — Never Miss Another Customer Again">
-    <meta property="og:description" content="AI solutions for small businesses. 24/7 customer engagement. Custom-built, not off-the-shelf.">
+    <title>FNDI | More Customers for Local Businesses</title>
+    <meta name="description" content="FNDI helps local businesses get more customers with ads, websites, social media, and follow-up that turns leads into bookings.">
+    <meta name="keywords" content="local business marketing, Meta ads, web design, social media, lead follow-up, Miami">
+    <meta property="og:title" content="FNDI | Never Miss Another Customer Again">
+    <meta property="og:description" content="We help local businesses get more customers. Custom-built, not off-the-shelf.">
     <meta property="og:image" content="https://fndi.tech/og-image.png">
     <meta name="theme-color" content="#ffffff">
 
@@ -21,1187 +21,27 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YSFXDYZ46B');
+        document.documentElement.classList.add('js');
     </script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-light: #ffffff;
-            --bg-alt: #f8f9fc;
-            --bg-alt-purple: #f8f7ff;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a68;
-            --text-tertiary: #6b7280;
-            --accent: #7c3aed;
-            --accent-deep: #6d28d9;
-            --border: #e5e7eb;
-            --footer-dark: #0f0f23;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
-        h2 { font-size: clamp(1.75rem, 5vw, 3rem); letter-spacing: -0.01em; }
-        h3 { font-size: 1.5rem; }
-
-        p { line-height: 1.7; }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Over hero: white text */
-        nav:not(.scrolled) .nav-logo { color: #ffffff; }
-        nav:not(.scrolled) .nav-links > li > a { color: #ffffff; }
-        nav:not(.scrolled) .hamburger span { background: #ffffff; }
-        nav:not(.scrolled) .dropdown-arrow { border-top-color: #ffffff; }
-
-        /* After scroll: dark text */
-        nav.scrolled .nav-logo { color: var(--text-primary); }
-        nav.scrolled .nav-links > li > a { color: var(--text-secondary); }
-        nav.scrolled .hamburger span { background: var(--text-primary); }
-        nav.scrolled .dropdown-arrow { border-top-color: var(--text-secondary); }
-
-        .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-logo span {
-            font-size: 0.55rem;
-            font-weight: 500;
-            color: inherit;
-            opacity: 0.8;
-            letter-spacing: 0.05em;
-            margin-top: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links > li {
-            position: relative;
-        }
-
-        .nav-links > li > a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links > li > a:hover {
-            color: var(--accent);
-        }
-
-        /* Dropdown arrow */
-        .dropdown-arrow {
-            width: 0;
-            height: 0;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 5px solid var(--text-secondary);
-            transition: transform 0.3s, border-top-color 0.3s;
-        }
-
-        .nav-links > li:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Dropdown menu */
-        .nav-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0.75rem 0;
-            min-width: 220px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.25s ease;
-            pointer-events: none;
-        }
-
-        .nav-links > li:hover .nav-dropdown {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: all;
-        }
-
-        .nav-dropdown a {
-            display: block;
-            padding: 0.6rem 1.25rem;
-            color: var(--text-secondary) !important;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .nav-dropdown a:hover {
-            background: var(--bg-alt-purple);
-            color: var(--accent) !important;
-        }
-
-        .nav-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-family: 'Inter', sans-serif;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-deep);
-            box-shadow: 0 8px 16px rgba(124, 58, 237, 0.25);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #ffffff;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            width: 24px;
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 2px;
-            background: currentColor;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--bg-light);
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem;
-            flex-direction: column;
-            gap: 0.25rem;
-            z-index: 999;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.6rem 0;
-        }
-
-        .mobile-menu .mobile-section-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 1rem 0 0.3rem;
-            border-top: 1px solid var(--border);
-            margin-top: 0.5rem;
-        }
-
-        .mobile-menu .mobile-section-label:first-child {
-            border-top: none;
-            margin-top: 0;
-            padding-top: 0;
-        }
-
-        .mobile-menu a.mobile-sub {
-            padding-left: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-        }
-
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 6rem 2rem 3rem;
-            background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80');
-            background-size: cover;
-            background-position: center right;
-            background-attachment: fixed;
-            position: relative;
-        }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
-            pointer-events: none;
-        }
-
-        #hero .container {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-            max-width: 650px;
-        }
-
-        .hero-text h1 {
-            margin: 1rem 0;
-            color: #ffffff;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-
-        .hero-label {
-            display: inline-block;
-            background: rgba(124, 58, 237, 0.25);
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.95);
-            margin: 1.5rem 0;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-
-        /* Services Section */
-        #services {
-            background: var(--bg-light);
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            background: var(--bg-alt);
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: #f3e8ff;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-
-        .service-link:hover {
-            gap: 0.8rem;
-        }
-
-        /* How It Works Section */
-        #how-it-works {
-            background: var(--bg-alt-purple);
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
-            color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .step h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .step p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Why FNDI Section */
-        #why-fndi {
-            background: var(--bg-light);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: #f3e8ff;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.8rem;
-        }
-
-        .feature-card h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Industries Section */
-        #industries {
-            background: var(--bg-alt-purple);
-        }
-
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .industry-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-        }
-
-        .industry-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .industry-card h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .industry-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Stats Section */
-        #stats {
-            background: var(--bg-light);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .stat-item p {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* CTA Audit Section */
-        #cta-audit {
-            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        #cta-audit h2 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-
-        #cta-audit .section-subtitle {
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        .audit-form {
-            max-width: 500px;
-            margin: 2rem auto 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-group input,
-        .form-group select {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group select::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .form-group select {
-            color: #ffffff;
-        }
-
-        .form-group select option {
-            color: var(--text-primary);
-            background: var(--bg-light);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--footer-dark);
-            padding: 4rem 2rem 1rem;
-            color: #ffffff;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-col h4 {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            color: #ffffff;
-        }
-
-        .footer-col a {
-            display: block;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.88rem;
-            line-height: 1.4;
-            padding: 0.25rem 0;
-            transition: color 0.3s ease;
-        }
-
-        .footer-col p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
-
-        .footer-col a:hover {
-            color: #ffffff;
-        }
-
-        .footer-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: #ffffff;
-        }
-
-        /* FAQ Accordion */
-        .faq-section {
-            padding: 5rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .faq-section .faq-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid var(--border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            padding: 1.25rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-align: left;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-chevron {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-            color: var(--accent);
-        }
-
-        .faq-item.open .faq-chevron {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease, padding 0.35s ease;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 300px;
-            padding-bottom: 1.25rem;
-        }
-
-        .faq-answer p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .faq-more {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .faq-more a {
-            color: var(--accent);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .faq-more a:hover {
-            color: var(--accent-deep);
-        }
-
-        /* Chat Widget */
-        .chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
-        .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(124,58,237,0.4); transition: all 0.3s ease; color: white; }
-        .chat-toggle:hover { background: var(--accent-deep); transform: scale(1.05); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
-        .chat-toggle .chat-icon-open, .chat-toggle .chat-icon-close { position: absolute; transition: opacity 0.2s ease, transform 0.2s ease; }
-        .chat-toggle .chat-icon-close { opacity: 0; transform: rotate(-90deg); }
-        .chat-widget.active .chat-toggle .chat-icon-open { opacity: 0; transform: rotate(90deg); }
-        .chat-widget.active .chat-toggle .chat-icon-close { opacity: 1; transform: rotate(0deg); }
-        .chat-panel { position: absolute; bottom: 72px; right: 0; width: 380px; height: 520px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.95); transition: all 0.3s ease; display: flex; flex-direction: column; }
-        .chat-widget.active .chat-panel { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
-        .chat-header { background: var(--accent); padding: 1.1rem 1.25rem; color: white; flex-shrink: 0; }
-        .chat-header h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 0.15rem; color: white; }
-        .chat-header p { font-size: 0.78rem; opacity: 0.85; margin: 0; }
-        .chat-header .chat-status { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; opacity: 0.9; margin-top: 0.4rem; }
-        .chat-status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
-        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        .chat-messages { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
-        .chat-messages::-webkit-scrollbar { width: 4px; }
-        .chat-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
-        .chat-msg { max-width: 85%; padding: 0.75rem 1rem; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
-        .chat-msg.bot { background: var(--bg-alt-purple); border-radius: 12px 12px 12px 4px; color: var(--text-primary); align-self: flex-start; }
-        .chat-msg.user { background: var(--accent); color: white; border-radius: 12px 12px 4px 12px; align-self: flex-end; }
-        .chat-msg.typing { display: flex; gap: 4px; align-items: center; padding: 0.85rem 1.2rem; }
-        .chat-msg.typing span { width: 7px; height: 7px; background: rgba(124,58,237,0.4); border-radius: 50%; animation: typingBounce 1.4s ease-in-out infinite; }
-        .chat-msg.typing span:nth-child(2) { animation-delay: 0.2s; }
-        .chat-msg.typing span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
-        .chat-input-area { padding: 0.75rem 1rem; border-top: 1px solid var(--border); display: flex; gap: 0.5rem; flex-shrink: 0; background: white; }
-        .chat-input { flex: 1; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.65rem 0.85rem; font-family: 'Inter', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; resize: none; }
-        .chat-input:focus { border-color: var(--accent); }
-        .chat-send { width: 40px; height: 40px; border-radius: 10px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; transition: background 0.2s; flex-shrink: 0; }
-        .chat-send:hover { background: var(--accent-deep); }
-        .chat-send:disabled { background: var(--border); cursor: not-allowed; }
-        .chat-quick-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-        .chat-quick-btn { padding: 0.4rem 0.75rem; background: white; border: 1.5px solid var(--border); border-radius: 20px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--text-secondary); font-weight: 500; transition: all 0.2s; text-decoration: none; }
-        .chat-quick-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-alt-purple); }
-        @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); height: 70vh; right: -8px; } }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Scroll reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 0 1rem;
-            }
-
-            .nav-links,
-            .nav-cta {
-                display: none !important;
-            }
-
-            .hamburger {
-                display: flex !important;
-            }
-
-            #hero {
-                min-height: 85vh;
-                padding: 5rem 1rem 2rem;
-                background-position: center;
-                background-attachment: scroll;
-                background-size: cover;
-                justify-content: center;
-            }
-
-            .hero-content {
-                gap: 2rem;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-text h1 {
-                font-size: clamp(1.75rem, 5vw, 2.5rem);
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            .services-grid,
-            .industries-grid,
-            .stats-grid,
-            .steps-grid,
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Featured service card responsive */
-            #services > .container > .reveal:first-of-type {
-                grid-template-columns: 1fr !important;
-            }
-
-            /* Service grid responsive */
-            #services > .container > div:last-child {
-                grid-template-columns: 1fr !important;
-            }
-
-            /* How it works timeline responsive */
-            #how-it-works div[style*="display: flex"][style*="gap: 0"] {
-                flex-direction: column !important;
-                gap: 2rem !important;
-            }
-
-            #how-it-works div[style*="position: absolute"][style*="height: 2px"] {
-                display: none !important;
-            }
-
-            /* Why FNDI responsive */
-            #why-fndi div[style*="grid-template-columns: 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr !important;
-            }
-
-            .footer-bottom-links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-    
-        /* Mobile Fixes */
-        img, video, svg { max-width: 100%; height: auto; }
-        * { -webkit-text-size-adjust: 100%; }
-
-        @media (max-width: 768px) {
-            body { overflow-x: hidden; }
-
-            /* Footer mobile */
-            .footer-content {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 1.5rem !important;
-            }
-
-            .footer-bottom-links {
-                flex-direction: column !important;
-                gap: 0.5rem !important;
-                align-items: center;
-            }
-
-            /* Nav */
-            .nav-cta { display: none !important; }
-
-            /* Typography */
-            h1 { font-size: 1.75rem !important; }
-            h2 { font-size: 1.4rem !important; }
-            h3 { font-size: 1.15rem !important; }
-
-            /* Sections */
-            section { padding: 2.5rem 1rem !important; }
-
-            /* Hero tweaks */
-            #hero, .hero { height: auto !important; min-height: 70vh !important; padding: 5rem 1.25rem 3rem !important; background-attachment: scroll !important; background-size: cover !important; background-position: center !important; }
-            .hero h1 { font-size: 1.75rem !important; }
-            .hero-subtitle { font-size: 1rem !important; }
-            .hero-ctas, .hero-buttons { flex-direction: column !important; gap: 0.75rem !important; }
-
-            /* Grids */
-            .pricing-grid, .services-grid, .industries-grid,
-            .stats-grid, .steps-grid, .features-grid,
-            .benefit-item, .comparison, .founders-grid,
-            .blog-grid, .team-grid, .tools-grid, .partners-grid,
-            .case-grid, .demo-grid, .resources-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
-            }
-
-            /* Tables scroll horizontally */
-            .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-            /* Forms */
-            .form-row, .form-group-row { flex-direction: column !important; }
-            input, select, textarea { font-size: 16px !important; } /* Prevent iOS zoom */
-
-            /* Pricing cards */
-            .pricing-card { padding: 1.5rem !important; }
-            .price { font-size: 2rem !important; }
-
-            /* Blog cards */
-            .blog-card { flex-direction: column !important; }
-            .blog-card-image { width: 100% !important; height: 180px !important; }
-
-            /* CTA sections full width */
-            .cta-content, .cta-box { padding: 2rem 1rem !important; }
-
-            /* Inline grids with style attributes */
-            div[style*="grid-template-columns: 1fr 1fr"],
-            div[style*="grid-template-columns:1fr 1fr"],
-            div[style*="grid-template-columns: repeat(2"],
-            div[style*="grid-template-columns: repeat(3"],
-            div[style*="grid-template-columns: repeat(4"] {
-                grid-template-columns: 1fr !important;
-            }
-
-            /* Flex layouts that should stack */
-            div[style*="display: flex"][style*="gap: 3rem"],
-            div[style*="display: flex"][style*="gap: 4rem"],
-            div[style*="display:flex"][style*="gap:3rem"],
-            div[style*="display:flex"][style*="gap:4rem"] {
-                flex-direction: column !important;
-            }
-
-            /* FAQ */
-            .faq-section { padding: 3rem 1rem !important; }
-            .faq-question { font-size: 0.95rem !important; }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr !important;
-            }
-            .footer-col { margin-bottom: 0.5rem; }
-            h1 { font-size: 1.5rem !important; }
-            h2 { font-size: 1.25rem !important; }
-        }
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- shell:nav -->
     <nav id="main-nav">
-        <a href="/" class="nav-logo">
-            FNDI
-            <span>Future Native Digital Intelligence</span>
-        </a>
+        <a href="/" class="nav-logo" aria-label="FNDI home">FNDI<span>Future Native Digital Intelligence</span></a>
         <ul class="nav-links">
             <li>
                 <a href="#services">Services <span class="dropdown-arrow"></span></a>
                 <div class="nav-dropdown">
-                    <a href="/services/voice-agents/">AI Voice Agents</a>
-                    <a href="/services/chatbots/">Website Chatbots</a>
-                    <a href="/services/websites/">Web Development</a>
-                    <a href="/services/automation/">Automation</a>
-                    <a href="/services/crm/">CRM Solutions</a>
-                    <a href="/services/social-media/">Social Media</a>
                     <a href="/services/meta-ads/">Meta Ads</a>
+                    <a href="/services/websites/">Web Development</a>
+                    <a href="/services/social-media/">Social Media</a>
+                    <a href="/services/crm/">CRM Solutions</a>
+                    <a href="/services/automation/">Automation</a>
                 </div>
             </li>
             <li>
@@ -1217,286 +57,259 @@
             </li>
             <li><a href="/pricing/">Pricing</a></li>
             <li><a href="/about/">About</a></li>
-            <li><a href="/portfolio/">Portfolio</a></li>
+            <li><a href="/contact/">Contact</a></li>
         </ul>
         <div class="nav-cta">
             <a href="/book/" class="btn btn-primary">Get Started</a>
         </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-section-label">Services</div>
-        <a href="/services/voice-agents/" class="mobile-sub">AI Voice Agents</a>
-        <a href="/services/chatbots/" class="mobile-sub">Website Chatbots</a>
-        <a href="/services/websites/" class="mobile-sub">Web Development</a>
-        <a href="/services/automation/" class="mobile-sub">Automation</a>
-        <a href="/services/crm/" class="mobile-sub">CRM Solutions</a>
-        <a href="/services/social-media/" class="mobile-sub">Social Media</a>
-        <a href="/services/meta-ads/" class="mobile-sub">Meta Ads</a>
+        <a href="/services/meta-ads/">Meta Ads</a>
+        <a href="/services/websites/">Web Development</a>
+        <a href="/services/social-media/">Social Media</a>
+        <a href="/services/crm/">CRM Solutions</a>
+        <a href="/services/automation/">Automation</a>
         <div class="mobile-section-label">Industries</div>
-        <a href="/industries/dental/" class="mobile-sub">Dental Offices</a>
-        <a href="/industries/med-spas/" class="mobile-sub">Med Spas</a>
-        <a href="/industries/law-firms/" class="mobile-sub">Law Firms</a>
-        <a href="/industries/restaurants/" class="mobile-sub">Restaurants</a>
-        <a href="/industries/salons/" class="mobile-sub">Salons</a>
-        <a href="/industries/home-services/" class="mobile-sub">Home Services</a>
+        <a href="/industries/dental/">Dental Offices</a>
+        <a href="/industries/med-spas/">Med Spas</a>
+        <a href="/industries/law-firms/">Law Firms</a>
+        <a href="/industries/restaurants/">Restaurants</a>
+        <a href="/industries/salons/">Salons</a>
+        <a href="/industries/home-services/">Home Services</a>
         <div class="mobile-section-label">More</div>
         <a href="/pricing/">Pricing</a>
         <a href="/about/">About</a>
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/blog/">Blog</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
-        <a href="/book/" class="btn btn-primary" style="text-align: center; margin-top: 0.5rem;">Get Started</a>
+        <a href="/book/" class="btn btn-primary">Get Started</a>
     </div>
 
-    <!-- Hero Section -->
+    <!-- /shell:nav -->
+
+    <main>
     <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-label">AI-POWERED GROWTH</div>
-                    <h1>Grow Your Business With Us</h1>
-                    <p>We build AI voice agents, chatbots, and automation tools that help small businesses answer every call, book more appointments, and grow revenue — 24/7.</p>
-                    <div class="hero-buttons">
-                        <a href="#cta-audit" class="btn btn-primary">Book a Free Call</a>
-                        <a href="#services" class="btn btn-outline">Learn More</a>
+        <div class="wrap hero-grid">
+            <div class="hero-text">
+                <h1><span>More customers</span><span>for your business.</span></h1>
+                <p>We run Facebook and Instagram ads, then back them with the website and follow-up that turn people nearby into paying customers.</p>
+                <div class="hero-buttons">
+                    <a href="/book/" class="btn btn-primary">Book a Free Call</a>
+                    <a href="#services" class="btn btn-outline">See what we do</a>
+                </div>
+            </div>
+
+            <div class="call demo" id="leadDemo" aria-label="Example of a lead ad for your business. Click through it.">
+                <div class="call-top">
+                    <span class="call-dot"></span>
+                    <div>
+                        <strong>Example lead ad</strong>
+                        <small>Try it. This is what your customers see.</small>
                     </div>
+                </div>
+
+                <div class="demo-screen">
+                    <div class="demo-step active" data-step="ad">
+                        <div class="ad-head">
+                            <span class="ad-avatar" aria-hidden="true"></span>
+                            <div>
+                                <strong>Your Business Here</strong>
+                                <small>Sponsored</small>
+                            </div>
+                        </div>
+                        <div class="ad-creative">
+                            <p class="ad-offer">Your offer here</p>
+                            <p class="ad-sub">Shown to people near you</p>
+                        </div>
+                        <div class="ad-bar">
+                            <div>
+                                <strong>Get a free quote</strong>
+                                <small>Takes 30 seconds</small>
+                            </div>
+                            <button type="button" class="demo-btn" data-next>Get Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-step" data-step="need">
+                        <p class="demo-q">What are you looking for?</p>
+                        <div class="demo-options" data-answer="need">
+                            <button type="button">A quote</button>
+                            <button type="button">To book an appointment</button>
+                            <button type="button">Just a question</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-step" data-step="when">
+                        <p class="demo-q">When do you need it?</p>
+                        <div class="demo-options" data-answer="when">
+                            <button type="button">As soon as possible</button>
+                            <button type="button">This week</button>
+                            <button type="button">This month</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-step" data-step="contact">
+                        <p class="demo-q">Confirm your contact info</p>
+                        <dl class="demo-fields">
+                            <div><dt>Name</dt><dd>Alex Rivera</dd></div>
+                            <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
+                            <div><dt>Email</dt><dd>alex@example.com</dd></div>
+                        </dl>
+                        <p class="demo-hint">Filled in automatically from their profile.</p>
+                        <button type="button" class="demo-btn wide" data-next>Submit</button>
+                    </div>
+
+                    <div class="demo-step" data-step="lead">
+                        <p class="demo-q">New lead for Your Business Here</p>
+                        <dl class="demo-fields">
+                            <div><dt>Name</dt><dd>Alex Rivera</dd></div>
+                            <div><dt>Wants</dt><dd id="leadNeed"></dd></div>
+                            <div><dt>When</dt><dd id="leadWhen"></dd></div>
+                            <div><dt>Phone</dt><dd>(305) 555-0142</dd></div>
+                        </dl>
+                        <p class="demo-hint">This is what lands with you, ready for a call back.</p>
+                        <button type="button" class="demo-btn wide ghost" data-restart>Start over</button>
+                    </div>
+                </div>
+
+                <div class="demo-progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="band band-wash">
+        <div class="wrap">
+            <div class="head">
+                <h2>Everything Your Business Needs to Grow</h2>
+                <p class="lede">We plan, build, and manage the marketing that brings customers in.</p>
+            </div>
+            <div class="rows">
+                <a href="/services/meta-ads/" class="row row-lead">
+                    <h3>Meta Ads</h3>
+                    <p>Facebook and Instagram campaigns that put your business in front of people nearby who are ready to book.</p>
+                    <span class="service-link">Learn more</span>
+                </a>
+                <a href="/services/websites/" class="row">
+                    <h3>Web Development</h3>
+                    <p>Fast, modern websites built to turn visitors into paying customers.</p>
+                    <span class="service-link">Learn more</span>
+                </a>
+                <a href="/services/social-media/" class="row">
+                    <h3>Social Media</h3>
+                    <p>Content, posting, and engagement that keep your business in front of local customers.</p>
+                    <span class="service-link">Learn more</span>
+                </a>
+                <a href="/services/crm/" class="row">
+                    <h3>CRM Solutions</h3>
+                    <p>Track every lead and follow up on time, so fewer customers slip away.</p>
+                    <span class="service-link">Learn more</span>
+                </a>
+                <a href="/services/automation/" class="row">
+                    <h3>Automation</h3>
+                    <p>Automatic texts, emails, and reminders that keep leads warm and calendars full.</p>
+                    <span class="service-link">Learn more</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="band">
+        <div class="wrap">
+            <div class="head">
+                <h2>Get Started in Three Simple Steps</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <h3>Book a Free Call</h3>
+                    <p>Tell us about your business and where you want more customers.</p>
+                </div>
+                <div class="step">
+                    <h3>We Build It</h3>
+                    <p>We set up your ads, website, and follow-up. Most projects launch within 7 to 14 business days.</p>
+                </div>
+                <div class="step">
+                    <h3>You Grow</h3>
+                    <p>Go live, start getting leads, and turn them into paying customers.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section — Featured + Grid -->
-    <section id="services" style="background: var(--bg-alt-purple);">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 3.5rem;">
-                <span class="section-label">Our Solutions</span>
-                <h2 class="section-title" style="margin-top: 0.5rem;">Everything Your Business Needs to Grow</h2>
-                <p style="color: var(--text-secondary); max-width: 550px; margin: 0.8rem auto 0; font-size: 1.05rem;">We design, build, and manage AI-powered tools tailored to your business.</p>
+    <section id="why-fndi" class="band band-wash">
+        <div class="wrap why">
+            <div class="why-text">
+                <h2>We're not a big agency that treats you like a number.</h2>
+                <p>We're founders doing real work for real businesses. Every plan is custom, every client gets our full attention, and we don't stop until it works.</p>
+                <a href="/about/" class="btn btn-outline">Learn About Us</a>
             </div>
-
-            <!-- Featured Service — Full Width -->
-            <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: white; border-radius: 20px; padding: 3rem; border: 1px solid var(--border); margin-bottom: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.04);">
-                <div>
-                    <span style="display: inline-block; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 1rem;">MOST POPULAR</span>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 0.8rem;">AI Voice Agents</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">Your AI receptionist answers every call 24/7 with natural conversation. It books appointments, answers FAQs, qualifies leads, and transfers urgent calls — so you never miss a customer again.</p>
-                    <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem;">
-                        <div><span style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">24/7</span><br><span style="font-size: 0.8rem; color: var(--text-tertiary);">Always on</span></div>
-                        <div><span style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">94%</span><br><span style="font-size: 0.8rem; color: var(--text-tertiary);">Booking rate</span></div>
-                        <div><span style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">48hr</span><br><span style="font-size: 0.8rem; color: var(--text-tertiary);">Setup time</span></div>
-                    </div>
-                    <a href="/services/voice-agents/" class="btn btn-primary">Learn More</a>
-                </div>
-                <div style="background: linear-gradient(135deg, #f3f0ff, #ede9fe); border-radius: 16px; padding: 2.5rem; text-align: center; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <div style="margin-bottom: 1rem;"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-                    <p style="color: var(--accent-deep); font-weight: 600; font-size: 1.1rem;">Sounds human. Works 24/7.</p>
-                    <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 0.5rem;">Handles calls, books appointments, qualifies leads</p>
-                </div>
-            </div>
-
-            <!-- Service Grid — 3 columns -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <a href="/services/chatbots/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">Website Chatbots</h3>
-                    </div>
-                    <p>AI chat that engages visitors, captures leads, and books meetings automatically.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
-                <a href="/services/websites/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">Web Development</h3>
-                    </div>
-                    <p>Fast, modern websites built to convert visitors into paying customers.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
-                <a href="/services/automation/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">Automation</h3>
-                    </div>
-                    <p>Custom workflows that eliminate manual tasks and save you hours every week.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
-                <a href="/services/crm/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">CRM Solutions</h3>
-                    </div>
-                    <p>Track every lead, automate follow-ups, and close more deals with smart CRM.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
-                <a href="/services/social-media/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">Social Media</h3>
-                    </div>
-                    <p>Content strategy, posting, and engagement management across all platforms.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
-                <a href="/services/meta-ads/" class="service-card reveal" style="text-decoration: none; color: inherit;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
-                        <h3 style="font-size: 1.15rem;">Meta Ads</h3>
-                    </div>
-                    <p>High-converting Facebook & Instagram campaigns that bring real customers.</p>
-                    <span class="service-link">Learn more →</span>
-                </a>
+            <div class="points">
+                <div><h4>Fast Follow-Up</h4><p>Every lead gets a quick reply, so interest doesn't go cold.</p></div>
+                <div><h4>Personal Attention</h4><p>Work directly with the founding team. No runaround, no outsourcing.</p></div>
+                <div><h4>100% Custom Built</h4><p>Nothing off-the-shelf. Every campaign and website is built for your business and your area.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works — Horizontal Timeline -->
-    <section id="how-it-works">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 3.5rem;">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title" style="margin-top: 0.5rem;">Get Started in Three Simple Steps</h2>
+    <section id="industries" class="band">
+        <div class="wrap">
+            <div class="head">
+                <h2>Built for Businesses Like Yours</h2>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 0; position: relative; max-width: 900px; margin: 0 auto;">
-                <!-- Connecting line -->
-                <div style="position: absolute; top: 28px; left: 56px; right: 56px; height: 2px; background: linear-gradient(90deg, var(--accent), #a78bfa, var(--accent)); z-index: 0;"></div>
-
-                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
-                    <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 1.2rem; box-shadow: 0 4px 20px rgba(124,58,237,0.3);">1</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Book a Free Call</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 220px; margin: 0 auto;">Tell us about your business and where you need help.</p>
-                </div>
-                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
-                    <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 1.2rem; box-shadow: 0 4px 20px rgba(124,58,237,0.3);">2</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">We Build It</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 220px; margin: 0 auto;">Our team designs and builds your custom AI tools in 48 hours.</p>
-                </div>
-                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
-                    <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 1.2rem; box-shadow: 0 4px 20px rgba(124,58,237,0.3);">3</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">You Grow</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 220px; margin: 0 auto;">Go live, start capturing leads, and watch your revenue grow.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why FNDI — Side by Side -->
-    <section id="why-fndi" style="background: var(--bg-alt);">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                <div class="reveal">
-                    <span class="section-label">Why FNDI</span>
-                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); margin: 0.5rem 0 1.5rem; letter-spacing: -0.01em;">We're not a big agency that treats you like a number.</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">We're founders building real tools for real businesses. Every solution is custom, every client gets our full attention, and we don't stop until it works.</p>
-                    <a href="/about/" class="btn btn-outline" style="border: 2px solid var(--accent); color: var(--accent); background: transparent;">Learn About Us →</a>
-                </div>
-                <div class="reveal" style="display: flex; flex-direction: column; gap: 1.2rem;">
-                    <div style="background: white; border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start;">
-                        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: linear-gradient(135deg, #7c3aed, #a78bfa); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                        <div><h4 style="font-size: 1rem; margin-bottom: 0.3rem;">24/7 Coverage</h4><p style="color: var(--text-secondary); font-size: 0.9rem;">Your AI tools never sleep — answering calls, capturing leads, and booking appointments around the clock.</p></div>
-                    </div>
-                    <div style="background: white; border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start;">
-                        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: linear-gradient(135deg, #7c3aed, #a78bfa); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                        <div><h4 style="font-size: 1rem; margin-bottom: 0.3rem;">Personal Attention</h4><p style="color: var(--text-secondary); font-size: 0.9rem;">Work directly with the founding team. No runaround, no outsourcing — just dedicated support.</p></div>
-                    </div>
-                    <div style="background: white; border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start;">
-                        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: linear-gradient(135deg, #7c3aed, #a78bfa); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-                        <div><h4 style="font-size: 1rem; margin-bottom: 0.3rem;">100% Custom Built</h4><p style="color: var(--text-secondary); font-size: 0.9rem;">Nothing off-the-shelf. Every solution is designed specifically for your business and industry.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries Section -->
-    <section id="industries">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <span class="section-label">Who We Help</span>
-            </div>
-            <h2 class="section-title" style="text-align: center; margin-top: 0.5rem;">Built for Businesses Like Yours</h2>
             <div class="industries-grid">
-                <a href="/industries/dental/" class="industry-card reveal">
+                <a href="/industries/dental/" class="industry-card">
                     <h3>Dental Offices</h3>
-                    <p>Automated appointment booking and patient engagement for dental practices.</p>
+                    <p>More new patient bookings and fewer empty chairs.</p>
                 </a>
-                <a href="/industries/med-spas/" class="industry-card reveal">
+                <a href="/industries/med-spas/" class="industry-card">
                     <h3>Med Spas</h3>
-                    <p>24/7 booking, consultation scheduling, and customer service automation.</p>
+                    <p>More consultations booked from Instagram and search.</p>
                 </a>
-                <a href="/industries/law-firms/" class="industry-card reveal">
+                <a href="/industries/law-firms/" class="industry-card">
                     <h3>Law Firms</h3>
-                    <p>Client intake automation, consultation booking, and secure communications.</p>
+                    <p>More qualified inquiries and booked consultations.</p>
                 </a>
-                <a href="/industries/restaurants/" class="industry-card reveal">
+                <a href="/industries/restaurants/" class="industry-card">
                     <h3>Restaurants</h3>
-                    <p>Order management, reservation booking, and customer support automation.</p>
+                    <p>More reservations, more orders, more regulars.</p>
                 </a>
-                <a href="/industries/salons/" class="industry-card reveal">
-                    <h3>Salons & Barbershops</h3>
-                    <p>Appointment scheduling, customer retention, and service bookings.</p>
+                <a href="/industries/salons/" class="industry-card">
+                    <h3>Salons &amp; Barbershops</h3>
+                    <p>A fuller calendar and clients who rebook.</p>
                 </a>
-                <a href="/industries/home-services/" class="industry-card reveal">
+                <a href="/industries/home-services/" class="industry-card">
                     <h3>Home Services</h3>
-                    <p>Lead capture, service scheduling, and customer communication automation.</p>
+                    <p>More quote requests and booked jobs.</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section id="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item reveal">
-                    <h3 id="stat-1">0</h3>
-                    <p>Calls Answered</p>
-                </div>
-                <div class="stat-item reveal">
-                    <h3 id="stat-2">0</h3>
-                    <p>Booking Rate</p>
-                </div>
-                <div class="stat-item reveal">
-                    <h3 id="stat-3">$0</h3>
-                    <p>Revenue Recovered</p>
-                </div>
-                <div class="stat-item reveal">
-                    <h3 id="stat-4">0</h3>
-                    <p>Setup Time</p>
-                </div>
+    <section id="cta-audit" class="band band-ink">
+        <div class="wrap audit">
+            <div>
+                <h2>Find Out How to Get More Customers</h2>
+                <p class="lede">Get a free analysis of your business. We'll show you exactly where you're losing customers and how to win them.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Audit Section -->
-    <section id="cta-audit">
-        <div class="container reveal">
-            <h2>Find Out How AI Can Grow Your Business</h2>
-            <p class="section-subtitle">Get a free analysis of your business — we'll show you exactly where AI can save you time and make you money.</p>
             <form class="audit-form" action="https://formsubmit.co/stefano@fndi.tech" method="POST">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://fndi.tech/thank-you/">
-
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                    <input type="text" id="name" name="name" required placeholder="John Smith" autocomplete="name">
                 </div>
-
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="you@yourbusiness.com">
+                    <input type="email" id="email" name="email" required placeholder="you@yourbusiness.com" autocomplete="email">
                 </div>
-
                 <div class="form-group">
                     <label for="website">Website (optional)</label>
                     <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
                 </div>
-
                 <div class="form-group">
                     <label for="business-type">Type of Business</label>
                     <select id="business-type" name="business_type" required>
@@ -1505,131 +318,78 @@
                         <option value="med-spa">Med Spa</option>
                         <option value="law-firm">Law Firm</option>
                         <option value="restaurant">Restaurant</option>
-                        <option value="salon">Salon & Barbershop</option>
+                        <option value="salon">Salon &amp; Barbershop</option>
                         <option value="home-services">Home Services</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Free Audit</button>
+                <button type="submit" class="btn btn-primary">Get My Free Audit</button>
             </form>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section" id="faq">
+        <div class="faq-inner">
         <h2>Frequently Asked Questions</h2>
         <p class="faq-subtitle">Quick answers to the questions we hear most.</p>
-
         <div class="faq-item">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                What is an AI voice agent?
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
+            <button class="faq-question" aria-expanded="false">What does FNDI do?</button>
             <div class="faq-answer">
-                <p>An AI voice agent answers your business phone calls naturally, 24/7. It understands speech, answers questions, books appointments, qualifies leads, and transfers urgent calls to your team. No more missed calls or voicemail.</p>
+                <p>We help local businesses get more customers. That means ads on Facebook and Instagram, a website that converts, social media, and follow-up that turns leads into bookings.</p>
             </div>
         </div>
-
         <div class="faq-item">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                How is FNDI different from other AI companies?
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
+            <button class="faq-question" aria-expanded="false">How is FNDI different from other agencies?</button>
             <div class="faq-answer">
-                <p>You work directly with the founders, Stefano and Douglas. We build custom solutions for your specific business, not templates. Every dollar you spend is meant to grow your business, and we treat your success like our own.</p>
+                <p>You work directly with the founders, Stefano and Douglas. We build a custom plan for your specific business, not templates. Every dollar you spend is meant to grow your business, and we treat your success like our own.</p>
             </div>
         </div>
-
         <div class="faq-item">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                How long does setup take?
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
+            <button class="faq-question" aria-expanded="false">How long does setup take?</button>
             <div class="faq-answer">
-                <p>Most projects launch within 7-14 business days. Voice agents and chatbots can go live in as little as 48 hours. We give you a specific timeline after our initial call.</p>
+                <p>Most projects launch within 7-14 business days. We give you a specific timeline after our initial call.</p>
             </div>
         </div>
-
         <div class="faq-item">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                Will it work with my existing systems?
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
+            <button class="faq-question" aria-expanded="false">Will it work with my existing systems?</button>
             <div class="faq-answer">
                 <p>Yes. We integrate with most popular booking systems (Acuity, Calendly), CRMs (Salesforce, Pipedrive), and business tools. If we don't support something yet, we can build a custom integration.</p>
             </div>
         </div>
-
         <div class="faq-item">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                Can I upgrade or downgrade anytime?
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
+            <button class="faq-question" aria-expanded="false">Can I upgrade or downgrade anytime?</button>
             <div class="faq-answer">
                 <p>Absolutely. Change plans anytime with prorated billing. No penalties, no hassles, no long-term contracts required.</p>
             </div>
         </div>
-
         <div class="faq-more">
-            <a href="/faq/">View all FAQs &rarr;</a>
+            <a href="/faq/" class="text-link">View all FAQs</a>
+        </div>
         </div>
     </section>
+    </main>
 
-    <!-- Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-panel">
-            <div class="chat-header">
-                <h4>FNDI AI Advisor</h4>
-                <p>Ask me anything about our services</p>
-                <div class="chat-status"><span class="chat-status-dot"></span> Online now</div>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="chat-msg bot">Hey! I'm the FNDI AI Advisor. What kind of business do you run? I'd love to show you how AI can help you grow.</div>
-                <div class="chat-quick-actions" id="chatQuickActions">
-                    <button class="chat-quick-btn" onclick="sendQuick('What services do you offer?')">Your services</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('How much does it cost?')">Pricing</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('I run a dental office')">I have a dental office</button>
-                    <button class="chat-quick-btn" onclick="sendQuick('I want to book a call')">Book a call</button>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." autocomplete="off">
-                <button class="chat-send" id="chatSend" aria-label="Send">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                </button>
-            </div>
-        </div>
-        <button class="chat-toggle" aria-label="Chat with us">
-            <svg class="chat-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            <svg class="chat-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-
-    <!-- Footer -->
+    <!-- shell:footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">FNDI</div>
-                <p style="margin-bottom: 0.3rem;">Future Native Digital Intelligence</p>
-                <p>AI solutions for small businesses.</p>
-                <p style="margin-top: 0.5rem;">Based in Miami, FL</p>
-                <p><a href="mailto:support@fndi.tech" style="color: rgba(255,255,255,0.7);">support@fndi.tech</a></p>
+                <p>Future Native Digital Intelligence</p>
+                <p>More customers for local businesses.</p>
+                <p>Based in Miami, FL</p>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/fndi_tech/" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                    <a href="https://www.linkedin.com/company/fnditech/" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="mailto:support@fndi.tech" class="social-icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.instagram.com/fndi_tech/" class="social-icon" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4"/><circle cx="9" cy="9" r="3.2"/><circle cx="13" cy="5" r=".6" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/company/fnditech/" class="social-icon" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="2.5"/><path d="M5.8 8v4.5M5.8 5.6v.1M8.6 12.5V8m0 2.2c0-1.4 1-2.2 2-2.2s1.8.7 1.8 2.2v2.3"/></svg></a>
+                    <a href="mailto:support@fndi.tech" class="social-icon" aria-label="Email"><svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3.5" width="14" height="11" rx="2"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Solutions</h4>
-                <a href="/services/voice-agents/">Voice Agents</a>
-                <a href="/services/chatbots/">Chatbots</a>
-                <a href="/services/websites/">Websites</a>
-                <a href="/services/automation/">Automation</a>
-                <a href="/services/crm/">CRM</a>
-                <a href="/services/social-media/">Social Media</a>
                 <a href="/services/meta-ads/">Meta Ads</a>
+                <a href="/services/websites/">Websites</a>
+                <a href="/services/social-media/">Social Media</a>
+                <a href="/services/crm/">CRM</a>
+                <a href="/services/automation/">Automation</a>
             </div>
             <div class="footer-col">
                 <h4>Industries</h4>
@@ -1644,23 +404,15 @@
                 <h4>Company</h4>
                 <a href="/about/">About Us</a>
                 <a href="/pricing/">Pricing</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/blog/">Blog</a>
-                <a href="/careers/">Careers</a>
-                <a href="/contact/">Contact</a>
+                <a href="/how-it-works/">How It Works</a>
                 <a href="/faq/">FAQ</a>
-                <a href="/case-studies/">Case Studies</a>
+                <a href="/careers/">Careers</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/partners/">Partners</a>
-                <a href="/resources/">Resources</a>
-                <a href="/compare/">Compare</a>
-                <a href="/how-it-works/">How It Works</a>
-                <a href="/demos/">Demos</a>
-                <a href="/assessment/">Free Assessment</a>
+                <h4>Get in touch</h4>
                 <a href="/book/">Book a Call</a>
-                <a href="/onboarding/">Client Onboarding</a>
+                <a href="/contact/">Contact</a>
+                <a href="mailto:support@fndi.tech">support@fndi.tech</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1674,199 +426,8 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Navigation Styling on Scroll
-        const nav = document.getElementById('main-nav');
-        const heroSection = document.getElementById('hero');
-
-        function updateNav() {
-            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-            if (window.scrollY > heroBottom - 70) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        }
-
-        window.addEventListener('scroll', updateNav);
-        updateNav();
-
-        // Reveal Animation on Scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Stat Counter Animation
-        const stats = [
-            { id: 'stat-1', target: 847, suffix: '+', label: 'Calls Answered' },
-            { id: 'stat-2', target: 94, suffix: '%', label: 'Booking Rate' },
-            { id: 'stat-3', target: 52, prefix: '$', suffix: 'K+', label: 'Revenue Recovered' },
-            { id: 'stat-4', target: 48, suffix: 'hr', label: 'Setup Time' }
-        ];
-
-        let hasAnimated = false;
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    hasAnimated = true;
-                    animateStats();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.getElementById('stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        function animateStats() {
-            stats.forEach(stat => {
-                const element = document.getElementById(stat.id);
-                let current = 0;
-                const increment = stat.target / 30;
-
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= stat.target) {
-                        current = stat.target;
-                        clearInterval(timer);
-                    }
-
-                    let displayValue = Math.floor(current);
-                    element.textContent = (stat.prefix || '') + displayValue + (stat.suffix || '');
-                }, 30);
-            });
-        }
-
-        // Handle resize for mobile menu
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-
-    <!-- Chat Widget -->
-    <script>
-        const chatWidget = document.getElementById('chatWidget');
-        const chatToggle = chatWidget.querySelector('.chat-toggle');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const chatSend = document.getElementById('chatSend');
-        let chatHistory = [];
-        let isTyping = false;
-
-        chatToggle.addEventListener('click', () => {
-            chatWidget.classList.toggle('active');
-            if (chatWidget.classList.contains('active')) chatInput.focus();
-        });
-
-        function addMessage(text, role) {
-            const msg = document.createElement('div');
-            msg.className = 'chat-msg ' + role;
-            msg.textContent = text;
-            chatMessages.appendChild(msg);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function showTyping() {
-            const t = document.createElement('div');
-            t.className = 'chat-msg bot typing';
-            t.id = 'typingIndicator';
-            t.innerHTML = '<span></span><span></span><span></span>';
-            chatMessages.appendChild(t);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function hideTyping() {
-            const t = document.getElementById('typingIndicator');
-            if (t) t.remove();
-        }
-
-        async function sendMessage(text) {
-            if (!text.trim() || isTyping) return;
-            // Remove quick actions after first message
-            const qa = document.getElementById('chatQuickActions');
-            if (qa) qa.remove();
-
-            addMessage(text, 'user');
-            chatHistory.push({ role: 'user', content: text });
-            chatInput.value = '';
-            isTyping = true;
-            chatSend.disabled = true;
-            showTyping();
-
-            try {
-                const res = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ messages: chatHistory })
-                });
-                const data = await res.json();
-                hideTyping();
-                const reply = data.reply || "Sorry, something went wrong. Try again!";
-                addMessage(reply, 'bot');
-                chatHistory.push({ role: 'assistant', content: reply });
-            } catch (e) {
-                hideTyping();
-                addMessage("Hmm, I'm having trouble connecting. Try again in a moment!", 'bot');
-            }
-            isTyping = false;
-            chatSend.disabled = false;
-            chatInput.focus();
-        }
-
-        function sendQuick(text) { sendMessage(text); }
-
-        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(chatInput.value); }
-        });
-    </script>
+    <script src="/site.js"></script>
 <script src="/lang.js"></script>
+    <!-- /shell:footer -->
 </body>
 </html>

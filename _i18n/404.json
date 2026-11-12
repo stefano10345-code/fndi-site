@@ -1,0 +1,9 @@
+{
+  "path": "/404/",
+  "strings": {
+    "Page Not Found": "Página no encontrada",
+    "Sorry, the page you are looking for doesn't exist. It may have been moved or deleted.": "Lo sentimos, la página que buscas no existe. Puede que se haya movido o eliminado.",
+    "Back to Home": "Volver al inicio",
+    "Contact Us": "Contáctanos"
+  }
+}
